@@ -26,10 +26,25 @@ const Create: NextPage = () => {
               />
               <Select options={options} />
             </div>
-            <FormInput placeholder="Enter your answers" />
+            <FormInput
+              label=""
+              placeholder="Enter your answers"
+              onChange={() => console.log()}
+              value="HI"
+              name="DFDSFSD"
+              errors="DASFA"
+            />
             <div className={styles.inputField_con}>
-              <ToggleButton label="Required" />
-              <ToggleButton label="Long answer" />
+              <ToggleButton
+                state={true}
+                onChange={() => console.log()}
+                label="Required"
+              />
+              <ToggleButton
+                state={true}
+                onChange={() => console.log()}
+                label="Long answer"
+              />
             </div>
           </div>
           <button>Add new</button>
