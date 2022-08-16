@@ -1,0 +1,29 @@
+.container{
+padding: 60px 60px;
+}
+.title{
+    font-size: 24px;
+    border: none;
+    font-weight: 700;
+    width: 80%;
+}
+.title:focus{
+    padding: 5px;
+    outline: blue 1px solid;
+    border-radius: 10px;
+}
+.inputField{
+    margin: 20px 0;
+}
+.inputField_con{
+    display: flex;
+
+}
+.inputField_ques{
+    margin-right: 30px;
+    padding: 8px;
+    min-width: 300px;
+    font-size: 18px;
+    border: none;
+    background-color: var(--background-color);
+}

@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+
+    width: 100%;
+}
+.fakeMenu{
+    width: 230px;
+}
+.rightSide{
+    flex:1;
+    height: 100vh;
+}
+.content{
+    width: 100%;
+    margin: 30px 30px;
+    background-color: white;
+}
