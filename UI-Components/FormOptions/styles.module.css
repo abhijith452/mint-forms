@@ -1,0 +1,22 @@
+.label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 20px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+}
+
+.inputContainer {
+    margin-bottom: 20px;
+    
+}
+.errorMsg{
+    font-size: 12px;
+    color: red;
+}

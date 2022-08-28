@@ -30,10 +30,38 @@ const Form: NextPage = () => {
         {
           componentId: 'G363944IPGU',
           type: 'input',
-          label: 'Enter your name',
+          label: 'Full name',
           required: true,
           validate: 'string',
         },
+        {
+          componentId: 'G3639446954',
+          type: 'input',
+          label: 'Email',
+          required: true,
+          validate: 'string',
+        },
+        {
+          componentId: 'G36sd6449848',
+          type: 'input',
+          label: 'Phone number',
+          required: true,
+          validate: 'string',
+        },
+        {
+          componentId: 'G36UI4854178',
+          type: 'input',
+          label: 'Institution',
+          required: true,
+          validate: 'string',
+        },
+        {
+          componentId: 'G36MBVFK86368',
+          type: 'input',
+          label: 'Designation',
+          required: true,
+          validate: 'string',
+        }
       ],
     ],
   };
@@ -70,7 +98,6 @@ const Form: NextPage = () => {
                       <FormInput
                         label={item.label}
                         placeholder=""
-                        name={item.componentId}
                         value={values[item.componentId]}
                         onChange={(e: any) =>
                           setFieldValue(item.componentId, e.target.value)

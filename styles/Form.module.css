@@ -17,7 +17,7 @@
     margin-bottom: 30px;
     padding: 0 60px;
 }
-.formContent{
+.formContent {
     padding: 0 60px;
 }
 .formBanner {
@@ -50,9 +50,24 @@
     cursor: pointer;
     margin-top: 20px;
     box-shadow: 0 15px 15px 0 #368dff6e, inset 0 -8px 10px 0 #0058d3c5;
-
 }
-
+.button2 {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #1479ff;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+.priceLabel {
+    margin-top: 10px;
+}
+.price {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 5px;
+}
 .footer {
     /* text-align: center; */
     font-size: 10px;
@@ -60,7 +75,6 @@
     margin-bottom: 20px;
     color: gray;
 }
-.footer p{
-
+.footer p {
     font-weight: 300;
 }

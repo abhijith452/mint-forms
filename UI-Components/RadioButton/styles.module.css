@@ -2,7 +2,7 @@
 .radioButton{
     display: flex;
     align-items: center;
-    margin: 5px 0px;
+    margin: 10px 0px;
 
 }
 .radio:checked,
@@ -57,10 +57,11 @@
 }
 .option{
     border: none;
-    padding: 4px;
+    margin: 5px;
+    font-size: 14px;
 }
 .button{
     color: var(--blue-primary);
-    font-size: 14px;
+    font-size: 16px;
     margin: 5px 0;
 }

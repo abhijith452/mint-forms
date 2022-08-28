@@ -7,22 +7,20 @@ interface props {
   checked: boolean;
 }
 
-const FormRadioButton: NextPage<props> = ({ label, onClick, checked }) => {
+const FormRadioButton: NextPage<props> = ({ label, onClick, checked}) => {
   return (
     <>
-      <div className={styles.radioButton}>
+      <div className={styles.radioButton} onClick={()=>onClick(label)}>
         <input
           className={styles.radio}
           type="radio"
-          onChange={() => onClick()}
+          onChange={(e:any) => onClick(e)}
           checked={checked}
         />
-        <label>
-          <input className={styles.option} value={label} />
-        </label>
+        <label>{label}</label>
         {/* <label onClick={()=>onClick()}>{label}</label> */}
       </div>
-      <p className={styles.button}>+ Add option</p>
+      {/* <p className={styles.button}>+ Add option</p> */}
     </>
   );
 };

@@ -6,7 +6,6 @@ interface props {
   placeholder: string;
   value: string;
   onChange: Function;
-  name: string;
   errors: string | boolean;
 }
 
@@ -15,7 +14,6 @@ const FormInput: NextPage<props> = ({
   placeholder,
   value,
   onChange,
-  name,
   errors,
 }) => {
   return (
@@ -26,10 +24,10 @@ const FormInput: NextPage<props> = ({
         value={value}
         style={{
           boxShadow:
-            errors !== undefined
+            errors !==""
               ? '0 12px 20px 0 rgba(255, 45, 45, 0.301),inset 0 -1px 8px 0 #ff5f5f6e'
               : '0 12px 20px 0 rgba(136,174,222,0.42),inset 0 -1px 8px 0 #B9D1F1',
-          outlineColor: errors !== undefined ? 'red' : '#1479ff',
+          outlineColor: errors !== "" ? 'red' : '#1479ff',
         }}
         onChange={(e) => onChange(e)}
         className={styles.input}
