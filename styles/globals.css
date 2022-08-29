@@ -32,3 +32,34 @@ body{
   --failed-back: #c52d5e;
   --success-back: #e7f8f0;
 }
+.errorBox {
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.02), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  min-height: 60px;
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+  color: var(--textcolor-secondary);
+  background-color: var(--input-color);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 5px;
+  z-index: 2000;
+}
+
+.errorBox span {
+  margin-left: 30px;
+  color: red;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.errorBox p {
+  margin: 10px;
+  font-size: 12px;
+  word-break: break-all;
+}

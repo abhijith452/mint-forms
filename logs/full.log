@@ -3,3 +3,188 @@
 2022-08-28T07:38:05.270Z [INFO   ]: > Connected to Paytm Servers
 2022-08-28T07:38:06.891Z [INFO   ]: > Connected to MongoDB
 2022-08-28T07:38:06.893Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:19:28.761Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:19:31.636Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:19:31.637Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:25:05.014Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:25:06.712Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:25:06.713Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:27:05.515Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:27:07.444Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:27:07.444Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:27:48.592Z [ERROR  ]: Unexpected token o in JSON at position 1
+2022-08-28T14:28:41.186Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:28:42.662Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:28:42.663Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:28:45.210Z [ERROR  ]: Unexpected token o in JSON at position 1
+2022-08-28T14:33:37.684Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:34:15.699Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:34:17.160Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:34:17.161Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:34:28.313Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:34:28.812Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:34:28.813Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:34:32.373Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:36:13.150Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:36:14.395Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:36:14.396Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:36:17.883Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:36:52.375Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:36:52.859Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:36:52.860Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:36:55.668Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:37:14.579Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:41:02.012Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:41:19.600Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:41:20.952Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:41:20.952Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:41:22.592Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:41:44.749Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:42:39.368Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:44:16.227Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:44:17.457Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:44:17.458Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:44:20.312Z [ERROR  ]: [object Object]
+2022-08-28T14:45:07.282Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:45:07.720Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:45:07.720Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:45:14.615Z [INFO   ]: > Razor token created for undefined
+2022-08-28T14:45:16.929Z [ERROR  ]: Invalid login: 535 Authentication failed
+2022-08-28T14:45:39.867Z [INFO   ]: > Razor token created for undefined
+2022-08-28T14:45:42.117Z [ERROR  ]: Invalid login: 535 Authentication failed
+2022-08-28T14:49:19.563Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:49:20.941Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:49:20.941Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:49:39.484Z [INFO   ]: > Razor token created for AAbhijirh
+2022-08-28T14:49:43.972Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwuAh0R08nemPZBsAAAAAht5tWIJLpUNF-5F-CcGMUo]
+2022-08-28T14:49:43.973Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwuAh0R08nemPZBsAAAAAht5tWIJLpUNF-5F-CcGMUo
+2022-08-28T14:51:16.753Z [INFO   ]: > Razor token created for AAbhijirh
+2022-08-28T14:51:20.966Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwuA6ER08nemPZByAAAAA5OmoEYP5QgirtpfFAHOdX8]
+2022-08-28T14:51:20.968Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwuA6ER08nemPZByAAAAA5OmoEYP5QgirtpfFAHOdX8
+2022-08-28T14:51:37.902Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T14:51:39.189Z [INFO   ]: > Connected to MongoDB
+2022-08-28T14:51:39.189Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T14:51:42.768Z [ERROR  ]: Unexpected token ' in JSON at position 0
+2022-08-28T14:51:53.585Z [INFO   ]: > Razor token created for AAbhijirh
+2022-08-28T14:51:57.875Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwuBDbVBtGLslFC3AAAABCNQ3QcObGeiEPXL1ra-.Tw]
+2022-08-28T14:51:57.877Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwuBDbVBtGLslFC3AAAABCNQ3QcObGeiEPXL1ra-.Tw
+2022-08-28T15:00:41.858Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T15:00:43.170Z [INFO   ]: > Connected to MongoDB
+2022-08-28T15:00:43.170Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T15:01:02.617Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T15:01:03.112Z [INFO   ]: > Connected to MongoDB
+2022-08-28T15:01:03.113Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T15:03:23.770Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T15:03:25.154Z [INFO   ]: > Connected to MongoDB
+2022-08-28T15:03:25.155Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T15:03:43.496Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T15:03:43.974Z [INFO   ]: > Connected to MongoDB
+2022-08-28T15:03:43.974Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T15:04:13.467Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T15:04:13.940Z [INFO   ]: > Connected to MongoDB
+2022-08-28T15:04:13.941Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T15:06:14.674Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T15:06:15.978Z [INFO   ]: > Connected to MongoDB
+2022-08-28T15:06:15.978Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T15:06:18.811Z [INFO   ]: > Razor token created for AAbhijirh
+2022-08-28T15:06:23.013Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwuEbkR08nemPZPMAAAABe4EkkETc.aFoZJAaUnXC0s]
+2022-08-28T15:06:23.016Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwuEbkR08nemPZPMAAAABe4EkkETc.aFoZJAaUnXC0s
+2022-08-28T15:07:34.152Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T15:07:35.535Z [INFO   ]: > Connected to MongoDB
+2022-08-28T15:07:35.536Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T15:07:37.772Z [INFO   ]: > Razor token created for AAbhijirh
+2022-08-28T15:07:42.375Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwuEvsVsBJHclhu6AAAABgLQqPQXm7KtPWFym4l.WAw]
+2022-08-28T15:07:42.376Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwuEvsVsBJHclhu6AAAABgLQqPQXm7KtPWFym4l.WAw
+2022-08-28T15:08:08.407Z [ERROR  ]: [object Object]
+2022-08-28T16:05:18.479Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T16:05:19.609Z [INFO   ]: > Connected to MongoDB
+2022-08-28T16:05:19.609Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T16:20:52.237Z [ERROR  ]: [object Object]
+2022-08-28T16:21:11.605Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T16:21:12.668Z [INFO   ]: > Connected to MongoDB
+2022-08-28T16:21:12.669Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T16:21:15.685Z [INFO   ]: > Razor token created for AAbhijirh
+2022-08-28T16:21:20.063Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwuV.8VsBJHclh.kAAAAB6wC7MFJzYsruIAqzwB8GBE]
+2022-08-28T16:21:20.065Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwuV.8VsBJHclh.kAAAAB6wC7MFJzYsruIAqzwB8GBE
+2022-08-28T16:21:29.717Z [INFO   ]: > Connected to Paytm Servers
+2022-08-28T16:21:30.167Z [INFO   ]: > Connected to MongoDB
+2022-08-28T16:21:30.168Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-28T16:21:32.680Z [ERROR  ]: [object Object]
+2022-08-29T06:09:25.495Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T06:09:40.509Z [ERROR  ]: querySrv ESERVFAIL _mongodb._tcp.cluster0.fwkhy.mongodb.net
+2022-08-29T09:20:03.369Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T09:20:04.958Z [INFO   ]: > Connected to MongoDB
+2022-08-29T09:20:04.959Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T14:52:21.304Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T14:52:22.301Z [INFO   ]: > Connected to MongoDB
+2022-08-29T14:52:22.302Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T14:52:56.393Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T14:52:56.915Z [INFO   ]: > Connected to MongoDB
+2022-08-29T14:52:56.916Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T14:53:33.301Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T14:53:34.123Z [INFO   ]: > Connected to MongoDB
+2022-08-29T14:53:34.124Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T14:58:51.606Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T14:58:52.467Z [INFO   ]: > Connected to MongoDB
+2022-08-29T14:58:52.467Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T15:09:23.628Z [ERROR  ]: Unexpected token u in JSON at position 0
+2022-08-29T15:11:26.298Z [ERROR  ]: Unexpected token u in JSON at position 0
+2022-08-29T15:14:59.766Z [ERROR  ]: [object Object]
+2022-08-29T15:43:19.069Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T15:43:20.220Z [INFO   ]: > Connected to MongoDB
+2022-08-29T15:43:20.221Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T15:44:10.331Z [INFO   ]: > Razor token created for Abhijith
+2022-08-29T15:44:14.277Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzezrVBtGLslPQRAAAACPn.hSxd6gxl0o3zqEPvS94]
+2022-08-29T15:44:14.279Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzezrVBtGLslPQRAAAACPn.hSxd6gxl0o3zqEPvS94
+2022-08-29T15:45:03.383Z [ERROR  ]: Cannot read properties of null (reading 'responses')
+2022-08-29T15:58:58.232Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T15:58:59.185Z [INFO   ]: > Connected to MongoDB
+2022-08-29T15:58:59.186Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:16:13.238Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:16:14.199Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:16:14.199Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:32:56.978Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:32:58.406Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:32:58.407Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:33:17.251Z [ERROR  ]: Cannot set properties of null (setting 'responses')
+2022-08-29T16:34:01.043Z [INFO   ]: > Razor token created for Abhijith Kannan
+2022-08-29T16:34:05.101Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzqfGTcOrtHjrfmAAAACUqZ3tObM6TBUx5WpqpaVAE]
+2022-08-29T16:34:05.103Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzqfGTcOrtHjrfmAAAACUqZ3tObM6TBUx5WpqpaVAE
+2022-08-29T16:34:34.259Z [ERROR  ]: Cannot read properties of undefined (reading 'findIndex')
+2022-08-29T16:40:39.562Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:40:41.561Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:40:41.562Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:40:55.557Z [INFO   ]: > Razor token created for asfasd
+2022-08-29T16:40:59.328Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzsG7VBtGLslP55AAAACjmUKMaEmwEWHCTcwzEIrqc]
+2022-08-29T16:40:59.330Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzsG7VBtGLslP55AAAACjmUKMaEmwEWHCTcwzEIrqc
+2022-08-29T16:42:10.070Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:42:12.481Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:42:12.481Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:42:25.743Z [INFO   ]: > Razor token created for dfa
+2022-08-29T16:42:29.528Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzsdbVBtGLslP6LAAAAC1-Z8qC1ZTCRChY3968ixeg]
+2022-08-29T16:42:29.530Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzsdbVBtGLslP6LAAAAC1-Z8qC1ZTCRChY3968ixeg
+2022-08-29T16:43:03.605Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:43:04.178Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:43:04.178Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:43:22.372Z [INFO   ]: > Razor token created for Abhijith
+2022-08-29T16:43:26.222Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzsrrVBtGLslP6RAAAADP8d.yVPXv0nq3LlZlOBDFo]
+2022-08-29T16:43:26.223Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzsrrVBtGLslP6RAAAADP8d.yVPXv0nq3LlZlOBDFo
+2022-08-29T16:44:12.439Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzs3LVBtGLslP6UAAAADXNAEk065zbCmmpG7jt0w7E]
+2022-08-29T16:44:12.441Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzs3LVBtGLslP6UAAAADXNAEk065zbCmmpG7jt0w7E
+2022-08-29T16:45:11.785Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:45:13.009Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:45:13.009Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:46:42.643Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:46:43.573Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:46:43.574Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:47:09.415Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:47:09.962Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:47:09.963Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:47:53.262Z [INFO   ]: > Connected to Paytm Servers
+2022-08-29T16:47:54.601Z [INFO   ]: > Connected to MongoDB
+2022-08-29T16:47:54.602Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-29T16:48:42.890Z [INFO   ]: > Razor token created for Abhijith Kannan
+2022-08-29T16:48:46.876Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzt7mTcOrtHjrhgAAAADnqyZs3rSTRxSIBYZMct-Pk]
+2022-08-29T16:48:46.878Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzt7mTcOrtHjrhgAAAADnqyZs3rSTRxSIBYZMct-Pk
+2022-08-29T16:49:01.519Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzt.UR08nemPkfMAAAAD1L4Q3W8-9kHfaN8TUB5ZzE]
+2022-08-29T16:49:01.519Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzt.UR08nemPkfMAAAAD1L4Q3W8-9kHfaN8TUB5ZzE

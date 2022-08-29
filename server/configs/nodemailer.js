@@ -6,8 +6,8 @@ function createTransport() {
     // service:"hotmail",
     port: process.env.NODE_ENV === 'production' ? process.env.MAIL_PORT : 587,
     auth: {
-      user: process.env.NODE_ENV === 'production' ? process.env.MAIL_USER : 'darius.friesen12@ethereal.email',
-      pass: process.env.NODE_ENV === 'production' ? process.env.MAIL_PASSWORD : '1xsWcq95tyunFvZ2HG'
+      user: process.env.NODE_ENV === 'production' ? process.env.MAIL_USER : 'maxine.reichel@ethereal.email',
+      pass: process.env.NODE_ENV === 'production' ? process.env.MAIL_PASSWORD : 'dU9PKnvUNeTcYKFX8A'
     }
   });
 

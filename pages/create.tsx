@@ -70,7 +70,7 @@ const FormItem: React.FunctionComponent<FormItemProps> = ({
           placeholder="Enter your answers"
           onChange={() => setType('shortAnswer')}
           value="HI"
-          name="DFDSFSD"
+          // name="DFDSFSD"
           errors="DASFA"
         />
       ) : null}

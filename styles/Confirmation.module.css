@@ -1,0 +1,99 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white!important;
+
+}
+
+.eventform {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background-color: white!important;
+  /* padding: 0 100px; */
+}
+
+.eventform_con {
+  max-width: 600px;
+  width: 100%;
+}
+
+.eventdetails_dnt {
+  color: gray;
+  margin-bottom: 10px;
+  font-weight: 500;
+  margin-top: 40px;
+
+}
+
+.eventdetails_title {
+  font-size: 30px;
+  margin-bottom: 10px;
+
+}
+
+.eventdetails_des {
+  color: gray;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.register {
+  margin-bottom: 20px;
+
+}
+
+.paymentDetails_title{
+  width: 100%;
+  padding: 10px;
+  height: 45px;
+  background-color: #eff2f5;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center ;
+  margin-bottom: 10px;
+}
+.paymentDetails_grid{
+  padding: 10px;
+  font-size: 14px;
+  display: grid;
+  word-wrap: break-word;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px
+}
+.txn{
+  word-break: break-all;
+}
+.confirm{
+  /* margin-top: 20px; */
+  font-size: 16px;
+  font-weight: 500;
+}
+.red,.failed{
+  color: red;
+}
+.pending{
+  color: yellow;
+}
+.success{
+  color: rgb(16, 255, 144);
+}
+.button{
+  padding: 10px;
+  background-color: #eff2f5;
+  border-radius: 10px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .eventform_con {
+      width: 80%;
+  }
+}
