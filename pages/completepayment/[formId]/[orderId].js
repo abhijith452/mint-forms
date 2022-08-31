@@ -1,8 +1,8 @@
 
 import axios from 'axios';
-import Loader from '../../../ui-component/loader';
+import Loader from '../../../UI-Components/loader';
 import { useEffect, useState } from 'react';
-import Error from '../../../ui-component/error';
+import Error from '../../../UI-Components/error';
 import loadScript from '../../../utils/razorpayScript';
 import { useRouter } from 'next/router'
 

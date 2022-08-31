@@ -569,3 +569,22 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-08-31T08:52:04.826Z [INFO   ]: > Razor token created for Abhijith
 2022-08-31T08:52:10.449Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw8hOrVBtGLslmwVAAAAJuobcba0OuE7d5m511EMdOU]
 2022-08-31T08:52:10.451Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw8hOrVBtGLslmwVAAAAJuobcba0OuE7d5m511EMdOU
+2022-08-31T09:00:19.362Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T09:00:23.007Z [INFO   ]: > Connected to MongoDB
+2022-08-31T09:00:23.007Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T09:01:28.234Z [ERROR  ]: Responses is not defined
+2022-08-31T09:01:52.158Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T09:01:56.003Z [INFO   ]: > Connected to MongoDB
+2022-08-31T09:01:56.004Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T09:02:01.418Z [ERROR  ]: Cannot read properties of undefined (reading '0')
+2022-08-31T09:02:19.332Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T09:02:21.996Z [INFO   ]: > Connected to MongoDB
+2022-08-31T09:02:21.997Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T09:02:29.513Z [ERROR  ]: Cannot read properties of undefined (reading '0')
+2022-08-31T09:02:34.894Z [ERROR  ]: Cannot read properties of undefined (reading '0')
+2022-08-31T09:02:48.256Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T09:02:51.385Z [INFO   ]: > Connected to MongoDB
+2022-08-31T09:02:51.385Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T09:02:58.753Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KCBH9SK0g3I1OD
+2022-08-31T09:03:26.704Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw8j3mTcOrtHkDIgAAAAJ38UlHf9XFTogrhbTVx5GsM]
+2022-08-31T09:03:26.705Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw8j3mTcOrtHkDIgAAAAJ38UlHf9XFTogrhbTVx5GsM
