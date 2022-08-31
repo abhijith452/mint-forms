@@ -1,6 +1,6 @@
+const moment = require('moment');
 module.exports = function (req) {
-  return (
-    `
+  return `
 
         <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -483,7 +483,9 @@ module.exports = function (req) {
                                 <tr>
                                   <td style="padding-right: 0px;padding-left: 0px;" align="center">
 
-                                    <img align="center" border="0" src=${req.banner}
+                                    <img align="center" border="0" src=${
+                                      req.banner
+                                    }
                                       width="500" class="v-src-width v-src-max-width" />
 
                                   </td>
@@ -563,9 +565,13 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 15px 0px 16px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: center; word-wrap: break-word;">
-                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: center;"><span style="font-size: 16px; line-height: 22.4px;"><span style="line-height: 22.4px; font-size: 16px;"><span style="line-height: 22.4px; font-size: 16px;">Dear <span style="color: #001041; font-size: 16px; line-height: 22.4px;"><strong>${req.name}</strong></span></span>
+                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: center;"><span style="font-size: 16px; line-height: 22.4px;"><span style="line-height: 22.4px; font-size: 16px;"><span style="line-height: 22.4px; font-size: 16px;">Dear <span style="color: #001041; font-size: 16px; line-height: 22.4px;"><strong>${
+                                  req.name
+                                }</strong></span></span>
                                   </span><span style="line-height: 22.4px; font-size: 16px;"><strong><span style="line-height: 22.4px; color: #001041; font-size: 16px;"><br /></span></strong><br />Unfortunately, we were unable to process your payment. Your registration
-                                  for <span style="color: #f39c12; font-size: 16px; line-height: 22.4px;"><strong>${req.title}</strong></span> was not successful.</span>
+                                  for <span style="color: #f39c12; font-size: 16px; line-height: 22.4px;"><strong>${
+                                    req.title
+                                  }</strong></span> was not successful.</span>
                                   </span>
                                 </p>
                                 <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
@@ -707,7 +713,9 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 15px 2px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: center; word-wrap: break-word;">
-                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;">${req.orderId}</p>
+                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;">${
+                                  req.orderId
+                                }</p>
                               </div>
 
                             </td>
@@ -813,7 +821,11 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 15px 2px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: center; word-wrap: break-word;">
-                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;">${new Date(req.txnDate).toLocaleDateString()} ${new Date(req.txnDate).toLocaleTimeString()}</p>
+                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;">${new Date(
+                                  req.txnDate
+                                ).toLocaleDateString()} ${new Date(
+    req.txnDate
+  ).toLocaleTimeString()}</p>
                               </div>
 
                             </td>
@@ -1005,7 +1017,9 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 15px 2px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: center; word-wrap: break-word;">
-                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><strong>${req.currency==="USD"?"$":"₹"} ${req.amount/100}</strong></p>
+                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><strong>${
+                                  req.currency === 'USD' ? '$' : '₹'
+                                } ${req.amount / 100}</strong></p>
                               </div>
 
                             </td>
@@ -1138,7 +1152,9 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:5px 15px 0px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: right; word-wrap: break-word;">
-                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 14px; line-height: 19.6px;"> ${req.name}</span></p>
+                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 14px; line-height: 19.6px;"> ${
+                                  req.name
+                                }</span></p>
                               </div>
 
                             </td>
@@ -1211,7 +1227,9 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:7px 15px 0px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: right; word-wrap: break-word;">
-                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><a rel="noopener" href="mailto:?subject=&body=" target="_blank">${req.email}</a></p>
+                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><a rel="noopener" href="mailto:?subject=&body=" target="_blank">${
+                                  req.email
+                                }</a></p>
                               </div>
 
                             </td>
@@ -1304,7 +1322,9 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:5px 15px 0px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: right; word-wrap: break-word;">
-                                <p style="font-size: 14px; line-height: 140%; text-align: left;">${req.phone}</p>
+                                <p style="font-size: 14px; line-height: 140%; text-align: left;">${
+                                  req.phone
+                                }</p>
                               </div>
 
                             </td>
@@ -1436,7 +1456,9 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:5px 15px 0px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: right; word-wrap: break-word;">
-                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 14px; line-height: 19.6px;">${req.venue}</span></p>
+                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><span style="font-size: 14px; line-height: 19.6px;">${
+                                  req.venue
+                                }</span></p>
                               </div>
 
                             </td>
@@ -1509,7 +1531,9 @@ module.exports = function (req) {
                             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:5px 15px 0px 0px;font-family:arial,helvetica,sans-serif;" align="left">
 
                               <div class="v-line-height" style="line-height: 140%; text-align: right; word-wrap: break-word;">
-                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;">${req.eventDate}</p>
+                                <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;">${moment(
+                                 req.eventDate
+                                ).format('D MMM YYYY')}</p>
                               </div>
 
                             </td>
@@ -1638,8 +1662,5 @@ module.exports = function (req) {
 </body>
 
 </html>
-        `
-
-
-  )
-}
+        `;
+};

@@ -22,11 +22,12 @@ function content(status, data, applicant,formDetails) {
                     txnId: data.txnId,
                     email: applicant.email,
                     phone: applicant.phone,
-                    banner:process.env.NODE_ENV==="development"?`http://localhost:3000/form%20banners/${formDetails.banner}`:`https://forms.ieee-mint.org/form%20banners/${formDetails.banner}`,
+                    banner:process.env.NODE_ENV==="development"?`http://localhost:3000/form%20banners/${formDetails.banner}`:`${process.env.domain}/form%20banners/${formDetails.banner}`,
                     title:formDetails.title,
                     venue:formDetails.venue,
                     eventDate:formDetails.eventDate,
-                    currency:data.currency
+                    currency:data.currency,
+                    domain:process.env.domain
                 }
             )
 
@@ -50,12 +51,13 @@ function content(status, data, applicant,formDetails) {
                     txnDate: moment.unix(data.created_at).toISOString(),
                     email: applicant.email,
                     phone: applicant.phone,
-                    banner:process.env.NODE_ENV==="development"?`http://localhost:3000/form%20banners/${formDetails.banner}`:`https://forms.ieee-mint.org/form%20banners/${formDetails.banner}`,
+                    banner:process.env.NODE_ENV==="development"?`http://localhost:3000/form%20banners/${formDetails.banner}`:`${process.env.domain}/form%20banners/${formDetails.banner}`,
                     title:formDetails.title,
                     venue:formDetails.venue,
                     eventDate:formDetails.eventDate,
                     formId:formDetails.formId,
-                    currency:data.currency
+                    currency:data.currency,
+                    domain:process.env.domain
                 }
             )
         }
@@ -77,11 +79,12 @@ function content(status, data, applicant,formDetails) {
                     txnDate: data.txnDate,
                     email: applicant.email,
                     phone: applicant.phone,
-                    banner:process.env.NODE_ENV==="development"?`http://localhost:3000/form%20banners/${formDetails.banner}`:`https://forms.ieee-mint.org/form%20banners/${formDetails.banner}`,
+                    banner:process.env.NODE_ENV==="development"?`http://localhost:3000/form%20banners/${formDetails.banner}`:`${process.env.domain}/form%20banners/${formDetails.banner}`,
                     title:formDetails.title,
                     venue:formDetails.venue,
                     eventDate:formDetails.eventDate,
-                    currency:data.currency
+                    currency:data.currency,
+                    domain:process.env.domain
                 }
             )
         }

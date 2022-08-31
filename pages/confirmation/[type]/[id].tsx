@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import styles from '../../../styles/Confirmation.module.css';
 import type { NextPage } from 'next';
+import moment from 'moment'
 
 type data = {
   paymentStatus: string;
@@ -122,14 +123,9 @@ const Confirmation: NextPage = () => {
                   ) : null}
                   {data.responses[0].txnDate !== undefined ? (
                     <>
-                      <p>Date</p>{' '}
+                      <p>Date and time</p>{' '}
                       <p>
-                        {new Date(
-                          data.responses[0].txnDate
-                        ).toLocaleDateString()}{' '}
-                        {new Date(
-                          data.responses[0].txnDate
-                        ).toLocaleTimeString()}
+                        {moment(data.responses[0].txnDate).format("D MMM YYYY HH:MM:SS A")}                   
                       </p>
                     </>
                   ) : null}
@@ -140,8 +136,8 @@ const Confirmation: NextPage = () => {
               <div className={styles.paymentDetails}>
                 <p className={styles.paymentDetails_title}>Event Details</p>
                 <div className={styles.paymentDetails_grid}>
-                  <p>Date and Time</p>{' '}
-                  <p>{new Date(data.eventDate).toLocaleString()}</p>
+                  <p>Date</p>{' '}
+                  <p>{moment(data.eventDate).format("D MMM YYYY")}</p>
                   <p>Venue</p> <p>{data.venue}</p>
                   {/* <p>Amount</p> <p>Rs 10.00</p>
                                 <p>Date</p> <p>12th Mar 2022 11:00 PM IST</p> */}

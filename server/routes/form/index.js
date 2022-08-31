@@ -69,7 +69,7 @@ router.post('/mail/reminder', async (req, res) => {
       if (applicant.paymentStatus === 'pending') {
         sendMail(
           applicant.email,
-          `${response.title} | Registration pending`,
+          `${formDetails.title} | Registration pending`,
           pendingTemplate({
             name: applicant.name,
             orderId: applicant.orderId,
@@ -90,6 +90,7 @@ router.post('/mail/reminder', async (req, res) => {
             eventDate: formDetails.eventDate,
             formId: formDetails.formId,
             currency: JSON.parse(applicant.amount).currency,
+            domain: process.env.domain,
           })
         );
       }
