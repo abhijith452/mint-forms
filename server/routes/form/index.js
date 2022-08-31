@@ -1,13 +1,13 @@
-const express = require("express");
-const logger = require("../../utils/logger");
+const express = require('express');
+const logger = require('../../utils/logger');
 const router = express.Router();
-const sendMail = require("./sendMail");
-const pendingTemplate = require("../../mailTemplates/registerPending");
-const successTemplate = require("../../mailTemplates/registerSuccess");
-const Form = require("../../models/forms");
-const discountRoutes = require("./discounts");
-const generateRandomString = require("../../utils/generateRandomString");
-const Responses = require("../../models/response")
+const sendMail = require('./sendMail');
+const pendingTemplate = require('../../mailTemplates/registerPending');
+const successTemplate = require('../../mailTemplates/registerSuccess');
+const Form = require('../../models/forms');
+const discountRoutes = require('./discounts');
+const generateRandomString = require('../../utils/generateRandomString');
+const Responses = require('../../models/response');
 // const fs = require("fs");
 // const PDFDocument = require("pdfkit");
 
@@ -37,12 +37,12 @@ const Responses = require("../../models/response")
 //   }
 // });
 
-router.get("/responses", async (req, res) => {
+router.get('/responses', async (req, res) => {
   try {
     // const applicants = await Applicant.find({})
     const responses = await Responses.find({ formId: req.query.formId });
     const formDetails = await Form.findOne({ formId: req.query.formId });
-    formDetails.responses = responses
+    formDetails.responses = responses;
     res.send(formDetails);
   } catch (err) {
     logger.error(err);
@@ -50,9 +50,9 @@ router.get("/responses", async (req, res) => {
   }
 });
 
-router.post("/mail", async (req, res) => {
+router.post('/mail', async (req, res) => {
   try {
-    var emailIds = req.body.to.split(",");
+    var emailIds = req.body.to.split(',');
     sendMail(emailIds, req.body.subject, req.body.msg);
     res.sendStatus(200);
   } catch (err) {
@@ -61,12 +61,12 @@ router.post("/mail", async (req, res) => {
   }
 });
 
-router.post("/mail/reminder", async (req, res) => {
+router.post('/mail/reminder', async (req, res) => {
   try {
     const response = await Responses.find({ formId: req.query.formId });
-    const formDetails = await Form.findOne({ formId: req.query.formId })
+    const formDetails = await Form.findOne({ formId: req.query.formId });
     response.forEach((applicant) => {
-      if (applicant.paymentStatus === "pending") {
+      if (applicant.paymentStatus === 'pending') {
         sendMail(
           applicant.email,
           `${response.title} | Registration pending`,
@@ -74,7 +74,7 @@ router.post("/mail/reminder", async (req, res) => {
             name: applicant.name,
             orderId: applicant.orderId,
             amount: JSON.parse(applicant.amount).amount * 100,
-            paymentStatus: "pending",
+            paymentStatus: 'pending',
             txnDate:
               applicant.timeStamp !== undefined
                 ? applicant.timeStamp
@@ -82,14 +82,14 @@ router.post("/mail/reminder", async (req, res) => {
             email: applicant.email,
             phone: applicant.phone,
             banner:
-              process.env.NODE_ENV === "development"
+              process.env.NODE_ENV === 'development'
                 ? `http://localhost:3000/form%20banners/${response.banner}`
                 : `https://forms.ieee-mint.org/form%20banners/${response.banner}`,
             title: formDetails.title,
             venue: formDetails.venue,
             eventDate: formDetails.eventDate,
             formId: formDetails.formId,
-            currency:JSON.parse(applicant.amount).currency
+            currency: JSON.parse(applicant.amount).currency,
           })
         );
       }
@@ -102,7 +102,17 @@ router.post("/mail/reminder", async (req, res) => {
   }
 });
 
-router.get("/pricing", async (req, res) => {
+router.delete('/response', async (req, res) => {
+  try {
+    await Responses.deleteOne({ formId: req.query.formId });
+    res.sendStatus(201);
+  } catch (err) {
+    logger.error(err);
+    res.status(400).send({ error: err.message });
+  }
+});
+
+router.get('/pricing', async (req, res) => {
   try {
     const response = await Form.findOne({ formId: req.query.formId });
     res.send({
@@ -115,7 +125,5 @@ router.get("/pricing", async (req, res) => {
     res.status(400).send({ error: err.message });
   }
 });
-
-
 
 module.exports = router;

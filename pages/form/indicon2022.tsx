@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import Error from '../../UI-Components/error';
 import Loader from '../../UI-Components/loader';
 import getIndiconPrice from '../../utils/getIndiconPrice';
+import getPaperPrice from '../../utils/getPaperPrice';
 import buildForm from '../../utils/buildForm';
 import Head from 'next/head';
 import * as yup from 'yup';
@@ -22,28 +23,29 @@ const Form: NextPage = () => {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
 
+  const  [initialVal,setIntialVal] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    ieeeMember: '',
+    institute: '',
+    designation: '',
+    category: '',
+    paperTitle: '',
+    papers: '1',
+    membershipId:''
+  });
   // var initialVal = {
-  //   name: '',
-  //   email: '',
-  //   phone: '',
+  //   name: 'Abhijith',
+  //   email: 'a@gmail.com',
+  //   phone: '7025263554',
   //   ieeeMember: 'No',
-  //   institute: '',
-  //   designation: '',
+  //   institute: 'CEK',
+  //   designation: 'CEK',
   //   category: '',
-  //   paperTitle: '',
+  //   paperTitle: 'ASDFASDFA',
   //   papers: '1',
   // };
-  var initialVal = {
-    name: 'Abhijith',
-    email: 'a@gmail.com',
-    phone: '7025263554',
-    ieeeMember: 'No',
-    institute: 'CEK',
-    designation: 'CEK',
-    category: '',
-    paperTitle: 'ASDFASDFA',
-    papers: '1',
-  };
 
   let schema = yup.object().shape({
     name: yup.string().required(),
@@ -55,6 +57,7 @@ const Form: NextPage = () => {
     category: yup.string().required(),
     paperTitle: yup.string().required(),
     papers: yup.string().required(),
+    membershipId:yup.string()
   });
 
   var additionalIndianPapers = [2000, 3000];
@@ -65,25 +68,27 @@ const Form: NextPage = () => {
 
     useEffect(() => {
       setAuthorPrice(getIndiconPrice(values));
-      if (Number(values.papers) > 1) {
-        if (values.category.includes('Foreign')) {
-          setAddPapers(
-            (new Date().toISOString() > '2022-10-15T18:29:59.059Z'
-              ? additionalForeignPapers[1]
-              : additionalForeignPapers[0]) *
-              (values.papers - 1)
-          );
-        } else {
-          setAddPapers(
-            (new Date().toISOString() > '2022-10-15T18:29:59.059Z'
-              ? additionalIndianPapers[1]
-              : additionalIndianPapers[0]) *
-              (values.papers - 1)
-          );
-        }
-      } else {
-        setAddPapers(0);
-      }
+
+      setAddPapers(getPaperPrice(values))
+      // if (Number(values.papers) > 1) {
+      //   if (values.category.includes('Foreign')) {
+      //     setAddPapers(
+      //       (new Date().toISOString() > '2022-10-15T18:29:59.059Z'
+      //         ? additionalForeignPapers[1]
+      //         : additionalForeignPapers[0]) *
+      //         (values.papers - 1)
+      //     );
+      //   } else {
+      //     setAddPapers(
+      //       (new Date().toISOString() > '2022-10-15T18:29:59.059Z'
+      //         ? additionalIndianPapers[1]
+      //         : additionalIndianPapers[0]) *
+      //         (values.papers - 1)
+      //     );
+      //   }
+      // } else {
+      //   setAddPapers(0);
+      // }
     }, [values]);
   };
 
@@ -149,6 +154,7 @@ const Form: NextPage = () => {
   }
 
   const handleUpload = async (values: any) => {
+    setIntialVal(values);
     setLoading(true);
     try {
       var data = values;
@@ -201,12 +207,12 @@ const Form: NextPage = () => {
           <div className={styles.formDetails}>
             <p className={styles.subTitle}>REGISTRATION FORM</p>
             <h1 className={styles.formTitle}>INDICON 2022</h1>
-            <p className={styles.formDescription}>
+            {/* <p className={styles.formDescription}>
               To ride a vehicle I worked on back home in New Zealand has always
               been a dream, to share it with so many like minded people at
               Ducati Owners Club NZ is even better. Credit to Aaron Staples for
               the great shots.
-            </p>
+            </p> */}
           </div>
           {error ? <Error setError={setError} msg={errorMsg} /> : null}
 
@@ -294,6 +300,19 @@ const Form: NextPage = () => {
                     errors={
                       getIn(errors, 'ieeeMember') !== undefined
                         ? getIn(errors, 'ieeeMember')
+                        : ''
+                    }
+                  />
+                   <FormInput
+                    label="Enter membership ID"
+                    placeholder="Enter your IEEE Membership ID "
+                    value={values.membershipId}
+                    onChange={(e: any) =>
+                      setFieldValue('membershipId', e.target.value)
+                    }
+                    errors={
+                      getIn(errors, 'membershipId') !== undefined
+                        ? getIn(errors, 'membershipId')
                         : ''
                     }
                   />

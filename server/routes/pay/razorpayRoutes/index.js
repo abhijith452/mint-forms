@@ -13,6 +13,10 @@ const Form = require('../../../models/forms');
 const logger = require('../../../utils/logger');
 const router = express.Router();
 
+const validate = require('../../../middleware/validateResponse');
+const responseSchema = require('../../../validations/responseValidation');
+const priceValidator = require('../../../middleware/priceValidator');
+
 var instance = new Razorpay({
   key_id: process.env.razorPayId,
   key_secret: process.env.razorPaySecret,
@@ -30,7 +34,6 @@ const fileStorage = multer.diskStorage({
 const upload = multer({ storage: fileStorage });
 
 router.get('/orderDetails', async (req, res) => {
-  console.log(req.query.orderId);
   try {
     const orderDetails = await instance.orders.fetch(req.query.orderId);
     const applicant = await Form.findOne(
@@ -84,7 +87,7 @@ router.post('/verify', async (req, res) => {
       // data.txnDate = moment.unix(orderDetails.created_at).toISOString();
       // data.txnId = req.body.razorpay_payment_id;
       // await addDataGoogleSheets(data);
-      console.log(response)
+
       var data = {
         txnAmount: orderDetails.amount_paid,
         orderId: req.body.razorpay_order_id,
@@ -149,45 +152,51 @@ router.post('/failed', async (req, res) => {
   }
 });
 
-router.post('/', upload.single('fileUpload'), async (req, res) => {
-  try {
-    var amountDetails = JSON.parse(req.body.amount);
+router.post(
+  '/',
+  upload.single('fileUpload'),
+  validate(responseSchema),
+  priceValidator,
+  async (req, res) => {
+    try {
+      var amountDetails = JSON.parse(req.body.amount);
 
-    var order = await instance.orders.create({
-      amount: amountDetails.amount * 100,
-      currency: amountDetails.currency,
-    });
-
-    const response = await new Response({
-      formId: req.query.formId,
-      responseId: generateRandomString(10),
-      orderId: order.id,
-      amount: amountDetails.amount / 100,
-      paymentStatus: amountDetails.amount === 0 ? 'success' : 'pending',
-      txnDate: amountDetails.amount === 0 ? order.txnDate : 'pending',
-      txnId: amountDetails.amount === 0 ? order.txnId : 'pending',
-      ...req.body,
-      ...(req.file !== undefined &&
-        req.file.path !== undefined && { fileUpload: req.file.path }),
-    });
-
-    const formDetails = await Form.findOne({ formId: req.query.formId });
-
-    notify('pending', order, req.body, formDetails);
-    logger.info(`> Razor token created for ${req.body.name}`);
-
-    response
-      .save()
-      .then(() => res.send(order))
-      .catch((err) => {
-        logger.error(err);
-        res.status(400).send({ error: err.message });
+      var order = await instance.orders.create({
+        amount: amountDetails.amount * 100,
+        currency: amountDetails.currency,
       });
-  } catch (err) {
-    console.log(err);
-    logger.error(err);
-    return res.status(400).send(err);
+
+      const response = await new Response({
+        formId: req.query.formId,
+        responseId: generateRandomString(10),
+        orderId: order.id,
+        amount: amountDetails.amount / 100,
+        paymentStatus: amountDetails.amount === 0 ? 'success' : 'pending',
+        txnDate: amountDetails.amount === 0 ? order.txnDate : 'pending',
+        txnId: amountDetails.amount === 0 ? order.txnId : 'pending',
+        ...req.body,
+        ...(req.file !== undefined &&
+          req.file.path !== undefined && { fileUpload: req.file.path }),
+      });
+
+      const formDetails = await Form.findOne({ formId: req.query.formId });
+
+      notify('pending', order, req.body, formDetails);
+      logger.info(`> Razor token created for ${req.body.name}`);
+
+      response
+        .save()
+        .then(() => res.send(order))
+        .catch((err) => {
+          logger.error(err);
+          res.status(400).send({ error: err.message });
+        });
+    } catch (err) {
+      console.log(err);
+      logger.error(err);
+      return res.status(400).send(err);
+    }
   }
-});
+);
 
 module.exports = router;
