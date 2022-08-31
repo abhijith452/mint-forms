@@ -639,3 +639,6 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-08-31T10:00:18.164Z [INFO   ]: > Reinitated payment for adsf orderId : order_KCCPweEx0s6Dut
 2022-08-31T10:00:43.691Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw8xS0R08nemP9V5AAAALb6q45w8tzmK.B7eh.dSvs4]
 2022-08-31T10:00:43.694Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw8xS0R08nemP9V5AAAALb6q45w8tzmK.B7eh.dSvs4
+2022-08-31T10:42:50.253Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T10:42:51.792Z [INFO   ]: > Connected to MongoDB
+2022-08-31T10:42:51.792Z [INFO   ]: > Ready on http://localhost:3000

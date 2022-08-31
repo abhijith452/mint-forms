@@ -60,35 +60,13 @@ const Form: NextPage = () => {
     membershipId:yup.string()
   });
 
-  var additionalIndianPapers = [2000, 3000];
-  var additionalForeignPapers = [50, 75];
 
   const PriceUpdater: Function = () => {
     const { values } = useFormikContext<any>();
 
     useEffect(() => {
       setAuthorPrice(getIndiconPrice(values));
-
       setAddPapers(getPaperPrice(values))
-      // if (Number(values.papers) > 1) {
-      //   if (values.category.includes('Foreign')) {
-      //     setAddPapers(
-      //       (new Date().toISOString() > '2022-10-15T18:29:59.059Z'
-      //         ? additionalForeignPapers[1]
-      //         : additionalForeignPapers[0]) *
-      //         (values.papers - 1)
-      //     );
-      //   } else {
-      //     setAddPapers(
-      //       (new Date().toISOString() > '2022-10-15T18:29:59.059Z'
-      //         ? additionalIndianPapers[1]
-      //         : additionalIndianPapers[0]) *
-      //         (values.papers - 1)
-      //     );
-      //   }
-      // } else {
-      //   setAddPapers(0);
-      // }
     }, [values]);
   };
 

@@ -78,3 +78,19 @@
 .footer p {
     font-weight: 300;
 }
+@media only screen and (max-width: 768px) {
+    .form {
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .form {
+        padding: 0;
+    }
+    .formDetails {
+        padding: 0 30px;
+    }
+    .formContent {
+        padding: 0 30px;
+    }
+}
