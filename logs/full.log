@@ -642,3 +642,6 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-08-31T10:42:50.253Z [INFO   ]: > Connected to Paytm Servers
 2022-08-31T10:42:51.792Z [INFO   ]: > Connected to MongoDB
 2022-08-31T10:42:51.792Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T11:06:03.057Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T11:06:04.402Z [INFO   ]: > Connected to MongoDB
+2022-08-31T11:06:04.403Z [INFO   ]: > Ready on http://localhost:3000

@@ -23,10 +23,11 @@ const FormInput: NextPage<props> = ({
         placeholder={placeholder}
         value={value}
         style={{
-          boxShadow:
-            errors !==""
-              ? '0 12px 20px 0 rgba(255, 45, 45, 0.301),inset 0 -1px 8px 0 #ff5f5f6e'
-              : '0 12px 20px 0 rgba(136,174,222,0.42),inset 0 -1px 8px 0 #B9D1F1',
+          // boxShadow:
+          //   errors !==""
+          //     ? '0 12px 20px 0 rgba(255, 45, 45, 0.301),inset 0 -1px 8px 0 #ff5f5f6e'
+          //     : '0 12px 20px 0 rgba(136,174,222,0.42),inset 0 -1px 8px 0 #B9D1F1',
+          boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;",
           outlineColor: errors !== "" ? 'red' : '#1479ff',
         }}
         onChange={(e) => onChange(e)}
