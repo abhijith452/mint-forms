@@ -13,7 +13,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler()
 //Routes import
 const payRoute = require('./routes/pay');
-// const formRoute = require('./routes/form');
+const formRoute = require('./routes/form');
 
 app.prepare().then(() => {
   const server = express();
@@ -33,7 +33,7 @@ app.prepare().then(() => {
   });
 
   server.use('/api/pay', payRoute);
-  // server.use('/api/form', formRoute);
+  server.use('/api/form', formRoute);
   server.all('*', (req, res) => {
     return handle(req, res);
   });

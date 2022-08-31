@@ -1133,7 +1133,7 @@ module.exports = function (req) {
                           <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 15px 2px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                             <div class="v-line-height" style="line-height: 140%; text-align: center; word-wrap: break-word;">
-                              <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><strong>${req.currency="USD"?"$":"₹"} ${req.amount/100}</strong></p>
+                              <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><strong>${req.currency==="USD"?"$":"₹"} ${req.amount/100}</strong></p>
                             </div>
 
                           </td>

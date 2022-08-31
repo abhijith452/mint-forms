@@ -1,0 +1,116 @@
+.responses {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: var(--textcolor-primary);
+  
+}
+.title{
+    font-size: 26px;
+    padding: 10px 0 15px 0;
+}
+.responses_tools {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.responses_buttons {
+    display: flex;
+    cursor: pointer;
+}
+.filterByPayStatus {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    align-items: center;
+    align-content: center;
+    margin: 20px 0;
+    text-align: center;
+
+}
+.filterByPayStatusLabel {
+    border: 1px var(--border-color) solid;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--textcolor-secondary);
+}
+.filterByPayStatusLabel:first-child{
+    border-radius: 8px 0 0 8px;
+}
+.filterByPayStatusLabel:last-child{
+    border-radius: 0 8px 8px 0;
+}
+.response_options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.responses_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--input-color);
+    height: 45px;
+    font-size: 12px;
+    padding: 0 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    color: var(--textcolor-secondary);
+}
+.responses_p {
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.table_row {
+    display: grid;
+    grid-template-columns: 30px repeat(9, minmax(100px, 200px));
+}
+.table_item {
+    padding: 10px 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: var( --background-color);
+    color: var(--textcolor-secondary);
+}
+.table_item_status {
+    padding: 5px 8px;
+    background-color: #f8f8e7;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.table_icon_container {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    border-radius: 50%;
+}
+.table_icon {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5px;
+}
+.table_header {
+    background-color: var(--input-color);
+    padding: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+}
+.table_header:nth-child(10) {
+    border-radius: 0 10px 10px 0;
+}
+.table_header:first-child {
+    border-radius: 10px 0 0 10px;
+}

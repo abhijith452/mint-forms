@@ -1,12 +1,7 @@
 import type { NextPage } from 'next';
 import styles from '../../styles/Form.module.css';
 import FormInput from '../../UI-Components/FormInput';
-import {
-  Formik,
-  useFormikContext,
-  getIn,
-  FormikProps,
-} from 'formik';
+import { Formik, useFormikContext, getIn, FormikProps } from 'formik';
 import axios from 'axios';
 import FormOptions from '../../UI-Components/FormOptions';
 import { useEffect, useState } from 'react';
@@ -17,31 +12,78 @@ import Loader from '../../UI-Components/loader';
 import getIndiconPrice from '../../utils/getIndiconPrice';
 import buildForm from '../../utils/buildForm';
 import Head from 'next/head';
+import * as yup from 'yup';
 
 const Form: NextPage = () => {
   const router = useRouter();
   const [authorPrice, setAuthorPrice] = useState(9000);
+  const [addPapers, setAddPapers] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
 
+  // var initialVal = {
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   ieeeMember: 'No',
+  //   institute: '',
+  //   designation: '',
+  //   category: '',
+  //   paperTitle: '',
+  //   papers: '1',
+  // };
   var initialVal = {
-    name: '',
-    email: '',
-    phone: '',
+    name: 'Abhijith',
+    email: 'a@gmail.com',
+    phone: '7025263554',
     ieeeMember: 'No',
-    institute: '',
-    designation: '',
+    institute: 'CEK',
+    designation: 'CEK',
     category: '',
-    paperTitle: '',
+    paperTitle: 'ASDFASDFA',
     papers: '1',
   };
+
+  let schema = yup.object().shape({
+    name: yup.string().required(),
+    email: yup.string().required().email(),
+    phone: yup.string().required(),
+    ieeeMember: yup.string().required(),
+    institute: yup.string().required(),
+    designation: yup.string().required(),
+    category: yup.string().required(),
+    paperTitle: yup.string().required(),
+    papers: yup.string().required(),
+  });
+
+  var additionalIndianPapers = [2000, 3000];
+  var additionalForeignPapers = [50, 75];
 
   const PriceUpdater: Function = () => {
     const { values } = useFormikContext<any>();
 
     useEffect(() => {
       setAuthorPrice(getIndiconPrice(values));
+      if (Number(values.papers) > 1) {
+        if (values.category.includes('Foreign')) {
+          setAddPapers(
+            (new Date().toISOString() > '2022-10-15T18:29:59.059Z'
+              ? additionalForeignPapers[1]
+              : additionalForeignPapers[0]) *
+              (values.papers - 1)
+          );
+        } else {
+          setAddPapers(
+            (new Date().toISOString() > '2022-10-15T18:29:59.059Z'
+              ? additionalIndianPapers[1]
+              : additionalIndianPapers[0]) *
+              (values.papers - 1)
+          );
+        }
+      } else {
+        setAddPapers(0);
+      }
     }, [values]);
   };
 
@@ -119,7 +161,7 @@ const Form: NextPage = () => {
           values.category === 'Foreign Author'
             ? 'USD'
             : 'INR',
-        amount: authorPrice,
+        amount: authorPrice + addPapers,
       });
 
       const formData = buildForm(data);
@@ -171,6 +213,7 @@ const Form: NextPage = () => {
           <div className={styles.formContent}>
             <Formik
               initialValues={initialVal}
+              validationSchema={schema}
               onSubmit={(values) => handleUpload(values)}
             >
               {({
@@ -187,7 +230,7 @@ const Form: NextPage = () => {
                     onChange={(e: any) => setFieldValue('name', e.target.value)}
                     errors={
                       getIn(errors, 'name') !== undefined
-                        ? getIn(errors, 'name') !== undefined
+                        ? getIn(errors, 'name')
                         : ''
                     }
                   />
@@ -200,7 +243,7 @@ const Form: NextPage = () => {
                     }
                     errors={
                       getIn(errors, 'email') !== undefined
-                        ? getIn(errors, 'email') !== undefined
+                        ? getIn(errors, 'email')
                         : ''
                     }
                   />
@@ -213,7 +256,7 @@ const Form: NextPage = () => {
                     }
                     errors={
                       getIn(errors, 'phone') !== undefined
-                        ? getIn(errors, 'phone') !== undefined
+                        ? getIn(errors, 'phone')
                         : ''
                     }
                   />
@@ -226,7 +269,7 @@ const Form: NextPage = () => {
                     }
                     errors={
                       getIn(errors, 'institute') !== undefined
-                        ? getIn(errors, 'institute') !== undefined
+                        ? getIn(errors, 'institute')
                         : ''
                     }
                   />
@@ -239,7 +282,7 @@ const Form: NextPage = () => {
                     }
                     errors={
                       getIn(errors, 'designation') !== undefined
-                        ? getIn(errors, 'designation') !== undefined
+                        ? getIn(errors, 'designation')
                         : ''
                     }
                   />
@@ -250,7 +293,7 @@ const Form: NextPage = () => {
                     onChange={(e: any) => setFieldValue('ieeeMember', e)}
                     errors={
                       getIn(errors, 'ieeeMember') !== undefined
-                        ? getIn(errors, 'ieeeMember') !== undefined
+                        ? getIn(errors, 'ieeeMember')
                         : ''
                     }
                   />
@@ -263,7 +306,7 @@ const Form: NextPage = () => {
                     }
                     errors={
                       getIn(errors, 'paperTitle') !== undefined
-                        ? getIn(errors, 'paperTitle') !== undefined
+                        ? getIn(errors, 'paperTitle')
                         : ''
                     }
                   />
@@ -274,7 +317,7 @@ const Form: NextPage = () => {
                     onChange={(e: any) => setFieldValue('papers', e)}
                     errors={
                       getIn(errors, 'papers') !== undefined
-                        ? getIn(errors, 'papers') !== undefined
+                        ? getIn(errors, 'papers')
                         : ''
                     }
                   />
@@ -284,6 +327,7 @@ const Form: NextPage = () => {
                       'Indian Author (Academia)',
                       'Indian Author (Industry)',
                       'Indian Student Author',
+                      'Indian Non-Author Attendee',
                       'Foreign Author',
                       'Foreign Student Author',
                     ]}
@@ -291,7 +335,7 @@ const Form: NextPage = () => {
                     onChange={(e: any) => setFieldValue('category', e)}
                     errors={
                       getIn(errors, 'category') !== undefined
-                        ? getIn(errors, 'category') !== undefined
+                        ? getIn(errors, 'category')
                         : ''
                     }
                   />
@@ -303,7 +347,7 @@ const Form: NextPage = () => {
                     values.category === 'Foreign Student Author'
                       ? '$ '
                       : 'Rs '}
-                    {authorPrice}
+                    {authorPrice + addPapers}
                   </h5>
                   <br />
                   {/* {JSON.stringify(values, null, 2)} */}

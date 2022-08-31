@@ -188,3 +188,295 @@
 2022-08-29T16:48:46.878Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzt7mTcOrtHjrhgAAAADnqyZs3rSTRxSIBYZMct-Pk
 2022-08-29T16:49:01.519Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYwzt.UR08nemPkfMAAAAD1L4Q3W8-9kHfaN8TUB5ZzE]
 2022-08-29T16:49:01.519Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYwzt.UR08nemPkfMAAAAD1L4Q3W8-9kHfaN8TUB5ZzE
+2022-08-30T09:01:28.639Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T09:01:30.577Z [INFO   ]: > Connected to MongoDB
+2022-08-30T09:01:30.577Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T09:02:35.633Z [ERROR  ]: ENOENT: no such file or directory, open '/run/media/kannan/Programs/Projects/Github/mint-forms/credgoogle.json'
+2022-08-30T09:04:11.108Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T09:04:12.702Z [INFO   ]: > Connected to MongoDB
+2022-08-30T09:04:12.703Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T09:04:55.722Z [ERROR  ]: Invalid JSON payload received. Unknown name "name" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "email" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "phone" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "ieeeMember" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "institute" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "designation" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "category" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "paperTitle" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "papers" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "membershipType" at 'data.values[0]': Cannot find field.
+Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot find field.
+2022-08-30T09:24:14.937Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T09:24:16.149Z [INFO   ]: > Connected to MongoDB
+2022-08-30T09:24:16.150Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T09:26:18.508Z [INFO   ]: > Razor token created for Abhijith Kannan
+2022-08-30T09:26:22.668Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw3XvsVsBJHcl5n6AAAAENNzY37uZv1OhwtjekwP7m8]
+2022-08-30T09:26:22.669Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw3XvsVsBJHcl5n6AAAAENNzY37uZv1OhwtjekwP7m8
+2022-08-30T10:27:27.463Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T10:27:29.302Z [INFO   ]: > Connected to MongoDB
+2022-08-30T10:27:29.302Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T10:28:17.783Z [INFO   ]: > Razor token created for Abhijith Kannan
+2022-08-30T10:28:21.739Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw3mRcVsBJHcl6S9AAAAERmNFJkJKZ19NPHvsPy1P1k]
+2022-08-30T10:28:21.741Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw3mRcVsBJHcl6S9AAAAERmNFJkJKZ19NPHvsPy1P1k
+2022-08-30T10:28:36.389Z [ERROR  ]: Invalid values[2][1]: struct_value {
+  fields {
+    key: "activePaths"
+    value {
+      struct_value {
+        fields {
+          key: "paths"
+          value {
+            struct_value {
+              fields {
+                key: "__v"
+                value {
+                  string_value: "init"
+                }
+              }
+              fields {
+                key: "_id"
+                value {
+                  string_value: "init"
+                }
+              }
+              fields {
+                key: "createdAt"
+                value {
+                  string_value: "init"
+                }
+              }
+              fields {
+                key: "formId"
+                value {
+                  string_value: "init"
+                }
+              }
+              fields {
+                key: "responseId"
+                value {
+                  string_value: "init"
+                }
+              }
+              fields {
+                key: "updatedAt"
+                value {
+                  string_value: "init"
+                }
+              }
+            }
+          }
+        }
+        fields {
+          key: "states"
+          value {
+            struct_value {
+              fields {
+                key: "init"
+                value {
+                  struct_value {
+                    fields {
+                      key: "__v"
+                      value {
+                        bool_value: true
+                      }
+                    }
+                    fields {
+                      key: "_id"
+                      value {
+                        bool_value: true
+                      }
+                    }
+                    fields {
+                      key: "createdAt"
+                      value {
+                        bool_value: true
+                      }
+                    }
+                    fields {
+                      key: "formId"
+                      value {
+                        bool_value: true
+                      }
+                    }
+                    fields {
+                      key: "responseId"
+                      value {
+                        bool_value: true
+                      }
+                    }
+                    fields {
+                      key: "updatedAt"
+                      value {
+                        bool_value: true
+                      }
+                    }
+                  }
+                }
+              }
+              fields {
+                key: "require"
+                value {
+                  struct_value {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  fields {
+    key: "skipId"
+    value {
+      bool_value: true
+    }
+  }
+  fields {
+    key: "strictMode"
+    value {
+      bool_value: false
+    }
+  }
+}
+
+2022-08-30T10:30:57.020Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T10:30:58.415Z [INFO   ]: > Connected to MongoDB
+2022-08-30T10:30:58.416Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T12:45:26.111Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T12:45:27.750Z [INFO   ]: > Connected to MongoDB
+2022-08-30T12:45:27.750Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T13:04:48.839Z [INFO   ]: > Razor token created for Abhijith Kannan
+2022-08-30T13:04:52.892Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4K9ER08nemP0FwAAAAErqIEhPeOj1nzbRk7x-fJMc]
+2022-08-30T13:04:52.894Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4K9ER08nemP0FwAAAAErqIEhPeOj1nzbRk7x-fJMc
+2022-08-30T13:05:06.556Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4LAkR08nemP0GLAAAAE90XTQshh.ZOshAG1fKRwAo]
+2022-08-30T13:05:06.557Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4LAkR08nemP0GLAAAAE90XTQshh.ZOshAG1fKRwAo
+2022-08-30T13:53:29.310Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T13:53:31.627Z [INFO   ]: > Connected to MongoDB
+2022-08-30T13:53:31.628Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:01:38.691Z [INFO   ]: > Razor token created for Abhijith
+2022-08-30T14:01:42.789Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4YRrVBtGLsle7HAAAAFAGjzwPrDmnjzXMdAzi2EFA]
+2022-08-30T14:01:42.790Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4YRrVBtGLsle7HAAAAFAGjzwPrDmnjzXMdAzi2EFA
+2022-08-30T14:02:43.130Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:02:44.477Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:02:44.477Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:02:51.708Z [INFO   ]: > Razor token created for Abhijith
+2022-08-30T14:02:55.803Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4Yj7VBtGLsle92AAAAFdTPYj3SEMbnfmppXPsToH8]
+2022-08-30T14:02:55.805Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4Yj7VBtGLsle92AAAAFdTPYj3SEMbnfmppXPsToH8
+2022-08-30T14:03:45.684Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:03:47.042Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:03:47.042Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:03:57.751Z [INFO   ]: > Razor token created for Abhijith
+2022-08-30T14:04:02.056Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4Y0bVBtGLslfBUAAAAFon2A7QVdZuQ7aYfF-a-7C0]
+2022-08-30T14:04:02.057Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4Y0bVBtGLslfBUAAAAFon2A7QVdZuQ7aYfF-a-7C0
+2022-08-30T14:04:25.709Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:04:26.246Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:04:26.247Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:04:37.130Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:04:37.632Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:04:37.632Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:04:43.947Z [INFO   ]: > Razor token created for Abhijith
+2022-08-30T14:04:47.895Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4Y.7VBtGLslfEdAAAAF2hKbowaUrnDDblZkGVQ4aY]
+2022-08-30T14:04:47.897Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4Y.7VBtGLslfEdAAAAF2hKbowaUrnDDblZkGVQ4aY
+2022-08-30T14:05:32.970Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4ZLGTcOrtHj7mlAAAAGK.69gbu-9RXimO-SZ1h5Zw]
+2022-08-30T14:05:32.974Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4ZLGTcOrtHj7mlAAAAGK.69gbu-9RXimO-SZ1h5Zw
+2022-08-30T14:06:18.921Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:06:20.263Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:06:20.263Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:06:38.737Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:06:39.254Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:06:39.255Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:06:45.175Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:06:45.681Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:06:45.681Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:11:07.662Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:11:08.935Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:11:08.935Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T14:11:17.326Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T14:11:17.795Z [INFO   ]: > Connected to MongoDB
+2022-08-30T14:11:17.796Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T15:21:07.629Z [INFO   ]: > Razor token created for Abhijith
+2022-08-30T15:21:11.708Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4q50R08nemP1q3AAAAGTOIqr2AtOCaoRlXALfmh7I]
+2022-08-30T15:21:11.711Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4q50R08nemP1q3AAAAGTOIqr2AtOCaoRlXALfmh7I
+2022-08-30T15:21:28.291Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw4q90R08nemP1q-AAAAGkE3lqJRgwxaSQUfDcJjR-0]
+2022-08-30T15:21:28.296Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw4q90R08nemP1q-AAAAGkE3lqJRgwxaSQUfDcJjR-0
+2022-08-30T15:28:56.550Z [ERROR  ]: [object Object]
+2022-08-30T16:51:15.635Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T16:51:18.352Z [INFO   ]: > Connected to MongoDB
+2022-08-30T16:51:18.352Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T16:59:47.984Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T16:59:50.893Z [INFO   ]: > Connected to MongoDB
+2022-08-30T16:59:50.894Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T17:03:37.958Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T17:03:40.799Z [INFO   ]: > Connected to MongoDB
+2022-08-30T17:03:40.802Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T17:09:11.520Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T17:09:14.533Z [INFO   ]: > Connected to MongoDB
+2022-08-30T17:09:14.534Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T17:10:28.766Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T17:10:31.530Z [INFO   ]: > Connected to MongoDB
+2022-08-30T17:10:31.530Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T17:11:33.492Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T17:11:36.444Z [INFO   ]: > Connected to MongoDB
+2022-08-30T17:11:36.445Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T17:16:41.281Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T17:16:44.237Z [INFO   ]: > Connected to MongoDB
+2022-08-30T17:16:44.237Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T17:18:35.104Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T17:18:38.162Z [INFO   ]: > Connected to MongoDB
+2022-08-30T17:18:38.163Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-30T17:22:28.163Z [INFO   ]: > Connected to Paytm Servers
+2022-08-30T17:22:31.022Z [INFO   ]: > Connected to MongoDB
+2022-08-30T17:22:31.023Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T04:56:01.930Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T04:56:05.800Z [INFO   ]: > Connected to MongoDB
+2022-08-31T04:56:05.801Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T05:31:21.424Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T05:32:17.509Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T05:32:21.209Z [INFO   ]: > Connected to MongoDB
+2022-08-31T05:32:21.209Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T05:34:12.049Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T05:34:15.809Z [INFO   ]: > Connected to MongoDB
+2022-08-31T05:34:15.810Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T05:40:24.345Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T05:40:28.138Z [INFO   ]: > Connected to MongoDB
+2022-08-31T05:40:28.139Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T05:41:28.675Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T05:41:32.344Z [INFO   ]: > Connected to MongoDB
+2022-08-31T05:41:32.345Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T05:58:23.580Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T05:58:27.650Z [INFO   ]: > Connected to MongoDB
+2022-08-31T05:58:27.650Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T05:58:49.660Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw74mbVBtGLslllIAAAAG4wsUDUqV8KrTpJUlkVzQPs]
+2022-08-31T05:58:49.660Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw74mbVBtGLslllIAAAAG4wsUDUqV8KrTpJUlkVzQPs
+2022-08-31T05:59:49.869Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw741bVBtGLslllLAAAAHAjkLqFIXcF5NCD10nIInQ8]
+2022-08-31T05:59:49.869Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw741bVBtGLslllLAAAAHAjkLqFIXcF5NCD10nIInQ8
+2022-08-31T06:28:41.795Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T06:28:45.902Z [INFO   ]: > Connected to MongoDB
+2022-08-31T06:28:45.902Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T06:28:55.632Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T06:28:58.195Z [INFO   ]: > Connected to MongoDB
+2022-08-31T06:28:58.195Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T06:29:46.957Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T06:29:50.928Z [INFO   ]: > Connected to MongoDB
+2022-08-31T06:29:50.928Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T06:29:59.640Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T06:30:02.603Z [INFO   ]: > Connected to MongoDB
+2022-08-31T06:30:02.603Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T06:30:37.646Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T06:30:40.493Z [INFO   ]: > Connected to MongoDB
+2022-08-31T06:30:40.494Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T06:31:18.443Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T06:31:21.554Z [INFO   ]: > Connected to MongoDB
+2022-08-31T06:31:21.554Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T06:32:02.859Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T06:32:32.888Z [ERROR  ]: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/
+2022-08-31T06:32:45.533Z [INFO   ]: > Connected to Paytm Servers
+2022-08-31T06:32:48.905Z [INFO   ]: > Connected to MongoDB
+2022-08-31T06:32:48.905Z [INFO   ]: > Ready on http://localhost:3000
+2022-08-31T07:23:18.847Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw8MZsVsBJHcmD12AAAAHWA7gwHO5KZCwiQz2MzpTPQ]
+2022-08-31T07:23:18.848Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw8MZsVsBJHcmD12AAAAHWA7gwHO5KZCwiQz2MzpTPQ
+2022-08-31T07:23:18.849Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw8MZmTcOrtHkCZXAAAAHiH5fzDxmdCwwl0FXeF4Q2U]
+2022-08-31T07:23:18.849Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw8MZmTcOrtHkCZXAAAAHiH5fzDxmdCwwl0FXeF4Q2U
+2022-08-31T07:23:18.850Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYw8MZkR08nemP8JAAAAAH-WlXYaUWPvCRLWdfMHtNNA]
+2022-08-31T07:23:18.850Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYw8MZkR08nemP8JAAAAAH-WlXYaUWPvCRLWdfMHtNNA

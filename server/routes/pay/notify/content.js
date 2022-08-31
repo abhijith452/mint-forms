@@ -4,7 +4,7 @@ const pending = require('../../../mailTemplates/registerPending');
 const moment = require('moment')
 
 function content(status, data, applicant,formDetails) {
-    console.log(data.currency)
+
 
     if (status === "success") {
         return {

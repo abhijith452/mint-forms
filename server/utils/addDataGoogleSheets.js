@@ -10,7 +10,7 @@ async function addDataGoogleSheets(data){
   });
   const client = await auth.getClient();
   const googleSheets = google.sheets({ version: "v4", auth: client });
-  
+
   await googleSheets.spreadsheets.values.append({
     auth,
     spreadsheetId,

@@ -3,6 +3,7 @@ function getIndiconPrice(values) {
     indianAuthorAcadamic: [9000, 10500],
     indianAuthorIndustry: [10000, 11500],
     indianAuthorStudent: [7500, 8500],
+    indianAttendee:[6000,7000],
     foreignAuthor: [250, 300],
     foreignStudentAuthor: [200, 250],
   };
@@ -10,6 +11,7 @@ function getIndiconPrice(values) {
     indianAuthorAcadamic: [10000, 11500],
     indianAuthorIndustry: [11000, 12500],
     indianAuthorStudent: [8500, 9500],
+    indianAttendee:[7000,8000],
     foreignAuthor: [300, 350],
     foreignStudentAuthor: [250, 300],
   };
@@ -75,6 +77,18 @@ function getIndiconPrice(values) {
     values.ieeeMember === 'No'
   ) {
     return pricingData.foreignStudentAuthor[1];
+  }
+  if (
+    values.category === 'Indian Non-Author Attendee' &&
+    values.ieeeMember === 'Yes'
+  ) {
+    return pricingData.indianAttendee[0];
+  }
+  if (
+    values.category === 'Indian Non-Author Attendee' &&
+    values.ieeeMember === 'No'
+  ) {
+    return pricingData.indianAttendee[1];
   }
   else{
     return 9000

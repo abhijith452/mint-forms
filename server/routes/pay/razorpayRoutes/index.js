@@ -17,6 +17,7 @@ var instance = new Razorpay({
   key_id: process.env.razorPayId,
   key_secret: process.env.razorPaySecret,
 });
+
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, './files');
@@ -25,6 +26,7 @@ const fileStorage = multer.diskStorage({
     cb(null, Date.now() + '--' + file.originalname);
   },
 });
+
 const upload = multer({ storage: fileStorage });
 
 router.get('/orderDetails', async (req, res) => {
@@ -37,7 +39,6 @@ router.get('/orderDetails', async (req, res) => {
         responses: { $elemMatch: { orderId: req.query.orderId } },
       }
     );
-    // console.log(applicant)
     logger.info(
       `> Reinitated payment for ${applicant.responses[0].name} orderId : ${req.query.orderId}`
     );
@@ -70,21 +71,26 @@ router.post('/verify', async (req, res) => {
         { orderId: req.query.orderId },
         {
           $set: {
-            'paymentStatus': 'success',
-            'txnDate': moment
-              .unix(orderDetails.created_at)
-              .toISOString(),
-            'txnId': req.body.razorpay_payment_id,
+            paymentStatus: 'success',
+            txnDate: moment.unix(orderDetails.created_at).toISOString(),
+            txnId: req.body.razorpay_payment_id,
           },
         }
       );
+
+      // var data = [moment().format('MMMM Do YYYY, h:mm:ss a')];
+      // data = data.concat(Object.values(response));
+      // data.paymentStatus = 'success';
+      // data.txnDate = moment.unix(orderDetails.created_at).toISOString();
+      // data.txnId = req.body.razorpay_payment_id;
+      // await addDataGoogleSheets(data);
+      console.log(response)
       var data = {
         txnAmount: orderDetails.amount_paid,
         orderId: req.body.razorpay_order_id,
         txnDate: moment.unix(orderDetails.created_at).toISOString(),
         txnId: req.body.razorpay_payment_id,
       };
-
 
       const formDetails = await Form.findOne({ formId: req.query.formId });
       notify('success', data, response, formDetails);
@@ -117,19 +123,16 @@ router.post('/failed', async (req, res) => {
 
     const response = await Response.findOneAndUpdate(
       {
-       orderId: req.body.metadata.order_id,
+        orderId: req.body.metadata.order_id,
       },
       {
         $set: {
-          'paymentStatus': 'failed',
-          'txnDate': moment
-            .unix(orderDetails.created_at)
-            .toISOString(),
-          'txnId': 'failed',
+          paymentStatus: 'failed',
+          txnDate: moment.unix(orderDetails.created_at).toISOString(),
+          txnId: 'failed',
         },
       }
     );
-  
 
     notify('failed', data, response, response);
 
@@ -153,14 +156,6 @@ router.post('/', upload.single('fileUpload'), async (req, res) => {
     var order = await instance.orders.create({
       amount: amountDetails.amount * 100,
       currency: amountDetails.currency,
-      transfers: [
-        {
-          account: process.env.transferAcc,
-          amount: amountDetails.amount * 100,
-          currency: amountDetails.currency,
-          on_hold: 0,
-        },
-      ],
     });
 
     const response = await new Response({
@@ -176,7 +171,8 @@ router.post('/', upload.single('fileUpload'), async (req, res) => {
         req.file.path !== undefined && { fileUpload: req.file.path }),
     });
 
-    const formDetails = await Form.find({ formId: req.query.formId });
+    const formDetails = await Form.findOne({ formId: req.query.formId });
+
     notify('pending', order, req.body, formDetails);
     logger.info(`> Razor token created for ${req.body.name}`);
 

@@ -9,7 +9,13 @@ interface props {
   value: string;
 }
 
-const FormOptions: NextPage<props> = ({ label, options, value,onChange }) => {
+const FormOptions: NextPage<props> = ({
+  label,
+  options,
+  value,
+  onChange,
+  errors,
+}) => {
   return (
     <div className={styles.inputContainer}>
       <p className={styles.label}>{label}</p>
@@ -18,9 +24,10 @@ const FormOptions: NextPage<props> = ({ label, options, value,onChange }) => {
           checked={value === item ? true : false}
           key={key}
           label={item}
-          onClick={(e:any) => onChange(e)}
+          onClick={(e: any) => onChange(e)}
         />
       ))}
+      <p className={styles.errorMsg}>{errors}</p>
     </div>
   );
 };

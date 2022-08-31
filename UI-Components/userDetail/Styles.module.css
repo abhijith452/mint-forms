@@ -1,0 +1,21 @@
+.userDetails {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    color: var(--textcolor-secondary);
+  
+}
+.userDetails_overlay {
+    flex: 1;
+}
+.userDetails_con {
+    height: 100vh;
+    width: 500px;
+    background: var(--background-color);
+    padding: 20px;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    right: 0;
+}
