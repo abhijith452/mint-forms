@@ -95,7 +95,7 @@ router.post('/callback', async (req, res) => {
         {
           $set: {
             paymentStatus: 'success',
-            txnDate: new Date(req.body.TXNDATE).toISOString(),
+            txnDate: moment(req.body.TXNDATE).toISOString(),
             txnId: req.body.TXNID,
           },
         }
@@ -104,7 +104,7 @@ router.post('/callback', async (req, res) => {
       var data = {
         txnAmount: req.body.TXNAMOUNT,
         orderId: req.body.ORDERID,
-        txnDate: new Date(req.body.TXNDATE).toISOString(),
+        txnDate: moment(req.body.TXNDATE).toISOString(),
         txnId: req.body.TXNID,
       };
 
@@ -129,7 +129,7 @@ router.post('/callback', async (req, res) => {
         {
           $set: {
             paymentStatus: 'failure',
-            txnDate: new Date(paytm.responseObject.body.txnDate).toISOString(),
+            txnDate: moment(paytm.responseObject.body.txnDate).toISOString(),
             txnId: req.body.TXNID,
           },
         }

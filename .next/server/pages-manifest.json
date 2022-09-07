@@ -1,14 +1,7 @@
 {
   "/_app": "pages/_app.js",
-  "/api/hello": "pages/api/hello.js",
   "/_error": "pages/_error.js",
-  "/create": "pages/create.html",
-  "/confirmation/[id]": "pages/confirmation/[id].html",
-  "/form/[formId]": "pages/form/[formId].html",
-  "/form/indicon2022": "pages/form/indicon2022.html",
-  "/": "pages/index.html",
-  "/[formId]/responses": "pages/[formId]/responses.html",
-  "/completepayment/[formId]/[orderId]": "pages/completepayment/[formId]/[orderId].html",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/form/indicon2022": "pages/form/indicon2022.js",
+  "/confirmation/[id]": "pages/confirmation/[id].js"
 }
