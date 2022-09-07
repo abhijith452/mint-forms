@@ -115,7 +115,7 @@ router.post('/callback', async (req, res) => {
         .then(() =>
           res.redirect(
             process.env.NODE_ENV === 'production'
-              ? `https://ieee-mint.org/confirmation/${req.body.ORDERID}`
+              ? `${process.env.domain}confirmation/${req.body.ORDERID}`
               : `http://localhost:3000/confirmation/${req.body.ORDERID}`
           )
         )
@@ -141,7 +141,7 @@ router.post('/callback', async (req, res) => {
         .then(() =>
           res.redirect(
             process.env.NODE_ENV === 'production'
-              ? `https://ieee-mint.org/confirmation/${req.body.ORDERID}`
+              ? `${process.env.domain}confirmation/${req.body.ORDERID}`
               : `http://localhost:3000/confirmation/${req.body.ORDERID}`
           )
         )
@@ -152,7 +152,7 @@ router.post('/callback', async (req, res) => {
     } else {
       return res.redirect(
         process.env.NODE_ENV === 'production'
-          ? `https://ieee-mint.org/confirmation/${req.body.ORDERID}`
+          ? `${process.env.domain}confirmation/${req.body.ORDERID}`
           : `http://localhost:3000/confirmation/${req.body.ORDERID}`
       );
     }

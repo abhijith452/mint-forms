@@ -336,6 +336,7 @@ const Form: NextPage = () => {
                       'Indian Author (Industry)',
                       'Indian Student Author',
                       'Indian Non-Author Attendee',
+                      'Indian Test Category',
                       'Foreign Author',
                       'Foreign Student Author',
                       'Foreign Test Category',

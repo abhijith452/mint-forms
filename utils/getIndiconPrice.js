@@ -6,6 +6,7 @@ function getIndiconPrice(values) {
     indianAttendee:[6000,7000],
     foreignAuthor: [250, 300],
     foreignStudentAuthor: [200, 250],
+    indianTest:[1,1],
     foreignTest:[1,1]
   };
   var pricingStandard = {
@@ -15,6 +16,7 @@ function getIndiconPrice(values) {
     indianAttendee:[7000,8000],
     foreignAuthor: [300, 350],
     foreignStudentAuthor: [250, 300],
+    indianTest:[1,1],
     foreignTest:[1,1]
 
   };
@@ -95,6 +97,9 @@ function getIndiconPrice(values) {
   }
   if(values.category==='Foreign Test Category'){
     return pricingData.foreignTest[0]
+  }
+  if(values.category==='Indian Test Category'){
+    return pricingData.indianTest[0]
   }
   else{
     return 9000
