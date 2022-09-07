@@ -74,6 +74,7 @@ router.post(
 );
 
 router.post('/callback', async (req, res) => {
+  console.log(`${process.env.domain}confirmation/${req.body.ORDERID}`)
   try {
     var orderId = req.body.ORDERID;
     var readTimeout = 80000;
@@ -83,11 +84,11 @@ router.post('/callback', async (req, res) => {
     var paymentStatusDetail = paymentStatusDetailBuilder
       .setReadTimeout(readTimeout)
       .build();
-    var response = await Paytm.Payment.getPaymentStatus(paymentStatusDetail);
+    var paytm = await Paytm.Payment.getPaymentStatus(paymentStatusDetail);
 
-    console.log(response.responseObject.body.resultInfo.resultStatus);
+    console.log(paytm.responseObject.body.resultInfo.resultStatus);
     if (
-      response.responseObject.body.resultInfo.resultStatus === 'TXN_SUCCESS'
+      paytm.responseObject.body.resultInfo.resultStatus === 'TXN_SUCCESS'
     ) {
       const response = await Response.findOneAndUpdate(
         { orderId: req.body.ORDERID },
@@ -113,25 +114,22 @@ router.post('/callback', async (req, res) => {
       response
         .save()
         .then(() =>
-          res.redirect(
-            process.env.NODE_ENV === 'production'
-              ? `${process.env.domain}confirmation/${req.body.ORDERID}`
-              : `http://localhost:3000/confirmation/${req.body.ORDERID}`
-          )
+          res.redirect(`${process.env.domain}confirmation/${req.body.ORDERID}`)
         )
         .catch((err) => {
           logger.error(err);
           res.status(400).send({ error: err.message });
         });
     } else if (
-      response.responseObject.body.resultInfo.resultStatus === 'TXN_FAILURE'
+      paytm.responseObject.body.resultInfo.resultStatus === 'TXN_FAILURE'
     ) {
+      console.log(paytm.responseObject.body.txnDate)
       const response = await Response.findOneAndUpdate(
         { orderId: req.body.ORDERID },
         {
           $set: {
             paymentStatus: 'failure',
-            txnDate: new Date(req.body.TXNDATE).toISOString(),
+            txnDate: new Date(paytm.responseObject.body.txnDate).toISOString(),
             txnId: req.body.TXNID,
           },
         }
@@ -139,11 +137,7 @@ router.post('/callback', async (req, res) => {
       response
         .save()
         .then(() =>
-          res.redirect(
-            process.env.NODE_ENV === 'production'
-              ? `${process.env.domain}confirmation/${req.body.ORDERID}`
-              : `http://localhost:3000/confirmation/${req.body.ORDERID}`
-          )
+          res.redirect(`${process.env.domain}confirmation/${req.body.ORDERID}`)
         )
         .catch((err) => {
           logger.error(err);
@@ -151,9 +145,7 @@ router.post('/callback', async (req, res) => {
         });
     } else {
       return res.redirect(
-        process.env.NODE_ENV === 'production'
-          ? `${process.env.domain}confirmation/${req.body.ORDERID}`
-          : `http://localhost:3000/confirmation/${req.body.ORDERID}`
+        `${process.env.domain}confirmation/${req.body.ORDERID}`
       );
     }
   } catch (err) {

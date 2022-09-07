@@ -1086,3 +1086,46 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-07T17:33:13.537Z [INFO   ]: > Paytm token created for dwdsa
 2022-09-07T17:33:31.342Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxjV60R08nemRjj7AAAAbxIqEz.Xdy4UlFMLiLCGJRQ]
 2022-09-07T17:33:31.344Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxjV60R08nemRjj7AAAAbxIqEz.Xdy4UlFMLiLCGJRQ
+2022-09-07T18:10:25.947Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:10:26.965Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:10:26.966Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:10:59.066Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T18:11:05.903Z [ERROR  ]: Invalid time value
+2022-09-07T18:11:26.189Z [ERROR  ]: Invalid time value
+2022-09-07T18:12:52.447Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:12:53.428Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:12:53.429Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:12:55.608Z [ERROR  ]: Invalid time value
+2022-09-07T18:13:17.712Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:13:18.263Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:13:18.264Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:13:19.424Z [ERROR  ]: Cannot access 'response' before initialization
+2022-09-07T18:13:50.454Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:13:51.072Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:13:51.073Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:13:58.064Z [ERROR  ]: Cannot access 'response' before initialization
+2022-09-07T18:15:02.249Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:15:03.131Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:15:03.131Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:15:05.823Z [ERROR  ]: response is not defined
+2022-09-07T18:15:27.853Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:15:28.397Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:15:28.398Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:15:30.445Z [ERROR  ]: Invalid time value
+2022-09-07T18:15:55.065Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:15:55.643Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:15:55.644Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:16:00.033Z [ERROR  ]: Invalid time value
+2022-09-07T18:16:14.710Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:16:15.435Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:16:15.436Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:16:16.723Z [ERROR  ]: Invalid time value
+2022-09-07T18:16:31.570Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:16:32.118Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:16:32.118Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:17:05.409Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T18:17:05.949Z [INFO   ]: > Connected to MongoDB
+2022-09-07T18:17:05.950Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T18:17:40.577Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T18:17:57.309Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxjgVUR08nemRj21AAAAcEhHh5iu6W9KosRH2s5ZTvs]
+2022-09-07T18:17:57.311Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxjgVUR08nemRj21AAAAcEhHh5iu6W9KosRH2s5ZTvs
