@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={}
+self.__REACT_LOADABLE_MANIFEST={"../UI-Components/RichEditor/index.js -> react-draft-wysiwyg":{id:35108,files:["static/chunks/2c386607.99c3d0abf37ead58.js"]}};
