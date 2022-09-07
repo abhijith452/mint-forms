@@ -1,5 +1,6 @@
 const moment = require('moment')
 module.exports = function (req) {
+
   return (
       `
       <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -1024,7 +1025,7 @@ module.exports = function (req) {
                           <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 15px 2px 3px;font-family:arial,helvetica,sans-serif;" align="left">
 
                             <div class="v-line-height" style="line-height: 140%; text-align: center; word-wrap: break-word;">
-                              <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><strong>${req.currency==="USD"?"$":"₹"} ${req.amount/100}</strong></p>
+                              <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><strong>${req.currency==="USD"?"$":"₹"} ${req.amount}</strong></p>
                             </div>
 
                           </td>

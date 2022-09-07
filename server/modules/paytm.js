@@ -29,11 +29,11 @@ function connectToPaytm() {
     try {
       var channelId = Paytm.EChannelId.WEB;
       var orderId = generateRandomString(10);
-      var txnAmount = Paytm.Money.constructWithCurrencyAndValue(Paytm.EnumCurrency.INR, req.body.ieeeMember === "true" ? "1980.00" : "1980.00");
+      var txnAmount = Paytm.Money.constructWithCurrencyAndValue(Paytm.EnumCurrency.INR, String(JSON.parse(req.body.amount).amount)+".00");
       var userInfo = new Paytm.UserInfo(generateRandomString(10));
       userInfo.setEmail(req.body.email);
-      userInfo.setFirstName(req.body.firstName);
-      userInfo.setLastName(req.body.lastName);
+      userInfo.setFirstName(req.body.name);
+      // userInfo.setLastName(req.body.lastName);
       userInfo.setMobile(req.body.phone);
       var paymentDetailBuilder = new Paytm.PaymentDetailBuilder(channelId, orderId, txnAmount, userInfo);
       var paymentDetail = paymentDetailBuilder.build();
@@ -44,11 +44,11 @@ function connectToPaytm() {
         orderId,
         "CHECKSUMHASH": response.responseObject.head.signature,
         "txnToken": response.responseObject.body.txnToken,
-        TXN_AMOUNT: "10.00",
+        TXN_AMOUNT:String(JSON.parse(req.body.amount).amount)+".00",
         WEBSITE: "WEBSTAGING",
       }
   
-      logger.info(`> Paytm token created for ${req.body.firstName + " " + req.body.lastName}`)
+      logger.info(`> Paytm token created for ${req.body.name}`)
   
       return details
     }
@@ -58,3 +58,4 @@ function connectToPaytm() {
     }
   }
   module.exports = {connectToPaytm,generateTxnId};
+  // String(JSON.parse(req.body.amount).amount)+".00"

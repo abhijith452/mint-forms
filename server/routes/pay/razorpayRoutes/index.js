@@ -51,7 +51,6 @@ router.post(
         formId: req.query.formId,
         responseId: generateRandomString(10),
         orderId: order.id,
-        amount: amountDetails.amount / 100,
         paymentStatus: amountDetails.amount === 0 ? 'success' : 'pending',
         txnDate: amountDetails.amount === 0 ? order.txnDate : 'pending',
         txnId: amountDetails.amount === 0 ? order.txnId : 'pending',
@@ -60,9 +59,16 @@ router.post(
           req.file.path !== undefined && { fileUpload: req.file.path }),
       });
 
+      const orderDetails = {
+        id: order.id,
+        amount: order.amount / 100,
+        currency: order.currency,
+        created_at: order.created_at,
+      };
+
       const formDetails = await Form.findOne({ formId: req.query.formId });
 
-      notify('pending', order, req.body, formDetails);
+      notify('pending', orderDetails, req.body, formDetails);
       logger.info(`> Razor token created for ${req.body.name}`);
 
       response
@@ -83,10 +89,7 @@ router.post(
 router.get('/orderDetails', async (req, res) => {
   try {
     const orderDetails = await instance.orders.fetch(req.query.orderId);
-    const applicant = await Response.findOne(
-      { orderId:req.query.orderId },
-     
-    );
+    const applicant = await Response.findOne({ orderId: req.query.orderId });
     logger.info(
       `> Reinitated payment for ${applicant.name} orderId : ${req.query.orderId}`
     );
@@ -126,19 +129,14 @@ router.post('/verify', async (req, res) => {
         }
       );
 
-      // var data = [moment().format('MMMM Do YYYY, h:mm:ss a')];
-      // data = data.concat(Object.values(response));
-      // data.paymentStatus = 'success';
-      // data.txnDate = moment.unix(orderDetails.created_at).toISOString();
-      // data.txnId = req.body.razorpay_payment_id;
-      // await addDataGoogleSheets(data);
-
       var data = {
-        txnAmount: orderDetails.amount_paid,
+        txnAmount: orderDetails.amount_paid / 100,
         orderId: req.body.razorpay_order_id,
         txnDate: moment.unix(orderDetails.created_at).toISOString(),
         txnId: req.body.razorpay_payment_id,
+        currency: orderDetails.currency,
       };
+      console.log(data.currency)
 
       const formDetails = await Form.findOne({ formId: req.query.formId });
       notify('success', data, response, formDetails);
@@ -196,6 +194,5 @@ router.post('/failed', async (req, res) => {
     res.status(400).send({ error: err.message });
   }
 });
-
 
 module.exports = router;

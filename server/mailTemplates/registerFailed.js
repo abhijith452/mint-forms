@@ -1019,7 +1019,7 @@ module.exports = function (req) {
                               <div class="v-line-height" style="line-height: 140%; text-align: center; word-wrap: break-word;">
                                 <p dir="ltr" style="font-size: 14px; line-height: 140%; text-align: left;"><strong>${
                                   req.currency === 'USD' ? '$' : '₹'
-                                } ${req.amount / 100}</strong></p>
+                                } ${req.amount}</strong></p>
                               </div>
 
                             </td>

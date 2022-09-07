@@ -645,3 +645,438 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-08-31T11:06:03.057Z [INFO   ]: > Connected to Paytm Servers
 2022-08-31T11:06:04.402Z [INFO   ]: > Connected to MongoDB
 2022-08-31T11:06:04.403Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:03:20.273Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:03:22.007Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:03:22.009Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:07:12.479Z [ERROR  ]: Unexpected token u in JSON at position 0
+2022-09-02T07:08:11.558Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:08:13.107Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:08:13.108Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:08:29.552Z [INFO   ]: > Paytm token created for undefined undefined
+2022-09-02T07:11:59.572Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:12:01.245Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:12:01.245Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:12:13.014Z [ERROR  ]: Unexpected token u in JSON at position 0
+2022-09-02T07:13:34.562Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:13:36.108Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:13:36.109Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:13:47.443Z [INFO   ]: > Paytm token created for undefined undefined
+2022-09-02T07:18:52.889Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:18:54.491Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:18:54.492Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:24:09.022Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:24:10.743Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:24:10.743Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:24:51.423Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:24:51.996Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:24:51.997Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:25:12.967Z [INFO   ]: > Paytm token created for undefined undefined
+2022-09-02T07:25:30.762Z [ERROR  ]: Cannot read properties of null (reading 'formId')
+2022-09-02T07:26:16.857Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:26:18.264Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:26:18.264Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:26:26.472Z [ERROR  ]: Cannot read properties of null (reading 'formId')
+2022-09-02T07:26:30.522Z [ERROR  ]: Cannot read properties of null (reading 'formId')
+2022-09-02T07:30:43.549Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:30:44.871Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:30:44.871Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:33:15.283Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:33:16.719Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:33:16.721Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:33:30.949Z [INFO   ]: > Paytm token created for undefined undefined
+2022-09-02T07:33:30.950Z [ERROR  ]: generateRandomString is not defined
+2022-09-02T07:34:56.498Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:34:57.971Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:34:57.972Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:35:32.416Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:35:33.100Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:35:33.101Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:36:37.876Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:36:39.363Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:36:39.364Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:37:13.611Z [INFO   ]: > Paytm token created for undefined undefined
+2022-09-02T07:37:13.759Z [ERROR  ]: order is not defined
+2022-09-02T07:38:03.701Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:38:05.436Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:38:05.438Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:38:19.313Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:38:20.046Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:38:20.048Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:40:27.476Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:40:29.515Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:40:29.516Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:40:38.422Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:40:39.238Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:40:39.239Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:40:53.325Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T07:40:53.448Z [ERROR  ]: order is not defined
+2022-09-02T07:41:48.643Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:41:50.232Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:41:50.233Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:42:21.330Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T07:42:26.129Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxGz4bVBtGLsmBrWAAAALrlDPFPAeEDNBN8pwdX75uY]
+2022-09-02T07:42:26.131Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxGz4bVBtGLsmBrWAAAALrlDPFPAeEDNBN8pwdX75uY
+2022-09-02T07:42:47.221Z [ERROR  ]: Cannot set properties of null (setting 'responses')
+2022-09-02T07:42:48.374Z [ERROR  ]: Cannot set properties of null (setting 'responses')
+2022-09-02T07:42:51.088Z [ERROR  ]: Cannot set properties of null (setting 'responses')
+2022-09-02T07:42:59.832Z [ERROR  ]: Cannot set properties of null (setting 'responses')
+2022-09-02T07:48:00.525Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:48:02.628Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:48:02.629Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:49:21.384Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:49:22.754Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:49:22.755Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:49:46.538Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:49:47.080Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:49:47.080Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:50:29.990Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T07:50:34.890Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG1ymTcOrtHkdTKAAAAL8u4chhoiDbLOGCRJvKZlk4]
+2022-09-02T07:50:34.891Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG1ymTcOrtHkdTKAAAAL8u4chhoiDbLOGCRJvKZlk4
+2022-09-02T07:50:40.731Z [ERROR  ]: Cannot read properties of null (reading 'signature')
+2022-09-02T07:50:44.953Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG11LVBtGLsmBsKAAAAMMJEb-thLGBwO25meqHyhew]
+2022-09-02T07:50:44.954Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG11LVBtGLsmBsKAAAAMMJEb-thLGBwO25meqHyhew
+2022-09-02T07:51:05.764Z [ERROR  ]: orderDetails is not defined
+2022-09-02T07:52:02.546Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:52:04.049Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:52:04.050Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:52:19.450Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T07:52:23.640Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG2N7VBtGLsmBscAAAAMQ2yMsPHGsbl480Q7rZ1M8s]
+2022-09-02T07:52:23.642Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG2N7VBtGLsmBscAAAAMQ2yMsPHGsbl480Q7rZ1M8s
+2022-09-02T07:53:34.000Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T07:53:38.492Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG2gmTcOrtHkdTlAAAAMtvZrSsViZ4z.aUOFbLz3Es]
+2022-09-02T07:53:38.493Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG2gmTcOrtHkdTlAAAAMtvZrSsViZ4z.aUOFbLz3Es
+2022-09-02T07:54:22.891Z [ERROR  ]: Cannot set properties of null (setting 'responses')
+2022-09-02T07:54:25.241Z [ERROR  ]: Cannot set properties of null (setting 'responses')
+2022-09-02T07:56:53.908Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T07:56:55.418Z [INFO   ]: > Connected to MongoDB
+2022-09-02T07:56:55.419Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T07:57:12.829Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T07:57:17.327Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG3XbVBtGLsmBsxAAAAM-t3AYezlzi4k1eo5Y8l6zQ]
+2022-09-02T07:57:17.329Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG3XbVBtGLsmBsxAAAAM-t3AYezlzi4k1eo5Y8l6zQ
+2022-09-02T08:02:23.308Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:02:24.829Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:02:24.830Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:02:38.469Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T08:02:42.962Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG4orVBtGLsmB0eAAAANF.X1.Pq7UI80IjrJ9t9wgI]
+2022-09-02T08:02:42.963Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG4orVBtGLsmB0eAAAANF.X1.Pq7UI80IjrJ9t9wgI
+2022-09-02T08:02:50.426Z [ERROR  ]: Cannot read properties of null (reading 'title')
+2022-09-02T08:03:21.487Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:03:22.135Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:03:22.136Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:05:06.924Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:05:08.599Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:05:08.600Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:05:25.803Z [INFO   ]: > Paytm token created for Abhijith Kannan
+2022-09-02T08:05:30.387Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG5SrVBtGLsmB9AAAAANbVx8uMSRTeOKYomCnRIUG4]
+2022-09-02T08:05:30.388Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG5SrVBtGLsmB9AAAAANbVx8uMSRTeOKYomCnRIUG4
+2022-09-02T08:05:40.831Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG5VMVsBJHcmfTxAAAANsG76jK1Ppr7ggxIEMaCIN8]
+2022-09-02T08:05:40.833Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG5VMVsBJHcmfTxAAAANsG76jK1Ppr7ggxIEMaCIN8
+2022-09-02T08:06:48.219Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:06:49.604Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:06:49.605Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:07:09.745Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T08:07:14.017Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG5sUR08nemQXkIAAAAN.mJm1tbS3b9Jby5lOowHZ4]
+2022-09-02T08:07:14.018Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG5sUR08nemQXkIAAAAN.mJm1tbS3b9Jby5lOowHZ4
+2022-09-02T08:07:22.230Z [ERROR  ]: date is not defined
+2022-09-02T08:07:50.492Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:07:51.794Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:07:51.796Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:08:34.212Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T08:08:38.292Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG6BmTcOrtHkdrYAAAAOATJInydhf1-KXJAIKErmHQ]
+2022-09-02T08:08:38.295Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG6BmTcOrtHkdrYAAAAOATJInydhf1-KXJAIKErmHQ
+2022-09-02T08:08:50.584Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxG6ErVBtGLsmCHvAAAAOY7JoXQQvCw.J8fVG5AMd3M]
+2022-09-02T08:08:50.585Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxG6ErVBtGLsmCHvAAAAOY7JoXQQvCw.J8fVG5AMd3M
+2022-09-02T08:46:43.631Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:46:45.125Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:46:45.125Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:47:31.863Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:47:32.647Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:47:32.648Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:48:00.131Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T08:48:04.571Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxHDRMVsBJHcmftIAAAAOkLSkbAqhANVq-m13YK3vkQ]
+2022-09-02T08:48:04.572Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxHDRMVsBJHcmftIAAAAOkLSkbAqhANVq-m13YK3vkQ
+2022-09-02T08:48:22.696Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxHDVrVBtGLsmCZMAAAAO7GbgjfOyL55SI2iM-iDex4]
+2022-09-02T08:48:22.698Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxHDVrVBtGLsmCZMAAAAO7GbgjfOyL55SI2iM-iDex4
+2022-09-02T08:51:16.174Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:51:17.662Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:51:17.663Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:51:29.800Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T08:51:34.803Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxHEFkR08nemQX3jAAAAPIgobzekEZ0Wu85PUHGsQso]
+2022-09-02T08:51:34.805Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxHEFkR08nemQX3jAAAAPIgobzekEZ0Wu85PUHGsQso
+2022-09-02T08:51:44.938Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxHEILVBtGLsmCZnAAAAPY2h3j2X4-VVZrkfm2zW0EQ]
+2022-09-02T08:51:44.940Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxHEILVBtGLsmCZnAAAAPY2h3j2X4-VVZrkfm2zW0EQ
+2022-09-02T08:53:20.131Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:53:21.704Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:53:21.705Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:54:43.095Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:54:44.801Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:54:44.802Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:56:51.118Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:56:52.399Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:56:52.400Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:57:53.758Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T08:57:55.257Z [INFO   ]: > Connected to MongoDB
+2022-09-02T08:57:55.259Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T08:58:14.482Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T08:58:19.185Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxHFqkR08nemQX34AAAAPqQXPJUDL-0mY2KnqQhRbZQ]
+2022-09-02T08:58:19.187Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxHFqkR08nemQX34AAAAPqQXPJUDL-0mY2KnqQhRbZQ
+2022-09-02T08:58:39.763Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxHFv0R08nemQX37AAAAP0.YYgJQsUHM957g3ETeeQo]
+2022-09-02T08:58:39.764Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxHFv0R08nemQX37AAAAP0.YYgJQsUHM957g3ETeeQo
+2022-09-02T09:00:19.610Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T09:00:21.138Z [INFO   ]: > Connected to MongoDB
+2022-09-02T09:00:21.140Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T09:03:00.389Z [ERROR  ]: [object Object]
+2022-09-02T09:06:45.698Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T09:06:47.738Z [INFO   ]: > Connected to MongoDB
+2022-09-02T09:06:47.738Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T09:07:41.689Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T09:07:42.258Z [INFO   ]: > Connected to MongoDB
+2022-09-02T09:07:42.260Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T09:07:58.190Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T09:08:10.109Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T09:08:10.827Z [INFO   ]: > Connected to MongoDB
+2022-09-02T09:08:10.828Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T09:08:50.533Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T09:08:51.254Z [INFO   ]: > Connected to MongoDB
+2022-09-02T09:08:51.256Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T09:11:57.215Z [INFO   ]: > Connected to Paytm Servers
+2022-09-02T09:11:58.690Z [INFO   ]: > Connected to MongoDB
+2022-09-02T09:11:58.691Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-02T09:12:36.282Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-02T09:12:40.683Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxHJCGTcOrtHkec4AAAAQCCT6GwrfDKeveL5Y6B9OWw]
+2022-09-02T09:12:40.685Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxHJCGTcOrtHkec4AAAAQCCT6GwrfDKeveL5Y6B9OWw
+2022-09-02T09:12:54.607Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxHJFmTcOrtHkec.AAAAQW-lKCrnAZxV0iNCHWUf0lU]
+2022-09-02T09:12:54.608Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxHJFmTcOrtHkec.AAAAQW-lKCrnAZxV0iNCHWUf0lU
+2022-09-03T05:18:14.590Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T05:18:16.262Z [INFO   ]: > Connected to MongoDB
+2022-09-03T05:18:16.262Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T05:18:52.034Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T05:18:56.642Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLjwLVBtGLsmRNIAAAAQr.AZaU3O-zxXPdeBtKEaX8]
+2022-09-03T05:18:56.644Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLjwLVBtGLsmRNIAAAAQr.AZaU3O-zxXPdeBtKEaX8
+2022-09-03T05:19:36.219Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLj58VsBJHcmu8MAAAAQ2oA0QbJfdKtQOAEGT.W9C0]
+2022-09-03T05:19:36.220Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLj58VsBJHcmu8MAAAAQ2oA0QbJfdKtQOAEGT.W9C0
+2022-09-03T05:20:06.629Z [INFO   ]: > Razor token created for Abhijith
+2022-09-03T05:20:10.572Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLkCsVsBJHcmu8SAAAARGbTen786FVAP-OyF-R2Y1o]
+2022-09-03T05:20:10.574Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLkCsVsBJHcmu8SAAAARGbTen786FVAP-OyF-R2Y1o
+2022-09-03T05:21:07.256Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLkQ0R08nemQoCjAAAARVgPvtYmfvISnm9HE47dgv4]
+2022-09-03T05:21:07.257Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLkQ0R08nemQoCjAAAARVgPvtYmfvISnm9HE47dgv4
+2022-09-03T05:31:35.434Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T05:31:37.506Z [INFO   ]: > Connected to MongoDB
+2022-09-03T05:31:37.507Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T05:31:53.959Z [INFO   ]: > Razor token created for Abhijith
+2022-09-03T05:31:58.165Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLmzcVsBJHcmu81AAAARpgl13DVdidn2MArMttsRN4]
+2022-09-03T05:31:58.167Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLmzcVsBJHcmu81AAAARpgl13DVdidn2MArMttsRN4
+2022-09-03T05:33:17.107Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T05:33:19.070Z [INFO   ]: > Connected to MongoDB
+2022-09-03T05:33:19.072Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:11:25.967Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:11:30.174Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:11:30.175Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:13:39.233Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:13:42.779Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:13:42.779Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:14:13.844Z [INFO   ]: > Razor token created for Abhijith
+2022-09-03T06:14:19.313Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLwu0R08nemQoQJAAAAR7EZ4FJLmw285ePAL1U8xtw]
+2022-09-03T06:14:19.315Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLwu0R08nemQoQJAAAAR7EZ4FJLmw285ePAL1U8xtw
+2022-09-03T06:15:08.673Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLw7GTcOrtHktoPAAAASPEJVlSyMdtksp6f3THQNn0]
+2022-09-03T06:15:08.675Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLw7GTcOrtHktoPAAAASPEJVlSyMdtksp6f3THQNn0
+2022-09-03T06:18:06.963Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:18:10.667Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:18:10.668Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:18:26.629Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:18:32.248Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLxt7VBtGLsmRdtAAAASa5BN1Rpqfrt-S8JPrhYXw4]
+2022-09-03T06:18:32.249Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLxt7VBtGLsmRdtAAAASa5BN1Rpqfrt-S8JPrhYXw4
+2022-09-03T06:18:40.165Z [INFO   ]: > Razor token created for Abhijith
+2022-09-03T06:18:45.661Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLxxcVsBJHcmvMHAAAASgmXEa7NMai1PZwtqz2dS-w]
+2022-09-03T06:18:45.662Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLxxcVsBJHcmvMHAAAASgmXEa7NMai1PZwtqz2dS-w
+2022-09-03T06:19:00.755Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLx1GTcOrtHktoSAAAAS0DmrsIzHmhjIXNXW-kJ8zs]
+2022-09-03T06:19:00.756Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLx1GTcOrtHktoSAAAAS0DmrsIzHmhjIXNXW-kJ8zs
+2022-09-03T06:20:05.759Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:20:09.580Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:20:09.581Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:22:08.660Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:22:12.457Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:22:12.458Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:22:39.401Z [INFO   ]: > Razor token created for Abhijith
+2022-09-03T06:22:44.672Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLytGTcOrtHktobAAAATOshMl.iY10qTiOtkTeYUSU]
+2022-09-03T06:22:44.673Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLytGTcOrtHktobAAAATOshMl.iY10qTiOtkTeYUSU
+2022-09-03T06:22:58.602Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLywmTcOrtHktoeAAAATQk1XjcizsflrbMXZMob73Q]
+2022-09-03T06:22:58.603Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLywmTcOrtHktoeAAAATQk1XjcizsflrbMXZMob73Q
+2022-09-03T06:23:27.586Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:23:33.106Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLy5LVBtGLsmRd.AAAATlXHVN5lloN2vjm2IjGsTGk]
+2022-09-03T06:23:33.107Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLy5LVBtGLsmRd.AAAATlXHVN5lloN2vjm2IjGsTGk
+2022-09-03T06:24:08.212Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:24:11.827Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:24:11.828Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:24:46.049Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:24:52.057Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLzM0R08nemQoQhAAAAT1aiiU8wXQ6-wkwVUdbufXw]
+2022-09-03T06:24:52.059Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLzM0R08nemQoQhAAAAT1aiiU8wXQ6-wkwVUdbufXw
+2022-09-03T06:26:36.196Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:26:39.696Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:26:39.697Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:26:55.839Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:27:01.841Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxLztbVBtGLsmReIAAAAUIe1u7Yk.iQZDVeDWqFl4yY]
+2022-09-03T06:27:01.841Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxLztbVBtGLsmReIAAAAUIe1u7Yk.iQZDVeDWqFl4yY
+2022-09-03T06:29:08.167Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:29:11.872Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:29:11.873Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:29:24.234Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:29:30.383Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL0SsVsBJHcmvMfAAAAUQAtmwXLqZjo1n2JBQG7.-w]
+2022-09-03T06:29:30.384Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL0SsVsBJHcmvMfAAAAUQAtmwXLqZjo1n2JBQG7.-w
+2022-09-03T06:30:30.517Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:30:33.898Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:30:33.898Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:30:44.447Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:30:50.359Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL0mrVBtGLsmRedAAAAUkEyDZygyv28lZA6iHG-4rw]
+2022-09-03T06:30:50.360Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL0mrVBtGLsmRedAAAAUkEyDZygyv28lZA6iHG-4rw
+2022-09-03T06:31:27.256Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:31:30.013Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:31:30.015Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:32:28.090Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:32:33.990Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL1AbVBtGLsmRemAAAAUxAf7775AC9irE7Q0eMhxd0]
+2022-09-03T06:32:33.992Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL1AbVBtGLsmRemAAAAUxAf7775AC9irE7Q0eMhxd0
+2022-09-03T06:33:17.729Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:33:21.529Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:33:21.530Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:33:41.520Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:33:47.719Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL1S7VBtGLsmReyAAAAVNTOUD5wOLs-6EdwPsvfEq8]
+2022-09-03T06:33:47.721Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL1S7VBtGLsmReyAAAAVNTOUD5wOLs-6EdwPsvfEq8
+2022-09-03T06:33:59.085Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL1VkR08nemQoQ2AAAAVTd1MTBfCr9vWySa2ypGeBs]
+2022-09-03T06:33:59.086Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL1VkR08nemQoQ2AAAAVTd1MTBfCr9vWySa2ypGeBs
+2022-09-03T06:36:32.943Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:36:36.690Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:36:36.691Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:36:55.358Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:37:01.260Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL2DLVBtGLsmRe4AAAAViQcVHnpYrQUKeW2wGxG414]
+2022-09-03T06:37:01.261Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL2DLVBtGLsmRe4AAAAViQcVHnpYrQUKeW2wGxG414
+2022-09-03T06:38:00.136Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T06:38:03.740Z [INFO   ]: > Connected to MongoDB
+2022-09-03T06:38:03.740Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T06:38:21.282Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:38:27.279Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL2YkR08nemQoQ.AAAAV7H2ks4Emst.N6iVUrqi5VU]
+2022-09-03T06:38:27.280Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL2YkR08nemQoQ.AAAAV7H2ks4Emst.N6iVUrqi5VU
+2022-09-03T06:38:37.006Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL2bMVsBJHcmvMxAAAAWCAMTxK.DNCz0cXrUMl45i8]
+2022-09-03T06:38:37.008Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL2bMVsBJHcmvMxAAAAWCAMTxK.DNCz0cXrUMl45i8
+2022-09-03T06:39:22.176Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T06:39:28.003Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxL2n8VsBJHcmvM3AAAAWX4lBbXmSHWyX3MOWYSm19c]
+2022-09-03T06:39:28.004Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxL2n8VsBJHcmvM3AAAAWX4lBbXmSHWyX3MOWYSm19c
+2022-09-03T07:26:03.915Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T07:26:07.664Z [INFO   ]: > Connected to MongoDB
+2022-09-03T07:26:07.665Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T07:33:13.378Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T07:33:17.133Z [INFO   ]: > Connected to MongoDB
+2022-09-03T07:33:17.134Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-03T08:43:12.165Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-03T08:43:19.691Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxMTp7VBtGLsmSPWAAAAWsWX9tabJ54MPLNO511K-go]
+2022-09-03T08:43:19.693Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxMTp7VBtGLsmSPWAAAAWsWX9tabJ54MPLNO511K-go
+2022-09-03T11:08:44.922Z [INFO   ]: > Connected to Paytm Servers
+2022-09-03T11:08:48.220Z [INFO   ]: > Connected to MongoDB
+2022-09-03T11:08:48.221Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T05:54:37.132Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T05:54:40.240Z [INFO   ]: > Connected to MongoDB
+2022-09-07T05:54:40.241Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T05:55:27.713Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T05:55:28.195Z [INFO   ]: > Connected to MongoDB
+2022-09-07T05:55:28.196Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T05:55:48.590Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T05:55:49.554Z [INFO   ]: > Connected to MongoDB
+2022-09-07T05:55:49.555Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T06:01:32.666Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T06:02:45.364Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T06:02:50.124Z [INFO   ]: > Connected to MongoDB
+2022-09-07T06:02:50.124Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T06:17:56.734Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T06:19:25.593Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T06:19:29.573Z [INFO   ]: > Connected to MongoDB
+2022-09-07T06:19:29.574Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T06:19:51.737Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T06:36:01.096Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T06:36:04.394Z [INFO   ]: > Connected to MongoDB
+2022-09-07T06:36:04.394Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T06:36:16.707Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T06:40:39.183Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T06:40:43.436Z [INFO   ]: > Connected to MongoDB
+2022-09-07T06:40:43.437Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T06:41:05.710Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T06:42:11.818Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T06:42:16.671Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxg9SLVBtGLsnHsQAAAAWw0KZXAGD..8SX.-HyIzVQE]
+2022-09-07T06:42:16.673Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxg9SLVBtGLsnHsQAAAAWw0KZXAGD..8SX.-HyIzVQE
+2022-09-07T06:42:28.159Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxg9VMVsBJHcnkZGAAAAXERCa.WksZZYmet3VnkDVN8]
+2022-09-07T06:42:28.160Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxg9VMVsBJHcnkZGAAAAXERCa.WksZZYmet3VnkDVN8
+2022-09-07T07:18:24.376Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T07:18:29.560Z [INFO   ]: > Connected to MongoDB
+2022-09-07T07:18:29.562Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T07:29:12.624Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T07:29:42.308Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhIZrVBtGLsnIAgAAAAXelVzJfeH500TPQy5qovj6c]
+2022-09-07T07:29:42.313Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhIZrVBtGLsnIAgAAAAXelVzJfeH500TPQy5qovj6c
+2022-09-07T07:33:44.397Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T07:33:48.579Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhJXER08nemRenvAAAAXrzYAKgqA3QxC1QUEVFp204]
+2022-09-07T07:33:48.580Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhJXER08nemRenvAAAAXrzYAKgqA3QxC1QUEVFp204
+2022-09-07T07:34:04.391Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KEvgFOnzlf8maw
+2022-09-07T07:34:42.605Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KEvgFOnzlf8maw
+2022-09-07T07:35:59.832Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KEvgFOnzlf8maw
+2022-09-07T07:36:12.931Z [ERROR  ]: Cannot read properties of null (reading 'title')
+2022-09-07T07:36:30.313Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KEvgFOnzlf8maw
+2022-09-07T07:36:53.194Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T07:37:00.277Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhKHLVBtGLsnIB7AAAAXzE9AFzh5SahGnRkL2MkHds]
+2022-09-07T07:37:00.280Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhKHLVBtGLsnIB7AAAAXzE9AFzh5SahGnRkL2MkHds
+2022-09-07T07:37:03.973Z [ERROR  ]: connection 2 to 3.6.242.39:27017 closed
+2022-09-07T07:37:10.720Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhKJmTcOrtHljxrAAAAYDaza5g82vxtGXlBIZOfeWI]
+2022-09-07T07:37:10.721Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhKJmTcOrtHljxrAAAAYDaza5g82vxtGXlBIZOfeWI
+2022-09-07T07:37:12.630Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T07:37:18.470Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhKLsVsBJHcnktGAAAAYYq32UIAF6XkpotnOQo1FKY]
+2022-09-07T07:37:18.472Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhKLsVsBJHcnktGAAAAYYq32UIAF6XkpotnOQo1FKY
+2022-09-07T07:37:38.923Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KEvjuhFXLYc50e
+2022-09-07T07:37:49.107Z [ERROR  ]: Cannot read properties of null (reading 'title')
+2022-09-07T07:39:37.538Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T07:39:43.405Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhKv7VBtGLsnICmAAAAYusV-1SFo8Nh7eI9zdVdeIY]
+2022-09-07T07:39:43.407Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhKv7VBtGLsnICmAAAAYusV-1SFo8Nh7eI9zdVdeIY
+2022-09-07T07:39:56.037Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KEvmSxARXaWlZE
+2022-09-07T07:40:08.669Z [ERROR  ]: Cannot read properties of null (reading 'title')
+2022-09-07T07:43:31.797Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KEvmSxARXaWlZE
+2022-09-07T07:43:44.728Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T07:44:01.077Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T07:44:07.166Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhLxrVBtGLsnIC7AAAAY.SK-XPL9-TSj2AfGZMgSBU]
+2022-09-07T07:44:07.167Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhLxrVBtGLsnIC7AAAAY.SK-XPL9-TSj2AfGZMgSBU
+2022-09-07T07:44:24.406Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhL2LVBtGLsnIC-AAAAZEkbCgwvop9QasyvDrg-BAg]
+2022-09-07T07:44:24.408Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhL2LVBtGLsnIC-AAAAZEkbCgwvop9QasyvDrg-BAg
+2022-09-07T07:44:31.823Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T07:44:37.902Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhL5cVsBJHcnkumAAAAZakcjr6kBQqCq1hwsh4asA8]
+2022-09-07T07:44:37.903Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhL5cVsBJHcnkumAAAAZakcjr6kBQqCq1hwsh4asA8
+2022-09-07T07:44:49.926Z [INFO   ]: > Reinitated payment for Abhijith orderId : order_KEvre8aWBrQSJY
+2022-09-07T07:45:06.167Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhMAUR08nemRepeAAAAZkNZ07sLiahnNFjlhRFMtF8]
+2022-09-07T07:45:06.168Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhMAUR08nemRepeAAAAZkNZ07sLiahnNFjlhRFMtF8
+2022-09-07T07:48:25.755Z [ERROR  ]: Cannot read properties of null (reading 'formId')
+2022-09-07T07:51:58.025Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T07:52:02.167Z [INFO   ]: > Connected to MongoDB
+2022-09-07T07:52:02.167Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T09:15:03.962Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T09:15:09.181Z [INFO   ]: > Connected to MongoDB
+2022-09-07T09:15:09.181Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T09:16:25.646Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T09:16:30.554Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhhbrVBtGLsnIwkAAAAZzK29pnntw5.4WdfwPszOxU]
+2022-09-07T09:16:30.556Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhhbrVBtGLsnIwkAAAAZzK29pnntw5.4WdfwPszOxU
+2022-09-07T09:16:39.807Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhhd8VsBJHcnldCAAAAaAM1L4.EpKmnD9o3zQNsPTc]
+2022-09-07T09:16:39.808Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhhd8VsBJHcnldCAAAAaAM1L4.EpKmnD9o3zQNsPTc
+2022-09-07T09:17:26.288Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T09:17:31.369Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxhhq8VsBJHcnldSAAAAaQqzPy88R.NxoflrGaVp4F4]
+2022-09-07T09:17:31.371Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxhhq8VsBJHcnldSAAAAaQqzPy88R.NxoflrGaVp4F4
+2022-09-07T14:12:17.015Z [INFO   ]: > Connected to Paytm Servers
+2022-09-07T14:12:21.876Z [INFO   ]: > Connected to MongoDB
+2022-09-07T14:12:21.877Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-07T14:12:47.483Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T14:12:52.958Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxim5MVsBJHcnoCqAAAAaiDcHeS7wfv1dkmFh3I22IM]
+2022-09-07T14:12:52.960Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxim5MVsBJHcnoCqAAAAaiDcHeS7wfv1dkmFh3I22IM
+2022-09-07T14:13:02.112Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T14:32:42.780Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-07T14:33:00.597Z [INFO   ]: > Razor token created for Abhijith
+2022-09-07T14:33:06.624Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxiromTcOrtHlnQrAAAAa0ccEnwTkC35ccsO-ZtjLjY]
+2022-09-07T14:33:06.626Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxiromTcOrtHlnQrAAAAa0ccEnwTkC35ccsO-ZtjLjY
+2022-09-07T14:37:54.209Z [INFO   ]: > Paytm token created for Abhijith Kannan
+2022-09-07T14:38:09.546Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxis0bVBtGLsnLk6AAAAbMk3HDljO9IYuiXTscDpUCs]
+2022-09-07T14:38:09.548Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxis0bVBtGLsnLk6AAAAbMk3HDljO9IYuiXTscDpUCs
+2022-09-07T14:39:15.473Z [INFO   ]: > Razor token created for Abhijith Kannan
+2022-09-07T14:39:18.914Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxitFkR08nemRiIQAAAAbSMT4SLZMZDS2OkrMWC2MmM]
+2022-09-07T14:39:18.915Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxitFkR08nemRiIQAAAAbSMT4SLZMZDS2OkrMWC2MmM
+2022-09-07T14:39:32.155Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxitI2TcOrtHlnSCAAAAbhH6.wdq.Oiu3yTFIHlHdyw]
+2022-09-07T14:39:32.156Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxitI2TcOrtHlnSCAAAAbhH6.wdq.Oiu3yTFIHlHdyw

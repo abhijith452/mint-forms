@@ -8,7 +8,7 @@ const responseSchema = yup.object().shape({
   institute: yup.string().required(),
   designation: yup.string().required(),
   category: yup.string().required("Select a category"),
-  paperTitle: yup.string().required("Title of the paper is required"),
+  paperId: yup.string().required("ID of the paper is required"),
   papers: yup.string().required("Number of papers is required"),
   amount:yup.string().required("Select a category"),
   membershipId: yup.string(),

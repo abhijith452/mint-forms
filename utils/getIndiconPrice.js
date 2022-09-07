@@ -6,6 +6,7 @@ function getIndiconPrice(values) {
     indianAttendee:[6000,7000],
     foreignAuthor: [250, 300],
     foreignStudentAuthor: [200, 250],
+    foreignTest:[1,1]
   };
   var pricingStandard = {
     indianAuthorAcadamic: [10000, 11500],
@@ -14,6 +15,8 @@ function getIndiconPrice(values) {
     indianAttendee:[7000,8000],
     foreignAuthor: [300, 350],
     foreignStudentAuthor: [250, 300],
+    foreignTest:[1,1]
+
   };
   var pricingData =
     new Date().toISOString() > '2022-10-15T18:29:59.059Z'
@@ -89,6 +92,9 @@ function getIndiconPrice(values) {
     values.ieeeMember === 'No'
   ) {
     return pricingData.indianAttendee[1];
+  }
+  if(values.category==='Foreign Test Category'){
+    return pricingData.foreignTest[0]
   }
   else{
     return 9000

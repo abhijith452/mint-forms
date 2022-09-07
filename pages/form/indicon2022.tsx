@@ -13,6 +13,8 @@ import getIndiconPrice from '../../utils/getIndiconPrice';
 import getPaperPrice from '../../utils/getPaperPrice';
 import buildForm from '../../utils/buildForm';
 import Head from 'next/head';
+import displayPaytm from '../../utils/displayPaytm';
+import PhoneSelector from '../../UI-Components/PhoneSelector';
 import * as yup from 'yup';
 
 const Form: NextPage = () => {
@@ -23,7 +25,7 @@ const Form: NextPage = () => {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
 
-  const  [initialVal,setIntialVal] = useState({
+  const [initialVal, setIntialVal] = useState({
     name: '',
     email: '',
     phone: '',
@@ -31,21 +33,21 @@ const Form: NextPage = () => {
     institute: '',
     designation: '',
     category: '',
-    paperTitle: '',
+    paperId: '',
     papers: '1',
-    membershipId:''
+    membershipId: '',
   });
-  // var initialVal = {
+  // const [initialVal, setIntialVal] = useState({
   //   name: 'Abhijith',
   //   email: 'a@gmail.com',
-  //   phone: '7025263554',
+  //   phone: '+917025263554',
   //   ieeeMember: 'No',
   //   institute: 'CEK',
   //   designation: 'CEK',
   //   category: '',
-  //   paperTitle: 'ASDFASDFA',
+  //   paperId: 'ASDFASDFA',
   //   papers: '1',
-  // };
+  // });
 
   let schema = yup.object().shape({
     name: yup.string().required(),
@@ -55,18 +57,17 @@ const Form: NextPage = () => {
     institute: yup.string().required(),
     designation: yup.string().required(),
     category: yup.string().required(),
-    paperTitle: yup.string().required(),
+    paperId: yup.string().required(),
     papers: yup.string().required(),
-    membershipId:yup.string()
+    membershipId: yup.string(),
   });
-
 
   const PriceUpdater: Function = () => {
     const { values } = useFormikContext<any>();
 
     useEffect(() => {
       setAuthorPrice(getIndiconPrice(values));
-      setAddPapers(getPaperPrice(values))
+      setAddPapers(getPaperPrice(values));
     }, [values]);
   };
 
@@ -94,9 +95,7 @@ const Form: NextPage = () => {
             `/api/pay/razorpay/verify?formId=indicon2022&orderId=${response.razorpay_order_id}`,
             response
           );
-          router.push(
-            `/confirmation/indicon2022/${response.razorpay_order_id}`
-          );
+          router.push(`/confirmation/${response.razorpay_order_id}`);
         } catch (err: any) {
           setError(true);
           setErrorMsg(
@@ -108,7 +107,7 @@ const Form: NextPage = () => {
       prefill: {
         name: `${values.name}`,
         email: values.email,
-        contact: `+91${values.phone}`,
+        contact: `${values.phone}`,
       },
     };
     const paymentObject = new (window as any).Razorpay(options);
@@ -119,9 +118,7 @@ const Form: NextPage = () => {
           `/api/pay/razorpay/failed?formId=indicon2022`,
           response.error
         );
-        router.push(
-          `/confirmation/indicon2022/${response.error.metadata.order_id}`
-        );
+        router.push(`/confirmation/${response.error.metadata.order_id}`);
         paymentObject.close();
       } catch (err: any) {
         setError(true);
@@ -140,29 +137,42 @@ const Form: NextPage = () => {
         ? 'IEEE Member'
         : 'Non IEEE Member';
       data.amount = JSON.stringify({
-        currency:
-          values.category === 'Foreign Student Author' ||
-          values.category === 'Foreign Author'
-            ? 'USD'
-            : 'INR',
+        currency: values.category.includes('Foreign') ? 'USD' : 'INR',
         amount: authorPrice + addPapers,
       });
 
       const formData = buildForm(data);
-      const res = await axios.post(
-        '/api/pay/razorpay?formId=indicon2022',
-        formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-      );
 
-      if (res.data.amount === 0) {
-        router.push(`/confirmation/indicon2022/${res.data.id}`);
-      } else {
+      if (values.category.includes('Foreign')) {
+        const res = await axios.post(
+          '/api/pay/razorpay?formId=indicon2022',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        );
+
         displayRazorpay(res.data, values);
+      } else {
+        const res = await axios.post(
+          '/api/pay/paytm?formId=indicon2022',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        );
+        var details = {
+          action:
+            process.env.NODE_ENV === 'production'
+              ? 'https://securegw.paytm.in/order/process'
+              : 'https://securegw-stage.paytm.in/order/process',
+          params: res.data,
+        };
+        displayPaytm(details);
       }
     } catch (err: any) {
       setError(true);
@@ -231,12 +241,13 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  <FormInput
+            
+                  <PhoneSelector
                     label="Phone *"
                     placeholder="Enter your phone number"
                     value={values.phone}
                     onChange={(e: any) =>
-                      setFieldValue('phone', e.target.value)
+                      setFieldValue('phone', e)
                     }
                     errors={
                       getIn(errors, 'phone') !== undefined
@@ -281,7 +292,7 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                   <FormInput
+                  <FormInput
                     label="Enter membership ID"
                     placeholder="Enter your IEEE Membership ID "
                     value={values.membershipId}
@@ -295,15 +306,15 @@ const Form: NextPage = () => {
                     }
                   />
                   <FormInput
-                    label="Paper title *"
-                    placeholder="Enter your paper title "
-                    value={values.paperTitle}
+                    label="Paper ID *"
+                    placeholder="Enter your paper id "
+                    value={values.paperId}
                     onChange={(e: any) =>
-                      setFieldValue('paperTitle', e.target.value)
+                      setFieldValue('paperId', e.target.value)
                     }
                     errors={
-                      getIn(errors, 'paperTitle') !== undefined
-                        ? getIn(errors, 'paperTitle')
+                      getIn(errors, 'paperId') !== undefined
+                        ? getIn(errors, 'paperId')
                         : ''
                     }
                   />
@@ -327,6 +338,7 @@ const Form: NextPage = () => {
                       'Indian Non-Author Attendee',
                       'Foreign Author',
                       'Foreign Student Author',
+                      'Foreign Test Category',
                     ]}
                     value={values.category}
                     onChange={(e: any) => setFieldValue('category', e)}
@@ -340,10 +352,7 @@ const Form: NextPage = () => {
                   <PriceUpdater />
                   <h4 className={styles.priceLabel}>Amount to be paid</h4>
                   <h5 className={styles.price}>
-                    {values.category === 'Foreign Author' ||
-                    values.category === 'Foreign Student Author'
-                      ? '$ '
-                      : 'Rs '}
+                    {values.category.includes('Foreign') ? '$ ' : 'Rs '}
                     {authorPrice + addPapers}
                   </h5>
                   <br />

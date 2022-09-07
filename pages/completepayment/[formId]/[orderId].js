@@ -3,10 +3,8 @@ import axios from 'axios';
 import Loader from '../../../UI-Components/loader';
 import { useEffect, useState } from 'react';
 import Error from '../../../UI-Components/error';
-import loadScript from '../../../utils/razorpayScript';
 import { useRouter } from 'next/router'
-
-
+import loadScript from '../../../utils/razorpayScript';
 
 export default function CompletePayment() {
     
@@ -16,35 +14,8 @@ export default function CompletePayment() {
     const [paymentSus, setPaymentSus] = useState(false);
     const [errorMsg, setErrorMsg] = useState(false);
 
-
-    useEffect(() => {
-        async function getData() {
-            try {
-                var data = await axios.get(`/api/pay/razorpay/orderDetails?orderId=${router.query.orderId}&formId=${router.query.formId}`)
-                console.log(data)
-                if (data.data.status !== "paid") {
-                    displayRazorpay(data.data, data.data.userDetails)
-                }
-                else {
-                    setPaymentSus(true)
-                }
-                // displayRazorpay()
-
-            }
-            catch (err) {
-                setError(true)
-                setErrorMsg(err.response !== undefined ? err.response.data.error : err)
-                setLoading(false);
-            }
-        }
-        if(router.query.orderId!==undefined){
-            getData()
-        }
-    }, [router.query.orderId])
-
-
     async function displayRazorpay(data, values) {
-        console.log(values)
+
         const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
 
         if (!res) {
@@ -57,13 +28,13 @@ export default function CompletePayment() {
             currency: data.currency,
             amount: String(data.amount),
             order_id: data.id,
-            name: 'IEEE Job Fair 2022',
+            name: 'Indicon 2022',
             description: 'Thank you for registering',
 
             handler: async (response) => {
                 try {
                     await axios.post(`/api/pay/razorpay/verify?formId=${router.query.formId}&orderId=${response.razorpay_order_id}`, response)
-                    router.push(`/confirmation/${router.query.formId}/${response.razorpay_order_id}`)
+                    router.push(`/confirmation/${response.razorpay_order_id}`)
                 } catch (err) {
                     setError(true)
                     setErrorMsg(err.response !== undefined ? err.response.data.error : err)
@@ -74,7 +45,7 @@ export default function CompletePayment() {
             prefill: {
                 name: `${values.name}`,
                 email: values.email,
-                contact: `+91${values.phone}`
+                contact:  data.amount.currency === 'USD' ? '' : `+91${values.phone}`
             }
         }
         const paymentObject = new window.Razorpay(options)
@@ -92,6 +63,30 @@ export default function CompletePayment() {
             }
         });
     }
+
+
+    useEffect(() => {
+        async function getData() {
+            try {
+                var data = await axios.get(`/api/pay/razorpay/orderDetails?orderId=${router.query.orderId}&formId=${router.query.formId}`)
+                console.log(data)
+                if (data.data.status !== "paid") {
+                    displayRazorpay(data.data, data.data.userDetails)
+                }
+                else {
+                    setPaymentSus(true)
+                }
+            }
+            catch (err) {
+                setError(true)
+                setErrorMsg(err.response !== undefined ? err.response.data.error : err)
+                setLoading(false);
+            }
+        }
+        if(router.query.orderId!==undefined){
+            getData()
+        }
+    }, [router.query.orderId])
 
 
     return (
