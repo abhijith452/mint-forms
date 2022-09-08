@@ -8,7 +8,6 @@ const Response = require('../../../models/response');
 const Form = require('../../../models/forms');
 const notify = require('../notify');
 const generateRandomString = require('../../../utils/generateRandomString');
-// const moment = require('moment');
 const moment = require('moment-timezone');
 const validate = require('../../../middleware/validateResponse');
 const responseSchema = require('../../../validations/responseValidation');
@@ -47,17 +46,6 @@ router.post(
         ...(req.file !== undefined &&
           req.file.path !== undefined && { fileUpload: req.file.path }),
       });
-
-      // const formDetails = await Form.findOne({ formId: req.query.formId });
-
-      // const orderDetails = {
-      //   id: txnId.orderId,
-      //   amount: txnId.TXN_AMOUNT,
-      //   currency: 'INR',
-      //   created_at:  moment().unix(),
-      // };
-
-      // notify('pending', orderDetails, req.body, formDetails);
 
       response
         .save()
