@@ -25,29 +25,29 @@ const Form: NextPage = () => {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
 
-  // const [initialVal, setIntialVal] = useState({
-  //   name: '',
-  //   email: '',
-  //   phone: '',
-  //   ieeeMember: '',
-  //   institute: '',
-  //   designation: '',
-  //   category: '',
-  //   paperId: '',
-  //   papers: '1',
-  //   membershipId: '',
-  // });
   const [initialVal, setIntialVal] = useState({
-    name: 'Abhijith',
-    email: 'a@gmail.com',
-    phone: '+917025263554',
-    ieeeMember: 'No',
-    institute: 'CEK',
-    designation: 'CEK',
+    name: '',
+    email: '',
+    phone: '',
+    ieeeMember: '',
+    institute: '',
+    designation: '',
     category: '',
-    paperId: 'ASDFASDFA',
+    paperId: '',
     papers: '1',
+    membershipId: '',
   });
+  // const [initialVal, setIntialVal] = useState({
+  //   name: 'Abhijith',
+  //   email: 'a@gmail.com',
+  //   phone: '+917025263554',
+  //   ieeeMember: 'No',
+  //   institute: 'CEK',
+  //   designation: 'CEK',
+  //   category: '',
+  //   paperId: 'ASDFASDFA',
+  //   papers: '1',
+  // });
 
   let schema = yup.object().shape({
     name: yup.string().required(),
