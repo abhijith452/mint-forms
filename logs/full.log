@@ -1136,3 +1136,22 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-07T18:36:33.742Z [INFO   ]: > Paytm token created for Abhijith
 2022-09-07T18:36:50.949Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxjkwkR08nemRj4YAAAAcezjLs7NEgFNV3rODgC4SDk]
 2022-09-07T18:36:50.950Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxjkwkR08nemRj4YAAAAcezjLs7NEgFNV3rODgC4SDk
+2022-09-08T13:16:39.116Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T13:16:42.222Z [INFO   ]: > Connected to MongoDB
+2022-09-08T13:16:42.223Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T13:17:16.742Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-08T13:17:35.056Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxnrbmTcOrtHl0LCAAAAcseq65SxMoXh7GIUoqVBCkM]
+2022-09-08T13:17:35.058Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxnrbmTcOrtHl0LCAAAAcseq65SxMoXh7GIUoqVBCkM
+2022-09-08T13:18:18.294Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T13:18:21.266Z [INFO   ]: > Connected to MongoDB
+2022-09-08T13:18:21.266Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T13:18:35.784Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-08T13:18:56.964Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxnrwER08nemRuOkAAAAc.Kg.MDoF9O8ZAmKYQ9snPg]
+2022-09-08T13:18:56.964Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxnrwER08nemRuOkAAAAc.Kg.MDoF9O8ZAmKYQ9snPg
+2022-09-08T13:19:22.093Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T13:19:25.251Z [INFO   ]: > Connected to MongoDB
+2022-09-08T13:19:25.251Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T13:33:25.176Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T13:33:28.293Z [INFO   ]: > Connected to MongoDB
+2022-09-08T13:33:28.293Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T13:34:44.000Z [INFO   ]: > Paytm token created for Abhijith

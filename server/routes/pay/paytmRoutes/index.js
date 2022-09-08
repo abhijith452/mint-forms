@@ -8,8 +8,8 @@ const Response = require('../../../models/response');
 const Form = require('../../../models/forms');
 const notify = require('../notify');
 const generateRandomString = require('../../../utils/generateRandomString');
-const moment = require('moment');
-
+// const moment = require('moment');
+const moment = require('moment-timezone');
 const validate = require('../../../middleware/validateResponse');
 const responseSchema = require('../../../validations/responseValidation');
 const priceValidator = require('../../../middleware/priceValidator');
@@ -74,7 +74,7 @@ router.post(
 );
 
 router.post('/callback', async (req, res) => {
-  console.log(`${process.env.domain}confirmation/${req.body.ORDERID}`)
+
   try {
     var orderId = req.body.ORDERID;
     var readTimeout = 80000;
@@ -86,7 +86,6 @@ router.post('/callback', async (req, res) => {
       .build();
     var paytm = await Paytm.Payment.getPaymentStatus(paymentStatusDetail);
 
-    console.log(paytm.responseObject.body.resultInfo.resultStatus);
     if (
       paytm.responseObject.body.resultInfo.resultStatus === 'TXN_SUCCESS'
     ) {
@@ -95,7 +94,7 @@ router.post('/callback', async (req, res) => {
         {
           $set: {
             paymentStatus: 'success',
-            txnDate: moment(req.body.TXNDATE).toISOString(),
+            txnDate: moment(req.body.TXNDATE).tz("Asia/Kolkata").toISOString(),
             txnId: req.body.TXNID,
           },
         }
@@ -104,7 +103,7 @@ router.post('/callback', async (req, res) => {
       var data = {
         txnAmount: req.body.TXNAMOUNT,
         orderId: req.body.ORDERID,
-        txnDate: moment(req.body.TXNDATE).toISOString(),
+        txnDate: moment(req.body.TXNDATE).tz("Asia/Kolkata").toISOString(),
         txnId: req.body.TXNID,
       };
 
@@ -123,13 +122,13 @@ router.post('/callback', async (req, res) => {
     } else if (
       paytm.responseObject.body.resultInfo.resultStatus === 'TXN_FAILURE'
     ) {
-      console.log(paytm.responseObject.body.txnDate)
+     
       const response = await Response.findOneAndUpdate(
         { orderId: req.body.ORDERID },
         {
           $set: {
             paymentStatus: 'failure',
-            txnDate: moment(paytm.responseObject.body.txnDate).toISOString(),
+            txnDate: moment(paytm.responseObject.body.txnDate).tz("Asia/Kolkata").toISOString(),
             txnId: req.body.TXNID,
           },
         }
