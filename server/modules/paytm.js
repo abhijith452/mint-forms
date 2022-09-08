@@ -14,8 +14,9 @@ function connectToPaytm() {
     var client_id = process.env.client_id;
     var callbackUrl = process.env.Callback;
     Paytm.MerchantProperties.setCallbackUrl(callbackUrl);
-    Paytm.MerchantProperties.initialize(env, mid, key, client_id, website);
-    Paytm.MerchantProperties.setConnectionTimeout(5000);
+    const res = Paytm.MerchantProperties.initialize(env, mid, key, client_id, website);
+    // Paytm.MerchantProperties.setConnectionTimeout(5);
+
     logger.info(`> Connected to Paytm Servers`);
     return;
   } catch (e) {

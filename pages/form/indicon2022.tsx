@@ -180,6 +180,27 @@ const Form: NextPage = () => {
       setLoading(false);
     }
   };
+
+  const catgory =
+    process.env.NODE_ENV === 'production'
+      ? [
+          'Indian Author (Academia)',
+          'Indian Author (Industry)',
+          'Indian Student Author',
+          'Indian Non-Author Attendee',
+          'Foreign Author',
+          'Foreign Student Author',
+        ]
+      : [
+          'Indian Author (Academia)',
+          'Indian Author (Industry)',
+          'Indian Student Author',
+          'Indian Non-Author Attendee',
+          'Indian Test Category',
+          'Foreign Author',
+          'Foreign Student Author',
+          'Foreign Test Category',
+        ];
   return (
     <div className={styles.form}>
       <Head>
@@ -241,14 +262,12 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-            
+
                   <PhoneSelector
                     label="Phone *"
                     placeholder="Enter your phone number"
                     value={values.phone}
-                    onChange={(e: any) =>
-                      setFieldValue('phone', e)
-                    }
+                    onChange={(e: any) => setFieldValue('phone', e)}
                     errors={
                       getIn(errors, 'phone') !== undefined
                         ? getIn(errors, 'phone')
@@ -331,16 +350,7 @@ const Form: NextPage = () => {
                   />
                   <FormOptions
                     label="Category *"
-                    options={[
-                      'Indian Author (Academia)',
-                      'Indian Author (Industry)',
-                      'Indian Student Author',
-                      'Indian Non-Author Attendee',
-                      'Indian Test Category',
-                      'Foreign Author',
-                      'Foreign Student Author',
-                      'Foreign Test Category',
-                    ]}
+                    options={catgory}
                     value={values.category}
                     onChange={(e: any) => setFieldValue('category', e)}
                     errors={

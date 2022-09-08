@@ -1187,3 +1187,97 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-08T14:21:01.400Z [INFO   ]: > Connected to Paytm Servers
 2022-09-08T14:21:04.279Z [INFO   ]: > Connected to MongoDB
 2022-09-08T14:21:04.281Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:13:40.663Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:14:13.114Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:14:29.140Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:15:44.007Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:15:44.009Z [ERROR  ]: Exception caught:  Class constructor URLSearchParams cannot be invoked without 'new'
+2022-09-08T15:15:47.341Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:15:47.342Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:15:58.139Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:15:58.140Z [ERROR  ]: Exception caught:  Class constructor URLSearchParams cannot be invoked without 'new'
+2022-09-08T15:16:00.647Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:16:00.648Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:16:18.721Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:16:20.291Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-08T15:16:21.146Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:16:21.147Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:16:54.894Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:16:56.152Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-08T15:16:57.919Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:16:57.920Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:20:37.066Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:20:38.657Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-08T15:20:40.573Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:20:40.576Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:22:15.996Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:22:27.561Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-08T15:22:31.251Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:22:31.282Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:24:12.582Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:24:21.821Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:24:21.877Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:24:56.825Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:24:59.227Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:24:59.228Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:25:20.356Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:25:21.899Z [INFO   ]: > Connected to IEEE Servers
+2022-09-08T15:25:23.374Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:25:23.375Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:25:33.879Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:25:35.233Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-08T15:25:36.381Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:25:36.382Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:26:47.591Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:26:47.592Z [ERROR  ]: Exception caught:  Assignment to constant variable.
+2022-09-08T15:26:50.622Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:26:50.622Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:26:59.842Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:27:01.049Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-08T15:27:02.355Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:27:02.355Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:29:09.638Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:29:11.108Z [INFO   ]: > Connected to IEEE Servers
+2022-09-08T15:29:12.552Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:29:12.553Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:32:07.070Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:32:08.578Z [INFO   ]: > Connected to IEEE Servers
+2022-09-08T15:32:11.122Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:32:11.122Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:32:52.657Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:32:54.127Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-08T15:32:55.377Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:32:55.378Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:33:02.602Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:33:04.777Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:33:04.778Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:35:36.870Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:35:40.034Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:35:40.035Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:36:17.646Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:36:19.974Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:36:19.975Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:41:52.533Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:41:55.733Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:41:55.733Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:42:38.366Z [INFO   ]: > Paytm token created for sadfas
+2022-09-08T15:42:51.238Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxoNe7VBtGLsnY9UAAAAeNuxps6cmnzCiPp3aYqA-mw]
+2022-09-08T15:42:51.239Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxoNe7VBtGLsnY9UAAAAeNuxps6cmnzCiPp3aYqA-mw
+2022-09-08T15:43:52.876Z [INFO   ]: > Paytm token created for SADFA
+2022-09-08T15:44:04.898Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:44:07.924Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:44:07.924Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:44:39.572Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxoN50R08nemRvtSAAAAeQ6Pya29Tu-ZFpzNQZwQuAk]
+2022-09-08T15:44:39.575Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxoN50R08nemRvtSAAAAeQ6Pya29Tu-ZFpzNQZwQuAk
+2022-09-08T15:45:26.676Z [INFO   ]: > Paytm token created for sdDAf
+2022-09-08T15:48:55.774Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxoO57VBtGLsnY-WAAAAekvhytpHNOzzhl.ukWUDKX0]
+2022-09-08T15:48:55.775Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxoO57VBtGLsnY-WAAAAekvhytpHNOzzhl.ukWUDKX0
+2022-09-08T15:49:33.733Z [INFO   ]: > Paytm token created for a@gmail.com
+2022-09-08T15:50:01.943Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxoPKbVBtGLsnY-cAAAAe2lv8Za69b9kEPZNBup7adk]
+2022-09-08T15:50:01.945Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxoPKbVBtGLsnY-cAAAAe2lv8Za69b9kEPZNBup7adk
+2022-09-08T15:50:49.131Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:50:52.228Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:50:52.228Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T15:51:00.543Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T15:51:02.841Z [INFO   ]: > Connected to MongoDB
+2022-09-08T15:51:02.841Z [INFO   ]: > Ready on http://localhost:3000
