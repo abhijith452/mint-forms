@@ -35,7 +35,6 @@ function content(status, data, applicant,formDetails) {
     }
 
     else if (status === "pending") {
-        console.log(data)
 
         return {
             from: process.env.NODE_ENV === "production" ? process.env.MAIL_USER : "graciela.keeling37@ethereal.email",

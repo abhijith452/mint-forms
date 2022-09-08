@@ -179,8 +179,8 @@ router.post('/failed', async (req, res) => {
         },
       }
     );
-
-    notify('failed', data, response, response);
+    const formDetails = await Form.findOne({ formId: req.query.formId });
+    notify('failed', data, response, formDetails);
 
     response
       .save()

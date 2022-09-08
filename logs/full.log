@@ -1155,3 +1155,35 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-08T13:33:28.293Z [INFO   ]: > Connected to MongoDB
 2022-09-08T13:33:28.293Z [INFO   ]: > Ready on http://localhost:3000
 2022-09-08T13:34:44.000Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-08T14:14:51.070Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T14:14:54.515Z [INFO   ]: > Connected to MongoDB
+2022-09-08T14:14:54.517Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T14:15:08.329Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-08T14:15:21.721Z [ERROR  ]: Cannot read properties of null (reading 'title')
+2022-09-08T14:15:36.065Z [ERROR  ]: Cannot read properties of null (reading 'title')
+2022-09-08T14:16:19.719Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T14:16:22.881Z [INFO   ]: > Connected to MongoDB
+2022-09-08T14:16:22.882Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T14:16:37.798Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-08T14:17:48.833Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T14:17:51.969Z [INFO   ]: > Connected to MongoDB
+2022-09-08T14:17:51.970Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T14:18:02.950Z [INFO   ]: > Razor token created for Abhijith
+2022-09-08T14:18:06.939Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxn5nkR08nemRu4wAAAAdHaRDUt87qqfElUOPUYf-.g]
+2022-09-08T14:18:06.941Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxn5nkR08nemRu4wAAAAdHaRDUt87qqfElUOPUYf-.g
+2022-09-08T14:18:26.264Z [INFO   ]: > Razor token created for Abhijith
+2022-09-08T14:18:30.653Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxn5tmTcOrtHl0yWAAAAdRIxz1fMIuqm3br7.VSzjt0]
+2022-09-08T14:18:30.655Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxn5tmTcOrtHl0yWAAAAdRIxz1fMIuqm3br7.VSzjt0
+2022-09-08T14:18:40.998Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxn5wLVBtGLsnYJRAAAAdmxmRc5MSVSptdpLXKVKyXQ]
+2022-09-08T14:18:41.000Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxn5wLVBtGLsnYJRAAAAdmxmRc5MSVSptdpLXKVKyXQ
+2022-09-08T14:19:10.497Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-08T14:19:21.123Z [ERROR  ]: Cannot read properties of null (reading 'title')
+2022-09-08T14:20:09.041Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T14:20:12.160Z [INFO   ]: > Connected to MongoDB
+2022-09-08T14:20:12.161Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-08T14:20:23.307Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-08T14:20:37.426Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxn6NWTcOrtHl0y3AAAAdxJ3IQaoOItVJP0tIGOKAaA]
+2022-09-08T14:20:37.427Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxn6NWTcOrtHl0y3AAAAdxJ3IQaoOItVJP0tIGOKAaA
+2022-09-08T14:21:01.400Z [INFO   ]: > Connected to Paytm Servers
+2022-09-08T14:21:04.279Z [INFO   ]: > Connected to MongoDB
+2022-09-08T14:21:04.281Z [INFO   ]: > Ready on http://localhost:3000

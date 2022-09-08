@@ -82,7 +82,7 @@ router.post('/callback', async (req, res) => {
         {
           $set: {
             paymentStatus: 'success',
-            txnDate: moment(req.body.TXNDATE).tz("Asia/Kolkata").toISOString(),
+            txnDate: moment().tz("Asia/Kolkata").toISOString(),
             txnId: req.body.TXNID,
           },
         }
@@ -91,7 +91,7 @@ router.post('/callback', async (req, res) => {
       var data = {
         txnAmount: req.body.TXNAMOUNT,
         orderId: req.body.ORDERID,
-        txnDate: moment(req.body.TXNDATE).tz("Asia/Kolkata").toISOString(),
+        txnDate: moment().tz("Asia/Kolkata").toISOString(),
         txnId: req.body.TXNID,
       };
 
@@ -116,11 +116,19 @@ router.post('/callback', async (req, res) => {
         {
           $set: {
             paymentStatus: 'failure',
-            txnDate: moment(paytm.responseObject.body.txnDate).tz("Asia/Kolkata").toISOString(),
+            txnDate: moment().tz("Asia/Kolkata").toISOString(),
             txnId: req.body.TXNID,
           },
         }
       );
+      var data = {
+        txnAmount: req.body.TXNAMOUNT,
+        orderId: req.body.ORDERID,
+        txnDate: moment().toISOString(),
+      };
+      const formDetails = await Form.findOne({ formId: response.formId  });
+
+      notify('failed', data, response, formDetails);
       response
         .save()
         .then(() =>
