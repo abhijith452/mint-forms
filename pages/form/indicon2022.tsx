@@ -33,7 +33,9 @@ const Form: NextPage = () => {
     institute: '',
     designation: '',
     category: '',
-    paperId: '',
+    paperId1: '',
+    paperId2: '',
+    paperId3: '',
     papers: '1',
     membershipId: '',
   });
@@ -45,7 +47,9 @@ const Form: NextPage = () => {
   //   institute: 'CEK',
   //   designation: 'CEK',
   //   category: '',
-  //   paperId: 'ASDFASDFA',
+  //  paperId1: '',
+  // paperId2: '',
+  // paperId3: '',
   //   papers: '1',
   // });
 
@@ -57,9 +61,20 @@ const Form: NextPage = () => {
     institute: yup.string().required(),
     designation: yup.string().required(),
     category: yup.string().required(),
-    paperId: yup.string().required(),
+    paperId1: yup.string().required(),
+    paperId2: yup.string().when('papers', {
+      is: (papers:any) => Number(papers) >= 2,
+      then: yup.string().required(),
+    }),
+    paperId3: yup.string().when('papers', {
+      is: (papers:any) => Number(papers) >= 3,
+      then: yup.string().required(),
+    }),
     papers: yup.string().required(),
-    membershipId: yup.string(),
+    membershipId: yup.string().when('ieeeMember', {
+      is: 'Yes',
+      then: yup.string().required(),
+    }),
   });
 
   const PriceUpdater: Function = () => {
@@ -324,19 +339,7 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  <FormInput
-                    label="Paper ID *"
-                    placeholder="Enter your paper id "
-                    value={values.paperId}
-                    onChange={(e: any) =>
-                      setFieldValue('paperId', e.target.value)
-                    }
-                    errors={
-                      getIn(errors, 'paperId') !== undefined
-                        ? getIn(errors, 'paperId')
-                        : ''
-                    }
-                  />
+
                   <FormOptions
                     label="Number of papers*"
                     options={['1', '2', '3']}
@@ -348,6 +351,49 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
+                  <FormInput
+                    label="Paper ID 1*"
+                    placeholder="Enter your paper id 1"
+                    value={values.paperId1}
+                    onChange={(e: any) =>
+                      setFieldValue('paperId1', e.target.value)
+                    }
+                    errors={
+                      getIn(errors, 'paperId1') !== undefined
+                        ? getIn(errors, 'paperId1')
+                        : ''
+                    }
+                  />
+                  {Number(values.papers) >= 2 ? (
+                    <FormInput
+                      label="Paper ID 2*"
+                      placeholder="Enter your paper id 2"
+                      value={values.paperId2}
+                      onChange={(e: any) =>
+                        setFieldValue('paperId2', e.target.value)
+                      }
+                      errors={
+                        getIn(errors, 'paperId2') !== undefined
+                          ? getIn(errors, 'paperId2')
+                          : ''
+                      }
+                    />
+                  ) : null}
+                  {Number(values.papers) >= 3 ? (
+                    <FormInput
+                      label="Paper ID 3*"
+                      placeholder="Enter your paper id 3"
+                      value={values.paperId3}
+                      onChange={(e: any) =>
+                        setFieldValue('paperId3', e.target.value)
+                      }
+                      errors={
+                        getIn(errors, 'paperId3') !== undefined
+                          ? getIn(errors, 'paperId3')
+                          : ''
+                      }
+                    />
+                  ) : null}
                   <FormOptions
                     label="Category *"
                     options={catgory}
