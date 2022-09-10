@@ -1,0 +1,15 @@
+.label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+.inputContainer {
+    margin-bottom: 20px;
+    
+}
+.errorMsg{
+    font-size: 12px;
+    color: red;
+}

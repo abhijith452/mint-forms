@@ -1,0 +1,40 @@
+.label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input {
+    
+    width: 100%;
+    padding: 10px 20px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    border: 1px rgb(222, 222, 222) solid;
+}
+
+.inputContainer {
+  
+    margin-bottom: 20px;
+}
+.container{
+    position: relative;
+}
+.errorMsg {
+    font-size: 12px;
+    color: red;
+}
+.button {
+    position: absolute;
+    transform: translateY(-50%);
+    height: 100%;
+    border: none;
+    background-color: var(--blue-secondary);
+    border-radius: 10px;
+    padding: 10px 20px;
+    top: 50%;
+    right: 0;
+    font-weight: 600;
+    color: var(--background-color);
+}

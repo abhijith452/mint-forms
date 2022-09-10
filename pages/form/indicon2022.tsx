@@ -15,6 +15,9 @@ import buildForm from '../../utils/buildForm';
 import Head from 'next/head';
 import displayPaytm from '../../utils/displayPaytm';
 import PhoneSelector from '../../UI-Components/PhoneSelector';
+import FormSelect from '../../UI-Components/FormSelect';
+import FormIEEE from '../../UI-Components/FormIEEE'
+import getCountryList from '../../utils/getCountryList';
 import * as yup from 'yup';
 
 const Form: NextPage = () => {
@@ -30,6 +33,12 @@ const Form: NextPage = () => {
     email: '',
     phone: '',
     ieeeMember: '',
+    address: '',
+    gender: '',
+    country: '',
+    state: '',
+    pincode: '',
+    food: '',
     institute: '',
     designation: '',
     category: '',
@@ -38,18 +47,25 @@ const Form: NextPage = () => {
     paperId3: '',
     papers: '1',
     membershipId: '',
+    passport: '',
   });
   // const [initialVal, setIntialVal] = useState({
   //   name: 'Abhijith',
-  //   email: 'a@gmail.com',
+  //   email: 'abhijithkannan452@gmail.com',
   //   phone: '+917025263554',
   //   ieeeMember: 'No',
   //   institute: 'CEK',
   //   designation: 'CEK',
+  //   address: 'XYZ Houser',
+  //   gender: 'Male',
+  //   country: 'India',
+  //   state: 'Kerala',
+  //   pincode: '686019',
+  //   food: 'Veg',
   //   category: '',
-  //  paperId1: '',
-  // paperId2: '',
-  // paperId3: '',
+  //   paperId1: '',
+  //   paperId2: '',
+  //   paperId3: '',
   //   papers: '1',
   // });
 
@@ -58,21 +74,32 @@ const Form: NextPage = () => {
     email: yup.string().required().email(),
     phone: yup.string().required(),
     ieeeMember: yup.string().required(),
+    address: yup.string().required(),
+    gender: yup.string().required(),
+    country: yup.string().required(),
+    state: yup.string().required(),
+    food: yup.string().required(),
+    pincode: yup.string().required(),
     institute: yup.string().required(),
     designation: yup.string().required(),
     category: yup.string().required(),
     paperId1: yup.string().required(),
     paperId2: yup.string().when('papers', {
-      is: (papers:any) => Number(papers) >= 2,
+      is: (papers: any) => Number(papers) >= 2,
       then: yup.string().required(),
     }),
     paperId3: yup.string().when('papers', {
-      is: (papers:any) => Number(papers) >= 3,
+      is: (papers: any) => Number(papers) >= 3,
       then: yup.string().required(),
     }),
     papers: yup.string().required(),
     membershipId: yup.string().when('ieeeMember', {
       is: 'Yes',
+      then: yup.string().required(),
+    }),
+    passport: yup.string().when('category', {
+      is: (category: any) =>
+        category !== undefined && category.includes('Foreign'),
       then: yup.string().required(),
     }),
   });
@@ -289,6 +316,67 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
+                  <FormOptions
+                    label="Gender*"
+                    options={['Male', 'Female']}
+                    value={values.gender}
+                    onChange={(e: any) => setFieldValue('gender', e)}
+                    errors={
+                      getIn(errors, 'gender') !== undefined
+                        ? getIn(errors, 'gender')
+                        : ''
+                    }
+                  />
+                  <FormInput
+                    label="Permanent address *"
+                    placeholder="Enter your permanent address"
+                    value={values.address}
+                    onChange={(e: any) =>
+                      setFieldValue('address', e.target.value)
+                    }
+                    errors={
+                      getIn(errors, 'address') !== undefined
+                        ? getIn(errors, 'address')
+                        : ''
+                    }
+                  />
+                  <FormSelect
+                    label="Country *"
+                    options={getCountryList}
+                    value={{ label: values.country, value: values.country }}
+                    onChange={(e: any) => setFieldValue('country', e.value)}
+                    errors={
+                      getIn(errors, 'country') !== undefined
+                        ? getIn(errors, 'country')
+                        : ''
+                    }
+                  />
+                  <FormInput
+                    label="State/Province *"
+                    placeholder="Enter your state or province"
+                    value={values.state}
+                    onChange={(e: any) =>
+                      setFieldValue('state', e.target.value)
+                    }
+                    errors={
+                      getIn(errors, 'state') !== undefined
+                        ? getIn(errors, 'state')
+                        : ''
+                    }
+                  />
+                  <FormInput
+                    label="Pincode *"
+                    placeholder="Enter your pincode"
+                    value={values.pincode}
+                    onChange={(e: any) =>
+                      setFieldValue('pincode', e.target.value)
+                    }
+                    errors={
+                      getIn(errors, 'pincode') !== undefined
+                        ? getIn(errors, 'pincode')
+                        : ''
+                    }
+                  />
                   <FormInput
                     label="Institute *"
                     placeholder="Enter your institution"
@@ -336,6 +424,30 @@ const Form: NextPage = () => {
                     errors={
                       getIn(errors, 'membershipId') !== undefined
                         ? getIn(errors, 'membershipId')
+                        : ''
+                    }
+                  />
+                   {/* <FormIEEE
+                    label="Enter membership ID"
+                    placeholder="Enter your IEEE Membership ID "
+                    value={values.membershipId}
+                    onChange={(e: any) =>
+                      setFieldValue('membershipId', e.target.value)
+                    }
+                    errors={
+                      getIn(errors, 'membershipId') !== undefined
+                        ? getIn(errors, 'membershipId')
+                        : ''
+                    }
+                  /> */}
+                  <FormOptions
+                    label="Food preference *"
+                    options={['Veg', 'Non Veg']}
+                    value={values.food}
+                    onChange={(e: any) => setFieldValue('food', e)}
+                    errors={
+                      getIn(errors, 'food') !== undefined
+                        ? getIn(errors, 'food')
                         : ''
                     }
                   />
@@ -405,6 +517,22 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
+                  {values.category !== undefined &&
+                  values.category.includes('Foreign') ? (
+                    <FormInput
+                      label="Passport number *"
+                      placeholder="Enter your passport number"
+                      value={values.passport}
+                      onChange={(e: any) =>
+                        setFieldValue('passport', e.target.value)
+                      }
+                      errors={
+                        getIn(errors, 'passport') !== undefined
+                          ? getIn(errors, 'passport')
+                          : ''
+                      }
+                    />
+                  ) : null}
 
                   <PriceUpdater />
                   <h4 className={styles.priceLabel}>Amount to be paid</h4>

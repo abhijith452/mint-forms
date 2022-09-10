@@ -1303,3 +1303,16 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-09T04:27:36.189Z [INFO   ]: > Connected to Paytm Servers
 2022-09-09T04:27:37.691Z [INFO   ]: > Connected to MongoDB
 2022-09-09T04:27:37.692Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T06:59:35.926Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T06:59:37.445Z [INFO   ]: > Connected to MongoDB
+2022-09-10T06:59:37.445Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T09:16:45.765Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T09:16:48.263Z [INFO   ]: > Connected to MongoDB
+2022-09-10T09:16:48.264Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T09:17:03.999Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T09:17:06.562Z [INFO   ]: > Connected to MongoDB
+2022-09-10T09:17:06.562Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T09:19:20.679Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-10T09:19:48.603Z [INFO   ]: > Razor token created for Abhijith
+2022-09-10T09:19:52.696Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxykEGTcOrtHmIw-AAAAfdLgtYQ7EfsppyMJQyoHziQ]
+2022-09-10T09:19:52.698Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxykEGTcOrtHmIw-AAAAfdLgtYQ7EfsppyMJQyoHziQ

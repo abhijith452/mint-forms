@@ -4,6 +4,12 @@ const responseSchema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().required().email(),
   phone: yup.string().required(),
+  address: yup.string().required(),
+  gender: yup.string().required(),
+  country: yup.string().required(),
+  state: yup.string().required(),
+  food: yup.string().required(),
+  pincode: yup.string().required(),
   ieeeMember: yup.string().required('Are you an IEEE Member is required'),
   institute: yup.string().required(),
   designation: yup.string().required(),
@@ -21,6 +27,10 @@ const responseSchema = yup.object().shape({
   amount: yup.string().required('Select a category'),
   membershipId: yup.string().when('ieeeMember', {
     is: 'Yes',
+    then: yup.string().required(),
+  }),
+  passport: yup.string().when('category', {
+    is: (category) => category !== undefined && category.includes('Foreign'),
     then: yup.string().required(),
   }),
 });
