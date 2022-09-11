@@ -8,7 +8,7 @@
 /credgoogle.json
 # testing
 /coverage
-
+./logs
 # next.js
 
 /out/
