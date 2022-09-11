@@ -1926,3 +1926,7 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-11T14:15:41.292Z [INFO   ]: > Connected to Paytm Servers
 2022-09-11T14:15:43.273Z [INFO   ]: > Connected to MongoDB
 2022-09-11T14:15:43.274Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T14:53:27.141Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T14:53:29.271Z [INFO   ]: > Connected to MongoDB
+2022-09-11T14:53:29.272Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T14:54:54.330Z [INFO   ]: > Connected to IEEE Servers

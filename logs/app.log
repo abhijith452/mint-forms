@@ -3176,3 +3176,5 @@ Response Received: <html>
 [2022-09-11T14:15:28.512Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: Setting Environment for STAGE
 [2022-09-11T14:15:41.291Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: initialize called
 [2022-09-11T14:15:41.292Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: Setting Environment for STAGE
+[2022-09-11T14:53:27.140Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: initialize called
+[2022-09-11T14:53:27.141Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: Setting Environment for STAGE

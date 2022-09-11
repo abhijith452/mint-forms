@@ -90,7 +90,7 @@ const Form: NextPage = () => {
     ieeeMember: yup.string().required(),
     validIEEE: yup.string().when('ieeeMember', {
       is: 'Yes',
-      then: yup.string().required(),
+      then: yup.string().required("Verify membership ID"),
     }),
     address: yup.string().required(),
     gender: yup.string().required(),
@@ -461,21 +461,8 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  {/* <FormInput
-                    label="Enter membership ID"
-                    placeholder="Enter your IEEE Membership ID "
-                    value={values.membershipId}
-                    onChange={(e: any) =>
-                      setFieldValue('membershipId', e.target.value)
-                    }
-                    errors={
-                      getIn(errors, 'membershipId') !== undefined
-                        ? getIn(errors, 'membershipId')
-                        : ''
-                    }
-                  /> */}
                   <FormIEEE
-                    label="Enter membership ID"
+                    label="If yes, enter your membership ID"
                     placeholder="Enter your IEEE Membership ID "
                     value={values.membershipId}
                     onChange={(e: any) =>

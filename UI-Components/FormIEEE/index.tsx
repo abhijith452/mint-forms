@@ -28,10 +28,20 @@ const FormIEEE: NextPage<props> = ({
     setLoading(true);
     try {
       const res = await axios.get(`/api/getMemberStatus?id=${value}`);
-      if (res.data.MemberStatus !== undefined) {
+      if (
+        res.data.MemberStatus !== undefined &&
+        res.data.MemberStatus === 'Active'
+      ) {
         setVerified(true);
         onChangeValid('true');
         setErr('');
+      }
+      if (
+        res.data.MemberStatus === 'Inactive' ||
+        res.data.MemberStatus === 'Not Applicable'
+      ) {
+        setVerified(false);
+        setErr(`membership status : ${res.data.MemberStatus}`);
       }
       if (res.data.reasons !== undefined) {
         setVerified(false);
@@ -89,7 +99,7 @@ const FormIEEE: NextPage<props> = ({
         {err ? (
           <>
             {String(err)}
-            <br/>
+            <br />
           </>
         ) : null}
         {vaildError}
