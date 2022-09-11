@@ -1,12 +1,15 @@
 import type { NextPage } from 'next';
+import axios from 'axios';
 import styles from './styles.module.css';
-
+import { useState } from 'react';
 interface props {
   label: string;
   placeholder: string;
   value: string;
   onChange: Function;
+  onChangeValid: Function;
   errors: string | boolean;
+  vaildError: string | boolean;
 }
 
 const FormIEEE: NextPage<props> = ({
@@ -14,8 +17,35 @@ const FormIEEE: NextPage<props> = ({
   placeholder,
   value,
   onChange,
+  onChangeValid,
   errors,
+  vaildError,
 }) => {
+  const [verified, setVerified] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState('');
+  const handleValidId = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(`/api/getMemberStatus?id=${value}`);
+      if (res.data.MemberStatus !== undefined) {
+        setVerified(true);
+        onChangeValid('true');
+        setErr('');
+      }
+      if (res.data.reasons !== undefined) {
+        setVerified(false);
+        setErr(res.data.reasons[0].message);
+      }
+      setLoading(false);
+      console.log(res);
+    } catch (err) {
+      setLoading(false);
+
+      console.log(err);
+    }
+  };
+
   return (
     <div className={styles.inputContainer}>
       <p className={styles.label}>{label}</p>
@@ -31,10 +61,39 @@ const FormIEEE: NextPage<props> = ({
           onChange={(e) => onChange(e)}
           className={styles.input}
         />
-        <button className={styles.button}>Verify</button>
+        <button
+          style={{
+            backgroundColor: verified
+              ? 'rgb(0, 231, 0)'
+              : 'var(--blue-secondary)',
+          }}
+          onClick={() => {
+            if (!loading) {
+              handleValidId();
+            }
+          }}
+          className={styles.button}
+        >
+          {loading ? (
+            <div className={styles.loader}></div>
+          ) : verified ? (
+            'Verified'
+          ) : (
+            'Verify'
+          )}
+        </button>
       </div>
 
-      <p className={styles.errorMsg}>{errors}</p>
+      <p className={styles.errorMsg}>
+        {errors} <br />{' '}
+        {err ? (
+          <>
+            {String(err)}
+            <br/>
+          </>
+        ) : null}
+        {vaildError}
+      </p>
     </div>
   );
 };

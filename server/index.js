@@ -3,24 +3,24 @@ const express = require('express');
 const logger = require('./utils/logger');
 const next = require('next');
 const bodyParser = require('body-parser');
+const axios = require('axios');
 var cors = require('cors');
 const mongoose = require('mongoose');
 const { connectToPaytm } = require('./modules/paytm');
-// const { connectToIEEE } = require('./modules/ieee');
-
+const checkIEEEConnection = require('./middleware/ieeeConnect');
+const ieeeConnection = require('./modules/ieee');
 const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-//Routes import
+
 const payRoute = require('./routes/pay');
 const formRoute = require('./routes/form');
 
-app.prepare().then(() => {
+app.prepare().then(async () => {
   const server = express();
   server.use(cors());
   connectToPaytm();
-  // connectToIEEE();
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
   server.route('/files/*').get((req, res) => {
@@ -31,6 +31,27 @@ app.prepare().then(() => {
   });
   server.get('/api/test', (req, res) => {
     return res.send('Hi');
+  });
+  server.get('/api/getMemberStatus', checkIEEEConnection, async (req, res) => {
+    try {
+      const url =
+        process.env.NODE_ENV === 'production'
+          ? 'https://services13.ieee.org/RST/Customer/getstatus'
+          : 'https://services11.ieee.org/RST/Customer/getstatus';
+      var data = {
+        MemberID: req.query.id,
+      };
+      const response = await axios.post(url, data, {
+        headers: {
+          Authorization: `Bearer ${ieeeConnection.ieeeToken}`,
+        },
+      });
+      return res.send(response.data);
+    } catch (err) {
+      logger.error('Exception caught: ', err);
+      console.log(err);
+      return res.status(400).send(err);
+    }
   });
 
   server.use('/api/pay', payRoute);

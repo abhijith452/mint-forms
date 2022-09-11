@@ -102,7 +102,7 @@ function getIndiconPrice(values) {
     return pricingData.indianTest[0]
   }
   else{
-    return 9000
+    return NaN
   }
 }
 module.exports = getIndiconPrice;

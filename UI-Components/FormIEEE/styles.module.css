@@ -30,7 +30,6 @@
     transform: translateY(-50%);
     height: 100%;
     border: none;
-    background-color: var(--blue-secondary);
     border-radius: 10px;
     padding: 10px 20px;
     top: 50%;
@@ -38,3 +37,16 @@
     font-weight: 600;
     color: var(--background-color);
 }
+.loader {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

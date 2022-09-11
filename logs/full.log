@@ -1316,3 +1316,610 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-10T09:19:48.603Z [INFO   ]: > Razor token created for Abhijith
 2022-09-10T09:19:52.696Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYxykEGTcOrtHmIw-AAAAfdLgtYQ7EfsppyMJQyoHziQ]
 2022-09-10T09:19:52.698Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYxykEGTcOrtHmIw-AAAAfdLgtYQ7EfsppyMJQyoHziQ
+2022-09-10T16:38:38.850Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:38:41.514Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:38:41.514Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:39:59.968Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:40:15.564Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:40:16.875Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-10T16:40:17.745Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:40:17.745Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:40:33.102Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:40:34.154Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-10T16:40:34.985Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:40:34.986Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:40:45.782Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:40:46.866Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-10T16:40:47.748Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:40:47.749Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:42:07.707Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:42:09.038Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-10T16:42:09.966Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:42:09.966Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:42:58.351Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:42:59.601Z [ERROR  ]: Exception caught:  Request failed with status code 400
+2022-09-10T16:43:00.219Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:43:00.220Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:43:11.088Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:43:12.778Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:43:13.471Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:43:13.472Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:44:23.794Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:44:25.212Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:44:26.069Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:44:26.070Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:44:31.821Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:44:33.188Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:44:37.050Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:44:38.364Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:44:38.888Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:44:38.889Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:50:18.774Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:50:20.319Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:50:20.879Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:50:20.880Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:50:43.952Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:50:45.336Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:50:45.754Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:50:45.755Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:50:58.104Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:50:59.486Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:50:59.972Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:50:59.973Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:51:07.374Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:51:08.664Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:51:09.220Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:51:09.221Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:55:39.156Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:55:40.344Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:55:41.411Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:55:41.412Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:55:53.938Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:55:55.027Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:55:55.640Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:55:55.640Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:56:03.580Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:56:04.636Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:56:05.389Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:56:05.390Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:56:12.164Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:56:13.213Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:56:13.828Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:56:13.829Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:56:22.121Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:56:26.733Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:56:27.849Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:56:28.490Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:56:28.491Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:56:41.959Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:56:48.439Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:56:49.781Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:56:50.102Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:56:50.103Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:56:57.752Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:56:59.048Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:56:59.825Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:56:59.826Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:57:08.137Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:57:09.464Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:57:09.788Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:57:09.788Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:57:43.709Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:57:44.801Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:57:45.981Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:57:45.982Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:57:50.687Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:57:51.806Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:58:03.875Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:58:04.992Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:58:05.595Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:58:05.596Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:58:16.403Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:58:17.574Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:58:18.113Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:58:18.114Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:58:23.041Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:58:24.131Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:58:24.733Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:58:24.733Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:58:28.384Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:58:30.260Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:58:30.261Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:58:31.307Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:58:37.253Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:58:38.595Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:58:39.114Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:58:39.115Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T16:58:58.025Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T16:58:59.084Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T16:58:59.903Z [INFO   ]: > Connected to MongoDB
+2022-09-10T16:58:59.904Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T17:05:21.122Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T17:05:22.843Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T17:05:23.426Z [INFO   ]: > Connected to MongoDB
+2022-09-10T17:05:23.426Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T17:05:48.990Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T17:05:50.376Z [ERROR  ]: Exception caught:  Assignment to constant variable.
+2022-09-10T17:05:50.883Z [INFO   ]: > Connected to MongoDB
+2022-09-10T17:05:50.883Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T17:06:13.514Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T17:06:14.993Z [ERROR  ]: Exception caught:  Assignment to constant variable.
+2022-09-10T17:06:15.272Z [INFO   ]: > Connected to MongoDB
+2022-09-10T17:06:15.273Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T17:06:36.441Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T17:06:37.818Z [ERROR  ]: Exception caught:  Assignment to constant variable.
+2022-09-10T17:06:38.517Z [INFO   ]: > Connected to MongoDB
+2022-09-10T17:06:38.517Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T17:06:54.851Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T17:06:56.170Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T17:06:56.546Z [INFO   ]: > Connected to MongoDB
+2022-09-10T17:06:56.547Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:23:24.952Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:23:33.992Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:23:35.842Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:23:35.843Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:23:36.979Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:24:11.643Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:24:12.774Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:24:13.387Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:24:13.388Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:24:21.484Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:24:22.820Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:24:23.167Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:24:23.167Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:24:41.506Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:24:42.656Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:24:43.460Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:24:43.461Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:24:48.687Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:24:49.774Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:24:50.383Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:24:50.384Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:25:06.796Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:25:12.241Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:25:13.369Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:25:13.918Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:25:13.919Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:25:52.166Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:25:53.356Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:26:00.292Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:26:01.417Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:26:07.815Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:26:09.150Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:26:13.654Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:26:18.495Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:26:19.828Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:26:20.181Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:26:20.182Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:26:31.117Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:26:32.430Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:26:32.978Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:26:32.978Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:28:33.079Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:28:34.633Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:28:35.250Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:28:35.251Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:30:42.049Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:30:43.399Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:30:47.898Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:30:49.402Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:30:49.648Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:30:49.649Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:31:00.082Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:31:01.417Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:31:01.696Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:31:01.697Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T18:31:28.101Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T18:31:29.439Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T18:31:29.747Z [INFO   ]: > Connected to MongoDB
+2022-09-10T18:31:29.749Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:12:10.836Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:12:16.653Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:12:18.008Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:12:18.451Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:12:18.452Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:12:23.046Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:12:24.413Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:12:24.863Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:12:24.863Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:14:06.476Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:14:07.856Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:14:08.886Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:14:08.887Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:14:27.449Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:14:32.158Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:14:33.456Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:14:34.035Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:14:34.036Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:14:47.808Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:14:49.169Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:14:49.581Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:14:49.582Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:15:27.212Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:15:28.588Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:15:29.559Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:15:29.559Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:15:40.854Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:15:46.094Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:15:47.453Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:15:47.928Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:15:47.929Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:17:06.379Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:17:07.741Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:17:08.526Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:17:08.528Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:17:26.522Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:17:27.838Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:17:28.388Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:17:28.389Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:17:42.746Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:17:44.484Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:17:44.485Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:18:07.803Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:18:09.939Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:18:09.939Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:18:16.749Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:18:22.016Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:18:23.375Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:18:24.007Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:18:24.008Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:18:47.211Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:18:48.511Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:18:49.059Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:18:49.060Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:19:25.707Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:19:27.070Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:19:27.856Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:19:27.857Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:19:58.735Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:20:00.278Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:20:00.657Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:20:00.658Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:20:29.583Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:20:30.880Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:20:31.873Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:20:31.874Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:21:21.436Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:21:22.736Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:21:23.070Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:21:23.070Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:21:46.797Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:21:51.836Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:21:53.249Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:21:53.690Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:21:53.691Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:22:39.486Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:22:40.930Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:22:42.964Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:22:42.966Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:22:56.181Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:22:57.467Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:22:59.311Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:22:59.312Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:24:13.471Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:24:18.420Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:24:19.777Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:24:22.117Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:24:22.117Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:27:53.947Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:27:57.929Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:27:59.266Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:28:01.648Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:28:01.648Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:28:40.473Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:28:41.855Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:28:43.616Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:28:43.617Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:29:07.982Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:29:09.259Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:29:11.535Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:29:11.536Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:30:48.132Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:30:49.479Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:30:51.707Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:30:51.707Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:33:07.960Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:33:09.412Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:33:11.717Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:33:11.718Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:33:27.048Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:33:31.505Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:33:42.131Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:33:43.406Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:33:45.036Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:33:45.044Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T19:34:10.864Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T19:34:12.140Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T19:34:14.432Z [INFO   ]: > Connected to MongoDB
+2022-09-10T19:34:14.432Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T23:46:58.505Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T23:47:00.583Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T23:47:03.954Z [INFO   ]: > Connected to MongoDB
+2022-09-10T23:47:03.955Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T23:48:03.196Z [ERROR  ]: Exception caught:  read ECONNRESET
+2022-09-10T23:48:28.319Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T23:48:44.688Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T23:48:52.063Z [INFO   ]: > Connected to MongoDB
+2022-09-10T23:48:52.063Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-10T23:49:30.577Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T23:49:32.068Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T23:49:38.015Z [INFO   ]: > Connected to Paytm Servers
+2022-09-10T23:49:39.689Z [INFO   ]: > Connected to IEEE Servers
+2022-09-10T23:49:41.274Z [INFO   ]: > Connected to MongoDB
+2022-09-10T23:49:41.275Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:50:11.808Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:50:13.476Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T00:50:14.698Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:50:14.699Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:50:55.197Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:50:55.584Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:50:55.584Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:51:06.134Z [ERROR  ]: Exception caught:  ieeeConnection is not defined
+2022-09-11T00:51:32.240Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:51:33.191Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:51:33.192Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:51:50.070Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:51:50.522Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:51:50.523Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:52:20.902Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:52:21.290Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:52:21.291Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:52:25.359Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T00:52:25.360Z [ERROR  ]: Exception caught:  ieeeConnection is not defined
+2022-09-11T00:56:19.928Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:56:20.900Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:56:20.901Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:56:40.401Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:56:40.910Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:56:40.911Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:56:49.224Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:56:49.702Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:56:49.703Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:56:55.644Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T00:57:29.896Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:57:30.886Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:57:30.887Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:57:37.788Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:57:43.667Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:57:44.190Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:57:44.190Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:57:48.794Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T00:58:13.872Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:58:17.757Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T00:58:18.182Z [INFO   ]: > Connected to MongoDB
+2022-09-11T00:58:18.183Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T00:58:34.263Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T01:06:21.695Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:06:22.809Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:06:22.810Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:06:29.277Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:06:29.775Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:06:29.776Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:07:08.769Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:07:09.171Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:07:09.172Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:07:16.153Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:07:16.675Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:07:16.676Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:07:39.087Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:07:39.869Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:07:39.869Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:07:50.255Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:07:50.710Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:07:50.710Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:08:23.309Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:08:23.854Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:08:23.854Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:08:34.409Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:08:35.202Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:08:35.203Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:09:13.440Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:09:14.161Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:09:14.162Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:09:28.241Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:09:28.771Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:09:28.772Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:09:40.261Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:09:40.940Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:09:40.940Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:09:46.285Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:09:46.797Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:09:46.798Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:09:54.988Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:09:55.458Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:09:55.459Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:14:19.374Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:14:20.439Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:14:20.440Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:15:12.000Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:15:12.552Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:15:12.554Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:15:19.215Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:15:19.903Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:15:19.904Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:15:28.138Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:15:28.976Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:15:28.977Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:15:37.873Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T01:15:38.304Z [INFO   ]: > Connected to MongoDB
+2022-09-11T01:15:38.304Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T01:16:02.293Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T06:47:10.565Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T06:47:12.001Z [INFO   ]: > Connected to MongoDB
+2022-09-11T06:47:12.001Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T06:49:43.317Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T06:49:44.271Z [INFO   ]: > Connected to MongoDB
+2022-09-11T06:49:44.272Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T06:59:32.554Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T06:59:33.717Z [INFO   ]: > Connected to MongoDB
+2022-09-11T06:59:33.717Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T06:59:39.825Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:01:12.864Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:01:13.797Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:01:13.798Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:01:19.428Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:01:19.885Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:01:19.885Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:01:24.515Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:01:41.666Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:01:42.390Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:01:42.390Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:01:47.999Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:01:48.491Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:01:48.493Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:02:09.226Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:02:09.758Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:02:09.759Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:02:16.350Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:02:32.004Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:02:32.757Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:02:32.758Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:02:57.549Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:02:58.073Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:02:58.074Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:03:10.893Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:03:11.351Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:03:11.352Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:03:19.782Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:03:20.280Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:03:20.280Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:03:28.145Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:04:10.813Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:04:11.508Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:04:11.511Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:04:22.995Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:07:15.788Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:07:16.833Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:07:16.833Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:07:28.385Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:12:12.374Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:12:13.385Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:12:13.386Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:12:22.742Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:13:32.843Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:13:33.836Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:13:33.836Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:13:41.829Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:15:31.093Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:15:32.208Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:15:32.208Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:15:47.036Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:15:47.476Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:15:47.476Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:15:56.275Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:20:29.695Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:20:30.913Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:20:30.913Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:21:06.555Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:50:30.473Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:50:55.226Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:50:55.227Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:51:02.100Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:51:02.104Z [ERROR  ]: Exception caught:  ieeeConnection is not defined
+2022-09-11T07:51:55.563Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:52:19.147Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:52:31.181Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:52:35.822Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:53:00.153Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:53:00.154Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:53:22.723Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:53:22.726Z [ERROR  ]: Exception caught:  ieeeConnection is not defined
+2022-09-11T07:53:59.503Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:54:18.357Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:54:42.991Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:54:42.992Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:55:06.464Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:55:30.627Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:55:30.628Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T07:55:37.478Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T07:56:05.529Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T07:56:28.895Z [INFO   ]: > Connected to MongoDB
+2022-09-11T07:56:28.896Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T08:38:31.188Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T08:38:32.384Z [INFO   ]: > Connected to MongoDB
+2022-09-11T08:38:32.385Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:39:34.716Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:39:35.881Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:39:35.882Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:40:27.925Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:40:28.390Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:40:28.391Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:43:51.699Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:43:52.995Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:43:52.996Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:44:10.275Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:44:10.768Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:44:10.771Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:44:21.853Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:44:22.242Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:44:22.243Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:44:28.302Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:44:28.812Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:44:28.813Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:44:46.260Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:44:50.179Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:44:50.716Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:44:50.717Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:45:06.050Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:45:07.049Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:45:07.049Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:45:20.237Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:45:20.806Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:45:20.807Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:45:25.640Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:45:26.148Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:45:26.149Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:46:35.116Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:46:36.065Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:46:36.066Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:46:49.026Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:46:49.485Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:46:49.486Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:46:54.052Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:46:54.540Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:46:54.540Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:47:05.484Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:47:06.018Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:47:06.019Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:50:47.855Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:50:48.759Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:50:48.759Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:52:39.685Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:52:40.664Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:52:40.664Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:52:45.637Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T10:52:46.153Z [INFO   ]: > Connected to MongoDB
+2022-09-11T10:52:46.154Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T10:53:42.534Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-11T11:34:41.868Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T11:34:42.990Z [INFO   ]: > Connected to MongoDB
+2022-09-11T11:34:42.991Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T11:35:06.831Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T12:45:55.066Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T13:02:25.604Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T13:02:27.041Z [INFO   ]: > Connected to MongoDB
+2022-09-11T13:02:27.042Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T13:10:04.624Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T13:10:05.933Z [INFO   ]: > Connected to MongoDB
+2022-09-11T13:10:05.934Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T13:14:41.575Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T13:14:46.205Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T13:14:47.411Z [INFO   ]: > Connected to MongoDB
+2022-09-11T13:14:47.412Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T13:33:37.789Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T13:35:29.739Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T13:35:31.058Z [INFO   ]: > Connected to MongoDB
+2022-09-11T13:35:31.058Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-11T13:35:32.270Z [INFO   ]: > Razor token created for Abhijith
+2022-09-11T13:35:37.522Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYx3kKbVBtGLsnycVAAAAfhD8yijODfnS70MftSIfrnE]
+2022-09-11T13:35:37.526Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYx3kKbVBtGLsnycVAAAAfhD8yijODfnS70MftSIfrnE
+2022-09-11T13:42:53.481Z [INFO   ]: > Connected to IEEE Servers
+2022-09-11T13:43:16.668Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-11T13:43:35.624Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYx3mB2TcOrtHmO8ZAAAAf-WRziUiZQI-KaWlVOIAC5U]
+2022-09-11T13:43:35.624Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYx3mB2TcOrtHmO8ZAAAAf-WRziUiZQI-KaWlVOIAC5U
+2022-09-11T13:44:56.599Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-11T13:45:26.643Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYx3mdsVsBJHcoOVTAAAAgJRzfbv8adO2aKl7ZTxR6g0]
+2022-09-11T13:45:26.644Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYx3mdsVsBJHcoOVTAAAAgJRzfbv8adO2aKl7ZTxR6g0
+2022-09-11T14:15:28.513Z [INFO   ]: > Connected to Paytm Servers
+2022-09-11T14:15:29.852Z [INFO   ]: > Connected to MongoDB
+2022-09-11T14:15:29.852Z [INFO   ]: > Ready on http://localhost:3000

@@ -4,19 +4,24 @@ import FormInput from '../../UI-Components/FormInput';
 import { Formik, useFormikContext, getIn, FormikProps } from 'formik';
 import axios from 'axios';
 import FormOptions from '../../UI-Components/FormOptions';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import loadScript from '../../utils/razorpayScript';
 import { useRouter } from 'next/router';
 import Error from '../../UI-Components/error';
 import Loader from '../../UI-Components/loader';
 import getIndiconPrice from '../../utils/getIndiconPrice';
-import getPaperPrice from '../../utils/getPaperPrice';
+import { getPaperPrice, getPaperSinglePrice } from '../../utils/getPaperPrice';
+import {
+  getExtraPagesPrice,
+  getNumOfAdditionalPages,
+  getSingleAdditionalPagePrice,
+} from '../../utils/getExtraPagesPrice';
 import buildForm from '../../utils/buildForm';
 import Head from 'next/head';
 import displayPaytm from '../../utils/displayPaytm';
 import PhoneSelector from '../../UI-Components/PhoneSelector';
 import FormSelect from '../../UI-Components/FormSelect';
-import FormIEEE from '../../UI-Components/FormIEEE'
+import FormIEEE from '../../UI-Components/FormIEEE';
 import getCountryList from '../../utils/getCountryList';
 import * as yup from 'yup';
 
@@ -24,6 +29,7 @@ const Form: NextPage = () => {
   const router = useRouter();
   const [authorPrice, setAuthorPrice] = useState(9000);
   const [addPapers, setAddPapers] = useState(0);
+  const [pages, setPages] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
@@ -33,6 +39,8 @@ const Form: NextPage = () => {
     email: '',
     phone: '',
     ieeeMember: '',
+    membershipId: '',
+    validIEEE: '',
     address: '',
     gender: '',
     country: '',
@@ -42,11 +50,13 @@ const Form: NextPage = () => {
     institute: '',
     designation: '',
     category: '',
-    paperId1: '',
-    paperId2: '',
-    paperId3: '',
     papers: '1',
-    membershipId: '',
+    paperId1: '',
+    extraPage1: '',
+    paperId2: '',
+    extraPage2: '',
+    paperId3: '',
+    extraPage3: '',
     passport: '',
   });
   // const [initialVal, setIntialVal] = useState({
@@ -54,6 +64,7 @@ const Form: NextPage = () => {
   //   email: 'abhijithkannan452@gmail.com',
   //   phone: '+917025263554',
   //   ieeeMember: 'No',
+  //   validIEEE: '',
   //   institute: 'CEK',
   //   designation: 'CEK',
   //   address: 'XYZ Houser',
@@ -64,8 +75,11 @@ const Form: NextPage = () => {
   //   food: 'Veg',
   //   category: '',
   //   paperId1: '',
+  //   extraPage1: '',
   //   paperId2: '',
+  //   extraPage2: '',
   //   paperId3: '',
+  //   extraPage3: '',
   //   papers: '1',
   // });
 
@@ -74,6 +88,10 @@ const Form: NextPage = () => {
     email: yup.string().required().email(),
     phone: yup.string().required(),
     ieeeMember: yup.string().required(),
+    validIEEE: yup.string().when('ieeeMember', {
+      is: 'Yes',
+      then: yup.string().required(),
+    }),
     address: yup.string().required(),
     gender: yup.string().required(),
     country: yup.string().required(),
@@ -84,13 +102,22 @@ const Form: NextPage = () => {
     designation: yup.string().required(),
     category: yup.string().required(),
     paperId1: yup.string().required(),
+    extraPage1: yup.string().required('Required'),
     paperId2: yup.string().when('papers', {
+      is: (papers: any) => Number(papers) >= 2,
+      then: yup.string().required(),
+    }),
+    extraPage2: yup.string().when('papers', {
       is: (papers: any) => Number(papers) >= 2,
       then: yup.string().required(),
     }),
     paperId3: yup.string().when('papers', {
       is: (papers: any) => Number(papers) >= 3,
       then: yup.string().required(),
+    }),
+    extraPage3: yup.string().when('papers', {
+      is: (papers: any) => Number(papers) >= 3,
+      then: yup.string().required('Required'),
     }),
     papers: yup.string().required(),
     membershipId: yup.string().when('ieeeMember', {
@@ -105,12 +132,32 @@ const Form: NextPage = () => {
   });
 
   const PriceUpdater: Function = () => {
-    const { values } = useFormikContext<any>();
-
+    const { values, setFieldValue } = useFormikContext<any>();
+    const didMount = useRef(false);
     useEffect(() => {
-      setAuthorPrice(getIndiconPrice(values));
-      setAddPapers(getPaperPrice(values));
-    }, [values]);
+      if (didMount.current) {
+        console.log('Hallo');
+        if (Number(values.papers) === 1) {
+          setFieldValue('extraPage2', '');
+          setFieldValue('extraPage3', '');
+        }
+        if (Number(values.papers) === 0) {
+          setFieldValue('extraPage3', '');
+        }
+        setAuthorPrice(getIndiconPrice(values));
+        setAddPapers(getPaperPrice(values));
+        setPages(getExtraPagesPrice(values));
+      } else {
+        didMount.current = true;
+      }
+    }, [
+      values.papers,
+      values.ieeeMember,
+      values.category,
+      values.extraPage1,
+      values.extraPage2,
+      values.extraPage3,
+    ]);
   };
 
   async function displayRazorpay(data: any, values: any) {
@@ -180,7 +227,7 @@ const Form: NextPage = () => {
         : 'Non IEEE Member';
       data.amount = JSON.stringify({
         currency: values.category.includes('Foreign') ? 'USD' : 'INR',
-        amount: authorPrice + addPapers,
+        amount: authorPrice + addPapers + pages,
       });
 
       const formData = buildForm(data);
@@ -414,20 +461,7 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  <FormInput
-                    label="Enter membership ID"
-                    placeholder="Enter your IEEE Membership ID "
-                    value={values.membershipId}
-                    onChange={(e: any) =>
-                      setFieldValue('membershipId', e.target.value)
-                    }
-                    errors={
-                      getIn(errors, 'membershipId') !== undefined
-                        ? getIn(errors, 'membershipId')
-                        : ''
-                    }
-                  />
-                   {/* <FormIEEE
+                  {/* <FormInput
                     label="Enter membership ID"
                     placeholder="Enter your IEEE Membership ID "
                     value={values.membershipId}
@@ -440,6 +474,25 @@ const Form: NextPage = () => {
                         : ''
                     }
                   /> */}
+                  <FormIEEE
+                    label="Enter membership ID"
+                    placeholder="Enter your IEEE Membership ID "
+                    value={values.membershipId}
+                    onChange={(e: any) =>
+                      setFieldValue('membershipId', e.target.value)
+                    }
+                    onChangeValid={(e: any) => setFieldValue('validIEEE', e)}
+                    errors={
+                      getIn(errors, 'membershipId') !== undefined
+                        ? getIn(errors, 'membershipId')
+                        : ''
+                    }
+                    vaildError={
+                      getIn(errors, 'validIEEE') !== undefined
+                        ? getIn(errors, 'validIEEE')
+                        : ''
+                    }
+                  />
                   <FormOptions
                     label="Food preference *"
                     options={['Veg', 'Non Veg']}
@@ -476,35 +529,73 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
+                  <FormOptions
+                    label="Whether the paper 1 has exceed the 6 page limit ? if yes by how many extra pages ?*"
+                    options={['Not applicable', '1', '2']}
+                    value={values.extraPage1}
+                    onChange={(e: any) => setFieldValue('extraPage1', e)}
+                    errors={
+                      getIn(errors, 'extraPage1') !== undefined
+                        ? getIn(errors, 'extraPage1')
+                        : ''
+                    }
+                  />
+
                   {Number(values.papers) >= 2 ? (
-                    <FormInput
-                      label="Paper ID 2*"
-                      placeholder="Enter your paper id 2"
-                      value={values.paperId2}
-                      onChange={(e: any) =>
-                        setFieldValue('paperId2', e.target.value)
-                      }
-                      errors={
-                        getIn(errors, 'paperId2') !== undefined
-                          ? getIn(errors, 'paperId2')
-                          : ''
-                      }
-                    />
+                    <>
+                      <FormInput
+                        label="Paper ID 2*"
+                        placeholder="Enter your paper id 2"
+                        value={values.paperId2}
+                        onChange={(e: any) =>
+                          setFieldValue('paperId2', e.target.value)
+                        }
+                        errors={
+                          getIn(errors, 'paperId2') !== undefined
+                            ? getIn(errors, 'paperId2')
+                            : ''
+                        }
+                      />
+                      <FormOptions
+                        label="Whether the paper 2 has exceed the 6 page limit ? if yes by how many extra pages ?*"
+                        options={['Not applicable', '1', '2']}
+                        value={values.extraPage2}
+                        onChange={(e: any) => setFieldValue('extraPage2', e)}
+                        errors={
+                          getIn(errors, 'extraPage2') !== undefined
+                            ? getIn(errors, 'extraPage2')
+                            : ''
+                        }
+                      />
+                    </>
                   ) : null}
                   {Number(values.papers) >= 3 ? (
-                    <FormInput
-                      label="Paper ID 3*"
-                      placeholder="Enter your paper id 3"
-                      value={values.paperId3}
-                      onChange={(e: any) =>
-                        setFieldValue('paperId3', e.target.value)
-                      }
-                      errors={
-                        getIn(errors, 'paperId3') !== undefined
-                          ? getIn(errors, 'paperId3')
-                          : ''
-                      }
-                    />
+                    <>
+                      <FormInput
+                        label="Paper ID 3*"
+                        placeholder="Enter your paper id 3"
+                        value={values.paperId3}
+                        onChange={(e: any) =>
+                          setFieldValue('paperId3', e.target.value)
+                        }
+                        errors={
+                          getIn(errors, 'paperId3') !== undefined
+                            ? getIn(errors, 'paperId3')
+                            : ''
+                        }
+                      />
+                      <FormOptions
+                        label="Whether the paper 3 has exceed the 6 page limit ? if yes by how many extra pages ?*"
+                        options={['Not applicable', '1', '2']}
+                        value={values.extraPage3}
+                        onChange={(e: any) => setFieldValue('extraPage3', e)}
+                        errors={
+                          getIn(errors, 'extraPage3') !== undefined
+                            ? getIn(errors, 'extraPage3')
+                            : ''
+                        }
+                      />
+                    </>
                   ) : null}
                   <FormOptions
                     label="Category *"
@@ -535,13 +626,38 @@ const Form: NextPage = () => {
                   ) : null}
 
                   <PriceUpdater />
+                  <h4 className={styles.breakDownLabel}>
+                    Amount based on chosen catgory
+                  </h4>
+                  <h5 className={styles.singlePrice}>
+                    {values.category.includes('Foreign') ? '$ ' : 'Rs '}
+                    {authorPrice}
+                  </h5>
+                  <h4 className={styles.breakDownLabel}>
+                    Amount based on chosen additional papers
+                  </h4>
+                  <h5 className={styles.singlePrice}>
+                    {`${getPaperSinglePrice(values)} * ${
+                      Number(values.papers) - 1
+                    } = `}
+                    {values.category.includes('Foreign') ? '$ ' : 'Rs '}
+                    {addPapers}
+                  </h5>
+                  <h4 className={styles.breakDownLabel}>
+                    Amount based on additional pages for each paper
+                  </h4>
+                  <h5 className={styles.singlePrice}>
+                    {`${getSingleAdditionalPagePrice(values)} * ${getNumOfAdditionalPages(values)} = `}
+                    {values.category.includes('Foreign') ? '$ ' : 'Rs '}
+                    {pages}
+                  </h5>
                   <h4 className={styles.priceLabel}>Amount to be paid</h4>
                   <h5 className={styles.price}>
                     {values.category.includes('Foreign') ? '$ ' : 'Rs '}
-                    {authorPrice + addPapers}
+                    {authorPrice + addPapers + pages}
                   </h5>
                   <br />
-                  {/* {JSON.stringify(values, null, 2)} */}
+                  {/* {JSON.stringify(errors, null, 2)} */}
                   <button
                     className={styles.button}
                     type="submit"
