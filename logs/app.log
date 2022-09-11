@@ -3174,3 +3174,5 @@ Response Received: <html>
 [2022-09-11T13:45:20.745Z] [PAYTM] INFO [NODE-SDK:1.0.0:f528ed3e-137f-4f2a-a71e-7c6d71bfa6c9] <Request>: Execution completed with raw json response: {"head":{"responseTimestamp":"1662903920768","version":"v1","signature":"Nv0SgsBHMRhIvWMBLNEottLYVYZW31vtFY+qThyunPXggc+5VdcK7YEy5h9kn32gZC922RUYm2CUv/fo2aIkpw6ySucHsHpbq6gEc0bpX1o="},"body":{"resultInfo":{"resultStatus":"TXN_FAILURE","resultCode":"810","resultMsg":"Payment failed due to a technical error. Please try after some time."},"txnId":"20220911111212800110168986404038394","orderId":"KT85WP0BE","txnAmount":"12000.00","txnType":"SALE","mid":"ciXcUt86833610141591","refundAmt":"0.0","txnDate":"2022-09-11 19:14:56.0"}}
 [2022-09-11T14:15:28.511Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: initialize called
 [2022-09-11T14:15:28.512Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: Setting Environment for STAGE
+[2022-09-11T14:15:41.291Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: initialize called
+[2022-09-11T14:15:41.292Z] [PAYTM] INFO [NODE-SDK1.0.0] <MerchantProperties>: Setting Environment for STAGE
