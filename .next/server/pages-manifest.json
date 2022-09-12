@@ -1,8 +1,8 @@
 {
-  "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/[formId]/responses": "pages/[formId]/responses.html",
+  "/_app": "pages/_app.js",
   "/api/hello": "pages/api/hello.js",
+  "/[formId]/responses": "pages/[formId]/responses.html",
   "/completepayment/[formId]/[orderId]": "pages/completepayment/[formId]/[orderId].html",
   "/confirmation/[id]": "pages/confirmation/[id].html",
   "/create": "pages/create.html",

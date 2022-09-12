@@ -5,7 +5,7 @@ const generateRandomString = require('../utils/generateRandomString');
 function connectToPaytm() {
   try {
     var env =
-      process.env.NODE_ENV === 'production'
+      process.env.NEXT_ENV === 'production'
         ? Paytm.LibraryConstants.PRODUCTION_ENVIRONMENT
         : Paytm.LibraryConstants.STAGING_ENVIRONMENT;
     var mid = process.env.Merchant_Id;
@@ -14,7 +14,7 @@ function connectToPaytm() {
     var client_id = process.env.client_id;
     var callbackUrl = process.env.Callback;
     Paytm.MerchantProperties.setCallbackUrl(callbackUrl);
-    const res = Paytm.MerchantProperties.initialize(env, mid, key, client_id, website);
+    Paytm.MerchantProperties.initialize(env, mid, key, client_id, website);
     // Paytm.MerchantProperties.setConnectionTimeout(5);
 
     logger.info(`> Connected to Paytm Servers`);

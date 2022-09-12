@@ -34,54 +34,54 @@ const Form: NextPage = () => {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
 
-  const [initialVal, setIntialVal] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    ieeeMember: '',
-    membershipId: '',
-    validIEEE: '',
-    address: '',
-    gender: '',
-    country: '',
-    state: '',
-    pincode: '',
-    food: '',
-    institute: '',
-    designation: '',
-    category: '',
-    papers: '1',
-    paperId1: '',
-    extraPage1: '',
-    paperId2: '',
-    extraPage2: '',
-    paperId3: '',
-    extraPage3: '',
-    passport: '',
-  });
   // const [initialVal, setIntialVal] = useState({
-  //   name: 'Abhijith',
-  //   email: 'abhijithkannan452@gmail.com',
-  //   phone: '+917025263554',
-  //   ieeeMember: 'No',
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   ieeeMember: '',
+  //   membershipId: '',
   //   validIEEE: '',
-  //   institute: 'CEK',
-  //   designation: 'CEK',
-  //   address: 'XYZ Houser',
-  //   gender: 'Male',
-  //   country: 'India',
-  //   state: 'Kerala',
-  //   pincode: '686019',
-  //   food: 'Veg',
+  //   address: '',
+  //   gender: '',
+  //   country: '',
+  //   state: '',
+  //   pincode: '',
+  //   food: '',
+  //   institute: '',
+  //   designation: '',
   //   category: '',
+  //   papers: '1',
   //   paperId1: '',
   //   extraPage1: '',
   //   paperId2: '',
   //   extraPage2: '',
   //   paperId3: '',
   //   extraPage3: '',
-  //   papers: '1',
+  //   passport: '',
   // });
+  const [initialVal, setIntialVal] = useState({
+    name: 'Abhijith',
+    email: 'abhijithkannan452@gmail.com',
+    phone: '+917025263554',
+    ieeeMember: 'No',
+    validIEEE: '',
+    institute: 'CEK',
+    designation: 'CEK',
+    address: 'XYZ Houser',
+    gender: 'Male',
+    country: 'India',
+    state: 'Kerala',
+    pincode: '686019',
+    food: 'Veg',
+    category: 'Indian Author (Academia)',
+    paperId1: 'asdas',
+    extraPage1: 'Not applicable',
+    paperId2: '',
+    extraPage2: '',
+    paperId3: '',
+    extraPage3: '',
+    papers: '1',
+  });
 
   let schema = yup.object().shape({
     name: yup.string().required(),
@@ -256,7 +256,7 @@ const Form: NextPage = () => {
         );
         var details = {
           action:
-            process.env.NODE_ENV === 'production'
+            process.env.NEXT_ENV === 'production'
               ? 'https://securegw.paytm.in/order/process'
               : 'https://securegw-stage.paytm.in/order/process',
           params: res.data,
@@ -277,8 +277,8 @@ const Form: NextPage = () => {
           'Indian Author (Industry)',
           'Indian Student Author',
           'Indian Non-Author Attendee',
-          'Foreign Author',
-          'Foreign Student Author',
+          // 'Foreign Author',
+          // 'Foreign Student Author',
         ]
       : [
           'Indian Author (Academia)',

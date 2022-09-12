@@ -1930,3 +1930,22 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-11T14:53:29.271Z [INFO   ]: > Connected to MongoDB
 2022-09-11T14:53:29.272Z [INFO   ]: > Ready on http://localhost:3000
 2022-09-11T14:54:54.330Z [INFO   ]: > Connected to IEEE Servers
+2022-09-12T10:33:09.444Z [INFO   ]: > Connected to Paytm Servers
+2022-09-12T10:33:12.781Z [INFO   ]: > Connected to MongoDB
+2022-09-12T10:33:12.782Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-12T10:37:04.686Z [INFO   ]: > Connected to Paytm Servers
+2022-09-12T10:37:07.741Z [INFO   ]: > Connected to MongoDB
+2022-09-12T10:37:07.742Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-12T11:23:29.794Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-12T11:40:29.277Z [INFO   ]: > Connected to Paytm Servers
+2022-09-12T11:40:32.102Z [INFO   ]: > Connected to MongoDB
+2022-09-12T11:40:32.103Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-12T11:40:49.443Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-12T11:41:13.963Z [INFO   ]: > Connected to Paytm Servers
+2022-09-12T11:41:16.112Z [INFO   ]: > Connected to MongoDB
+2022-09-12T11:41:16.113Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-12T11:41:25.439Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-12T11:41:49.525Z [INFO   ]: Send:250 OK id=1oXhov-0005LF-Gc
+2022-09-12T11:44:31.405Z [INFO   ]: > Connected to Paytm Servers
+2022-09-12T11:44:34.008Z [INFO   ]: > Connected to MongoDB
+2022-09-12T11:44:34.009Z [INFO   ]: > Ready on http://localhost:3000
