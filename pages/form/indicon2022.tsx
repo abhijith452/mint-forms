@@ -16,6 +16,7 @@ import {
   getNumOfAdditionalPages,
   getSingleAdditionalPagePrice,
 } from '../../utils/getExtraPagesPrice';
+import getTotalPrice from '../../utils/getTotalPrice';
 import buildForm from '../../utils/buildForm';
 import Head from 'next/head';
 import displayPaytm from '../../utils/displayPaytm';
@@ -34,54 +35,54 @@ const Form: NextPage = () => {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
 
-  // const [initialVal, setIntialVal] = useState({
-  //   name: '',
-  //   email: '',
-  //   phone: '',
-  //   ieeeMember: '',
-  //   membershipId: '',
-  //   validIEEE: '',
-  //   address: '',
-  //   gender: '',
-  //   country: '',
-  //   state: '',
-  //   pincode: '',
-  //   food: '',
-  //   institute: '',
-  //   designation: '',
-  //   category: '',
-  //   papers: '1',
-  //   paperId1: '',
-  //   extraPage1: '',
-  //   paperId2: '',
-  //   extraPage2: '',
-  //   paperId3: '',
-  //   extraPage3: '',
-  //   passport: '',
-  // });
   const [initialVal, setIntialVal] = useState({
-    name: 'Abhijith',
-    email: 'abhijithkannan452@gmail.com',
-    phone: '+917025263554',
-    ieeeMember: 'No',
+    name: '',
+    email: '',
+    phone: '',
+    ieeeMember: '',
+    membershipId: '',
     validIEEE: '',
-    institute: 'CEK',
-    designation: 'CEK',
-    address: 'XYZ Houser',
-    gender: 'Male',
-    country: 'India',
-    state: 'Kerala',
-    pincode: '686019',
-    food: 'Veg',
-    category: 'Indian Author (Academia)',
-    paperId1: 'asdas',
-    extraPage1: 'Not applicable',
+    address: '',
+    gender: '',
+    country: '',
+    state: '',
+    pincode: '',
+    food: '',
+    institute: '',
+    designation: '',
+    category: '',
+    papers: '1',
+    paperId1: '',
+    extraPage1: '',
     paperId2: '',
     extraPage2: '',
     paperId3: '',
     extraPage3: '',
-    papers: '1',
+    passport: '',
   });
+  // const [initialVal, setIntialVal] = useState({
+  //   name: 'Abhijith',
+  //   email: 'abhijithkannan452@gmail.com',
+  //   phone: '+917025263554',
+  //   ieeeMember: 'No',
+  //   validIEEE: '',
+  //   institute: 'CEK',
+  //   designation: 'CEK',
+  //   address: 'XYZ Houser',
+  //   gender: 'Male',
+  //   country: 'India',
+  //   state: 'Kerala',
+  //   pincode: '686019',
+  //   food: 'Veg',
+  //   category: 'Indian Author (Academia)',
+  //   paperId1: 'asdas',
+  //   extraPage1: 'Not applicable',
+  //   paperId2: '',
+  //   extraPage2: '',
+  //   paperId3: '',
+  //   extraPage3: '',
+  //   papers: '1',
+  // });
 
   let schema = yup.object().shape({
     name: yup.string().required(),
@@ -90,7 +91,7 @@ const Form: NextPage = () => {
     ieeeMember: yup.string().required(),
     validIEEE: yup.string().when('ieeeMember', {
       is: 'Yes',
-      then: yup.string().required("Verify membership ID"),
+      then: yup.string().required('Verify membership ID'),
     }),
     address: yup.string().required(),
     gender: yup.string().required(),
@@ -227,7 +228,7 @@ const Form: NextPage = () => {
         : 'Non IEEE Member';
       data.amount = JSON.stringify({
         currency: values.category.includes('Foreign') ? 'USD' : 'INR',
-        amount: authorPrice + addPapers + pages,
+        amount: getTotalPrice(authorPrice + addPapers + pages, values),
       });
 
       const formData = buildForm(data);
@@ -290,6 +291,15 @@ const Form: NextPage = () => {
           'Foreign Student Author',
           'Foreign Test Category',
         ];
+
+  const total = (values: any) => {
+    var amount = authorPrice + addPapers + pages;
+    var gst = amount * 0.18;
+    var feePercent = values.category.includes('Foreign') ? 0.032 : 0.022;
+    var fee = feePercent * (amount + gst);
+    var feeGST = fee * 0.18;
+    return (amount + gst + fee + feeGST).toFixed(2);
+  };
   return (
     <div className={styles.form}>
       <Head>
@@ -621,7 +631,7 @@ const Form: NextPage = () => {
                     {authorPrice}
                   </h5>
                   <h4 className={styles.breakDownLabel}>
-                    Amount based on chosen additional papers
+                    Amount based on number of the additional papers
                   </h4>
                   <h5 className={styles.singlePrice}>
                     {`${getPaperSinglePrice(values)} * ${
@@ -634,14 +644,29 @@ const Form: NextPage = () => {
                     Amount based on additional pages for each paper
                   </h4>
                   <h5 className={styles.singlePrice}>
-                    {`${getSingleAdditionalPagePrice(values)} * ${getNumOfAdditionalPages(values)} = `}
+                    {`${getSingleAdditionalPagePrice(
+                      values
+                    )} * ${getNumOfAdditionalPages(values)} = `}
                     {values.category.includes('Foreign') ? '$ ' : 'Rs '}
                     {pages}
                   </h5>
-                  <h4 className={styles.priceLabel}>Amount to be paid</h4>
-                  <h5 className={styles.price}>
+                  <h4 className={styles.breakDownLabel}>Amount to be paid</h4>
+                  <h5 className={styles.singlePrice}>
                     {values.category.includes('Foreign') ? '$ ' : 'Rs '}
                     {authorPrice + addPapers + pages}
+                  </h5>
+                  <h4 className={styles.priceLabel}>
+                    Total amount (
+                    <i>
+                      18% GST and{' '}
+                      {values.category.includes('Foreign') ? '3.2%' : '2.2%'}{' '}
+                      convenience fee included
+                    </i>
+                    )
+                  </h4>
+                  <h5 className={styles.price}>
+                    {values.category.includes('Foreign') ? '$ ' : 'Rs '}
+                    {getTotalPrice(authorPrice + addPapers + pages, values)}
                   </h5>
                   <br />
                   {/* {JSON.stringify(errors, null, 2)} */}
