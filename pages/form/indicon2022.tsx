@@ -255,11 +255,14 @@ const Form: NextPage = () => {
             },
           }
         );
+     
+        var paytmLink =  process.env.NEXT_PUBLIC_ENV === 'production'
+        ? 'https://securegw.paytm.in/order/process'
+        : 'https://securegw-stage.paytm.in/order/process'
+        console.log(paytmLink)
         var details = {
-          action:
-            process.env.NEXT_ENV === 'production'
-              ? 'https://securegw.paytm.in/order/process'
-              : 'https://securegw-stage.paytm.in/order/process',
+          action:paytmLink ,
+           
           params: res.data,
         };
         displayPaytm(details);
@@ -278,8 +281,8 @@ const Form: NextPage = () => {
           'Indian Author (Industry)',
           'Indian Student Author',
           'Indian Non-Author Attendee',
-          // 'Foreign Author',
-          // 'Foreign Student Author',
+          'Foreign Author',
+          'Foreign Student Author',
         ]
       : [
           'Indian Author (Academia)',
@@ -292,14 +295,6 @@ const Form: NextPage = () => {
           'Foreign Test Category',
         ];
 
-  const total = (values: any) => {
-    var amount = authorPrice + addPapers + pages;
-    var gst = amount * 0.18;
-    var feePercent = values.category.includes('Foreign') ? 0.032 : 0.022;
-    var fee = feePercent * (amount + gst);
-    var feeGST = fee * 0.18;
-    return (amount + gst + fee + feeGST).toFixed(2);
-  };
   return (
     <div className={styles.form}>
       <Head>

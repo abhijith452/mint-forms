@@ -5,7 +5,7 @@ const generateRandomString = require('../utils/generateRandomString');
 function connectToPaytm() {
   try {
     var env =
-      process.env.NEXT_ENV === 'production'
+      process.env.NEXT_PUBLIC_ENV === 'production'
         ? Paytm.LibraryConstants.PRODUCTION_ENVIRONMENT
         : Paytm.LibraryConstants.STAGING_ENVIRONMENT;
     var mid = process.env.Merchant_Id;
@@ -52,7 +52,7 @@ const generateTxnId = async (req) => {
     );
     var paymentDetail = paymentDetailBuilder.build();
     var response = await Paytm.Payment.createTxnToken(paymentDetail);
-   console.log(response )
+
     var details = {
       mid: process.env.Merchant_Id,
       orderId,
