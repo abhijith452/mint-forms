@@ -143,7 +143,6 @@ const Form: NextPage = () => {
     const didMount = useRef(false);
     useEffect(() => {
       if (didMount.current) {
-
         if (values.papers === 'Not applicable') {
           setFieldValue('paperId1', '');
           setFieldValue('paperId2', '');
@@ -181,9 +180,7 @@ const Form: NextPage = () => {
   };
 
   async function displayRazorpay(data: any, values: any) {
-    const res = await loadScript(
-      'https://checkout.razorpay.com/v1/checkout.js'
-    );
+    const res = await loadScript();
 
     if (!res) {
       alert('Razorpay SDK failed to load. Are you online?');
@@ -279,6 +276,7 @@ const Form: NextPage = () => {
           process.env.NEXT_PUBLIC_ENV === 'production'
             ? 'https://securegw.paytm.in/order/process'
             : 'https://securegw-stage.paytm.in/order/process';
+        console.log(process.env.NEXT_PUBLIC_ENV);
         console.log(paytmLink);
         var details = {
           action: paytmLink,
