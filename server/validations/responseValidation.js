@@ -19,8 +19,14 @@ const responseSchema = yup.object().shape({
   designation: yup.string().required(),
   category: yup.string().required('Select a category'),
   papers: yup.string().required('Number of papers is required'),
-  paperId1: yup.string().required('ID of the paper 1 is required'),
-  extraPage1: yup.string().required('Select the extra page for paper 1'),
+  paperId1: yup.string().when('papers', {
+    is: (papers) => Number(papers) > 0,
+    then: yup.string().required('ID of the paper 1 is required'),
+  }),
+  extraPage1: yup.string().when('papers', {
+    is: (papers) => Number(papers) > 0,
+    then: yup.string().required('Select the extra page for paper 1'),
+  }),
   paperId2: yup.string().when('papers', {
     is: (papers) => Number(papers) >= 2,
     then: yup.string().required('ID of the paper 2 is required'),

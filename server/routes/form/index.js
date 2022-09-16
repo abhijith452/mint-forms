@@ -105,7 +105,7 @@ router.post('/mail/reminder', async (req, res) => {
 
 router.delete('/response', async (req, res) => {
   try {
-    await Responses.deleteOne({ formId: req.query.formId });
+    await Responses.deleteOne({ orderId: req.query.orderId });
     res.sendStatus(201);
   } catch (err) {
     logger.error(err);

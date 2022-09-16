@@ -102,8 +102,14 @@ const Form: NextPage = () => {
     institute: yup.string().required(),
     designation: yup.string().required(),
     category: yup.string().required(),
-    paperId1: yup.string().required(),
-    extraPage1: yup.string().required('Required'),
+    paperId1: yup.string().when('papers', {
+      is: (papers: any) => Number(papers) > 0,
+      then: yup.string().required(),
+    }),
+    extraPage1: yup.string().when('papers', {
+      is: (papers: any) => Number(papers) > 0,
+      then: yup.string().required('Required'),
+    }),
     paperId2: yup.string().when('papers', {
       is: (papers: any) => Number(papers) >= 2,
       then: yup.string().required(),
@@ -137,14 +143,27 @@ const Form: NextPage = () => {
     const didMount = useRef(false);
     useEffect(() => {
       if (didMount.current) {
-        console.log('Hallo');
-        if (Number(values.papers) === 1) {
+
+        if (values.papers === 'Not applicable') {
+          setFieldValue('paperId1', '');
+          setFieldValue('paperId2', '');
+          setFieldValue('paperId3', '');
+          setFieldValue('extraPage1', '');
           setFieldValue('extraPage2', '');
           setFieldValue('extraPage3', '');
         }
-        if (Number(values.papers) === 0) {
+        if (Number(values.papers) === 1) {
+          setFieldValue('paperId2', '');
+          setFieldValue('paperId3', '');
+          setFieldValue('extraPage2', '');
           setFieldValue('extraPage3', '');
         }
+        if (Number(values.papers) === 2) {
+          setFieldValue('paperId3', '');
+          setFieldValue('category', '');
+          setFieldValue('extraPage3', '');
+        }
+
         setAuthorPrice(getIndiconPrice(values));
         setAddPapers(getPaperPrice(values));
         setPages(getExtraPagesPrice(values));
@@ -255,14 +274,15 @@ const Form: NextPage = () => {
             },
           }
         );
-     
-        var paytmLink =  process.env.NEXT_PUBLIC_ENV === 'production'
-        ? 'https://securegw.paytm.in/order/process'
-        : 'https://securegw-stage.paytm.in/order/process'
-        console.log(paytmLink)
+
+        var paytmLink =
+          process.env.NEXT_PUBLIC_ENV === 'production'
+            ? 'https://securegw.paytm.in/order/process'
+            : 'https://securegw-stage.paytm.in/order/process';
+        console.log(paytmLink);
         var details = {
-          action:paytmLink ,
-           
+          action: paytmLink,
+
           params: res.data,
         };
         displayPaytm(details);
@@ -499,7 +519,7 @@ const Form: NextPage = () => {
 
                   <FormOptions
                     label="Number of papers*"
-                    options={['1', '2', '3']}
+                    options={['1', '2', '3', 'Not applicable']}
                     value={values.papers}
                     onChange={(e: any) => setFieldValue('papers', e)}
                     errors={
@@ -508,31 +528,34 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  <FormInput
-                    label="Paper ID 1*"
-                    placeholder="Enter your paper id 1"
-                    value={values.paperId1}
-                    onChange={(e: any) =>
-                      setFieldValue('paperId1', e.target.value)
-                    }
-                    errors={
-                      getIn(errors, 'paperId1') !== undefined
-                        ? getIn(errors, 'paperId1')
-                        : ''
-                    }
-                  />
-                  <FormOptions
-                    label="Whether the paper 1 has exceed the 6 page limit ? if yes by how many extra pages ?*"
-                    options={['Not applicable', '1', '2']}
-                    value={values.extraPage1}
-                    onChange={(e: any) => setFieldValue('extraPage1', e)}
-                    errors={
-                      getIn(errors, 'extraPage1') !== undefined
-                        ? getIn(errors, 'extraPage1')
-                        : ''
-                    }
-                  />
-
+                  {Number(values.papers) > 0 ? (
+                    <>
+                      <FormInput
+                        label="Paper ID 1*"
+                        placeholder="Enter your paper id 1"
+                        value={values.paperId1}
+                        onChange={(e: any) =>
+                          setFieldValue('paperId1', e.target.value)
+                        }
+                        errors={
+                          getIn(errors, 'paperId1') !== undefined
+                            ? getIn(errors, 'paperId1')
+                            : ''
+                        }
+                      />
+                      <FormOptions
+                        label="Whether the paper 1 has exceed the 6 page limit ? if yes by how many extra pages ?*"
+                        options={['Not applicable', '1', '2']}
+                        value={values.extraPage1}
+                        onChange={(e: any) => setFieldValue('extraPage1', e)}
+                        errors={
+                          getIn(errors, 'extraPage1') !== undefined
+                            ? getIn(errors, 'extraPage1')
+                            : ''
+                        }
+                      />
+                    </>
+                  ) : null}
                   {Number(values.papers) >= 2 ? (
                     <>
                       <FormInput

@@ -2071,3 +2071,47 @@ Invalid JSON payload received. Unknown name "amount" at 'data.values[0]': Cannot
 2022-09-14T16:47:52.577Z [INFO   ]: > Connected to MongoDB
 2022-09-14T16:47:52.577Z [INFO   ]: > Ready on http://localhost:3000
 2022-09-14T16:48:08.527Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-16T02:59:23.605Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T02:59:24.552Z [INFO   ]: > Connected to MongoDB
+2022-09-16T02:59:24.553Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T03:37:12.800Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T03:37:14.500Z [INFO   ]: > Connected to MongoDB
+2022-09-16T03:37:14.501Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T03:37:23.576Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T03:37:24.254Z [INFO   ]: > Connected to MongoDB
+2022-09-16T03:37:24.255Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T03:37:34.048Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T03:37:34.619Z [INFO   ]: > Connected to MongoDB
+2022-09-16T03:37:34.619Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T04:02:12.488Z [INFO   ]: > Paytm token created for Abhijith
+2022-09-16T04:02:33.076Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYyP1WMVsBJHcpJRWAAAAhvbNONZAa5QKKAYjmfr.Uy8]
+2022-09-16T04:02:33.077Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYyP1WMVsBJHcpJRWAAAAhvbNONZAa5QKKAYjmfr.Uy8
+2022-09-16T04:06:45.198Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T04:06:53.563Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T04:06:54.725Z [INFO   ]: > Connected to MongoDB
+2022-09-16T04:06:54.726Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T04:07:10.453Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T04:07:11.022Z [INFO   ]: > Connected to MongoDB
+2022-09-16T04:07:11.023Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T04:07:29.164Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T04:07:29.811Z [INFO   ]: > Connected to MongoDB
+2022-09-16T04:07:29.811Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T04:07:34.156Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T04:07:34.670Z [INFO   ]: > Connected to MongoDB
+2022-09-16T04:07:34.671Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T04:07:41.955Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T04:07:42.535Z [INFO   ]: > Connected to MongoDB
+2022-09-16T04:07:42.536Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T04:17:49.970Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T04:17:50.833Z [INFO   ]: > Connected to MongoDB
+2022-09-16T04:17:50.833Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T04:18:50.762Z [INFO   ]: > Connected to Paytm Servers
+2022-09-16T04:18:51.680Z [INFO   ]: > Connected to MongoDB
+2022-09-16T04:18:51.681Z [INFO   ]: > Ready on http://localhost:3000
+2022-09-16T04:28:04.756Z [ERROR  ]: Exception caught:  connect ETIMEDOUT 140.98.202.73:443
+2022-09-16T04:28:25.787Z [ERROR  ]: Exception caught:  connect ETIMEDOUT 140.98.202.73:443
+2022-09-16T04:29:49.151Z [ERROR  ]: Exception caught:  connect ETIMEDOUT 140.98.202.73:443
+2022-09-16T04:30:10.194Z [ERROR  ]: Exception caught:  connect ETIMEDOUT 140.98.202.73:443
+2022-09-16T04:34:24.562Z [INFO   ]: > Paytm token created for Suman Kumar Maji
+2022-09-16T04:35:19.309Z [INFO   ]: Send:250 Accepted [STATUS=new MSGID=YwuAQan1Y7Hp3-9RYyP9B7VBtGLsotctAAAAh0aYLLTetJz1bRG-JnH6xJ8]
+2022-09-16T04:35:19.310Z [INFO   ]: https://ethereal.email/message/YwuAQan1Y7Hp3-9RYyP9B7VBtGLsotctAAAAh0aYLLTetJz1bRG-JnH6xJ8
