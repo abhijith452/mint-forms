@@ -11,7 +11,7 @@ function content(status, data, applicant,formDetails) {
             from: process.env.NODE_ENV === "production" ? process.env.MAIL_USER : "graciela.keeling37@ethereal.email",
             to: process.env.NODE_ENV === "production" ? applicant.email : "graciela.keeling37@ethereal.email",
             subject: `${formDetails.title} | Registration Successful`,
-            cc: "backup@ieeejobfair.com",
+            cc: "backup@ieee-mint.org",
             html: success(
                 {
                     name: applicant.name,
@@ -40,7 +40,7 @@ function content(status, data, applicant,formDetails) {
             from: process.env.NODE_ENV === "production" ? process.env.MAIL_USER : "graciela.keeling37@ethereal.email",
             to: process.env.NODE_ENV === "production" ? applicant.email : "graciela.keeling37@ethereal.email",
             subject: `${formDetails.title} | Registration pending`,
-            cc: "backup@ieeejobfair.com",
+            cc: "backup@ieee-mint.org",
 
             html: pending(
                 {
@@ -68,7 +68,7 @@ function content(status, data, applicant,formDetails) {
             from: process.env.NODE_ENV === "production" ? process.env.MAIL_USER : "graciela.keeling37@ethereal.email",
             to: process.env.NODE_ENV === "production" ? applicant.email : "graciela.keeling37@ethereal.email",
             subject: `${formDetails.title} | Registration failed`,
-            cc: "backup@ieeejobfair.com",
+            cc: "backup@ieee-mint.org",
 
             html: failed(
                 {
