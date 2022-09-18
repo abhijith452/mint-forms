@@ -37,13 +37,13 @@ const generateTxnId = async (req) => {
     var orderId = generateRandomString(10);
     var txnAmount = Paytm.Money.constructWithCurrencyAndValue(
       Paytm.EnumCurrency.INR,
-      String(JSON.parse(req.body.amount).amount)
+      String(JSON.parse(req.amount).amount)
     );
     var userInfo = new Paytm.UserInfo(generateRandomString(10));
-    userInfo.setEmail(req.body.email);
-    userInfo.setFirstName(req.body.name);
-    // userInfo.setLastName(req.body.lastName);
-    userInfo.setMobile(req.body.phone);
+    userInfo.setEmail(req.email);
+    userInfo.setFirstName(req.name);
+    // userInfo.setLastName(req.lastName);
+    userInfo.setMobile(req.phone);
     var paymentDetailBuilder = new Paytm.PaymentDetailBuilder(
       channelId,
       orderId,
@@ -58,11 +58,11 @@ const generateTxnId = async (req) => {
       orderId,
       CHECKSUMHASH: response.responseObject.head.signature,
       txnToken: response.responseObject.body.txnToken,
-      TXN_AMOUNT: String(JSON.parse(req.body.amount).amount) ,
+      TXN_AMOUNT: String(JSON.parse(req.amount).amount),
       WEBSITE: 'WEBSTAGING',
     };
 
-    logger.info(`> Paytm token created for ${req.body.name}`);
+    logger.info(`> Paytm token created for ${req.name}`);
 
     return details;
   } catch (err) {
@@ -70,5 +70,44 @@ const generateTxnId = async (req) => {
     return err;
   }
 };
-module.exports = { connectToPaytm, generateTxnId };
+
+const reinitateTxnId = async (req) => {
+  try {
+    var channelId = Paytm.EChannelId.WEB;
+    var orderId = req.orderId;
+    var txnAmount = Paytm.Money.constructWithCurrencyAndValue(
+      Paytm.EnumCurrency.INR,
+      String(JSON.parse(req.amount).amount)
+    );
+    var userInfo = new Paytm.UserInfo(generateRandomString(10));
+    userInfo.setEmail(req.email);
+    userInfo.setFirstName(req.name);
+    userInfo.setMobile(req.phone);
+    var paymentDetailBuilder = new Paytm.PaymentDetailBuilder(
+      channelId,
+      orderId,
+      txnAmount,
+      userInfo
+    );
+    var paymentDetail = paymentDetailBuilder.build();
+    var response = await Paytm.Payment.createTxnToken(paymentDetail);
+
+    var details = {
+      mid: process.env.Merchant_Id,
+      orderId,
+      CHECKSUMHASH: response.responseObject.head.signature,
+      txnToken: response.responseObject.body.txnToken,
+      TXN_AMOUNT: String(JSON.parse(req.amount).amount),
+      WEBSITE: 'WEBSTAGING',
+    };
+
+    logger.info(`> Paytm token created for ${req.name}`);
+
+    return details;
+  } catch (err) {
+    logger.error(err);
+    return err;
+  }
+};
+module.exports = { connectToPaytm, generateTxnId, reinitateTxnId };
 // String(JSON.parse(req.body.amount).amount)+".00"

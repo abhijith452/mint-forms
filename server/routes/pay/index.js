@@ -21,6 +21,9 @@ router.get('/confirmation', async (req, res) => {
         formId: 1,
       }
     );
+    if(response===null){
+      return res.status(400).send({ error: 'Invalid order ID' });
+    }
 
     const formDetails = await Form.findOne(
       { formId: response.formId },
@@ -39,29 +42,5 @@ router.get('/confirmation', async (req, res) => {
   }
 });
 
-// router.get('/reinitiate', async (req, res) => {
-//   try {
-//     if (req.query.paymentProvider==="razorpay") {
-//       const orderDetails = await instance.orders.fetch(req.query.orderId);
-//       const applicant = await Response.findOne({ orderId: req.query.orderId });
-//       logger.info(
-//         `> Reinitated payment for ${applicant.name} orderId : ${req.query.orderId}`
-//       );
-//       orderDetails.key = process.env.razorPayId;
-//       orderDetails.userDetails = {
-//         name: applicant.name,
-//         email: applicant.email,
-//         phone: applicant.phone,
-//       };
-//       res.send(orderDetails);
-//     }
-//     else{
-
-//     }
-//   } catch (err) {
-//     res.status(400).send({ error: err.message });
-//     logger.error(err);
-//   }
-// });
 
 module.exports = router;

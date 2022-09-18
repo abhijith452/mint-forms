@@ -60,10 +60,11 @@ router.post(
       });
 
       const orderDetails = {
-        id: order.id,
-        amount: order.amount / 100,
+        orderId: order.id,
+        txnAmount: order.amount / 100,
         currency: order.currency,
-        created_at: order.created_at,
+        txnDate: moment().tz('Asia/Kolkata').toISOString(),
+        paymentProvider: 'razorpay',
       };
 
       const formDetails = await Form.findOne({ formId: req.query.formId });
@@ -136,7 +137,7 @@ router.post('/verify', async (req, res) => {
         txnId: req.body.razorpay_payment_id,
         currency: orderDetails.currency,
       };
-      console.log(data.currency)
+      console.log(data.currency);
 
       const formDetails = await Form.findOne({ formId: req.query.formId });
       notify('success', data, response, formDetails);

@@ -15,11 +15,10 @@ function stringifyValue(val) {
   }
 }
 
-function buildForm({ action, target, params }) {
+function buildForm({ action, params }) {
   const form = document.createElement('form');
   form.setAttribute('method', 'post');
   form.setAttribute('action', action);
-  form.setAttribute('target', target);
 
   Object.keys(params).forEach((key) => {
     const input = document.createElement('input');
@@ -32,13 +31,20 @@ function buildForm({ action, target, params }) {
   return form;
 }
 
-function displayPaytm(details) {
+function displayPaytm(data) {
+  var paytmLink =
+    process.env.NEXT_PUBLIC_ENV === 'production'
+      ? 'https://securegw.paytm.in/order/process'
+      : 'https://securegw-stage.paytm.in/order/process';
 
-    
+  var details = {
+    action: paytmLink,
+    params: data,
+  };
   const form = buildForm(details);
   document.body.appendChild(form);
   form.submit();
   form.remove();
 }
 
-module.exports =displayPaytm;
+module.exports = displayPaytm;

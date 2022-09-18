@@ -1,7 +1,7 @@
-function loadScript(src) {
+function loadScript() {
 	return new Promise((resolve) => {
 		const script = document.createElement('script')
-		script.src = src
+		script.src = 'https://checkout.razorpay.com/v1/checkout.js'
 		script.onload = () => {
 			resolve(true)
 		}
