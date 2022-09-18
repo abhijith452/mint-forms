@@ -32,11 +32,14 @@ function buildForm({ action, params }) {
 }
 
 function displayPaytm(data) {
-  var paytmLink =
-    process.env.NEXT_PUBLIC_ENV === 'production'
-      ? 'https://securegw.paytm.in/order/process'
-      : 'https://securegw-stage.paytm.in/order/process';
+  var paytmLink = '';
+  if (process.env.NEXT_PUBLIC_ENV === 'production') {
+    paytmLink = 'https://securegw.paytm.in/order/process';
+  } else {
+    paytmLink = 'https://securegw-stage.paytm.in/order/process';
+  }
 
+  console.log(process.env.NEXT_PUBLIC_ENV);
   var details = {
     action: paytmLink,
     params: data,
