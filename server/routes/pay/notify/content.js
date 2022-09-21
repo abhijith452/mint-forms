@@ -130,7 +130,7 @@ function content(status, data, transaction, formDetails) {
     return {
       from: metadata.from,
       to: metadata.to,
-      subject: `${formDetails.title} | Registration Successful`,
+      subject: `${formDetails.title} | Registration pending`,
       cc: 'backup@ieee-mint.org',
       html: conPending({
         link:
@@ -162,7 +162,7 @@ function content(status, data, transaction, formDetails) {
     return {
       from: metadata.from,
       to: metadata.to,
-      subject: `${formDetails.title} | Registration Successful`,
+      subject: `${formDetails.title} | Registration failed`,
       cc: 'backup@ieee-mint.org',
       html: conFailed({
         ...metadata.html,
