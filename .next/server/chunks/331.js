@@ -36,10 +36,10 @@ function buildForm({ action , params  }) {
 }
 function displayPaytm(data) {
     var paytmLink = "";
-    if (true) {
-        paytmLink = "https://securegw.paytm.in/order/process";
-    } else {}
-    console.log("production");
+    if (false) {} else {
+        paytmLink = "https://securegw-stage.paytm.in/order/process";
+    }
+    console.log("development");
     var details = {
         action: paytmLink,
         params: data

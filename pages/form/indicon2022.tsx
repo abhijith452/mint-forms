@@ -159,7 +159,6 @@ const Form: NextPage = () => {
         }
         if (Number(values.papers) === 2) {
           setFieldValue('paperId3', '');
-          setFieldValue('category', '');
           setFieldValue('extraPage3', '');
         }
 

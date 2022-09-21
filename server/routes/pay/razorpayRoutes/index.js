@@ -59,17 +59,17 @@ router.post(
           req.file.path !== undefined && { fileUpload: req.file.path }),
       });
 
-      const orderDetails = {
+
+      var transactionInfo = {
         orderId: order.id,
         txnAmount: order.amount / 100,
         currency: order.currency,
         txnDate: moment().tz('Asia/Kolkata').toISOString(),
         paymentProvider: 'razorpay',
       };
-
       const formDetails = await Form.findOne({ formId: req.query.formId });
-
-      notify('pending', orderDetails, req.body, formDetails);
+      notify('conPending', req.body, transactionInfo, formDetails);
+      
       logger.info(`> Razor token created for ${req.body.name}`);
 
       response
@@ -130,17 +130,15 @@ router.post('/verify', async (req, res) => {
         }
       );
 
-      var data = {
+      var transactionInfo = {
         txnAmount: orderDetails.amount_paid / 100,
         orderId: req.body.razorpay_order_id,
         txnDate: moment.unix(orderDetails.created_at).toISOString(),
         txnId: req.body.razorpay_payment_id,
-        currency: orderDetails.currency,
+        currency: orderDetails.currency
       };
-      console.log(data.currency);
-
       const formDetails = await Form.findOne({ formId: req.query.formId });
-      notify('success', data, response, formDetails);
+      notify('conSuccess', response, transactionInfo, formDetails);
       response
         .save()
         .then(() => res.sendStatus(200))
@@ -162,11 +160,6 @@ router.post('/failed', async (req, res) => {
     const orderDetails = await instance.orders.fetch(
       req.body.metadata.order_id
     );
-    var data = {
-      txnAmount: orderDetails.amount_paid,
-      orderId: req.body.metadata.order_id,
-      txnDate: moment.unix(orderDetails.created_at).toISOString(),
-    };
 
     const response = await Response.findOneAndUpdate(
       {
@@ -180,8 +173,15 @@ router.post('/failed', async (req, res) => {
         },
       }
     );
+    var transactionInfo = {
+      txnAmount: orderDetails.amount_paid / 100,
+      orderId: req.body.razorpay_order_id,
+      txnDate: moment.unix(orderDetails.created_at).toISOString(),
+      txnId: req.body.razorpay_payment_id,
+      currency: orderDetails.currency
+    };
     const formDetails = await Form.findOne({ formId: req.query.formId });
-    notify('failed', data, response, formDetails);
+    notify('conFailed', response, transactionInfo, formDetails);
 
     response
       .save()

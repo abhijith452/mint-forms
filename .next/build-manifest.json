@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/4uessSiaV6_QlIhip2NGS/_buildManifest.js",
-    "static/4uessSiaV6_QlIhip2NGS/_ssgManifest.js"
+    "static/rpVzZYOa8pnC4DrGTDP-g/_buildManifest.js",
+    "static/rpVzZYOa8pnC4DrGTDP-g/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -49,7 +49,7 @@
       "static/chunks/main-8243ebe299bc5e4f.js",
       "static/chunks/48-bd3ddd084ab6f9dd.js",
       "static/css/973b0b932f17e52c.css",
-      "static/chunks/pages/completepayment/[paymentProvider]/[orderId]-b9c1dc4fbfee5f89.js"
+      "static/chunks/pages/completepayment/[paymentProvider]/[orderId]-7efeede77ac1fb0e.js"
     ],
     "/confirmation/[id]": [
       "static/chunks/webpack-0ac84baf7c20a833.js",
@@ -88,7 +88,7 @@
       "static/chunks/231-667fe64fb2a9bb5d.js",
       "static/chunks/710-cb70f52e78db6c83.js",
       "static/css/a06561ae8e3863ac.css",
-      "static/chunks/pages/form/indicon2022-33410ee8df6798ed.js"
+      "static/chunks/pages/form/indicon2022-035015cb63310a71.js"
     ]
   },
   "ampFirstPages": []

@@ -47,7 +47,7 @@ router.post(
           req.file.path !== undefined && { fileUpload: req.file.path }),
       });
 
-      var data = {
+      var txnInfo = {
         currency: amountDetails.currency,
         txnAmount: amountDetails.amount,
         orderId: txnId.orderId,
@@ -56,7 +56,7 @@ router.post(
       };
 
       const formDetails = await Form.findOne({ formId: req.query.formId });
-      notify('pending', data, response, formDetails);
+      notify('conPending', req.body, txnInfo, formDetails);
       response
         .save()
         .then(() => res.send(txnId))
@@ -95,15 +95,16 @@ router.post('/callback', async (req, res) => {
         }
       );
 
-      var data = {
+      var txnInfo = {
         txnAmount: req.body.TXNAMOUNT,
         orderId: req.body.ORDERID,
         txnDate: moment().tz('Asia/Kolkata').toISOString(),
         txnId: req.body.TXNID,
+        currency: req.body.CURRENCY,
       };
 
       const formDetails = await Form.findOne({ formId: response.formId });
-      notify('success', data, response, formDetails);
+      notify('conSuccess', response, txnInfo, formDetails);
 
       response
         .save()
@@ -127,14 +128,17 @@ router.post('/callback', async (req, res) => {
           },
         }
       );
-      var data = {
+
+      var txnInfo = {
         txnAmount: req.body.TXNAMOUNT,
         orderId: req.body.ORDERID,
-        txnDate: moment().toISOString(),
+        txnDate: moment().tz('Asia/Kolkata').toISOString(),
+        txnId: req.body.TXNID,
+        currency: req.body.CURRENCY,
       };
       const formDetails = await Form.findOne({ formId: response.formId });
 
-      notify('failed', data, response, formDetails);
+      notify('conFailed', response, txnInfo, formDetails);
       response
         .save()
         .then(() =>

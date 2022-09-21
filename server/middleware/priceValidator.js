@@ -8,8 +8,6 @@ const priceValidator = (req, res, next) => {
   const paper = getPaperPrice(req.body);
   const extraPages = getExtraPagesPrice(req.body);
   const total = getTotalPrice(authorPrice + paper + extraPages, req.body)
-  console.log(total)
-  console.log(JSON.parse(req.body.amount).amount)
   if (total === JSON.parse(req.body.amount).amount) {
     console.log('Amount validated');
     next();
