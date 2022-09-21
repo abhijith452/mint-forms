@@ -177,7 +177,7 @@ const Form: NextPage = () => {
       values.extraPage3,
     ]);
   };
-
+  console.log(process.env.NEXT_PUBLIC_ENV);
   async function displayRazorPay(data: any, values: any) {
     const res = await loadScript();
 
