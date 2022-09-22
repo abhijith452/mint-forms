@@ -18,7 +18,7 @@ function getRegratationFee(data) {
 
 function getAdditionalPapersInfo(data) {
   return {
-    qty: data.papers - 1,
+    qty: isNaN(data.papers) ? 0 : data.papers - 1,
     amount: getPaperPrice(data),
   };
 }

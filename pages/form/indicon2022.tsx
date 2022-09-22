@@ -165,6 +165,7 @@ const Form: NextPage = () => {
         setAuthorPrice(getIndiconPrice(values));
         setAddPapers(getPaperPrice(values));
         setPages(getExtraPagesPrice(values));
+        console.log(getPaperPrice(values));
       } else {
         didMount.current = true;
       }
@@ -177,7 +178,6 @@ const Form: NextPage = () => {
       values.extraPage3,
     ]);
   };
-  console.log(process.env.NEXT_PUBLIC_ENV);
   async function displayRazorPay(data: any, values: any) {
     const res = await loadScript();
 
@@ -642,7 +642,7 @@ const Form: NextPage = () => {
                   </h4>
                   <h5 className={styles.singlePrice}>
                     {`${getPaperSinglePrice(values)} * ${
-                      Number(values.papers) - 1
+                      isNaN(values.papers) ? 0 : Number(values.papers) - 1
                     } = `}
                     {values.category.includes('Foreign') ? '$ ' : 'Rs '}
                     {addPapers}
