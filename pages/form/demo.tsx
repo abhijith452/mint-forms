@@ -253,19 +253,7 @@ const Form: NextPage = () => {
 
       const formData = buildForm(data);
 
-      if (values.category.includes('Foreign')) {
-        const res = await axios.post(
-          '/api/pay/razorpay?formId=demo',
-          formData,
-          {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-          }
-        );
-
-        displayRazorPay(res.data, values);
-      } else {
+    
         const res = await axios.post(
           '/api/pay/paytm?formId=demo',
           formData,
@@ -277,7 +265,7 @@ const Form: NextPage = () => {
         );
 
         displayPaytm(res.data);
-      }
+     
     } catch (err: any) {
       handleAxiosError(err);
     }
