@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={"..\\UI-Components\\RichEditor\\index.js -> react-draft-wysiwyg":{"id":"..\\UI-Components\\RichEditor\\index.js -> react-draft-wysiwyg","files":["static/chunks/node_modules_react-draft-wysiwyg_dist_react-draft-wysiwyg_js.js"]}}
+self.__REACT_LOADABLE_MANIFEST={"..\\UI-Components\\RichEditor\\index.js -> react-draft-wysiwyg":{id:35108,files:["static/chunks/2c386607.99c3d0abf37ead58.js"]}};
