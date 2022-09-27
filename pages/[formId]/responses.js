@@ -71,43 +71,71 @@ export default function Responses() {
   } = useQuery('repoData', getData, {
     enabled: formId !== undefined ? true : false,
   });
+  function convertToCSV(objArray) {
+    var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+    var str = '';
+
+    for (var i = 0; i < array.length; i++) {
+        var line = '';
+        for (var index in array[i]) {
+            if (line != '') line += ','
+
+            line += array[i][index];
+        }
+
+        str += line + '\r\n';
+    }
+
+    return str;
+}
 
   const createCsv = () => {
-    const headers = [
-      'orderId',
-      'name',
-      'email',
-      'phone',
-      'institute',
-      'designation',
-      'category',
-      'ieeeMember',
-      'papers',
-      'paperTitle',
-      'paymentStatus',
-      'txnDate',
-    ];
-    const rows = [];
+    var rows = [];
     var a = true;
-    data.data.responses.forEach((val) => {
-      var arr = [];
-      if (a) {
-        a = false;
-        rows.push(headers);
-      }
-      headers.forEach((v) => {
-        arr.push(
-          v === 'amount'
-            ? '"' + JSON.parse(val[v]).amount + '"'
-            : '"' + val[v] + '"'
-        );
-      });
-      rows.push(arr);
-    });
-    let csvContent =
-      'data:text/csv;charset=utf-8,' + rows.map((e) => e.join(',')).join('\n');
-    var encodedUri = encodeURI(csvContent);
-    window.open(encodedUri);
+    var jsonObject = JSON.stringify(data.data.responses);
+    var csv = convertToCSV(jsonObject);
+    // window.open(data.data.responses)
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data.data.responses));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href",     dataStr);
+    downloadAnchorNode.setAttribute("download", "exportName" + ".json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+    // data.data.responses.forEach((val) => {
+    //   var arr = [];
+    //   // if (a) {
+    //   //   a= false
+    //   //   Object.keys(val).forEach((item)=>{
+    //   //     arr.push('"' + item + '"');
+    //   //   });
+    //   //   rows.push(arr);
+    //   //   arr = [];
+    //   // }
+    //   Object.values(val).forEach((item) => {
+    //     arr.push('"' + item + '"');
+    //   });
+
+    //   rows.push(arr);
+    // });
+    // let csvContent = rows.map((e) => e.join(',')).join('\n');
+    // var encodedUri = encodeURI(csvContent);
+    // console.log(rows)
+    // window.open(encodedUri);
+    // var exportedFilenmae = 'export.csv';
+    // var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    // var link = document.createElement('a');
+    // if (link.download !== undefined) {
+    //   // feature detection
+    //   // Browsers that support HTML5 download attribute
+    //   var url = URL.createObjectURL(blob);
+    //   link.setAttribute('href', url);
+    //   link.setAttribute('download', exportedFilenmae);
+    //   link.style.visibility = 'hidden';
+    //   document.body.appendChild(link);
+    //   link.click();
+    //   document.body.removeChild(link);
+    // }
   };
 
   const sendNotification = async () => {
@@ -272,8 +300,8 @@ export default function Responses() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search for users, email address..."
               /> */}
-              {/* <div className={styles.responses_buttons}>
-                <div
+              <div className={styles.responses_buttons}>
+                {/* <div
                   className={styles.responses_button}
                   onClick={() => setNotify(true)}
                 >
@@ -286,7 +314,7 @@ export default function Responses() {
                 >
                   <SendIcon />
                   <p className={styles.responses_p}>Send mail</p>
-                </div>
+                </div> */}
                 <div
                   className={styles.responses_button}
                   onClick={() => createCsv()}
@@ -294,7 +322,7 @@ export default function Responses() {
                   <DownloadIcon />
                   <p className={styles.responses_p}>Download CSV</p>
                 </div>
-              </div> */}
+              </div>
             </div>
             <div className={styles.response_options}>
               <div className={styles.filterByPayStatus}>

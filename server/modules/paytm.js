@@ -33,11 +33,12 @@ function connectToPaytm() {
 }
 const generateTxnId = async (req) => {
   try {
+    var txnInfo = JSON.parse(req.amount)
     var channelId = Paytm.EChannelId.WEB;
     var orderId = generateRandomString(10);
     var txnAmount = Paytm.Money.constructWithCurrencyAndValue(
-      Paytm.EnumCurrency.INR,
-      String(JSON.parse(req.amount).amount)
+      txnInfo.currency,
+      txnInfo.amount
     );
     var userInfo = new Paytm.UserInfo(generateRandomString(10));
     userInfo.setEmail(req.email);
