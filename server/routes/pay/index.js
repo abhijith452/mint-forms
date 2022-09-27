@@ -6,48 +6,23 @@ const paytmRoutes = require('./paytmRoutes');
 const Response = require('../../models/response');
 const Form = require('../../models/forms');
 const notify = require('./notify');
-const conSuccess = require('../../mailTemplates/conferenceSuccess');
-const moment = require('moment');
-const getIndiconPrice = require('../../../utils/getIndiconPrice');
-const { getPaperPrice } = require('../../../utils/getPaperPrice');
-const { getExtraPagesPrice } = require('../../../utils/getExtraPagesPrice');
-
 
 router.use('/razorpay', razorPayRoutes);
 router.use('/paytm', paytmRoutes);
-router.get('/html', async (req, res) => {
+router.get('/success', async (req, res) => {
   try {
-    const response = await Response.findOne({ orderId: '44ZHW9SXOD' });
+    const response = await Response.findOne({ orderId: req.query.orderId });
     const formDetails = await Form.findOne({ orderId: response.formId });
-    res.send(
-      conSuccess({
-        name: response.name,
-        orderId: response.orderId,
-        amount: JSON.parse(response.amount).amount,
-        paymentStatus: 'success',
-        txnDate: moment(response.txnDate),
-        txnId: response.txnId,
-        email: response.email,
-        phone: response.phone,
-        banner:
-          process.env.NODE_ENV === 'development'
-            ? `http://localhost:3000/form%20banners/${formDetails.banner}`
-            : `${process.env.domain}/form%20banners/${formDetails.banner}`,
-        title: formDetails.title,
-        venue: formDetails.venue,
-        eventDate: moment(formDetails.eventDate),
-        currency: JSON.parse(response.amount).currency,
-        domain: process.env.domain,
-        fee: getIndiconPrice(response),
-        additionalPapers:getPaperPrice(response),
-        extraPages:getExtraPagesPrice(response),
-        papers:response.papers,
-        category:response.category,
-        numOfExtraPage: `${ str2num(response.extraPage1) +
-          str2num(response.extraPage2) +
-          str2num(response.extraPage3)}`
-      })
-    );
+
+    var txnInfo = {
+      txnAmount: JSON.parse(response.amount).amount,
+      orderId: response.orderId,
+      txnDate: response.txnDate,
+      txnId: response.txnId,
+      currency: JSON.parse(response.amount).currency,
+    };
+    notify('conSuccess', response, txnInfo, formDetails);
+    res.sendStatus(200);
   } catch (err) {
     res.status(400).send({ error: err.message });
     logger.error(err);

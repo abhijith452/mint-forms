@@ -1,13 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
 import Error from '../../UI-Components/error';
-import Input from '../../UI-Components/search';
 import Loader from '../../UI-Components/loader';
 import RadioButton from '../../UI-Components/RadioButton';
 import { useQuery, useQueryClient } from 'react-query';
 import Notification from '../../UI-Components/notification';
 import UserDetails from '../../UI-Components/userDetail';
-import SendIcon from '../../icons/send';
 import DownloadIcon from '../../icons/download';
 import styles from '../../styles/Responses.module.css';
 import { useRouter } from 'next/router';
@@ -66,35 +64,12 @@ export default function Responses() {
 
   const {
     isLoading,
-    error: isError,
     data,
   } = useQuery('repoData', getData, {
     enabled: formId !== undefined ? true : false,
   });
-  function convertToCSV(objArray) {
-    var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
-    var str = '';
-
-    for (var i = 0; i < array.length; i++) {
-        var line = '';
-        for (var index in array[i]) {
-            if (line != '') line += ','
-
-            line += array[i][index];
-        }
-
-        str += line + '\r\n';
-    }
-
-    return str;
-}
 
   const createCsv = () => {
-    var rows = [];
-    var a = true;
-    var jsonObject = JSON.stringify(data.data.responses);
-    var csv = convertToCSV(jsonObject);
-    // window.open(data.data.responses)
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data.data.responses));
     var downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute("href",     dataStr);
@@ -102,47 +77,10 @@ export default function Responses() {
     document.body.appendChild(downloadAnchorNode); // required for firefox
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
-    // data.data.responses.forEach((val) => {
-    //   var arr = [];
-    //   // if (a) {
-    //   //   a= false
-    //   //   Object.keys(val).forEach((item)=>{
-    //   //     arr.push('"' + item + '"');
-    //   //   });
-    //   //   rows.push(arr);
-    //   //   arr = [];
-    //   // }
-    //   Object.values(val).forEach((item) => {
-    //     arr.push('"' + item + '"');
-    //   });
-
-    //   rows.push(arr);
-    // });
-    // let csvContent = rows.map((e) => e.join(',')).join('\n');
-    // var encodedUri = encodeURI(csvContent);
-    // console.log(rows)
-    // window.open(encodedUri);
-    // var exportedFilenmae = 'export.csv';
-    // var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    // var link = document.createElement('a');
-    // if (link.download !== undefined) {
-    //   // feature detection
-    //   // Browsers that support HTML5 download attribute
-    //   var url = URL.createObjectURL(blob);
-    //   link.setAttribute('href', url);
-    //   link.setAttribute('download', exportedFilenmae);
-    //   link.style.visibility = 'hidden';
-    //   document.body.appendChild(link);
-    //   link.click();
-    //   document.body.removeChild(link);
-    // }
   };
 
   const sendNotification = async () => {
     try {
-      // await axios.post(`/api/form/mail/reminder?formId=${formId}`);
-      // setNotification(true);
-      // setNotificationMsg('Payment link mail send successfully');
       setNotify(false);
     } catch (err) {
       setError(true);
