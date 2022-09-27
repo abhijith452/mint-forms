@@ -391,7 +391,8 @@ export default function Responses() {
                         </div>
                         <div className={styles.table_item}>{val.institute}</div>
                         <div className={styles.table_item}>
-                          {val.membershipType}
+                          {/* {val.membershipType} */}
+                          {val.validIEEE||val.validIEEE!==""?"IEEE Member":"Non IEEE Member"}
                         </div>
                         <div className={styles.table_item}>
                           {JSON.parse(val.amount).currency === 'USD'

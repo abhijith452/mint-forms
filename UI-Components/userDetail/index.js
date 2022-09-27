@@ -14,7 +14,7 @@ export default function UserDetails({ data, setShow }) {
                 <DisabledInput label="Email" value={data.email} />
                 <DisabledInput label="Phone" value={data.phone} />
                 <DisabledInput label="Institute" value={data.institute} />
-                <DisabledInput label="Membership Type" value={data.membershipType} />
+                <DisabledInput label="Membership Type" value={data.validIEEE||data.validIEEE!==""?"IEEE Member":"Non IEEE Member"} />
                 {data.membershipId!== undefined&&data.membershipId!=="" ? <DisabledInput label="Membership ID" value={data.membershipId} /> : null}
                 {data.gender!== undefined ? <DisabledInput label="Gender" value={data.gender} /> : null}
                 {data.category!== undefined ? <DisabledInput label="Category" value={data.category} /> : null}

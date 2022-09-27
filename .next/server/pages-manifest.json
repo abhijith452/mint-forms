@@ -6,6 +6,7 @@
   "/completepayment/[paymentProvider]/[orderId]": "pages/completepayment/[paymentProvider]/[orderId].html",
   "/confirmation/[id]": "pages/confirmation/[id].html",
   "/create": "pages/create.html",
+  "/form/demo": "pages/form/demo.html",
   "/form/dynamic": "pages/form/dynamic.html",
   "/form/indicon2022": "pages/form/indicon2022.html",
   "/": "pages/index.html",
