@@ -183,7 +183,7 @@ const Form: NextPage = () => {
         </>
       ) : (
         <div className={styles.formContainer}>
-          <img className={styles.formBanner} src="/indicon2.png" />
+          <img className={styles.formBanner} src="/pedes.png" />
           <div className={styles.formDetails}>
             <p className={styles.subTitle}>REGISTRATION FORM</p>
             <h1 className={styles.formTitle}>PEDES 2022</h1>
