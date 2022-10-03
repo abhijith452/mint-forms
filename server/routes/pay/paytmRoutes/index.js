@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios');
 const Paytm = require('paytm-pg-node-sdk');
 const logger = require('../../../utils/logger');
 const { reinitateTxnId, generateTxnId } = require('../../../modules/paytm');
@@ -13,6 +14,7 @@ const validate = require('../../../middleware/validateResponse');
 const responseSchema = require('../../../validations/responseValidation');
 const priceValidator = require('../../../middleware/priceValidator');
 const checkOrderPaytm = require('../../../middleware/checkOrderPaytm');
+const { exchangeRates } = require('exchange-rates-api');
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -28,13 +30,28 @@ const upload = multer({ storage: fileStorage });
 router.post(
   '/',
   upload.single('fileUpload'),
-  validate(responseSchema),
   priceValidator,
 
   async (req, res) => {
     try {
-      var txnId = await generateTxnId(req.body);
+      var data = req.body;
+
       var amountDetails = JSON.parse(req.body.amount);
+
+      if (amountDetails.currency === 'USD') {
+        const inr = await axios.get(
+          'https://www.frankfurter.app/latest?from=USD&toINR'
+        );
+        var temp = {
+          amount: (amountDetails.amount * inr.data.rates.INR).toFixed(2),
+          currency: 'INR',
+          conversionRate: inr.data.rates.INR,
+        };
+        amountDetails = temp;
+        data.amount = JSON.stringify(amountDetails);
+      }
+
+      var txnId = await generateTxnId(data);
       const response = await new Response({
         formId: req.query.formId,
         responseId: generateRandomString(10),
@@ -48,7 +65,7 @@ router.post(
       });
 
       var txnInfo = {
-        currency: amountDetails.currency,
+        currency: 'INR',
         txnAmount: amountDetails.amount,
         orderId: txnId.orderId,
         txnDate: moment().tz('Asia/Kolkata').toISOString(),
@@ -56,7 +73,11 @@ router.post(
       };
 
       const formDetails = await Form.findOne({ formId: req.query.formId });
-      notify('conPending', req.body, txnInfo, formDetails);
+      if (req.query.formId === 'indicon2022') {
+        notify('conPending', req.body, txnInfo, formDetails);
+      } else {
+        notify('pending', req.body, txnInfo, formDetails);
+      }
       response
         .save()
         .then(() => res.send(txnId))

@@ -10,7 +10,7 @@
 /coverage
 /logs
 # next.js
-
+/.vscode
 /out/
 
 # production

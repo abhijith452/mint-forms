@@ -22,7 +22,7 @@ function content(status, data, transaction, formDetails) {
       name: data.name,
       orderId: transaction.orderId,
       amount: transaction.txnAmount,
-      txnDate: moment(transaction.txnDate).format("DD MMMM YYYY HH:MM:SS"),
+      txnDate: moment(transaction.txnDate).format('DD MMMM YYYY HH:MM:SS'),
       txnId: transaction.txnId,
       email: data.email,
       phone: data.phone,
@@ -45,87 +45,41 @@ function content(status, data, transaction, formDetails) {
       subject: `${formDetails.title} | Registration Successful`,
       cc: 'backup@ieee-mint.org',
       html: success({
-        name: applicant.name,
-        orderId: data.orderId !== undefined ? data.orderId : data.id,
-        amount: data.txnAmount,
+        ...metadata.html,
         paymentStatus: 'success',
-        txnDate: data.txnDate,
-        txnId: data.txnId,
-        email: applicant.email,
-        phone: applicant.phone,
-        banner:
-          process.env.NODE_ENV === 'development'
-            ? `http://localhost:3000/form%20banners/${formDetails.banner}`
-            : `${process.env.domain}/form%20banners/${formDetails.banner}`,
-        title: formDetails.title,
-        venue: formDetails.venue,
-        eventDate: formDetails.eventDate,
-        currency: data.currency,
-        domain: process.env.domain,
       }),
     };
-  }
-  // else if (status === 'pending') {
-  //   return {
-  //     from: metadata.from,
-  //     to: metadata.to,
-  //     subject: `${formDetails.title} | Registration pending`,
-  //     cc: 'backup@ieee-mint.org',
+  } else if (status === 'pending') {
+    return {
+      from: metadata.from,
+      to: metadata.to,
+      subject: `${formDetails.title} | Registration pending`,
+      cc: 'backup@ieee-mint.org',
 
-  //     html: pending({
-  //       name: applicant.name,
-  //       orderId: data.orderId,
-  //       amount: data.txnAmount,
-  //       paymentStatus: 'pending',
-  //       txnDate: data.txnDate,
-  //       email: applicant.email,
-  //       phone: applicant.phone,
-  //       banner:
-  //         process.env.NODE_ENV === 'development'
-  //           ? `http://localhost:3000/form%20banners/${formDetails.banner}`
-  //           : `${process.env.domain}/form%20banners/${formDetails.banner}`,
-  //       title: formDetails.title,
-  //       venue: formDetails.venue,
-  //       eventDate: formDetails.eventDate,
-  //       formId: formDetails.formId,
-  //       currency: data.currency,
-  //       domain: process.env.domain,
-  //       link:
-  //         process.env.domain +
-  //         'completepayment/' +
-  //         data.paymentProvider +
-  //         `/` +
-  //         data.orderId,
-  //     }),
-  //   };
-  // } else if (status === 'failed') {
-  //   return {
-  //     from: metadata.from,
-  //     to: metadata.to,
-  //     subject: `${formDetails.title} | Registration failed`,
-  //     cc: 'backup@ieee-mint.org',
+      html: pending({
+        ...metadata.html,
+        paymentStatus: 'pending',
+        link:
+          process.env.domain +
+          'completepayment/' +
+          transaction.paymentProvider +
+          `/` +
+          transaction.orderId,
+      }),
+    };
+  } else if (status === 'failed') {
+    return {
+      from: metadata.from,
+      to: metadata.to,
+      subject: `${formDetails.title} | Registration failed`,
+      cc: 'backup@ieee-mint.org',
 
-  //     html: failed({
-  //       name: applicant.name,
-  //       orderId: data.orderId,
-  //       amount: data.txnAmount,
-  //       paymentStatus: 'failed',
-  //       txnDate: data.txnDate,
-  //       email: applicant.email,
-  //       phone: applicant.phone,
-  //       banner:
-  //         process.env.NODE_ENV === 'development'
-  //           ? `http://localhost:3000/form%20banners/${formDetails.banner}`
-  //           : `${process.env.domain}/form%20banners/${formDetails.banner}`,
-  //       title: formDetails.title,
-  //       venue: formDetails.venue,
-  //       eventDate: formDetails.eventDate,
-  //       currency: data.currency,
-  //       domain: process.env.domain,
-  //     }),
-  //   };
-  // }
-  else if (status === 'conPending') {
+      html: failed({
+        paymentStatus: 'failed',
+        ...html.metadata,
+      }),
+    };
+  } else if (status === 'conPending') {
     priceInfo = getPriceBreakdown(data);
     return {
       from: metadata.from,
