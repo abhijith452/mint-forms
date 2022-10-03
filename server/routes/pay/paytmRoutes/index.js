@@ -125,7 +125,13 @@ router.post('/callback', async (req, res) => {
       };
 
       const formDetails = await Form.findOne({ formId: response.formId });
-      notify('conSuccess', response, txnInfo, formDetails);
+
+      if (req.query.formId === 'indicon2022') {
+        notify('conSuccess', response, txnInfo, formDetails);
+      } else {
+        notify('success', response, txnInfo, formDetails);
+      }
+      
 
       response
         .save()
@@ -158,8 +164,13 @@ router.post('/callback', async (req, res) => {
         currency: req.body.CURRENCY,
       };
       const formDetails = await Form.findOne({ formId: response.formId });
-
-      notify('conFailed', response, txnInfo, formDetails);
+      if (req.query.formId === 'indicon2022') {
+        notify('conFailed', response, txnInfo, formDetails);
+      } else {
+        notify('failed', response, txnInfo, formDetails);
+      }
+      
+     
       response
         .save()
         .then(() =>
