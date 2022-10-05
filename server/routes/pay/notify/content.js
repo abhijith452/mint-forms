@@ -76,7 +76,7 @@ function content(status, data, transaction, formDetails) {
 
       html: failed({
         paymentStatus: 'failed',
-        ...html.metadata,
+        ...metadata.html,
       }),
     };
   } else if (status === 'conPending') {

@@ -16,15 +16,15 @@ import PhoneSelector from '../../UI-Components/PhoneSelector';
 import FormSelect from '../../UI-Components/FormSelect';
 import FormIEEE from '../../UI-Components/FormIEEE';
 import getCountryList from '../../utils/getCountryList';
-import { getPedesPrice, getPedesTotalPrice } from '../../utils/getPedesPrice';
+import { getPedesPrice, getExtraPagesPrice2 } from '../../utils/getPedesPrice';
 import * as yup from 'yup';
+import getTotalPrice from '../../utils/getTotalPrice';
 
 const Form: NextPage = () => {
-  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
-
+  const [pages, setPages] = useState(0);
   const [initialVal, setIntialVal] = useState({
     name: '',
     email: '',
@@ -42,6 +42,7 @@ const Form: NextPage = () => {
     institute: '',
     designation: '',
     category: '',
+    presentation:'',
     papers: '1',
     paperId1: '',
     paperId2: '',
@@ -59,11 +60,14 @@ const Form: NextPage = () => {
   //   country: 'India',
   //   state: 'Kerala',
   //   pincode: '686019',
+  //   presentation: '',
   //   food: 'Veg',
   //   citizen: 'Indian',
   //   category: 'IEEE Student Member',
   //   paperId1: 'asdas',
+  //   extraPage1: '',
   //   paperId2: '',
+  //   extraPage2: '',
   //   papers: '1',
   // });
 
@@ -76,6 +80,8 @@ const Form: NextPage = () => {
       is: 'Yes',
       then: yup.string().required('Verify membership ID'),
     }),
+    presentation: yup.string().required(),
+    presentationType: yup.string().required(),
     citizen: yup.string().required(),
     address: yup.string().required(),
     gender: yup.string().required(),
@@ -90,7 +96,15 @@ const Form: NextPage = () => {
       is: (papers: any) => Number(papers) > 0,
       then: yup.string().required(),
     }),
+    extraPage1: yup.string().when('papers', {
+      is: (papers: any) => Number(papers) > 0,
+      then: yup.string().required('Required'),
+    }),
     paperId2: yup.string().when('papers', {
+      is: (papers: any) => Number(papers) >= 2,
+      then: yup.string().required(),
+    }),
+    extraPage2: yup.string().when('papers', {
       is: (papers: any) => Number(papers) >= 2,
       then: yup.string().required(),
     }),
@@ -111,9 +125,17 @@ const Form: NextPage = () => {
     const didMount = useRef(false);
     useEffect(() => {
       if (didMount.current) {
+        if (values.papers === 'Not applicable') {
+          setFieldValue('paperId1', '');
+          setFieldValue('paperId2', '');
+          setFieldValue('extraPage1', '');
+          setFieldValue('extraPage2', '');
+        }
         if (Number(values.papers) === 1) {
           setFieldValue('paperId2', '');
+          setFieldValue('extraPage2', '');
         }
+        setPages(getExtraPagesPrice2(values));
       } else {
         didMount.current = true;
       }
@@ -123,10 +145,8 @@ const Form: NextPage = () => {
       values.category,
       values.extraPage1,
       values.extraPage2,
-      values.extraPage3,
     ]);
   };
-
   const handleAxiosError = (err: any) => {
     setError(true);
     setErrorMsg(err.response !== undefined ? err.response.data.error : err);
@@ -143,7 +163,7 @@ const Form: NextPage = () => {
         : 'Non IEEE Member';
       data.amount = JSON.stringify({
         currency: values.citizen === 'Foreign' ? 'USD' : 'INR',
-        amount: getPedesTotalPrice(values, getPedesPrice(values)),
+        amount: getTotalPrice(getPedesPrice(values) + pages, values),
       });
 
       const formData = buildForm(data);
@@ -384,10 +404,31 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-
+                  <FormOptions
+                    label="Prefered presentation mode *"
+                    options={['Online', 'Offline']}
+                    value={values.presentation}
+                    onChange={(e: any) => setFieldValue('presentation', e)}
+                    errors={
+                      getIn(errors, 'presentation') !== undefined
+                        ? getIn(errors, 'presentation')
+                        : ''
+                    }
+                  />
+                  <FormOptions
+                    label="Presentation type *"
+                    options={['Oral', 'Poster']}
+                    value={values.presentationType}
+                    onChange={(e: any) => setFieldValue('presentationType', e)}
+                    errors={
+                      getIn(errors, 'presentationType') !== undefined
+                        ? getIn(errors, 'presentationType')
+                        : ''
+                    }
+                  />
                   <FormOptions
                     label="Number of papers*"
-                    options={['1', '2']}
+                    options={['1', '2', 'Not applicable']}
                     value={values.papers}
                     onChange={(e: any) => setFieldValue('papers', e)}
                     errors={
@@ -411,6 +452,17 @@ const Form: NextPage = () => {
                             : ''
                         }
                       />
+                      <FormOptions
+                        label="Whether the paper 1 has exceed the 6 page limit ? if yes by how many extra pages ?*"
+                        options={['Not applicable', '1', '2']}
+                        value={values.extraPage1}
+                        onChange={(e: any) => setFieldValue('extraPage1', e)}
+                        errors={
+                          getIn(errors, 'extraPage1') !== undefined
+                            ? getIn(errors, 'extraPage1')
+                            : ''
+                        }
+                      />
                     </>
                   ) : null}
                   {Number(values.papers) >= 2 ? (
@@ -425,6 +477,17 @@ const Form: NextPage = () => {
                         errors={
                           getIn(errors, 'paperId2') !== undefined
                             ? getIn(errors, 'paperId2')
+                            : ''
+                        }
+                      />
+                      <FormOptions
+                        label="Whether the paper 2 has exceed the 6 page limit ? if yes by how many extra pages ?*"
+                        options={['Not applicable', '1', '2']}
+                        value={values.extraPage2}
+                        onChange={(e: any) => setFieldValue('extraPage2', e)}
+                        errors={
+                          getIn(errors, 'extraPage2') !== undefined
+                            ? getIn(errors, 'extraPage2')
                             : ''
                         }
                       />
@@ -460,13 +523,19 @@ const Form: NextPage = () => {
                   ) : null}
 
                   <PriceUpdater />
-
                   <h4 className={styles.breakDownLabel}>
                     Amount to be paid (including GST)
                   </h4>
                   <h5 className={styles.singlePrice}>
                     {values.citizen === 'Foreign' ? '$ ' : 'Rs '}
                     {getPedesPrice(values)}
+                  </h5>
+                  <h4 className={styles.breakDownLabel}>
+                    Amount based on extra pages(including GST)
+                  </h4>
+                  <h5 className={styles.singlePrice}>
+                    {values.citizen === 'Foreign' ? '$ ' : 'Rs '}
+                    {getExtraPagesPrice2(values)}
                   </h5>
                   <h4 className={styles.priceLabel}>
                     Total amount (
@@ -479,7 +548,8 @@ const Form: NextPage = () => {
                   </h4>
                   <h5 className={styles.price}>
                     {values.citizen === 'Foreign' ? '$ ' : 'Rs '}
-                    {getPedesTotalPrice(values, getPedesPrice(values))}
+                    {getTotalPrice(getPedesPrice(values) + pages, values)}
+                    {/* {getPedesTotalPrice(values, getPedesPrice(values))} */}
                   </h5>
                   <br />
                   {/* {JSON.stringify(errors, null, 2)} */}

@@ -3,8 +3,8 @@ const { getPaperPrice } = require('../../utils/getPaperPrice');
 const { getExtraPagesPrice } = require('../../utils/getExtraPagesPrice');
 const getTotalPrice = require('../../utils/getTotalPrice');
 const {
-  getPedesTotalPrice,
   getPedesPrice,
+  getExtraPagesPrice2,
 } = require('../../utils/getPedesPrice');
 
 const getPriceValidateIndicon = (req) => {
@@ -20,8 +20,12 @@ const priceValidator = (req, res, next) => {
   if (req.query.formId === 'indicon2022' || req.query.formId === 'demo') {
     total = getPriceValidateIndicon(req);
   } else if (req.query.formId === 'pedes2022') {
-    total = getPedesTotalPrice(req.body, getPedesPrice(req.body));
+    total = getTotalPrice(
+      getPedesPrice(req.body) + getExtraPagesPrice2(req.body),
+      req.body
+    );
   }
+
   if (total === JSON.parse(req.body.amount).amount) {
     console.log('Amount validated');
     next();
