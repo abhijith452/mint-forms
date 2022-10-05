@@ -14,7 +14,7 @@ const validate = require('../../../middleware/validateResponse');
 const responseSchema = require('../../../validations/responseValidation');
 const priceValidator = require('../../../middleware/priceValidator');
 const checkOrderPaytm = require('../../../middleware/checkOrderPaytm');
-const {  generateTxn2} = require('../../../modules/paytmNew');
+// const {  generateTxn2} = require('../../../modules/paytmNew');
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -27,23 +27,23 @@ const fileStorage = multer.diskStorage({
 
 const upload = multer({ storage: fileStorage });
 
-router.post('/test', async (req, res) => {
-  try {
-    var txnAmount = {
-      currency:"INR",
-      amount:"4780.00",
-      ownerSplitAmount:"4000"
-    }
-    var data = {
-      amount:JSON.stringify(txnAmount)
-    }
-    var a = await generateTxn2(data);
-    res.send(a);
-  } catch (err) {
-    res.status(400).send({ error: err.message });
-    logger.error(err);
-  }
-});
+// router.post('/test', async (req, res) => {
+//   try {
+//     var txnAmount = {
+//       currency:"INR",
+//       amount:"4780.00",
+//       ownerSplitAmount:"4000"
+//     }
+//     var data = {
+//       amount:JSON.stringify(txnAmount)
+//     }
+//     var a = await generateTxn2(data);
+//     res.send(a);
+//   } catch (err) {
+//     res.status(400).send({ error: err.message });
+//     logger.error(err);
+//   }
+// });
 
 router.post(
   '/',
