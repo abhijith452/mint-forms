@@ -42,7 +42,7 @@ const Form: NextPage = () => {
     institute: '',
     designation: '',
     category: '',
-    presentation:'',
+    presentation: '',
     papers: '1',
     paperId1: '',
     paperId2: '',
@@ -186,10 +186,10 @@ const Form: NextPage = () => {
 
   const catgory = [
     'IEEE Student Member',
-    'Non-IEEE Student Member',
     'IEEE Member',
-    'Non-IEEE member',
     'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus',
+    'Non-IEEE Student Member',
+    'Non-IEEE member',
   ];
 
   return (
@@ -341,7 +341,7 @@ const Form: NextPage = () => {
                   />
                   <FormInput
                     label="Designation *"
-                    placeholder="Enter your phone number"
+                    placeholder="Enter your designation"
                     value={values.designation}
                     onChange={(e: any) =>
                       setFieldValue('designation', e.target.value)
@@ -523,15 +523,13 @@ const Form: NextPage = () => {
                   ) : null}
 
                   <PriceUpdater />
-                  <h4 className={styles.breakDownLabel}>
-                    Amount to be paid (including GST)
-                  </h4>
+                  <h4 className={styles.breakDownLabel}>Amount to be paid</h4>
                   <h5 className={styles.singlePrice}>
                     {values.citizen === 'Foreign' ? '$ ' : 'Rs '}
                     {getPedesPrice(values)}
                   </h5>
                   <h4 className={styles.breakDownLabel}>
-                    Amount based on extra pages(including GST)
+                    Amount based on extra pages
                   </h4>
                   <h5 className={styles.singlePrice}>
                     {values.citizen === 'Foreign' ? '$ ' : 'Rs '}
@@ -542,7 +540,7 @@ const Form: NextPage = () => {
                     <i>
                       {' '}
                       {values.citizen === 'Foreign' ? '3.2%' : '2.2%'}{' '}
-                      convenience fee included
+                      convenience fee and 18% GST included
                     </i>
                     )
                   </h4>
