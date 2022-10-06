@@ -169,7 +169,7 @@ const Form: NextPage = () => {
       const formData = buildForm(data);
 
       const res = await axios.post(
-        '/api/pay/paytm?formId=pedes2022',
+        '/api/pay/paytm/test?formId=pedes2022',
         formData,
         {
           headers: {
