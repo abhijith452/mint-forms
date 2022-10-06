@@ -207,6 +207,35 @@ router.post('/callback', async (req, res) => {
   }
 });
 
+router.post('/confirmation', async (req, res) => {
+  try {
+    const applicant = await Response.findOne({
+      orderId: req.query.orderId,
+    });
+    var amt = JSON.parse(applicant.amount);
+
+    var txnInfo = {
+      txnAmount: amt.amount,
+      orderId: applicant.orderId,
+      txnDate: applicant.txnDate,
+      txnId: applicant.txnId,
+      currency: 'INR',
+    };
+
+    const formDetails = await Form.findOne({ formId: applicant.formId });
+
+    if (req.query.formId === 'indicon2022') {
+      notify('conSuccess', applicant, txnInfo, formDetails);
+    } else {
+      notify('success', applicant, txnInfo, formDetails);
+    }
+    res.sendStatus(201)
+  } catch (err) {
+    res.status(400).send({ error: err.message });
+    logger.error(err);
+  }
+});
+
 router.get('/reinitiate', checkOrderPaytm, async (req, res) => {
   try {
     const applicant = await Response.findOne({
