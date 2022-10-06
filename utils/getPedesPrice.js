@@ -62,9 +62,19 @@ function getPedesTotalPrice(amount, values) {
   return (amount + gst + fee + feeGST).toFixed(2);
 }
 
-
+function getFee(amount, values) {
+  var gst = amount * 0.18;
+  var feePercent =
+   values.citizen === 'Foreign'
+      ? 0.032
+      : 0.0205;
+  var fee = feePercent * (amount + gst);
+  var feeGST = fee * 0.18;
+  return (fee + feeGST).toFixed(2);
+}
 module.exports = {
   getPedesPrice,
   getPedesTotalPrice,
   getExtraPagesPrice2,
+  getFee
 };

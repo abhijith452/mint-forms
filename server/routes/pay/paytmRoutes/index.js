@@ -14,7 +14,7 @@ const validate = require('../../../middleware/validateResponse');
 const responseSchema = require('../../../validations/responseValidation');
 const priceValidator = require('../../../middleware/priceValidator');
 const checkOrderPaytm = require('../../../middleware/checkOrderPaytm');
-const {  generateTxn2} = require('../../../modules/paytmNew');
+const { generateTxn2 } = require('../../../modules/paytmNew');
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -30,13 +30,13 @@ const upload = multer({ storage: fileStorage });
 router.post('/test', async (req, res) => {
   try {
     var txnAmount = {
-      currency:"INR",
-      amount:"4780.00",
-      ownerSplitAmount:"4000"
-    }
+      currency: 'INR',
+      amount: '4780.00',
+      ownerSplitAmount: '4000',
+    };
     var data = {
-      amount:JSON.stringify(txnAmount)
-    }
+      amount: JSON.stringify(txnAmount),
+    };
     var a = await generateTxn2(data);
     res.send(a);
   } catch (err) {
@@ -61,6 +61,8 @@ router.post(
           'https://www.frankfurter.app/latest?from=USD&toINR'
         );
         var temp = {
+          fee: (amountDetails.fee * inr.data.rates.INR).toFixed(2),
+          ownerAmt: (amountDetails.ownerAmt * inr.data.rates.INR).toFixed(2),
           amount: (amountDetails.amount * inr.data.rates.INR).toFixed(2),
           currency: 'INR',
           conversionRate: inr.data.rates.INR,
@@ -229,7 +231,7 @@ router.post('/confirmation', async (req, res) => {
     } else {
       notify('success', applicant, txnInfo, formDetails);
     }
-    res.sendStatus(201)
+    res.sendStatus(201);
   } catch (err) {
     res.status(400).send({ error: err.message });
     logger.error(err);

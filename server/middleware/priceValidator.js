@@ -5,6 +5,7 @@ const getTotalPrice = require('../../utils/getTotalPrice');
 const {
   getPedesPrice,
   getExtraPagesPrice2,
+  getPedesTotalPrice
 } = require('../../utils/getPedesPrice');
 
 const getPriceValidateIndicon = (req) => {
@@ -20,7 +21,7 @@ const priceValidator = (req, res, next) => {
   if (req.query.formId === 'indicon2022' || req.query.formId === 'demo') {
     total = getPriceValidateIndicon(req);
   } else if (req.query.formId === 'pedes2022') {
-    total = getTotalPrice(
+    total =getPedesTotalPrice(
       getPedesPrice(req.body) + getExtraPagesPrice2(req.body),
       req.body
     );

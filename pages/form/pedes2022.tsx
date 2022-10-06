@@ -16,7 +16,12 @@ import PhoneSelector from '../../UI-Components/PhoneSelector';
 import FormSelect from '../../UI-Components/FormSelect';
 import FormIEEE from '../../UI-Components/FormIEEE';
 import getCountryList from '../../utils/getCountryList';
-import { getPedesPrice, getExtraPagesPrice2 } from '../../utils/getPedesPrice';
+import {
+  getPedesPrice,
+  getExtraPagesPrice2,
+  getPedesTotalPrice,
+  getFee,
+} from '../../utils/getPedesPrice';
 import * as yup from 'yup';
 import getTotalPrice from '../../utils/getTotalPrice';
 
@@ -34,15 +39,11 @@ const Form: NextPage = () => {
     validIEEE: '',
     citizen: '',
     address: '',
-    gender: '',
     country: '',
     state: '',
     pincode: '',
-    food: '',
     institute: '',
-    designation: '',
     category: '',
-    presentation: '',
     papers: '1',
     paperId1: '',
     paperId2: '',
@@ -60,10 +61,8 @@ const Form: NextPage = () => {
   //   country: 'India',
   //   state: 'Kerala',
   //   pincode: '686019',
-  //   presentation: '',
-  //   food: 'Veg',
   //   citizen: 'Indian',
-  //   category: 'IEEE Student Member',
+  //   category: 'Non-IEEE Student Member',
   //   paperId1: 'asdas',
   //   extraPage1: '',
   //   paperId2: '',
@@ -80,17 +79,12 @@ const Form: NextPage = () => {
       is: 'Yes',
       then: yup.string().required('Verify membership ID'),
     }),
-    presentation: yup.string().required(),
-    presentationType: yup.string().required(),
     citizen: yup.string().required(),
     address: yup.string().required(),
-    gender: yup.string().required(),
     country: yup.string().required(),
     state: yup.string().required(),
-    food: yup.string().required(),
     pincode: yup.string().required(),
     institute: yup.string().required(),
-    designation: yup.string().required(),
     category: yup.string().required(),
     paperId1: yup.string().when('papers', {
       is: (papers: any) => Number(papers) > 0,
@@ -163,13 +157,15 @@ const Form: NextPage = () => {
         : 'Non IEEE Member';
       data.amount = JSON.stringify({
         currency: values.citizen === 'Foreign' ? 'USD' : 'INR',
-        amount: getTotalPrice(getPedesPrice(values) + pages, values),
+        fee: getFee(getPedesPrice(values) + pages, values),
+        ownerAmt: ((getPedesPrice(values) + pages)*1.18).toFixed(2),
+        amount: getPedesTotalPrice(getPedesPrice(values) + pages, values),
       });
 
       const formData = buildForm(data);
 
       const res = await axios.post(
-        '/api/pay/paytm/test?formId=pedes2022',
+        '/api/pay/paytm?formId=pedes2022',
         formData,
         {
           headers: {
@@ -188,10 +184,8 @@ const Form: NextPage = () => {
     'IEEE Student Member',
     'IEEE Member',
     'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus',
-    'Non-IEEE Student Member',
-    'Non-IEEE member',
   ];
-
+  const catgory2 = ['Non-IEEE Student Member', 'Non-IEEE member'];
   return (
     <div className={styles.form}>
       <Head>
@@ -265,17 +259,7 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  <FormOptions
-                    label="Gender*"
-                    options={['Male', 'Female']}
-                    value={values.gender}
-                    onChange={(e: any) => setFieldValue('gender', e)}
-                    errors={
-                      getIn(errors, 'gender') !== undefined
-                        ? getIn(errors, 'gender')
-                        : ''
-                    }
-                  />
+
                   <FormInput
                     label="Permanent address *"
                     placeholder="Enter your permanent address"
@@ -339,19 +323,7 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  <FormInput
-                    label="Designation *"
-                    placeholder="Enter your designation"
-                    value={values.designation}
-                    onChange={(e: any) =>
-                      setFieldValue('designation', e.target.value)
-                    }
-                    errors={
-                      getIn(errors, 'designation') !== undefined
-                        ? getIn(errors, 'designation')
-                        : ''
-                    }
-                  />
+
                   <FormOptions
                     label="Are you an IEEE Member*"
                     options={['Yes', 'No']}
@@ -393,39 +365,7 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  <FormOptions
-                    label="Food preference *"
-                    options={['Veg', 'Non Veg']}
-                    value={values.food}
-                    onChange={(e: any) => setFieldValue('food', e)}
-                    errors={
-                      getIn(errors, 'food') !== undefined
-                        ? getIn(errors, 'food')
-                        : ''
-                    }
-                  />
-                  <FormOptions
-                    label="Prefered presentation mode *"
-                    options={['Online', 'Offline']}
-                    value={values.presentation}
-                    onChange={(e: any) => setFieldValue('presentation', e)}
-                    errors={
-                      getIn(errors, 'presentation') !== undefined
-                        ? getIn(errors, 'presentation')
-                        : ''
-                    }
-                  />
-                  <FormOptions
-                    label="Presentation type *"
-                    options={['Oral', 'Poster']}
-                    value={values.presentationType}
-                    onChange={(e: any) => setFieldValue('presentationType', e)}
-                    errors={
-                      getIn(errors, 'presentationType') !== undefined
-                        ? getIn(errors, 'presentationType')
-                        : ''
-                    }
-                  />
+
                   <FormOptions
                     label="Number of papers*"
                     options={['1', '2', 'Not applicable']}
@@ -496,7 +436,7 @@ const Form: NextPage = () => {
 
                   <FormOptions
                     label="Category *"
-                    options={catgory}
+                    options={values.validIEEE === 'true' ? catgory : catgory2}
                     value={values.category}
                     onChange={(e: any) => setFieldValue('category', e)}
                     errors={
@@ -505,22 +445,6 @@ const Form: NextPage = () => {
                         : ''
                     }
                   />
-                  {values.category !== undefined &&
-                  values.category.includes('Foreign') ? (
-                    <FormInput
-                      label="Passport number *"
-                      placeholder="Enter your passport number"
-                      value={values.passport}
-                      onChange={(e: any) =>
-                        setFieldValue('passport', e.target.value)
-                      }
-                      errors={
-                        getIn(errors, 'passport') !== undefined
-                          ? getIn(errors, 'passport')
-                          : ''
-                      }
-                    />
-                  ) : null}
 
                   <PriceUpdater />
                   <h4 className={styles.breakDownLabel}>Amount to be paid</h4>
@@ -539,14 +463,14 @@ const Form: NextPage = () => {
                     Total amount (
                     <i>
                       {' '}
-                      {values.citizen === 'Foreign' ? '3.2%' : '2.2%'}{' '}
+                      {values.citizen === 'Foreign' ? '3.2%' : '2.05%'}{' '}
                       convenience fee and 18% GST included
                     </i>
                     )
                   </h4>
                   <h5 className={styles.price}>
                     {values.citizen === 'Foreign' ? '$ ' : 'Rs '}
-                    {getTotalPrice(getPedesPrice(values) + pages, values)}
+                    {getPedesTotalPrice(getPedesPrice(values) + pages, values)}
                     {/* {getPedesTotalPrice(values, getPedesPrice(values))} */}
                   </h5>
                   <br />
