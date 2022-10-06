@@ -37,12 +37,12 @@ function str2num(val) {
     return Number(val);
   }
 }
-function getPedesTotalPrice(val, price) {
-  var feePercent = val.citizen === 'Indian' ? 0.032 : 0.022;
-  var fee = price * feePercent;
-  var feeGST = fee * 0.18;
-  return (price + fee + feeGST).toFixed(2);
-}
+// function getPedesTotalPrice(val, price) {
+//   var feePercent = val.citizen === 'Indian' ? 0.032 : 0.022;
+//   var fee = price * feePercent;
+//   var feeGST = fee * 0.18;
+//   return (price + fee + feeGST).toFixed(2);
+// }
 function getExtraPagesPrice2(values) {
   var numOfPages = str2num(values.extraPage1) + str2num(values.extraPage2);
   if (values.citizen === 'Indian') {
@@ -51,6 +51,17 @@ function getExtraPagesPrice2(values) {
     return numOfPages * foreignPage;
   }
 }
+function getPedesTotalPrice(amount, values) {
+  var gst = amount * 0.18;
+  var feePercent =
+   values.citizen === 'Foreign'
+      ? 0.032
+      : 0.0205;
+  var fee = feePercent * (amount + gst);
+  var feeGST = fee * 0.18;
+  return (amount + gst + fee + feeGST).toFixed(2);
+}
+
 
 module.exports = {
   getPedesPrice,

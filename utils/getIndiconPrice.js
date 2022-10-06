@@ -21,7 +21,7 @@ function getIndiconPrice(values) {
 
   };
   var pricingData =
-    new Date().toISOString() > '2022-10-05T18:29:59.059Z'
+    new Date().toISOString() > '2022-10-07T04:29:59.059Z'
       ? pricingStandard
       : pricingEarlyBird;
 

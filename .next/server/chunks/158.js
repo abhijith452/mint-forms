@@ -123,7 +123,7 @@ function getIndiconPrice(values) {
             1
         ]
     };
-    var pricingData = new Date().toISOString() > "2022-10-05T18:29:59.059Z" ? pricingStandard : pricingEarlyBird;
+    var pricingData = new Date().toISOString() > "2022-10-07T04:29:59.059Z" ? pricingStandard : pricingEarlyBird;
     if (values.category === "Indian Author (Academia)" && values.ieeeMember === "Yes") {
         return pricingData.indianAuthorAcadamic[0];
     }
@@ -189,9 +189,9 @@ var additionalForeignPapers = [
 function getPaperSinglePrice(values) {
     if (Number(values.papers) > 1) {
         if (values.category.includes("Foreign")) {
-            return new Date().toISOString() > "2022-10-05T18:29:59.059Z" ? additionalForeignPapers[1] : additionalForeignPapers[0];
+            return new Date().toISOString() > "2022-10-07T04:29:59.059Z" ? additionalForeignPapers[1] : additionalForeignPapers[0];
         } else {
-            return new Date().toISOString() > "2022-10-05T18:29:59.059Z" ? additionalIndianPapers[1] : additionalIndianPapers[0];
+            return new Date().toISOString() > "2022-10-07T04:29:59.059Z" ? additionalIndianPapers[1] : additionalIndianPapers[0];
         }
     } else {
         return 0;
@@ -200,9 +200,9 @@ function getPaperSinglePrice(values) {
 function getPaperPrice(values) {
     if (Number(values.papers) > 1) {
         if (values.category.includes("Foreign")) {
-            return (new Date().toISOString() > "2022-10-05T18:29:59.059Z" ? additionalForeignPapers[1] : additionalForeignPapers[0]) * (values.papers - 1);
+            return (new Date().toISOString() > "2022-10-07T04:29:59.059Z" ? additionalForeignPapers[1] : additionalForeignPapers[0]) * (values.papers - 1);
         } else if (values.category.includes("Indian")) {
-            return (new Date().toISOString() > "2022-10-05T18:29:59.059Z" ? additionalIndianPapers[1] : additionalIndianPapers[0]) * (values.papers - 1);
+            return (new Date().toISOString() > "2022-10-07T04:29:59.059Z" ? additionalIndianPapers[1] : additionalIndianPapers[0]) * (values.papers - 1);
         } else {
             return 0;
         }
