@@ -1,4 +1,4 @@
-const PaytmChecksum = require('PaytmChecksum');
+const PaytmChecksum = require('paytmchecksum');
 const axios = require('axios');
 const logger = require('../utils/logger');
 const generateRandomString = require('../utils/generateRandomString');
