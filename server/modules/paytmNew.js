@@ -26,9 +26,13 @@ async function generateTxn2(data) {
           {
             mid: 'QUedcKFz198044201850',
             partnerId: 'abhijithkannan',
+            amount: { value: '900', currency: 'INR' },
+          },
+          {
+            mid: 'TZIemPYk892862475294',
+            partnerId: 'jacob01',
             amount: { value: '100', currency: 'INR' },
-          }
-
+          },
         ],
       },
     };
