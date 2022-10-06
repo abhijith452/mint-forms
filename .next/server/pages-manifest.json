@@ -1,16 +1,16 @@
 {
   "/_app": "pages/_app.js",
-  "/[formId]/responses": "pages/[formId]/responses.html",
+  "/_error": "pages/_error.js",
   "/api/hello": "pages/api/hello.js",
   "/completepayment/[paymentProvider]/[orderId]": "pages/completepayment/[paymentProvider]/[orderId].html",
   "/confirmation/[id]": "pages/confirmation/[id].html",
-  "/create": "pages/create.html",
+  "/[formId]/responses": "pages/[formId]/responses.html",
   "/form/demo": "pages/form/demo.html",
+  "/create": "pages/create.html",
   "/form/dynamic": "pages/form/dynamic.html",
   "/form/indicon2022": "pages/form/indicon2022.html",
   "/form/pedes2022": "pages/form/pedes2022.html",
   "/": "pages/index.html",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }
