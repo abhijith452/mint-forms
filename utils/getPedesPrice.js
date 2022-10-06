@@ -1,17 +1,19 @@
 const indian = {
-  'IEEE Student Member': 4000,
-  'Non-IEEE Student Member': 5000,
-  'IEEE Member': 10000,
-  'Non-IEEE member': 12000,
+  'IEEE Student author': 4000,
+  'Student author': 5000,
+  'IEEE Author (Academia/Industry)': 10000,
+  'Author (Academia/Industry)': 12000,
   'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus': 6000,
+  'TEST': 100,
 };
 
 const foreign = {
-  'IEEE Student Member': 120,
-  'Non-IEEE Student Member': 150,
-  'IEEE Member': 300,
-  'Non-IEEE member': 360,
+  'IEEE Student author': 120,
+  'Student author': 150,
+  'IEEE Author (Academia/Industry)': 300,
+  'Author (Academia/Industry)': 360,
   'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus': 200,
+  'TEST': 1,
 };
 
 const indianPage = 1000;

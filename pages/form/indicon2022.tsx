@@ -178,60 +178,60 @@ const Form: NextPage = () => {
       values.extraPage3,
     ]);
   };
-  async function displayRazorPay(data: any, values: any) {
-    const res = await loadScript();
+  // async function displayRazorPay(data: any, values: any) {
+  //   const res = await loadScript();
 
-    if (!res) {
-      alert('Razorpay SDK failed to load. Are you online?');
-      return;
-    }
+  //   if (!res) {
+  //     alert('Razorpay SDK failed to load. Are you online?');
+  //     return;
+  //   }
 
-    const options = {
-      key: data.key,
-      currency: data.currency,
-      amount: String(data.amount),
-      order_id: data.id,
-      name: 'Indicon 2022',
-      description: 'Thank you for registering',
+  //   const options = {
+  //     key: data.key,
+  //     currency: data.currency,
+  //     amount: String(data.amount),
+  //     order_id: data.id,
+  //     name: 'Indicon 2022',
+  //     description: 'Thank you for registering',
 
-      handler: async (response: any) => {
-        try {
-          await axios.post(
-            `/api/pay/razorpay/verify?formId=indicon2022&orderId=${response.razorpay_order_id}`,
-            response
-          );
-          router.push(`/confirmation/${response.razorpay_order_id}`);
-        } catch (err: any) {
-          setError(true);
-          setErrorMsg(
-            err.response !== undefined ? err.response.data.error : err
-          );
-          setLoading(false);
-        }
-      },
-      prefill: {
-        name: `${values.name}`,
-        email: values.email,
-        contact: `${values.phone}`,
-      },
-    };
-    const paymentObject = new (window as any).Razorpay(options);
-    paymentObject.open();
-    paymentObject.on('payment.failed', async (response: any) => {
-      try {
-        await axios.post(
-          `/api/pay/razorpay/failed?formId=indicon2022`,
-          response.error
-        );
-        router.push(`/confirmation/${response.error.metadata.order_id}`);
-        paymentObject.close();
-      } catch (err: any) {
-        setError(true);
-        setErrorMsg(err.response !== undefined ? err.response.data.error : err);
-        setLoading(false);
-      }
-    });
-  }
+  //     handler: async (response: any) => {
+  //       try {
+  //         await axios.post(
+  //           `/api/pay/razorpay/verify?formId=indicon2022&orderId=${response.razorpay_order_id}`,
+  //           response
+  //         );
+  //         router.push(`/confirmation/${response.razorpay_order_id}`);
+  //       } catch (err: any) {
+  //         setError(true);
+  //         setErrorMsg(
+  //           err.response !== undefined ? err.response.data.error : err
+  //         );
+  //         setLoading(false);
+  //       }
+  //     },
+  //     prefill: {
+  //       name: `${values.name}`,
+  //       email: values.email,
+  //       contact: `${values.phone}`,
+  //     },
+  //   };
+  //   const paymentObject = new (window as any).Razorpay(options);
+  //   paymentObject.open();
+  //   paymentObject.on('payment.failed', async (response: any) => {
+  //     try {
+  //       await axios.post(
+  //         `/api/pay/razorpay/failed?formId=indicon2022`,
+  //         response.error
+  //       );
+  //       router.push(`/confirmation/${response.error.metadata.order_id}`);
+  //       paymentObject.close();
+  //     } catch (err: any) {
+  //       setError(true);
+  //       setErrorMsg(err.response !== undefined ? err.response.data.error : err);
+  //       setLoading(false);
+  //     }
+  //   });
+  // }
   const handleAxiosError = (err: any) => {
     setError(true);
     setErrorMsg(err.response !== undefined ? err.response.data.error : err);
@@ -249,35 +249,39 @@ const Form: NextPage = () => {
       data.amount = JSON.stringify({
         currency: values.category.includes('Foreign') ? 'USD' : 'INR',
         amount: getTotalPrice(authorPrice + addPapers + pages, values),
+        fee:
+          getTotalPrice(authorPrice + addPapers + pages, values) -
+          Number(((authorPrice + addPapers + pages) * 1.18).toFixed(2)),
+        ownerAmt: Number(((authorPrice + addPapers + pages) * 1.18).toFixed(2)),
       });
 
       const formData = buildForm(data);
 
-      if (values.category.includes('Foreign')) {
-        const res = await axios.post(
-          '/api/pay/razorpay?formId=indicon2022',
-          formData,
-          {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-          }
-        );
+      // if (values.category.includes('Foreign')) {
+      //   const res = await axios.post(
+      //     '/api/pay/razorpay?formId=indicon2022',
+      //     formData,
+      //     {
+      //       headers: {
+      //         'Content-Type': 'multipart/form-data',
+      //       },
+      //     }
+      //   );
 
-        displayRazorPay(res.data, values);
-      } else {
-        const res = await axios.post(
-          '/api/pay/paytm?formId=indicon2022',
-          formData,
-          {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-          }
-        );
+      //   displayRazorPay(res.data, values);
+      // } else {
+      const res = await axios.post(
+        '/api/pay/paytm?formId=indicon2022',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
 
-        displayPaytm(res.data);
-      }
+      displayPaytm(res.data);
+      // }
     } catch (err: any) {
       handleAxiosError(err);
     }

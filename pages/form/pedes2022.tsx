@@ -64,7 +64,7 @@ const Form: NextPage = () => {
   //   citizen: 'Indian',
   //   category: 'Non-IEEE Student Member',
   //   paperId1: 'asdas',
-  //   extraPage1: '',
+  //   extraPage1: 'Not applicable',
   //   paperId2: '',
   //   extraPage2: '',
   //   papers: '1',
@@ -158,7 +158,7 @@ const Form: NextPage = () => {
       data.amount = JSON.stringify({
         currency: values.citizen === 'Foreign' ? 'USD' : 'INR',
         fee: getFee(getPedesPrice(values) + pages, values),
-        ownerAmt: ((getPedesPrice(values) + pages)*1.18).toFixed(2),
+        ownerAmt: ((getPedesPrice(values) + pages) * 1.18).toFixed(2),
         amount: getPedesTotalPrice(getPedesPrice(values) + pages, values),
       });
 
@@ -181,11 +181,11 @@ const Form: NextPage = () => {
   };
 
   const catgory = [
-    'IEEE Student Member',
-    'IEEE Member',
+    'IEEE Student author',
+    'IEEE Author (Academia/Industry)',
     'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus',
   ];
-  const catgory2 = ['Non-IEEE Student Member', 'Non-IEEE member'];
+  const catgory2 = ['Student author', 'Author (Academia/Industry)'];
   return (
     <div className={styles.form}>
       <Head>

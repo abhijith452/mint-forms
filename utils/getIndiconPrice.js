@@ -6,7 +6,7 @@ function getIndiconPrice(values) {
     indianAttendee:[6000,7000],
     foreignAuthor: [250, 300],
     foreignStudentAuthor: [200, 250],
-    indianTest:[1,1],
+    indianTest:[10,10],
     foreignTest:[1,1]
   };
   var pricingStandard = {
@@ -16,7 +16,7 @@ function getIndiconPrice(values) {
     indianAttendee:[7000,8000],
     foreignAuthor: [300, 350],
     foreignStudentAuthor: [250, 300],
-    indianTest:[1,1],
+    indianTest:[10,10],
     foreignTest:[1,1]
 
   };

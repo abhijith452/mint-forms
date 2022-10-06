@@ -70,8 +70,10 @@ router.post(
         amountDetails = temp;
         data.amount = JSON.stringify(amountDetails);
       }
-
-      var txnId = await generateTxnId(data);
+      const formDetails = await Form.findOne({ formId: req.query.formId });
+          
+      // var txnId = await generateTxnId(data);
+      var txnId = await generateTxn2(data,formDetails.splitInfo);
       const response = await new Response({
         formId: req.query.formId,
         responseId: generateRandomString(10),
@@ -92,12 +94,11 @@ router.post(
         paymentProvider: 'paytm',
       };
 
-      const formDetails = await Form.findOne({ formId: req.query.formId });
-      if (req.query.formId === 'indicon2022') {
-        notify('conPending', req.body, txnInfo, formDetails);
-      } else {
-        notify('pending', req.body, txnInfo, formDetails);
-      }
+      // if (req.query.formId === 'indicon2022') {
+      //   notify('conPending', req.body, txnInfo, formDetails);
+      // } else {
+      //   notify('pending', req.body, txnInfo, formDetails);
+      // }
       response
         .save()
         .then(() => res.send(txnId))

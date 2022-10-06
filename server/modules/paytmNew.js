@@ -3,7 +3,44 @@ const axios = require('axios');
 const logger = require('../utils/logger');
 const generateRandomString = require('../utils/generateRandomString');
 
-async function generateTxn2(data) {
+var slipInfoGen = (val, ownerSplit, total) => {
+  var arr = [];
+  if (val.method === 'AMOUNT') {
+    val.acc.forEach((acc, key) => {
+      if (key === 0) {
+        arr.push({
+          mid: acc.mid,
+          partnerId: acc.partnerId,
+          amount: { value: ownerSplit, currency: 'INR' },
+        });
+      }
+      if (key === 1) {
+        arr.push({
+          mid: acc.mid,
+          partnerId: acc.partnerId,
+          amount: {
+            value: String((total - ownerSplit).toFixed(2)),
+            currency: 'INR',
+          },
+        });
+      }
+    });
+    console.log(arr);
+    return arr;
+  } else {
+    val.acc.forEach((acc) => {
+      arr.push({
+        mid: acc.mid,
+        partnerId: acc.partnerId,
+        percentage: acc.value,
+      });
+    });
+    console.log(arr);
+    return arr;
+  }
+};
+
+async function generateTxn2(data, splitInfo) {
   try {
     var txnInfo = JSON.parse(data.amount);
     var paytmParams = { head: {}, body: {} };
@@ -14,26 +51,15 @@ async function generateTxn2(data) {
       orderId: generateRandomString(10),
       callbackUrl: process.env.Callback,
       txnAmount: {
-        value: '1000.00',
-        currency: txnInfo.currency,
+        value: txnInfo.amount,
+        currency: 'INR',
       },
       userInfo: {
         custId: generateRandomString(10),
       },
       splitSettlementInfo: {
-        splitMethod: 'AMOUNT',
-        splitInfo: [
-          {
-            mid: 'QUedcKFz198044201850',
-            partnerId: 'abhijithkannan',
-            amount: { value: '900', currency: 'INR' },
-          },
-          {
-            mid: 'TZIemPYk892862475294',
-            partnerId: 'jacob01',
-            amount: { value: '100', currency: 'INR' },
-          },
-        ],
+        splitMethod: splitInfo.method,
+        splitInfo: slipInfoGen(splitInfo, txnInfo.ownerAmt, txnInfo.amount),
       },
     };
 
@@ -44,13 +70,12 @@ async function generateTxn2(data) {
     paytmParams.head = {
       signature: checksum,
     };
-    console.log;
     var res = await axios.post(
       `https://securegw.paytm.in/theia/api/v1/initiateTransaction?mid=${process.env.Merchant_Id}&orderId=${paytmParams.body.orderId}`,
       paytmParams
     );
-    // logger.info(`> Paytm token created for `);
     console.log(paytmParams);
+    console.log(res.data);
     var details = {
       mid: process.env.Merchant_Id,
       orderId: paytmParams.body.orderId,
