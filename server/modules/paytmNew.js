@@ -14,7 +14,7 @@ async function generateTxn2(data) {
       orderId: generateRandomString(10),
       callbackUrl: process.env.Callback,
       txnAmount: {
-        value: '10.00',
+        value: '1000.00',
         currency: txnInfo.currency,
       },
       userInfo: {
@@ -24,9 +24,9 @@ async function generateTxn2(data) {
         splitMethod: 'AMOUNT',
         splitInfo: [
           {
-            mid: 'TZIemPYk892862475294',
-            partnerId: 'jacob01',
-            amount: { value: '1', currency: 'INR' },
+            mid: 'QUedcKFz198044201850',
+            partnerId: 'abhijithkannan',
+            amount: { value: '100', currency: 'INR' },
           }
 
         ],
