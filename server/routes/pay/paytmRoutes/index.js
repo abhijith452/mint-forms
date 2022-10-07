@@ -61,6 +61,7 @@ router.post(
           'https://www.frankfurter.app/latest?from=USD&toINR'
         );
         var temp = {
+          usd: amountDetails.amount,
           fee: (amountDetails.fee * inr.data.rates.INR).toFixed(2),
           ownerAmt: (amountDetails.ownerAmt * inr.data.rates.INR).toFixed(2),
           amount: (amountDetails.amount * inr.data.rates.INR).toFixed(2),
@@ -71,9 +72,9 @@ router.post(
         data.amount = JSON.stringify(amountDetails);
       }
       const formDetails = await Form.findOne({ formId: req.query.formId });
-          
+
       // var txnId = await generateTxnId(data);
-      var txnId = await generateTxn2(data,formDetails.splitInfo);
+      var txnId = await generateTxn2(data, formDetails.splitInfo);
       const response = await new Response({
         formId: req.query.formId,
         responseId: generateRandomString(10),

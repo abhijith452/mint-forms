@@ -30,45 +30,45 @@ const Form: NextPage = () => {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
   const [pages, setPages] = useState(0);
-  const [initialVal, setIntialVal] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    ieeeMember: '',
-    membershipId: '',
-    validIEEE: '',
-    citizen: '',
-    address: '',
-    country: '',
-    state: '',
-    pincode: '',
-    institute: '',
-    category: '',
-    papers: '1',
-    paperId1: '',
-    paperId2: '',
-  });
   // const [initialVal, setIntialVal] = useState({
-  //   name: 'Test ',
-  //   email: 'abhijithkannan452@gmail.com',
-  //   phone: '+917025263554',
-  //   ieeeMember: 'No',
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   ieeeMember: '',
+  //   membershipId: '',
   //   validIEEE: '',
-  //   institute: 'CEK',
-  //   designation: 'CEK',
-  //   address: 'XYZ Houser',
-  //   gender: 'Male',
-  //   country: 'India',
-  //   state: 'Kerala',
-  //   pincode: '686019',
-  //   citizen: 'Indian',
-  //   category: 'Non-IEEE Student Member',
-  //   paperId1: 'asdas',
-  //   extraPage1: 'Not applicable',
-  //   paperId2: '',
-  //   extraPage2: '',
+  //   citizen: '',
+  //   address: '',
+  //   country: '',
+  //   state: '',
+  //   pincode: '',
+  //   institute: '',
+  //   category: '',
   //   papers: '1',
+  //   paperId1: '',
+  //   paperId2: '',
   // });
+  const [initialVal, setIntialVal] = useState({
+    name: 'Test ',
+    email: 'abhijithkannan452@gmail.com',
+    phone: '+917025263554',
+    ieeeMember: 'No',
+    validIEEE: '',
+    institute: 'CEK',
+    designation: 'CEK',
+    address: 'XYZ Houser',
+    gender: 'Male',
+    country: 'India',
+    state: 'Kerala',
+    pincode: '686019',
+    citizen: 'Indian',
+    category: 'Non-Author Attendee',
+    paperId1: 'asdas',
+    extraPage1: 'Not applicable',
+    paperId2: '',
+    extraPage2: '',
+    papers: '1',
+  });
 
   let schema = yup.object().shape({
     name: yup.string().required(),
@@ -157,7 +157,10 @@ const Form: NextPage = () => {
         : 'Non IEEE Member';
       data.amount = JSON.stringify({
         currency: values.citizen === 'Foreign' ? 'USD' : 'INR',
-        fee: getFee(getPedesPrice(values) + pages, values),
+        fee: (
+          getPedesTotalPrice(getPedesPrice(values) + pages, values) -
+          (getPedesPrice(values) + pages) * 1.18
+        ).toFixed(2),
         ownerAmt: ((getPedesPrice(values) + pages) * 1.18).toFixed(2),
         amount: getPedesTotalPrice(getPedesPrice(values) + pages, values),
       });
@@ -181,11 +184,11 @@ const Form: NextPage = () => {
   };
 
   const catgory = [
-    'IEEE Student author',
-    'IEEE Author (Academia/Industry)',
+    'Non-Author Attendee',
+    'Author (Academia/Industry)',
     'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus',
   ];
-  const catgory2 = ['Student author', 'Author (Academia/Industry)'];
+  const catgory2 = ['Non-Author Attendee', 'Author (Academia/Industry)'];
   return (
     <div className={styles.form}>
       <Head>
@@ -463,7 +466,7 @@ const Form: NextPage = () => {
                     Total amount (
                     <i>
                       {' '}
-                      {values.citizen === 'Foreign' ? '3.2%' : '2.05%'}{' '}
+                      {values.citizen === 'Foreign' ? '3.05%' : '2.05%'}{' '}
                       convenience fee and 18% GST included
                     </i>
                     )

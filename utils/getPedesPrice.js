@@ -1,30 +1,39 @@
 const indian = {
-  'IEEE Student author': 4000,
-  'Student author': 5000,
-  'IEEE Author (Academia/Industry)': 10000,
-  'Author (Academia/Industry)': 12000,
-  'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus': 6000,
-  'TEST': 100,
+  'Non-Author Attendee': [4000, 4400],
+  'Author (Academia/Industry)': [10000, 11000],
+  'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus': [
+    6000, 6600,
+  ],
 };
-
+const indianNonIEEE = {
+  'Non-Author Attendee': [5000, 5500],
+  'Author (Academia/Industry)': [12000, 13200],
+};
 const foreign = {
-  'IEEE Student author': 120,
-  'Student author': 150,
-  'IEEE Author (Academia/Industry)': 300,
-  'Author (Academia/Industry)': 360,
-  'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus': 200,
-  'TEST': 1,
+  'Non-Author Attendee': [120, 132],
+  'Author (Academia/Industry)': [300, 330],
+  'IEEE Life Fellow/ IEEE Life Member/IEEE Member Professor Emeritus': [
+    200, 220,
+  ],
 };
-
+const foreignNonIEEE = {
+  'Non-Author Attendee': [150, 165],
+  'Author (Academia/Industry)': [360, 396],
+};
 const indianPage = 1000;
 const foreignPage = 20;
+var index = new Date().toISOString() > '2022-10-15T18:29:59.059Z' ? 1 : 0;
 
 function getPedesPrice(val) {
   if (val.category !== '') {
     if (val.citizen === 'Indian') {
-      return indian[val.category];
+      return val.validIEEE === 'true'
+        ? indian[val.category][index]
+        : indianNonIEEE[val.category][index];
     } else if (val.citizen === 'Foreign') {
-      return foreign[val.category];
+      return val.validIEEE === 'true'
+        ? foreign[val.category][index]
+        : foreignNonIEEE[val.category][index];
     } else {
       return 0;
     }
@@ -55,10 +64,7 @@ function getExtraPagesPrice2(values) {
 }
 function getPedesTotalPrice(amount, values) {
   var gst = amount * 0.18;
-  var feePercent =
-   values.citizen === 'Foreign'
-      ? 0.032
-      : 0.0205;
+  var feePercent = values.citizen === 'Foreign' ? 0.0305 : 0.0205;
   var fee = feePercent * (amount + gst);
   var feeGST = fee * 0.18;
   return (amount + gst + fee + feeGST).toFixed(2);
@@ -66,10 +72,7 @@ function getPedesTotalPrice(amount, values) {
 
 function getFee(amount, values) {
   var gst = amount * 0.18;
-  var feePercent =
-   values.citizen === 'Foreign'
-      ? 0.032
-      : 0.0205;
+  var feePercent = values.citizen === 'Foreign' ? 0.032 : 0.0205;
   var fee = feePercent * (amount + gst);
   var feeGST = fee * 0.18;
   return (fee + feeGST).toFixed(2);
@@ -78,5 +81,5 @@ module.exports = {
   getPedesPrice,
   getPedesTotalPrice,
   getExtraPagesPrice2,
-  getFee
+  getFee,
 };
