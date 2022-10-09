@@ -27,18 +27,38 @@ const fileStorage = multer.diskStorage({
 
 const upload = multer({ storage: fileStorage });
 
-router.post('/test', async (req, res) => {
+router.post('/transfer',upload.single('fileUpload'), async (req, res) => {
   try {
-    var txnAmount = {
-      currency: 'INR',
-      amount: '4780.00',
-      ownerSplitAmount: '4000',
+    var splitInfo = {
+      method: 'AMOUNT',
+      acc: [
+        {
+          mid: req.body.accountId,
+          partnerId: req.body.partnerId,
+        },
+      ],
     };
-    var data = {
-      amount: JSON.stringify(txnAmount),
-    };
-    var a = await generateTxn2(data);
-    res.send(a);
+    // var data = req.body;
+    // data.amount = JSON.stringify(req.body.amount);
+    var txnId = await generateTxn2(req.body, splitInfo);
+    const response = await new Response({
+      formId: req.query.formId,
+      responseId: generateRandomString(10),
+      orderId: txnId.orderId,
+      paymentStatus: 'pending',
+      txnDate: 'pending',
+      txnId: 'pending',
+      ...req.body,
+      ...(req.file !== undefined &&
+        req.file.path !== undefined && { fileUpload: req.file.path }),
+    });
+    response
+      .save()
+      .then(() => res.send(txnId))
+      .catch((err) => {
+        logger.error(err);
+        res.status(400).send({ error: err.message });
+      });
   } catch (err) {
     res.status(400).send({ error: err.message });
     logger.error(err);
@@ -240,30 +260,30 @@ router.post('/confirmation', async (req, res) => {
   }
 });
 
-router.get('/reinitiate', checkOrderPaytm, async (req, res) => {
-  try {
-    const applicant = await Response.findOne({
-      orderId: req.query.orderId,
-    });
-    var txnId = await generateTxnId(applicant);
-    const response = await Response.findOneAndUpdate(
-      { orderId: req.query.orderId },
-      { orderId: txnId.orderId }
-    );
-    if (response === null) {
-      return res.status(400).send({ error: 'Invalid order ID' });
-    }
-    response
-      .save()
-      .then(() => res.send(txnId))
-      .catch((err) => {
-        logger.error(err);
-        res.status(400).send({ error: err.message });
-      });
-  } catch (err) {
-    res.status(400).send({ error: err.message });
-    logger.error(err);
-  }
-});
+// router.get('/reinitiate', checkOrderPaytm, async (req, res) => {
+//   try {
+//     const applicant = await Response.findOne({
+//       orderId: req.query.orderId,
+//     });
+//     var txnId = await generateTxnId(applicant);
+//     const response = await Response.findOneAndUpdate(
+//       { orderId: req.query.orderId },
+//       { orderId: txnId.orderId }
+//     );
+//     if (response === null) {
+//       return res.status(400).send({ error: 'Invalid order ID' });
+//     }
+//     response
+//       .save()
+//       .then(() => res.send(txnId))
+//       .catch((err) => {
+//         logger.error(err);
+//         res.status(400).send({ error: err.message });
+//       });
+//   } catch (err) {
+//     res.status(400).send({ error: err.message });
+//     logger.error(err);
+//   }
+// });
 
 module.exports = router;
