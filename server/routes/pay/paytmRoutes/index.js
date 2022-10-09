@@ -170,7 +170,7 @@ router.post('/callback', async (req, res) => {
 
       if (req.query.formId === 'indicon2022') {
         notify('conSuccess', response, txnInfo, formDetails);
-      } else {
+      } else if(req.query.formId === 'transfer'){
         notify('success', response, txnInfo, formDetails);
       }
 
