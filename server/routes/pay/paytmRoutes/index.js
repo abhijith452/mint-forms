@@ -27,7 +27,7 @@ const fileStorage = multer.diskStorage({
 
 const upload = multer({ storage: fileStorage });
 
-router.post('/transfer',upload.single('fileUpload'), async (req, res) => {
+router.post('/transfer', upload.single('fileUpload'), async (req, res) => {
   try {
     var splitInfo = {
       method: 'AMOUNT',
@@ -134,6 +134,23 @@ router.post(
   }
 );
 
+router.get('/orderStatus', async (req, res) => {
+  try {
+    var paymentStatusDetailBuilder = new Paytm.PaymentStatusDetailBuilder(
+      req.query.orderId
+    );
+    var paymentStatusDetail = paymentStatusDetailBuilder
+      .setReadTimeout(8000)
+      .build();
+    var paytm = await Paytm.Payment.getPaymentStatus(paymentStatusDetail);
+
+   
+    res.send(paytm);
+  } catch (err) {
+    res.status(400).send(err);
+    logger.error(err);
+  }
+});
 router.post('/callback', async (req, res) => {
   try {
     var orderId = req.body.ORDERID;
@@ -170,7 +187,7 @@ router.post('/callback', async (req, res) => {
 
       if (req.query.formId === 'indicon2022') {
         notify('conSuccess', response, txnInfo, formDetails);
-      } else if(req.query.formId === 'transfer'){
+      } else if (req.query.formId === 'transfer') {
         notify('success', response, txnInfo, formDetails);
       }
 

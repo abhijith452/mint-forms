@@ -16,6 +16,7 @@ import FormBackLayout from '../../layout/FormBackLayout/formBackLayout';
 import AddResponses from '../../components/addResponses';
 import SendMail from '../../components/sendMail';
 import Head from 'next/head';
+import getPriceBreakdown from '../../server/utils/getPriceBreakdown';
 
 export default function Responses() {
   const [loading, setLoading] = useState(false);
@@ -62,21 +63,35 @@ export default function Responses() {
     }
   };
 
-  const {
-    isLoading,
-    data,
-  } = useQuery('repoData', getData, {
+  const { isLoading, data } = useQuery('repoData', getData, {
     enabled: formId !== undefined ? true : false,
   });
 
   const createCsv = () => {
-    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data.data.responses));
-    var downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href",     dataStr);
-    downloadAnchorNode.setAttribute("download", "exportName" + ".json");
-    document.body.appendChild(downloadAnchorNode); // required for firefox
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
+    var g = [];
+    // data.data.responses.forEach((val) => {
+    //    // val.paymentStatus === 'success' &&
+    //     // new Date(val.createdAt).toISOString() >= '2022-10-07T04:29:59.059Z'
+    //   if ("a"==="a") {
+    //     var amt = JSON.parse(val.amount).amount;
+    //     var cur = JSON.parse(val.amount).currency;
+    //     var a = getPriceBreakdown(val);
+    //     g.push({
+    //       amt,
+    //       currency: cur,
+    //       a,
+    //       ...val,
+    //     });
+    //   }
+    // });
+    // var dataStr =
+    //   'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(g));
+    // var downloadAnchorNode = document.createElement('a');
+    // downloadAnchorNode.setAttribute('href', dataStr);
+    // downloadAnchorNode.setAttribute('download', 'exportName' + '.json');
+    // document.body.appendChild(downloadAnchorNode); // required for firefox
+    // downloadAnchorNode.click();
+    // downloadAnchorNode.remove();
   };
 
   const sendNotification = async () => {
@@ -392,7 +407,9 @@ export default function Responses() {
                         <div className={styles.table_item}>{val.institute}</div>
                         <div className={styles.table_item}>
                           {/* {val.membershipType} */}
-                          {val.validIEEE||val.validIEEE!==""?"IEEE Member":"Non IEEE Member"}
+                          {val.validIEEE || val.validIEEE !== ''
+                            ? 'IEEE Member'
+                            : 'Non IEEE Member'}
                         </div>
                         <div className={styles.table_item}>
                           {JSON.parse(val.amount).currency === 'USD'

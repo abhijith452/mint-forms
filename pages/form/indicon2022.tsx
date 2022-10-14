@@ -25,7 +25,7 @@ import FormSelect from '../../UI-Components/FormSelect';
 import FormIEEE from '../../UI-Components/FormIEEE';
 import getCountryList from '../../utils/getCountryList';
 import * as yup from 'yup';
-
+ 
 const Form: NextPage = () => {
   const router = useRouter();
   const [authorPrice, setAuthorPrice] = useState(9000);
@@ -317,7 +317,7 @@ const Form: NextPage = () => {
         <>
           <Loader msg="Don't refresh this page. Redirecting to payment processing service ..." />
         </>
-      ) : (
+      ) : new Date().toISOString() < '2022-09-14T18:29:59.059Z' ? (
         <div className={styles.formContainer}>
           <img className={styles.formBanner} src="/indicon2.png" />
           <div className={styles.formDetails}>
@@ -330,8 +330,7 @@ const Form: NextPage = () => {
               the great shots.
             </p> */}
           </div>
-          {error ? <Error setError={setError} msg={errorMsg} /> : null}
-
+          {error ? <Error setError={setError} msg={errorMsg} /> : null}(
           <div className={styles.formContent}>
             <Formik
               initialValues={initialVal}
@@ -711,6 +710,27 @@ const Form: NextPage = () => {
               </a>
             </footer>
           </div>
+          )
+        </div>
+      ) : (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <img
+            style={{ width: '250px', marginBottom: '20px' }}
+            src="/closed.jpg"
+          />
+          <p style={{fontSize:"20px"}}>
+            Thank you for your interest. Apparently, the registrations are
+            closed for now.
+          </p>
         </div>
       )}
     </div>
