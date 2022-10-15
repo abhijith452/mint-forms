@@ -14,6 +14,7 @@ const applicantSchema = new Schema(
     members: { type: Array },
     specific: { type: Object },
     splitInfo: { type: Object },
+    expiryDate:{ type: String },
     responses: [Object],
   },
   { timestamps: true }

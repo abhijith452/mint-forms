@@ -68,7 +68,7 @@ export default function Responses() {
   });
 
   const createCsv = () => {
-    var g = [];
+    // var g = [];
     // data.data.responses.forEach((val) => {
     //    // val.paymentStatus === 'success' &&
     //     // new Date(val.createdAt).toISOString() >= '2022-10-07T04:29:59.059Z'
@@ -84,14 +84,14 @@ export default function Responses() {
     //     });
     //   }
     // });
-    // var dataStr =
-    //   'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(g));
-    // var downloadAnchorNode = document.createElement('a');
-    // downloadAnchorNode.setAttribute('href', dataStr);
-    // downloadAnchorNode.setAttribute('download', 'exportName' + '.json');
-    // document.body.appendChild(downloadAnchorNode); // required for firefox
-    // downloadAnchorNode.click();
-    // downloadAnchorNode.remove();
+    var dataStr =
+      'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data.data.responses));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute('href', dataStr);
+    downloadAnchorNode.setAttribute('download', 'exportName' + '.json');
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
   };
 
   const sendNotification = async () => {

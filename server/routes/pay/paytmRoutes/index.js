@@ -260,7 +260,7 @@ router.post('/confirmation', async (req, res) => {
       orderId: applicant.orderId,
       txnDate: applicant.txnDate,
       txnId: applicant.txnId,
-      currency: 'INR',
+      currency: amt.currency,
     };
 
     const formDetails = await Form.findOne({ formId: applicant.formId });

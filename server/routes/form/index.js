@@ -50,6 +50,16 @@ router.get('/responses', async (req, res) => {
   }
 });
 
+router.get('/formDetails', async (req, res) => {
+  try {
+    const formDetails = await Form.findOne({ formId: req.query.formId });
+    res.send(formDetails)
+  } catch (err) {
+    logger.error(err);
+    res.status(400).send({ error: err.message });
+  }
+});
+
 router.post('/mail', async (req, res) => {
   try {
     var emailIds = req.body.to.split(',');

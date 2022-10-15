@@ -6,7 +6,6 @@ import axios from 'axios';
 import FormOptions from '../../UI-Components/FormOptions';
 import { useEffect, useState, useRef } from 'react';
 import loadScript from '../../utils/razorpayScript';
-import { useRouter } from 'next/router';
 import Error from '../../UI-Components/error';
 import Loader from '../../UI-Components/loader';
 import getIndiconPrice from '../../utils/getIndiconPrice';
@@ -25,9 +24,12 @@ import FormSelect from '../../UI-Components/FormSelect';
 import FormIEEE from '../../UI-Components/FormIEEE';
 import getCountryList from '../../utils/getCountryList';
 import * as yup from 'yup';
- 
-const Form: NextPage = () => {
-  const router = useRouter();
+
+interface types {
+  expiryDate: string;
+}
+
+const Form: NextPage<types> = (props) => {
   const [authorPrice, setAuthorPrice] = useState(9000);
   const [addPapers, setAddPapers] = useState(0);
   const [pages, setPages] = useState(0);
@@ -317,7 +319,7 @@ const Form: NextPage = () => {
         <>
           <Loader msg="Don't refresh this page. Redirecting to payment processing service ..." />
         </>
-      ) : new Date().toISOString() < '2022-09-14T18:29:59.059Z' ? (
+      ) : new Date().toISOString() < props.expiryDate ? (
         <div className={styles.formContainer}>
           <img className={styles.formBanner} src="/indicon2.png" />
           <div className={styles.formDetails}>
@@ -727,7 +729,7 @@ const Form: NextPage = () => {
             style={{ width: '250px', marginBottom: '20px' }}
             src="/closed.jpg"
           />
-          <p style={{fontSize:"20px"}}>
+          <p style={{ fontSize: '20px' }}>
             Thank you for your interest. Apparently, the registrations are
             closed for now.
           </p>
@@ -738,3 +740,24 @@ const Form: NextPage = () => {
 };
 
 export default Form;
+
+export async function getServerSideProps() {
+  try {
+    const price = await axios.get(
+      process.env.NODE_ENV !== 'development'
+        ? 'https://mint-forms.ieee-mint.org/api/form/formDetails?formId=indicon2022'
+        : 'http://localhost:3000/api/form/formDetails?formId=indicon2022'
+    );
+
+    return {
+      props: price.data,
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        pricing: {},
+      },
+    };
+  }
+}
