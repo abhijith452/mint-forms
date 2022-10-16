@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import styles from '../../styles/Confirmation.module.css';
 import type { NextPage } from 'next';
-import moment from 'moment'
+import moment from 'moment';
 
 type data = {
   paymentStatus: string;
@@ -20,7 +20,7 @@ interface props {
   responses: Array<data>;
   eventDate: string;
   venue: string;
-  formId:string;
+  formId: string;
 }
 
 const Confirmation: NextPage = () => {
@@ -28,9 +28,9 @@ const Confirmation: NextPage = () => {
   const [data, setData] = useState<props>({
     title: '',
     responses: [],
-    venue:"",
-    eventDate:"",
-    formId:""
+    venue: '',
+    eventDate: '',
+    formId: '',
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -85,8 +85,10 @@ const Confirmation: NextPage = () => {
                 </p>
               ) : (
                 <p className={styles.eventdetails_des}>
-                  {data.responses !== undefined &&
-                  data.responses[0].paymentStatus !== 'failed'
+                  {data.responses[0].paymentStatus === undefined
+                    ? ''
+                    : data.responses !== undefined &&
+                      data.responses[0].paymentStatus !== 'failed'
                     ? 'The payment is yet to be recieved'
                     : 'The transaction has failed'}
                 </p>
@@ -119,26 +121,31 @@ const Confirmation: NextPage = () => {
                   {data.responses[0].amount !== undefined ? (
                     <>
                       <p>Amount</p>{' '}
-                      <p>{JSON.parse(data.responses[0].amount).currency} {JSON.parse(data.responses[0].amount).amount}</p>
+                      <p>
+                        {JSON.parse(data.responses[0].amount).currency}{' '}
+                        {JSON.parse(data.responses[0].amount).amount}
+                      </p>
                     </>
                   ) : null}
                   {data.responses[0].txnDate !== undefined ? (
                     <>
                       <p>Date and time</p>{' '}
                       <p>
-                        {moment(data.responses[0].txnDate).format("D MMM YYYY h:mm:ss a")}                   
+                        {moment(data.responses[0].txnDate).format(
+                          'D MMM YYYY h:mm:ss a'
+                        )}
                       </p>
                     </>
                   ) : null}
                 </div>
               ) : null}
             </div>
-            { data.venue!==undefined ? (
+            {data.venue !== undefined ? (
               <div className={styles.paymentDetails}>
                 <p className={styles.paymentDetails_title}>Event Details</p>
                 <div className={styles.paymentDetails_grid}>
                   <p>Date</p>{' '}
-                  <p>{moment(data.eventDate).format("D MMM YYYY")}</p>
+                  <p>{moment(data.eventDate).format('D MMM YYYY')}</p>
                   <p>Venue</p> <p>{data.venue}</p>
                   {/* <p>Amount</p> <p>Rs 10.00</p>
                                 <p>Date</p> <p>12th Mar 2022 11:00 PM IST</p> */}

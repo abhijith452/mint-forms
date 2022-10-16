@@ -85,7 +85,8 @@ export default function Responses() {
     //   }
     // });
     var dataStr =
-      'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data.data.responses));
+      'data:text/json;charset=utf-8,' +
+      encodeURIComponent(JSON.stringify(data.data.responses));
     var downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute('href', dataStr);
     downloadAnchorNode.setAttribute('download', 'exportName' + '.json');
@@ -411,12 +412,19 @@ export default function Responses() {
                             ? 'IEEE Member'
                             : 'Non IEEE Member'}
                         </div>
+
                         <div className={styles.table_item}>
-                          {JSON.parse(val.amount).currency === 'USD'
-                            ? '$'
-                            : '₹'}{' '}
-                          {JSON.parse(val.amount).amount}
+                          {val.amount !== undefined ? (
+                            <>
+                              {' '}
+                              {JSON.parse(val.amount).currency === 'USD'
+                                ? '$'
+                                : '₹'}{' '}
+                              {JSON.parse(val.amount).amount}
+                            </>
+                          ) : "Free"}
                         </div>
+
                         <div className={styles.table_item}>
                           <div
                             className={styles.table_item_status}

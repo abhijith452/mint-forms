@@ -8,6 +8,8 @@ const Form = require('../../models/forms');
 const discountRoutes = require('./discounts');
 const generateRandomString = require('../../utils/generateRandomString');
 const Responses = require('../../models/response');
+const multer = require('multer');
+
 // const fs = require("fs");
 // const PDFDocument = require("pdfkit");
 
@@ -37,6 +39,54 @@ const Responses = require('../../models/response');
 //   }
 // });
 
+const fileStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, './files');
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '--' + file.originalname);
+  },
+});
+const upload = multer({ storage: fileStorage });
+
+router.post('/addresponse', upload.single('fileUpload'), async (req, res) => {
+  try {
+    // const applicants = await Applicant.find({})
+    var orderId = generateRandomString(10);
+    const response = await new Responses({
+      formId: req.query.formId,
+      responseId: generateRandomString(10),
+      orderId: orderId,
+      ...req.body,
+      ...(req.file !== undefined &&
+        req.file.path !== undefined && { fileUpload: req.file.path }),
+    });
+    response
+      .save()
+      .then(() => res.send({ orderId }))
+      .catch((err) => {
+        logger.error(err);
+        res.status(400).send({ error: err.message });
+      });
+  } catch (err) {
+    logger.error(err);
+    res.status(400).send({ error: err.message });
+  }
+});
+
+router.get('/responses', async (req, res) => {
+  try {
+    // const applicants = await Applicant.find({})
+    const responses = await Responses.find({ formId: req.query.formId });
+    const formDetails = await Form.findOne({ formId: req.query.formId });
+    formDetails.responses = responses;
+    res.send(formDetails);
+  } catch (err) {
+    logger.error(err);
+    res.status(400).send({ error: err.message });
+  }
+});
+
 router.get('/responses', async (req, res) => {
   try {
     // const applicants = await Applicant.find({})
@@ -53,7 +103,7 @@ router.get('/responses', async (req, res) => {
 router.get('/formDetails', async (req, res) => {
   try {
     const formDetails = await Form.findOne({ formId: req.query.formId });
-    res.send(formDetails)
+    res.send(formDetails);
   } catch (err) {
     logger.error(err);
     res.status(400).send({ error: err.message });

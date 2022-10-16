@@ -10,9 +10,10 @@
   "/form/dynamic": "pages/form/dynamic.html",
   "/form/paymentStatus": "pages/form/paymentStatus.html",
   "/form/pedes2022": "pages/form/pedes2022.html",
-  "/form/test": "pages/form/test.html",
   "/": "pages/index.html",
+  "/form/test": "pages/form/test.html",
   "/_document": "pages/_document.js",
   "/form/indicon2022": "pages/form/indicon2022.js",
+  "/form/indicon2022special": "pages/form/indicon2022special.js",
   "/404": "pages/404.html"
 }
