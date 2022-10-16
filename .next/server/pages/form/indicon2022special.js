@@ -82,9 +82,7 @@ const Form = (props)=>{
         designation: "",
         papers: "1",
         paperId1: "",
-        extraPage1: "",
         paperId2: "",
-        extraPage2: "",
         passport: "",
         specialSession: ""
     });
@@ -130,15 +128,7 @@ const Form = (props)=>{
             is: (papers)=>Number(papers) > 0,
             then: yup__WEBPACK_IMPORTED_MODULE_15__.string().required()
         }),
-        extraPage1: yup__WEBPACK_IMPORTED_MODULE_15__.string().when("papers", {
-            is: (papers)=>Number(papers) > 0,
-            then: yup__WEBPACK_IMPORTED_MODULE_15__.string().required("Required")
-        }),
         paperId2: yup__WEBPACK_IMPORTED_MODULE_15__.string().when("papers", {
-            is: (papers)=>Number(papers) >= 2,
-            then: yup__WEBPACK_IMPORTED_MODULE_15__.string().required()
-        }),
-        extraPage2: yup__WEBPACK_IMPORTED_MODULE_15__.string().when("papers", {
             is: (papers)=>Number(papers) >= 2,
             then: yup__WEBPACK_IMPORTED_MODULE_15__.string().required()
         }),
@@ -330,49 +320,23 @@ const Form = (props)=>{
                                                 onChange: (e)=>setFieldValue("papers", e),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "papers") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "papers") : ""
                                             }),
-                                            Number(values.papers) > 0 ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                                                children: [
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
-                                                        label: "Paper ID 1*",
-                                                        placeholder: "Enter your paper id 1",
-                                                        value: values.paperId1,
-                                                        onChange: (e)=>setFieldValue("paperId1", e.target.value),
-                                                        errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "paperId1") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "paperId1") : ""
-                                                    }),
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
-                                                        label: "Whether the paper 1 has exceed the 6 page limit ? if yes by how many extra pages ?*",
-                                                        options: [
-                                                            "Not applicable",
-                                                            "1",
-                                                            "2"
-                                                        ],
-                                                        value: values.extraPage1,
-                                                        onChange: (e)=>setFieldValue("extraPage1", e),
-                                                        errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "extraPage1") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "extraPage1") : ""
-                                                    })
-                                                ]
+                                            Number(values.papers) > 0 ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+                                                    label: "Paper ID 1*",
+                                                    placeholder: "Enter your paper id 1",
+                                                    value: values.paperId1,
+                                                    onChange: (e)=>setFieldValue("paperId1", e.target.value),
+                                                    errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "paperId1") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "paperId1") : ""
+                                                })
                                             }) : null,
-                                            Number(values.papers) >= 2 ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                                                children: [
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
-                                                        label: "Paper ID 2*",
-                                                        placeholder: "Enter your paper id 2",
-                                                        value: values.paperId2,
-                                                        onChange: (e)=>setFieldValue("paperId2", e.target.value),
-                                                        errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "paperId2") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "paperId2") : ""
-                                                    }),
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
-                                                        label: "Whether the paper 2 has exceed the 6 page limit ? if yes by how many extra pages ?*",
-                                                        options: [
-                                                            "Not applicable",
-                                                            "1",
-                                                            "2"
-                                                        ],
-                                                        value: values.extraPage2,
-                                                        onChange: (e)=>setFieldValue("extraPage2", e),
-                                                        errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "extraPage2") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "extraPage2") : ""
-                                                    })
-                                                ]
+                                            Number(values.papers) >= 2 ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+                                                    label: "Paper ID 2*",
+                                                    placeholder: "Enter your paper id 2",
+                                                    value: values.paperId2,
+                                                    onChange: (e)=>setFieldValue("paperId2", e.target.value),
+                                                    errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "paperId2") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "paperId2") : ""
+                                                })
                                             }) : null,
                                             values.category !== undefined && values.category.includes("Foreign") ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
                                                 label: "Passport number *",
@@ -421,7 +385,7 @@ const Form = (props)=>{
                                                     label: values.specialSession,
                                                     value: values.specialSession
                                                 },
-                                                onChange: (e)=>setFieldValue("country", e.specialSession),
+                                                onChange: (e)=>setFieldValue("specialSession", e.value),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "specialSession") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "specialSession") : ""
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {

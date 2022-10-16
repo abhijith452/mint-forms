@@ -42,9 +42,8 @@ const Form: NextPage<types> = (props) => {
     designation: '',
     papers: '1',
     paperId1: '',
-    extraPage1: '',
+    
     paperId2: '',
-    extraPage2: '',
     passport: '',
     specialSession: '',
   });
@@ -91,18 +90,12 @@ const Form: NextPage<types> = (props) => {
       is: (papers: any) => Number(papers) > 0,
       then: yup.string().required(),
     }),
-    extraPage1: yup.string().when('papers', {
-      is: (papers: any) => Number(papers) > 0,
-      then: yup.string().required('Required'),
-    }),
+ 
     paperId2: yup.string().when('papers', {
       is: (papers: any) => Number(papers) >= 2,
       then: yup.string().required(),
     }),
-    extraPage2: yup.string().when('papers', {
-      is: (papers: any) => Number(papers) >= 2,
-      then: yup.string().required(),
-    }),
+   
     papers: yup.string().required(),
     membershipId: yup.string().when('ieeeMember', {
       is: 'Yes',
@@ -366,17 +359,7 @@ const Form: NextPage<types> = (props) => {
                             : ''
                         }
                       />
-                      <FormOptions
-                        label="Whether the paper 1 has exceed the 6 page limit ? if yes by how many extra pages ?*"
-                        options={['Not applicable', '1', '2']}
-                        value={values.extraPage1}
-                        onChange={(e: any) => setFieldValue('extraPage1', e)}
-                        errors={
-                          getIn(errors, 'extraPage1') !== undefined
-                            ? getIn(errors, 'extraPage1')
-                            : ''
-                        }
-                      />
+                     
                     </>
                   ) : null}
                   {Number(values.papers) >= 2 ? (
@@ -394,17 +377,7 @@ const Form: NextPage<types> = (props) => {
                             : ''
                         }
                       />
-                      <FormOptions
-                        label="Whether the paper 2 has exceed the 6 page limit ? if yes by how many extra pages ?*"
-                        options={['Not applicable', '1', '2']}
-                        value={values.extraPage2}
-                        onChange={(e: any) => setFieldValue('extraPage2', e)}
-                        errors={
-                          getIn(errors, 'extraPage2') !== undefined
-                            ? getIn(errors, 'extraPage2')
-                            : ''
-                        }
-                      />
+                    
                     </>
                   ) : null}
 
@@ -465,7 +438,7 @@ const Form: NextPage<types> = (props) => {
                       value: values.specialSession,
                     }}
                     onChange={(e: any) =>
-                      setFieldValue('country', e.specialSession)
+                      setFieldValue('specialSession', e.value)
                     }
                     errors={
                       getIn(errors, 'specialSession') !== undefined
@@ -473,7 +446,7 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
-                  {/* {JSON.stringify(errors, null, 2)} */}
+                  {/* {JSON.stringify(values, null, 2)} */}
                   <button
                     className={styles.button}
                     type="submit"
