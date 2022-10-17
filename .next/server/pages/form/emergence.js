@@ -81,7 +81,8 @@ const Form = (props)=>{
         food: "",
         accomodation: "",
         ieee: "",
-        ias: "false"
+        ias: "false",
+        category: ""
     });
     // const [initialVal, setIntialVal] = useState({
     //   name: 'test',
@@ -116,8 +117,30 @@ const Form = (props)=>{
         food: yup__WEBPACK_IMPORTED_MODULE_16__.string().required(),
         ias: yup__WEBPACK_IMPORTED_MODULE_16__.string(),
         ieee: yup__WEBPACK_IMPORTED_MODULE_16__.string(),
-        accomodation: yup__WEBPACK_IMPORTED_MODULE_16__.string().required()
+        accomodation: yup__WEBPACK_IMPORTED_MODULE_16__.string().required(),
+        category: yup__WEBPACK_IMPORTED_MODULE_16__.string().required()
     });
+    const getCategory = (values)=>{
+        if (values.ias === "true") {
+            return new Date().toISOString() < _utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.earlyBirdLastDate ? [
+                "IAS Member Rs 450"
+            ] : [
+                "IAS Member Rs 600"
+            ];
+        } else if (values.validIEEE === "true") {
+            return new Date().toISOString() < _utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.earlyBirdLastDate ? [
+                "IEEE Member Rs 550"
+            ] : [
+                "IEEE Member Rs 700"
+            ];
+        } else {
+            return new Date().toISOString() < _utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.earlyBirdLastDate ? [
+                "Non-IEEE Member Rs 700"
+            ] : [
+                "Non-IEEE Member Rs 850"
+            ];
+        }
+    };
     const handleAxiosError = (err)=>{
         setError(true);
         setErrorMsg(err.response !== undefined ? err.response.data.error : err);
@@ -162,7 +185,7 @@ const Form = (props)=>{
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                         className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_17___default().formBanner),
-                        src: "/EMERGENCE.png"
+                        src: "/emergence.webp"
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_17___default().formDetails),
@@ -241,7 +264,7 @@ const Form = (props)=>{
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
                                                 label: "Workshop Preference *",
                                                 options: [
-                                                    "Project Development Workshop",
+                                                    "Rapid Prototyping",
                                                     "Introduction to PVsyst",
                                                     "IOT Candle Workshop", 
                                                 ],
@@ -301,6 +324,13 @@ const Form = (props)=>{
                                                 },
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "membershipId") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "membershipId") : "",
                                                 vaildError: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "validIEEE") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "validIEEE") : ""
+                                            }),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+                                                label: "Category *",
+                                                options: getCategory(values),
+                                                value: values.category,
+                                                onChange: (e)=>setFieldValue("category", e),
+                                                errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "category") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "category") : ""
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
                                                 className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_17___default().breakDownLabel),
@@ -507,14 +537,18 @@ const pricing = {
         600
     ]
 };
-var index = new Date().toISOString() > "2022-10-20T18:29:59.059Z" ? 1 : 0;
+var earlyBirdLastDate = "2022-10-20T18:29:59.059Z";
+var index = new Date().toISOString() > earlyBirdLastDate ? 1 : 0;
 function getEmergencePrice(val) {
-    if (val.ias === "true" && val.validIEEE === "true") {
+    if (val.category === "IAS Member Rs 450" || val.category === "IAS Member Rs 600") {
         return pricing.IAS[index];
-    } else if (val.ias === "false" && val.validIEEE === "true") {
+    }
+    if (val.category === "IEEE Member Rs 550" || val.category === "IEEE Member Rs 700") {
         return pricing.IEEE[index];
-    } else {
+    } else if (val.category === "Non-IEEE Member Rs 700" || val.category === "Non-IEEE Member Rs 850") {
         return pricing.nonIEEE[index];
+    } else {
+        return 0;
     }
 }
 function getEmergenceTotalPrice(amount, values) {
@@ -526,7 +560,8 @@ function getEmergenceTotalPrice(amount, values) {
 }
 module.exports = {
     getEmergencePrice,
-    getEmergenceTotalPrice
+    getEmergenceTotalPrice,
+    earlyBirdLastDate
 };
 
 

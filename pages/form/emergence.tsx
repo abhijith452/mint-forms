@@ -1,25 +1,24 @@
 import type { NextPage } from 'next';
 import styles from '../../styles/Form.module.css';
 import FormInput from '../../UI-Components/FormInput';
-import { Formik, useFormikContext, getIn, FormikProps } from 'formik';
+import { Formik, getIn, FormikProps } from 'formik';
 import axios from 'axios';
 import FormOptions from '../../UI-Components/FormOptions';
-import { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
 import Error from '../../UI-Components/error';
 import Loader from '../../UI-Components/loader';
 import {
   getEmergencePrice,
   getEmergenceTotalPrice,
+  earlyBirdLastDate,
 } from '../../utils/getEmergencePrice';
-import districtList from '../../utils/getDistrictList'
-import getTotalPrice from '../../utils/getTotalPrice';
+import districtList from '../../utils/getDistrictList';
 import buildForm from '../../utils/buildForm';
 import Head from 'next/head';
 import displayPaytm from '../../utils/displayPaytm';
 import PhoneSelector from '../../UI-Components/PhoneSelector';
 import FormSelect from '../../UI-Components/FormSelect';
 import FormIEEE from '../../UI-Components/FormIEEE';
-import getCountryList from '../../utils/getCountryList';
 import * as yup from 'yup';
 
 interface types {
@@ -46,6 +45,7 @@ const Form: NextPage<types> = (props) => {
     accomodation: '',
     ieee: '',
     ias: 'false',
+    category: '',
   });
   // const [initialVal, setIntialVal] = useState({
   //   name: 'test',
@@ -81,7 +81,23 @@ const Form: NextPage<types> = (props) => {
     ias: yup.string(),
     ieee: yup.string(),
     accomodation: yup.string().required(),
+    category: yup.string().required(),
   });
+  const getCategory = (values: any) => {
+    if (values.ias === 'true') {
+      return new Date().toISOString() < earlyBirdLastDate
+        ? ['IAS Member Rs 450']
+        : ['IAS Member Rs 600'];
+    } else if (values.validIEEE === 'true') {
+      return new Date().toISOString() < earlyBirdLastDate
+        ? ['IEEE Member Rs 550']
+        : ['IEEE Member Rs 700'];
+    } else {
+      return new Date().toISOString() < earlyBirdLastDate
+        ? ['Non-IEEE Member Rs 700']
+        : ['Non-IEEE Member Rs 850'];
+    }
+  };
 
   const handleAxiosError = (err: any) => {
     setError(true);
@@ -97,7 +113,10 @@ const Form: NextPage<types> = (props) => {
       data.amount = JSON.stringify({
         currency: 'INR',
         amount: getEmergenceTotalPrice(getEmergencePrice(values)),
-        fee: (getEmergenceTotalPrice(getEmergencePrice(values)) - getEmergencePrice(values)).toFixed(2),
+        fee: (
+          getEmergenceTotalPrice(getEmergencePrice(values)) -
+          getEmergencePrice(values)
+        ).toFixed(2),
         ownerAmt: getEmergencePrice(values),
       });
 
@@ -130,7 +149,7 @@ const Form: NextPage<types> = (props) => {
         </>
       ) : new Date().toISOString() < props.expiryDate ? (
         <div className={styles.formContainer}>
-          <img className={styles.formBanner} src="/EMERGENCE.png" />
+          <img className={styles.formBanner} src="/emergence.webp" />
           <div className={styles.formDetails}>
             <p className={styles.subTitle}>REGISTRATION FORM</p>
             <h1 className={styles.formTitle}>EMERGENCE 2.0</h1>
@@ -224,7 +243,7 @@ const Form: NextPage<types> = (props) => {
                   <FormOptions
                     label="Workshop Preference *"
                     options={[
-                      'Project Development Workshop',
+                      'Rapid Prototyping',
                       'Introduction to PVsyst',
                       'IOT Candle Workshop',
                     ]}
@@ -307,6 +326,17 @@ const Form: NextPage<types> = (props) => {
                     vaildError={
                       getIn(errors, 'validIEEE') !== undefined
                         ? getIn(errors, 'validIEEE')
+                        : ''
+                    }
+                  />
+                  <FormOptions
+                    label="Category *"
+                    options={getCategory(values)}
+                    value={values.category}
+                    onChange={(e: any) => setFieldValue('category', e)}
+                    errors={
+                      getIn(errors, 'category') !== undefined
+                        ? getIn(errors, 'category')
                         : ''
                     }
                   />
