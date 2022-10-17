@@ -398,7 +398,7 @@ const Form: NextPage<types> = (props) => {
                     />
                   ) : null}
                   <FormSelect
-                    label="Special Selection *"
+                    label="Special Session *"
                     options={[
                       {
                         value: 'SS01',

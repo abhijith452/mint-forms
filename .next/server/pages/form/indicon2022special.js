@@ -346,7 +346,7 @@ const Form = (props)=>{
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "passport") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "passport") : ""
                                             }) : null,
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormSelect__WEBPACK_IMPORTED_MODULE_12__/* ["default"] */ .Z, {
-                                                label: "Special Selection *",
+                                                label: "Special Session *",
                                                 options: [
                                                     {
                                                         value: "SS01",
