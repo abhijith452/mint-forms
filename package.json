@@ -33,6 +33,7 @@
     "next": "12.2.2",
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.19",
+    "paytm-blink-checkout-react": "^0.0.3",
     "paytm-pg-node-sdk": "^1.0.4",
     "paytmchecksum": "^1.5.0",
     "prettyjson": "^1.2.5",

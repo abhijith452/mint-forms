@@ -10,6 +10,12 @@ import buildForm from '../../utils/buildForm';
 import Head from 'next/head';
 import displayPaytm from '../../utils/displayPaytm';
 import * as yup from 'yup';
+import { config } from 'dotenv';
+const {
+  CheckoutProvider,
+  Checkout,
+  injectCheckout,
+} = require('paytm-blink-checkout-react');
 
 const Form: NextPage = () => {
   const [loading, setLoading] = useState(false);
@@ -17,11 +23,12 @@ const Form: NextPage = () => {
   const [errorMsg, setErrorMsg] = useState(false);
 
   const [initialVal, setIntialVal] = useState({
-    amount: '',
-    accountId: '',
-    partnerId: '',
-    splitAmnt: '',
+    amount: '100',
+    accountId: 'TZIemPYk892862475294',
+    partnerId: 'jacob01',
+    splitAmnt: '80',
   });
+  const [config, setConfig] = useState({});
 
   let schema = yup.object().shape({
     amount: yup.string().required(),
@@ -38,7 +45,7 @@ const Form: NextPage = () => {
 
   const handleUpload = async (values: any) => {
     setIntialVal(values);
-    setLoading(true);
+    // setLoading(true);
     try {
       var data = values;
       data.amount = JSON.stringify({
@@ -58,8 +65,35 @@ const Form: NextPage = () => {
           },
         }
       );
-
-      displayPaytm(res.data);
+      // mid: process.env.Merchant_Id,
+      // orderId: paytmParams.body.orderId,
+      // CHECKSUMHASH: res.data.head.signature,
+      // txnToken: res.data.body.txnToken,
+      // TXN_AMOUNT: txnInfo.amount,
+      // WEBSITE: 'WEBSTAGING',
+      // displayPaytm(res.data);
+      setLoading(false);
+      setConfig({
+        root: '',
+        flow: 'DEFAULT',
+        data: {
+          orderId: res.data.orderId /* update order id */,
+          token:  res.data.txnToken /* update token value */,
+          tokenType: 'TXN_TOKEN',
+          amount: res.data.TXN_AMOUNT /* update amount */,
+        },
+        merchant:{
+          mid:res.data.mid,
+          logo: "/header.png"
+        },
+        "handler": {
+          "notifyMerchant": function(eventName:any,data:any){
+          console.log("notifyMerchant handler function called");
+          console.log("eventName => ",eventName);
+          console.log("data => ",data);
+          }
+          }
+      });
       // }
     } catch (err: any) {
       handleAxiosError(err);
@@ -107,19 +141,23 @@ const Form: NextPage = () => {
                     label="Amount *"
                     placeholder="Enter your total amount"
                     value={values.amount}
-                    onChange={(e: any) => setFieldValue('amount', e.target.value)}
+                    onChange={(e: any) =>
+                      setFieldValue('amount', e.target.value)
+                    }
                     errors={
                       getIn(errors, 'amount') !== undefined
                         ? getIn(errors, 'amount')
                         : ''
                     }
                   />
-                    
+
                   <FormInput
                     label="Account ID *"
                     placeholder="Enter your Account ID "
                     value={values.accountId}
-                    onChange={(e: any) => setFieldValue('accountId', e.target.value)}
+                    onChange={(e: any) =>
+                      setFieldValue('accountId', e.target.value)
+                    }
                     errors={
                       getIn(errors, 'accountId') !== undefined
                         ? getIn(errors, 'accountId')
@@ -130,7 +168,9 @@ const Form: NextPage = () => {
                     label="Partner ID *"
                     placeholder="Enter your Account ID "
                     value={values.partnerId}
-                    onChange={(e: any) => setFieldValue('partnerId', e.target.value)}
+                    onChange={(e: any) =>
+                      setFieldValue('partnerId', e.target.value)
+                    }
                     errors={
                       getIn(errors, 'partnerId') !== undefined
                         ? getIn(errors, 'partnerId')
@@ -141,7 +181,9 @@ const Form: NextPage = () => {
                     label="Amount to be send to split account *"
                     placeholder="Enter your Account ID "
                     value={values.splitAmnt}
-                    onChange={(e: any) => setFieldValue('splitAmnt', e.target.value)}
+                    onChange={(e: any) =>
+                      setFieldValue('splitAmnt', e.target.value)
+                    }
                     errors={
                       getIn(errors, 'splitAmnt') !== undefined
                         ? getIn(errors, 'splitAmnt')
@@ -171,7 +213,11 @@ const Form: NextPage = () => {
                         : ''
                     }
                   /> */}
-
+                
+                  <CheckoutProvider config={config}>
+                      <Checkout />
+                    </CheckoutProvider>
+                  
                   <button
                     className={styles.button}
                     type="submit"

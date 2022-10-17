@@ -2884,6 +2884,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+paytm-blink-checkout-react@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/paytm-blink-checkout-react/-/paytm-blink-checkout-react-0.0.3.tgz#063f87c9afa76393da9a33abd5a44d487d269aaa"
+  integrity sha512-lfNN4YqseuSGs11R3cCftKO0g138n1sxfZ4f4vN6aRTkeflcQYfzMzwvE4SdNtDiY40QLGsqkrhSu3b6o07toQ==
+
 paytm-pg-node-sdk@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/paytm-pg-node-sdk/-/paytm-pg-node-sdk-1.0.4.tgz#5d85ca226acf80e8e496491a86ee1047b21d957a"

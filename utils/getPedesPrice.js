@@ -22,7 +22,7 @@ const foreignNonIEEE = {
 };
 const indianPage = 1000;
 const foreignPage = 20;
-var index = new Date().toISOString() > '2022-10-15T18:29:59.059Z' ? 1 : 0;
+var index = new Date().toISOString() > '2022-10-25T18:29:59.059Z' ? 1 : 0;
 
 function getPedesPrice(val) {
   if (val.category !== '') {
