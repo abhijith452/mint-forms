@@ -7,6 +7,10 @@ const {
   getExtraPagesPrice2,
   getPedesTotalPrice,
 } = require('../../utils/getPedesPrice');
+const {
+  getEmergencePrice,
+  getEmergenceTotalPrice,
+} = require('../../utils/getEmergencePrice');
 
 const getPriceValidateIndicon = (req) => {
   const authorPrice = getIndiconPrice(req.body);
@@ -20,6 +24,8 @@ const priceValidator = (req, res, next) => {
   var total = 0;
   if (req.query.formId === 'indicon2022' || req.query.formId === 'demo') {
     total = getPriceValidateIndicon(req);
+  } else if (req.query.formId === 'emergence') {
+    total = getEmergenceTotalPrice(getEmergencePrice(req.body));
   } else if (req.query.formId === 'pedes2022') {
     total = getPedesTotalPrice(
       getPedesPrice(req.body) + getExtraPagesPrice2(req.body),

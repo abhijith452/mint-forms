@@ -23,6 +23,7 @@ const FormIEEE: NextPage<props> = ({
 }) => {
   const [verified, setVerified] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [SocietyList,setSocietyList] = useState(false);
   const [err, setErr] = useState('');
   const handleValidId = async () => {
     setLoading(true);
@@ -33,7 +34,8 @@ const FormIEEE: NextPage<props> = ({
         res.data.MemberStatus === 'Active'
       ) {
         setVerified(true);
-        onChangeValid('true');
+        setSocietyList(res.data.SocietyList)
+        onChangeValid('true',res.data.SocietyList);
         setErr('');
       }
       if (

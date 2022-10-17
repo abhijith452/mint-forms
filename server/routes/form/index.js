@@ -77,20 +77,13 @@ router.post('/addresponse', upload.single('fileUpload'), async (req, res) => {
 router.get('/responses', async (req, res) => {
   try {
     // const applicants = await Applicant.find({})
-    const responses = await Responses.find({ formId: req.query.formId });
-    const formDetails = await Form.findOne({ formId: req.query.formId });
-    formDetails.responses = responses;
-    res.send(formDetails);
-  } catch (err) {
-    logger.error(err);
-    res.status(400).send({ error: err.message });
-  }
-});
-
-router.get('/responses', async (req, res) => {
-  try {
-    // const applicants = await Applicant.find({})
-    const responses = await Responses.find({ formId: req.query.formId });
+    const responses = await Responses.find(
+      { formId: req.query.formId },
+      {
+        _id: false,
+        updatedAt: false,
+      }
+    );
     const formDetails = await Form.findOne({ formId: req.query.formId });
     formDetails.responses = responses;
     res.send(formDetails);
