@@ -723,22 +723,6 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 7635:
-/***/ ((module) => {
-
-
-function getTotalPrice(amount, values) {
-    var gst = amount * 0.18;
-    var feePercent = values.category.includes("Foreign") || values.citizen === "Foreign" ? 0.032 : 0.022;
-    var fee = feePercent * (amount + gst);
-    var feeGST = fee * 0.18;
-    return (amount + gst + fee + feeGST).toFixed(2);
-}
-module.exports = getTotalPrice;
-
-
-/***/ }),
-
 /***/ 2167:
 /***/ ((module) => {
 
@@ -802,7 +786,7 @@ module.exports = import("react-phone-number-input");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [427,174,704,834,661,723,354], () => (__webpack_exec__(4211)));
+var __webpack_exports__ = __webpack_require__.X(0, [427,174,704,834,661,723,713], () => (__webpack_exec__(4211)));
 module.exports = __webpack_exports__;
 
 })();

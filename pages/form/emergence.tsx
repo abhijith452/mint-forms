@@ -46,6 +46,7 @@ const Form: NextPage<types> = (props) => {
     ieee: '',
     ias: 'false',
     category: '',
+    promocode: '',
   });
   // const [initialVal, setIntialVal] = useState({
   //   name: 'test',
@@ -82,6 +83,7 @@ const Form: NextPage<types> = (props) => {
     ieee: yup.string(),
     accomodation: yup.string().required(),
     category: yup.string().required(),
+    promocode: yup.string(),
   });
   const getCategory = (values: any) => {
     if (values.ias === 'true') {
@@ -142,6 +144,7 @@ const Form: NextPage<types> = (props) => {
     <div className={styles.form}>
       <Head>
         <title>EMERGENCE 2.0</title>
+        {/* <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></link> */}
       </Head>
       {loading ? (
         <>
@@ -340,7 +343,17 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
-
+                  <FormInput
+                    label="Promo code *"
+                    placeholder="Enter promo code"
+                    value={values.promocode}
+                    onChange={(e: any) => setFieldValue('promocode', e.target.value)}
+                    errors={
+                      getIn(errors, 'promocode') !== undefined
+                        ? getIn(errors, 'promocode')
+                        : ''
+                    }
+                  />
                   <h4 className={styles.breakDownLabel}>
                     Amount based on chosen catgory
                   </h4>

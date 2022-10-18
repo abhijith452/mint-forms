@@ -32,8 +32,10 @@ export default function UserDetails({ data, setShow }) {
                 {data.location!== undefined ? <DisabledInput label="Location" value={data.location} /> : null}
                 {data.papers!== undefined ? <DisabledInput label="Number of Papers" value={data.papers} /> : null}
                 {data.paperTitle!== undefined ? <DisabledInput label="Paper Title" value={data.paperTitle} /> : null}
-                {data.amount!== undefined ? <DisabledInput label="Amount Paid" value={`${JSON.parse(data.amount).currency==="USD"?"$":"₹"} ${JSON.parse(data.amount).amount}`} /> : null}
+                {data.amount!== undefined ? <DisabledInput label="Total amount paid" value={`${JSON.parse(data.amount).currency==="USD"?"$":"₹"} ${JSON.parse(data.amount).amount}`} /> : null}
                 {data.promoCode!== undefined ? <DisabledInput label="Promo Code" value={data.promoCode} /> : null}
+                {data.promocode!== undefined ? <DisabledInput label="Promo Code" value={data.promocode} /> : null}
+                {data.amount!== undefined ? <DisabledInput label="Amount transferred" value={`${JSON.parse(data.amount).currency==="USD"?"$":"₹"} ${JSON.parse(data.amount).ownerAmt}`} /> : null}
 
             </div>
         </div>

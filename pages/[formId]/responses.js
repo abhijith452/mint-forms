@@ -16,7 +16,7 @@ import FormBackLayout from '../../layout/FormBackLayout/formBackLayout';
 import AddResponses from '../../components/addResponses';
 import SendMail from '../../components/sendMail';
 import Head from 'next/head';
-import getPriceBreakdown from '../../server/utils/getPriceBreakdown';
+import csvDownload from 'json-to-csv-export';
 
 export default function Responses() {
   const [loading, setLoading] = useState(false);
@@ -43,8 +43,8 @@ export default function Responses() {
     'Name',
     'Email',
     'Institute',
-    'Designation',
     'Membership Type',
+    'Category',
     'Amount',
     'Payment Status',
     'Action',
@@ -84,15 +84,30 @@ export default function Responses() {
     //     });
     //   }
     // });
-    var dataStr =
-      'data:text/json;charset=utf-8,' +
-      encodeURIComponent(JSON.stringify(data.data.responses));
-    var downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute('href', dataStr);
-    downloadAnchorNode.setAttribute('download', 'exportName' + '.json');
-    document.body.appendChild(downloadAnchorNode); // required for firefox
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
+    // var dataStr =
+    //   'data:text/json;charset=utf-8,' +
+    //   encodeURIComponent(JSON.stringify(data.data.responses));
+    // var downloadAnchorNode = document.createElement('a');
+    // downloadAnchorNode.setAttribute('href', dataStr);
+    // downloadAnchorNode.setAttribute('download', 'Responses' + '.json');
+    // document.body.appendChild(downloadAnchorNode); // required for firefox
+    // downloadAnchorNode.click();
+    // downloadAnchorNode.remove();
+
+    var g = data.data.responses;
+    var a = [];
+    g.forEach((val) => {
+      a.push({ ...val, amount: JSON.parse(val.amount).ownerAmt });
+    });
+
+    var config = {
+      data: a,
+      filename: 'Responses',
+      delimiter: ',',
+      headers: Object.keys(data.data.responses[0]),
+    };
+
+    csvDownload(config);
   };
 
   const sendNotification = async () => {
@@ -402,17 +417,17 @@ export default function Responses() {
                             : val.name}
                         </div>
                         <div className={styles.table_item}>{val.email}</div>
-                        <div className={styles.table_item} name={val.category}>
-                          {val.category}
-                        </div>
                         <div className={styles.table_item}>{val.institute}</div>
+
                         <div className={styles.table_item}>
                           {/* {val.membershipType} */}
                           {val.validIEEE || val.validIEEE !== ''
                             ? 'IEEE Member'
                             : 'Non IEEE Member'}
                         </div>
-
+                        <div className={styles.table_item} name={val.category}>
+                          {val.category}
+                        </div>
                         <div className={styles.table_item}>
                           {val.amount !== undefined ? (
                             <>
@@ -420,9 +435,11 @@ export default function Responses() {
                               {JSON.parse(val.amount).currency === 'USD'
                                 ? '$'
                                 : '₹'}{' '}
-                              {JSON.parse(val.amount).amount}
+                              {JSON.parse(val.amount).ownerAmt}
                             </>
-                          ) : "Free"}
+                          ) : (
+                            'Free'
+                          )}
                         </div>
 
                         <div className={styles.table_item}>

@@ -56,6 +56,8 @@ async function generateTxn2(data, splitInfo) {
       },
       userInfo: {
         custId: generateRandomString(10),
+        email:data.email,
+        firstName:data.name
       },
       splitSettlementInfo: {
         splitMethod: splitInfo.method,

@@ -82,6 +82,7 @@ router.get('/responses', async (req, res) => {
       {
         _id: false,
         updatedAt: false,
+        __v: false,
       }
     );
     const formDetails = await Form.findOne({ formId: req.query.formId });

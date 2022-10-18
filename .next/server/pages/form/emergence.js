@@ -82,7 +82,8 @@ const Form = (props)=>{
         accomodation: "",
         ieee: "",
         ias: "false",
-        category: ""
+        category: "",
+        promocode: ""
     });
     // const [initialVal, setIntialVal] = useState({
     //   name: 'test',
@@ -118,7 +119,8 @@ const Form = (props)=>{
         ias: yup__WEBPACK_IMPORTED_MODULE_16__.string(),
         ieee: yup__WEBPACK_IMPORTED_MODULE_16__.string(),
         accomodation: yup__WEBPACK_IMPORTED_MODULE_16__.string().required(),
-        category: yup__WEBPACK_IMPORTED_MODULE_16__.string().required()
+        category: yup__WEBPACK_IMPORTED_MODULE_16__.string().required(),
+        promocode: yup__WEBPACK_IMPORTED_MODULE_16__.string()
     });
     const getCategory = (values)=>{
         if (values.ias === "true") {
@@ -331,6 +333,13 @@ const Form = (props)=>{
                                                 value: values.category,
                                                 onChange: (e)=>setFieldValue("category", e),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "category") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "category") : ""
+                                            }),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+                                                label: "Promo code *",
+                                                placeholder: "Enter promo code",
+                                                value: values.promocode,
+                                                onChange: (e)=>setFieldValue("promocode", e.target.value),
+                                                errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "promocode") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "promocode") : ""
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
                                                 className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_17___default().breakDownLabel),
