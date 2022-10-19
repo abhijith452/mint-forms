@@ -11,6 +11,7 @@ const {
   getEmergencePrice,
   getEmergenceTotalPrice,
 } = require('../../utils/getEmergencePrice');
+const Form = require('../models/forms');
 
 const getPriceValidateIndicon = (req) => {
   const authorPrice = getIndiconPrice(req.body);
@@ -20,26 +21,31 @@ const getPriceValidateIndicon = (req) => {
   return total;
 };
 
-const priceValidator = (req, res, next) => {
-  var total = 0;
-  if (req.query.formId === 'indicon2022' || req.query.formId === 'demo') {
-    total = getPriceValidateIndicon(req);
-  } else if (req.query.formId === 'emergence') {
-    total = getEmergenceTotalPrice(getEmergencePrice(req.body));
-  } else if (req.query.formId === 'pedes2022') {
-    total = getPedesTotalPrice(
-      getPedesPrice(req.body) + getExtraPagesPrice2(req.body),
-      req.body
-    );
-  }
-  console.log(total);
-  console.log(JSON.parse(req.body.amount).amount);
-  if (total === JSON.parse(req.body.amount).amount) {
-    console.log('Amount validated');
-    next();
-  } else {
-    res.status(400).send({ error: "Selected category isn't avaliable" });
-  }
+const priceValidator = async (req, res, next) => {
+  try {
+    const formDetails = await Form.findOne({ formId: req.query.formId });
+    var total = 0;
+    if (req.query.formId === 'indicon2022' || req.query.formId === 'demo') {
+      total = getPriceValidateIndicon(req);
+    } else if (req.query.formId === 'emergence') {
+      total = getEmergenceTotalPrice(
+        getEmergencePrice(req.body, formDetails.earlybird)
+      );
+    } else if (req.query.formId === 'pedes2022') {
+      total = getPedesTotalPrice(
+        getPedesPrice(req.body) + getExtraPagesPrice2(req.body),
+        req.body
+      );
+    }
+    console.log(total);
+    console.log(JSON.parse(req.body.amount).amount);
+    if (total === JSON.parse(req.body.amount).amount) {
+      console.log('Amount validated');
+      next();
+    } else {
+      res.status(400).send({ error: "Selected category isn't avaliable" });
+    }
+  } catch (err) {}
 };
 
 module.exports = priceValidator;

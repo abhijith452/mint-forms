@@ -133,7 +133,16 @@ router.post(
     }
   }
 );
-
+router.post('/webhook', async (req, res) => {
+  try {
+    logger.info(req.body);
+    console.log(req.body)
+    res.send(200);
+  } catch (err) {
+    res.status(400).send(err);
+    logger.error(err);
+  }
+});
 router.get('/orderStatus', async (req, res) => {
   try {
     var paymentStatusDetailBuilder = new Paytm.PaymentStatusDetailBuilder(

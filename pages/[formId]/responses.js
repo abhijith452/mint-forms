@@ -97,11 +97,15 @@ export default function Responses() {
     var g = data.data.responses;
     var a = [];
     g.forEach((val) => {
-      a.push({ ...val, amount: JSON.parse(val.amount).ownerAmt });
+      if (val.amount !== undefined) {
+        a.push({ ...val, amount: JSON.parse(val.amount).ownerAmt });
+      } else {
+        a.push({ ...val });
+      }
     });
 
     var config = {
-      data: a,
+      data: data.data.responses,
       filename: 'Responses',
       delimiter: ',',
       headers: Object.keys(data.data.responses[0]),

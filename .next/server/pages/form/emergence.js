@@ -67,40 +67,40 @@ const Form = (props)=>{
     const { 0: loading , 1: setLoading  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)(false);
     const { 0: error , 1: setError  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)(false);
     const { 0: errorMsg , 1: setErrorMsg  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)(false);
-    const { 0: initialVal , 1: setIntialVal  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)({
-        name: "",
-        email: "",
-        gender: "",
-        district: "",
-        phone: "",
-        institute: "",
-        ieeeMember: "",
-        validIEEE: "",
-        workshop: "",
-        iv: "",
-        food: "",
-        accomodation: "",
-        ieee: "",
-        ias: "false",
-        category: "",
-        promocode: ""
-    });
     // const [initialVal, setIntialVal] = useState({
-    //   name: 'test',
-    //   email: 'abhijithkannan452@gmail.com',
-    //   gender: 'Male',
-    //   district: 'India',
-    //   phone: '+917025263554',
-    //   institute: 'CEK',
-    //   ieeeMember: 'No',
+    //   name: '',
+    //   email: '',
+    //   gender: '',
+    //   district: '',
+    //   phone: '',
+    //   institute: '',
+    //   ieeeMember: '',
     //   validIEEE: '',
-    //   workshop: 'Project Development Workshop',
-    //   iv: 'ALIND Switchgear Indsutries, Mannar',
-    //   food: 'Veg',
-    //   accomodation: 'Yes',
+    //   workshop: '',
+    //   iv: '',
+    //   food: '',
+    //   accomodation: '',
     //   ieee: '',
     //   ias: 'false',
+    //   category: '',
+    //   promocode: '',
     // });
+    const { 0: initialVal , 1: setIntialVal  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)({
+        name: "test",
+        email: "abhijithkannan452@gmail.com",
+        gender: "Male",
+        district: "India",
+        phone: "+917025263554",
+        institute: "CEK",
+        ieeeMember: "No",
+        validIEEE: "",
+        workshop: "Project Development Workshop",
+        iv: "ALIND Switchgear Indsutries, Mannar",
+        food: "Veg",
+        accomodation: "Yes",
+        ieee: "",
+        ias: "false"
+    });
     let schema = yup__WEBPACK_IMPORTED_MODULE_16__.object().shape({
         name: yup__WEBPACK_IMPORTED_MODULE_16__.string().required(),
         email: yup__WEBPACK_IMPORTED_MODULE_16__.string().required().email(),
@@ -124,19 +124,19 @@ const Form = (props)=>{
     });
     const getCategory = (values)=>{
         if (values.ias === "true") {
-            return new Date().toISOString() < _utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.earlyBirdLastDate ? [
+            return new Date().toISOString() < props.earlybird ? [
                 "IAS Member Rs 450"
             ] : [
                 "IAS Member Rs 600"
             ];
         } else if (values.validIEEE === "true") {
-            return new Date().toISOString() < _utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.earlyBirdLastDate ? [
+            return new Date().toISOString() < props.earlybird ? [
                 "IEEE Member Rs 550"
             ] : [
                 "IEEE Member Rs 700"
             ];
         } else {
-            return new Date().toISOString() < _utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.earlyBirdLastDate ? [
+            return new Date().toISOString() < props.earlybird ? [
                 "Non-IEEE Member Rs 700"
             ] : [
                 "Non-IEEE Member Rs 850"
@@ -155,9 +155,9 @@ const Form = (props)=>{
             var data = values;
             data.amount = JSON.stringify({
                 currency: "INR",
-                amount: (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergenceTotalPrice)((0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values)),
-                fee: ((0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergenceTotalPrice)((0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values)) - (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values)).toFixed(2),
-                ownerAmt: (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values)
+                amount: (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergenceTotalPrice)((0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values, props.earlybird)),
+                fee: ((0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergenceTotalPrice)((0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values, props.earlybird)) - (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values, props.earlybird)).toFixed(2),
+                ownerAmt: (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values, props.earlybird)
             });
             const formData = _utils_buildForm__WEBPACK_IMPORTED_MODULE_10___default()(data);
             const res = await axios__WEBPACK_IMPORTED_MODULE_3___default().post("/api/pay/paytm?formId=emergence", formData, {
@@ -367,7 +367,7 @@ const Form = (props)=>{
                                                 className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_17___default().price),
                                                 children: [
                                                     `Rs `,
-                                                    (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergenceTotalPrice)((0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values))
+                                                    (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergenceTotalPrice)((0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values, props.earlybird))
                                                 ]
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
@@ -546,9 +546,8 @@ const pricing = {
         600
     ]
 };
-var earlyBirdLastDate = "2022-10-20T18:29:59.059Z";
-var index = new Date().toISOString() > earlyBirdLastDate ? 1 : 0;
-function getEmergencePrice(val) {
+function getEmergencePrice(val, earlyBirdLastDate) {
+    var index = new Date().toISOString() > earlyBirdLastDate ? 1 : 0;
     if (val.category === "IAS Member Rs 450" || val.category === "IAS Member Rs 600") {
         return pricing.IAS[index];
     }
@@ -569,8 +568,7 @@ function getEmergenceTotalPrice(amount, values) {
 }
 module.exports = {
     getEmergencePrice,
-    getEmergenceTotalPrice,
-    earlyBirdLastDate
+    getEmergenceTotalPrice
 };
 
 

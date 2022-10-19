@@ -3,10 +3,9 @@ const pricing = {
   IEEE: [550, 700],
   IAS: [450, 600],
 };
-var earlyBirdLastDate = '2022-10-20T18:29:59.059Z';
-var index = new Date().toISOString() > earlyBirdLastDate ? 1 : 0;
 
-function getEmergencePrice(val) {
+function getEmergencePrice(val, earlyBirdLastDate) {
+  var index = new Date().toISOString() > earlyBirdLastDate ? 1 : 0;
   if (
     val.category === 'IAS Member Rs 450' ||
     val.category === 'IAS Member Rs 600'
@@ -29,6 +28,7 @@ function getEmergencePrice(val) {
 }
 
 function getEmergenceTotalPrice(amount, values) {
+
   var gst = amount * 0.18;
   var feePercent = 0.022;
   var fee = feePercent * amount;
@@ -38,5 +38,4 @@ function getEmergenceTotalPrice(amount, values) {
 module.exports = {
   getEmergencePrice,
   getEmergenceTotalPrice,
-  earlyBirdLastDate,
 };

@@ -10,7 +10,6 @@ import Loader from '../../UI-Components/loader';
 import {
   getEmergencePrice,
   getEmergenceTotalPrice,
-  earlyBirdLastDate,
 } from '../../utils/getEmergencePrice';
 import districtList from '../../utils/getDistrictList';
 import buildForm from '../../utils/buildForm';
@@ -23,6 +22,8 @@ import * as yup from 'yup';
 
 interface types {
   expiryDate: string;
+  responses: any;
+  earlybird: any;
 }
 
 const Form: NextPage<types> = (props) => {
@@ -30,40 +31,40 @@ const Form: NextPage<types> = (props) => {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
 
-  const [initialVal, setIntialVal] = useState({
-    name: '',
-    email: '',
-    gender: '',
-    district: '',
-    phone: '',
-    institute: '',
-    ieeeMember: '',
-    validIEEE: '',
-    workshop: '',
-    iv: '',
-    food: '',
-    accomodation: '',
-    ieee: '',
-    ias: 'false',
-    category: '',
-    promocode: '',
-  });
   // const [initialVal, setIntialVal] = useState({
-  //   name: 'test',
-  //   email: 'abhijithkannan452@gmail.com',
-  //   gender: 'Male',
-  //   district: 'India',
-  //   phone: '+917025263554',
-  //   institute: 'CEK',
-  //   ieeeMember: 'No',
+  //   name: '',
+  //   email: '',
+  //   gender: '',
+  //   district: '',
+  //   phone: '',
+  //   institute: '',
+  //   ieeeMember: '',
   //   validIEEE: '',
-  //   workshop: 'Project Development Workshop',
-  //   iv: 'ALIND Switchgear Indsutries, Mannar',
-  //   food: 'Veg',
-  //   accomodation: 'Yes',
+  //   workshop: '',
+  //   iv: '',
+  //   food: '',
+  //   accomodation: '',
   //   ieee: '',
   //   ias: 'false',
+  //   category: '',
+  //   promocode: '',
   // });
+  const [initialVal, setIntialVal] = useState({
+    name: 'test',
+    email: 'abhijithkannan452@gmail.com',
+    gender: 'Male',
+    district: 'India',
+    phone: '+917025263554',
+    institute: 'CEK',
+    ieeeMember: 'No',
+    validIEEE: '',
+    workshop: 'Project Development Workshop',
+    iv: 'ALIND Switchgear Indsutries, Mannar',
+    food: 'Veg',
+    accomodation: 'Yes',
+    ieee: '',
+    ias: 'false',
+  });
   let schema = yup.object().shape({
     name: yup.string().required(),
     email: yup.string().required().email(),
@@ -87,15 +88,15 @@ const Form: NextPage<types> = (props) => {
   });
   const getCategory = (values: any) => {
     if (values.ias === 'true') {
-      return new Date().toISOString() < earlyBirdLastDate
+      return new Date().toISOString() < props.earlybird
         ? ['IAS Member Rs 450']
         : ['IAS Member Rs 600'];
     } else if (values.validIEEE === 'true') {
-      return new Date().toISOString() < earlyBirdLastDate
+      return new Date().toISOString() < props.earlybird
         ? ['IEEE Member Rs 550']
         : ['IEEE Member Rs 700'];
     } else {
-      return new Date().toISOString() < earlyBirdLastDate
+      return new Date().toISOString() < props.earlybird
         ? ['Non-IEEE Member Rs 700']
         : ['Non-IEEE Member Rs 850'];
     }
@@ -114,12 +115,14 @@ const Form: NextPage<types> = (props) => {
       var data = values;
       data.amount = JSON.stringify({
         currency: 'INR',
-        amount: getEmergenceTotalPrice(getEmergencePrice(values)),
+        amount: getEmergenceTotalPrice(
+          getEmergencePrice(values, props.earlybird)
+        ),
         fee: (
-          getEmergenceTotalPrice(getEmergencePrice(values)) -
-          getEmergencePrice(values)
+          getEmergenceTotalPrice(getEmergencePrice(values, props.earlybird)) -
+          getEmergencePrice(values, props.earlybird)
         ).toFixed(2),
-        ownerAmt: getEmergencePrice(values),
+        ownerAmt: getEmergencePrice(values, props.earlybird),
       });
 
       const formData = buildForm(data);
@@ -347,7 +350,9 @@ const Form: NextPage<types> = (props) => {
                     label="Promo code *"
                     placeholder="Enter promo code"
                     value={values.promocode}
-                    onChange={(e: any) => setFieldValue('promocode', e.target.value)}
+                    onChange={(e: any) =>
+                      setFieldValue('promocode', e.target.value)
+                    }
                     errors={
                       getIn(errors, 'promocode') !== undefined
                         ? getIn(errors, 'promocode')
@@ -367,7 +372,9 @@ const Form: NextPage<types> = (props) => {
                   </h4>
                   <h5 className={styles.price}>
                     {`Rs `}
-                    {getEmergenceTotalPrice(getEmergencePrice(values))}
+                    {getEmergenceTotalPrice(
+                      getEmergencePrice(values, props.earlybird)
+                    )}
                     {/* {getPedesTotalPrice(values, getPedesPrice(values))} */}
                   </h5>
                   <br />
