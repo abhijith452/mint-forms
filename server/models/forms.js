@@ -15,6 +15,7 @@ const applicantSchema = new Schema(
     specific: { type: Object },
     splitInfo: { type: Object },
     expiryDate:{ type: String },
+    earlybird:{ type: String },
     responses: [Object],
   },
   { timestamps: true }

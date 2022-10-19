@@ -23,11 +23,11 @@ const getPriceValidateIndicon = (req) => {
 
 const priceValidator = async (req, res, next) => {
   try {
-    const formDetails = await Form.findOne({ formId: req.query.formId });
     var total = 0;
     if (req.query.formId === 'indicon2022' || req.query.formId === 'demo') {
       total = getPriceValidateIndicon(req);
     } else if (req.query.formId === 'emergence') {
+      const formDetails = await Form.findOne({ formId: req.query.formId });
       total = getEmergenceTotalPrice(
         getEmergencePrice(req.body, formDetails.earlybird)
       );
