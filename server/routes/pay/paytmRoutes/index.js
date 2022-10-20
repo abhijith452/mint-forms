@@ -135,10 +135,10 @@ router.post(
 );
 router.post('/webhook', async (req, res) => {
   try {
-    logger.info(req.body);
-    await axios.post("https://eo5z9welnk8y4gr.m.pipedream.net",req.body)
-    console.log(req.body)
-    res.send(200);
+    logger.info(JSON.stringify(req.body));
+    // await axios.post("https://eo5z9welnk8y4gr.m.pipedream.net",req.body)
+    // console.log(req.body)
+    res.sendStatus(200);
   } catch (err) {
     res.status(400).send(err);
     logger.error(err);

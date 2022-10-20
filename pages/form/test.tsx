@@ -78,21 +78,21 @@ const Form: NextPage = () => {
         flow: 'DEFAULT',
         data: {
           orderId: res.data.orderId /* update order id */,
-          token:  res.data.txnToken /* update token value */,
+          token: res.data.txnToken /* update token value */,
           tokenType: 'TXN_TOKEN',
           amount: res.data.TXN_AMOUNT /* update amount */,
         },
-        merchant:{
-          mid:res.data.mid,
-          logo: "/header.png"
+        merchant: {
+          mid: res.data.mid,
+          logo: '/header.png',
         },
-        "handler": {
-          "notifyMerchant": function(eventName:any,data:any){
-          console.log("notifyMerchant handler function called");
-          console.log("eventName => ",eventName);
-          console.log("data => ",data);
-          }
-          }
+        handler: {
+          notifyMerchant: function (eventName: any, data: any) {
+            console.log('notifyMerchant handler function called');
+            console.log('eventName => ', eventName);
+            console.log('data => ', data);
+          },
+        },
       });
       // }
     } catch (err: any) {
@@ -213,11 +213,16 @@ const Form: NextPage = () => {
                         : ''
                     }
                   /> */}
-                
-                  <CheckoutProvider config={config}>
-                      <Checkout />
-                    </CheckoutProvider>
-                  
+
+                  <CheckoutProvider
+                    config={config}
+                    env={
+                      process.env.NODE_ENV === 'development' ? 'STAGE' : 'PROD'
+                    }
+                  >
+                    <Checkout />
+                  </CheckoutProvider>
+
                   <button
                     className={styles.button}
                     type="submit"
