@@ -1,4 +1,3 @@
-import { getIn } from 'formik';
 import type { NextPage } from 'next';
 import styles from './styles.module.css';
 
@@ -16,7 +15,6 @@ const FormTextArea: NextPage<props> = ({
   placeholder,
   value,
   onChange,
-  name,
   errors,
 }) => {
   return (
@@ -27,12 +25,10 @@ const FormTextArea: NextPage<props> = ({
         value={value}
         style={{
           boxShadow:
-            getIn(errors, name) !== undefined
-              ? '0 12px 20px 0 rgba(255, 45, 45, 0.301),inset 0 -1px 8px 0 #ff5f5f6e'
-              : '0 12px 20px 0 rgba(136,174,222,0.42),inset 0 -1px 8px 0 #B9D1F1',
-          outlineColor: getIn(errors, name) !== undefined ? 'red' : '#1479ff',
+            'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
+          outlineColor: errors !== '' ? 'red' : '#1479ff',
         }}
-        onChange={()=>onChange()}
+        onChange={(e) => onChange(e)}
         className={styles.input}
       />
       <p className={styles.errorMsg}>{errors}</p>

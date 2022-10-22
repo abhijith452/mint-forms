@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import styles from '../../styles/Form.module.css';
 import FormInput from '../../UI-Components/FormInput';
+import FormTextArea from '../../UI-Components/FormTextArea';
 import { Formik, getIn, FormikProps } from 'formik';
 import axios from 'axios';
 import FormOptions from '../../UI-Components/FormOptions';
@@ -36,6 +37,7 @@ const Form: NextPage<types> = (props) => {
     ieeeMember: 'No',
     validIEEE: '',
     section: '',
+    volunteering: '',
   });
   // const [initialVal, setIntialVal] = useState({
   //   name: 'Test ',
@@ -67,6 +69,7 @@ const Form: NextPage<types> = (props) => {
     institute: yup.string(),
     type: yup.string().required(),
     field: yup.string(),
+    volunteering: yup.string(),
     ieeeMember: yup.string().required(),
     validIEEE: yup.string().when('ieeeMember', {
       is: 'Yes',
@@ -121,10 +124,10 @@ const Form: NextPage<types> = (props) => {
         </>
       ) : new Date().toISOString() < props.expiryDate ? (
         <div className={styles.formContainer}>
-          <img className={styles.formBanner} src="/indicon2.png" />
+          <img className={styles.formBanner} src="/upskill.jpg" />
           <div className={styles.formDetails}>
             <p className={styles.subTitle}>REGISTRATION FORM</p>
-            <h1 className={styles.formTitle}>YP UPSkill 2022</h1>
+            <h1 className={styles.formTitle}>UPSkill 2022</h1>
             {/* <p className={styles.formDescription}>
               To ride a vehicle I worked on back home in New Zealand has always
               been a dream, to share it with so many like minded people at
@@ -196,7 +199,7 @@ const Form: NextPage<types> = (props) => {
                   />
 
                   <FormInput
-                    label="Institute"
+                    label="Institution/Company"
                     placeholder="Enter your institution"
                     value={values.institute}
                     onChange={(e: any) =>
@@ -220,6 +223,20 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
+                  <FormTextArea
+                    label="Previous volunteering experince wiith IEEE or any other organizations"
+                    placeholder="Enter your previous volunteering experince"
+                    value={values.volunteering}
+                    name=""
+                    onChange={(e: any) =>
+                      setFieldValue('volunteering', e.target.value)
+                    }
+                    errors={
+                      getIn(errors, 'volunteering') !== undefined
+                        ? getIn(errors, 'volunteering')
+                        : ''
+                    }
+                  />
 
                   <FormOptions
                     label="Are you an IEEE Member*"
@@ -232,40 +249,44 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
-                  {values.ieeeMember==="Yes"?<>
-                  <FormIEEE
-                    label="If yes, enter your membership ID"
-                    placeholder="Enter your IEEE Membership ID "
-                    value={values.membershipId}
-                    onChange={(e: any) =>
-                      setFieldValue('membershipId', e.target.value)
-                    }
-                    onChangeValid={(e: any) => setFieldValue('validIEEE', e)}
-                    errors={
-                      getIn(errors, 'membershipId') !== undefined
-                        ? getIn(errors, 'membershipId')
-                        : ''
-                    }
-                    vaildError={
-                      getIn(errors, 'validIEEE') !== undefined
-                        ? getIn(errors, 'validIEEE')
-                        : ''
-                    }
-                  />
-                  <FormInput
-                    label="Section *"
-                    placeholder="Enter your institution"
-                    value={values.section}
-                    onChange={(e: any) =>
-                      setFieldValue('section', e.target.value)
-                    }
-                    errors={
-                      getIn(errors, 'section') !== undefined
-                        ? getIn(errors, 'section')
-                        : ''
-                    }
-                  />
-                  </>:null}
+                  {values.ieeeMember === 'Yes' ? (
+                    <>
+                      <FormIEEE
+                        label="If yes, enter your membership ID"
+                        placeholder="Enter your IEEE Membership ID "
+                        value={values.membershipId}
+                        onChange={(e: any) =>
+                          setFieldValue('membershipId', e.target.value)
+                        }
+                        onChangeValid={(e: any) =>
+                          setFieldValue('validIEEE', e)
+                        }
+                        errors={
+                          getIn(errors, 'membershipId') !== undefined
+                            ? getIn(errors, 'membershipId')
+                            : ''
+                        }
+                        vaildError={
+                          getIn(errors, 'validIEEE') !== undefined
+                            ? getIn(errors, 'validIEEE')
+                            : ''
+                        }
+                      />
+                      <FormInput
+                        label="Section *"
+                        placeholder="Enter your institution"
+                        value={values.section}
+                        onChange={(e: any) =>
+                          setFieldValue('section', e.target.value)
+                        }
+                        errors={
+                          getIn(errors, 'section') !== undefined
+                            ? getIn(errors, 'section')
+                            : ''
+                        }
+                      />
+                    </>
+                  ) : null}
 
                   {/* {JSON.stringify(values, null, 2)} */}
                   <button
