@@ -347,7 +347,7 @@ const Form = (props)=>{
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h5", {
                                                 className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_17___default().singlePrice),
-                                                children: (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values)
+                                                children: (0,_utils_getEmergencePrice__WEBPACK_IMPORTED_MODULE_8__.getEmergencePrice)(values, props.earlybird)
                                             }),
                                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h4", {
                                                 className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_17___default().priceLabel),

@@ -460,7 +460,7 @@ const Form: NextPage = () => {
                   </h4>
                   <h5 className={styles.singlePrice}>
                     {values.citizen === 'Foreign' ? '$ ' : 'Rs '}
-                    {getPedesPrice(values)}
+                    {getExtraPagesPrice2(values)}
                   </h5>
                   <h4 className={styles.priceLabel}>
                     Total amount (

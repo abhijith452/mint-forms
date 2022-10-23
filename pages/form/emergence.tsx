@@ -364,7 +364,7 @@ const Form: NextPage<types> = (props) => {
                   </h4>
                   <h5 className={styles.singlePrice}>
                     {/* {values.category.includes('Foreign') ? '$ ' : 'Rs '} */}
-                    {getEmergencePrice(values)}
+                    {getEmergencePrice(values,props.earlybird)}
                   </h5>
                   <h4 className={styles.priceLabel}>
                     Total amount (
