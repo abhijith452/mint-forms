@@ -332,7 +332,7 @@ const Form: NextPage<types> = (props) => {
               the great shots.
             </p> */}
           </div>
-          {error ? <Error setError={setError} msg={errorMsg} /> : null}(
+          {error ? <Error setError={setError} msg={errorMsg} /> : null}
           <div className={styles.formContent}>
             <Formik
               initialValues={initialVal}
@@ -712,7 +712,7 @@ const Form: NextPage<types> = (props) => {
               </a>
             </footer>
           </div>
-          )
+          
         </div>
       ) : (
         <div

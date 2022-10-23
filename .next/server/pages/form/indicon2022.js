@@ -352,7 +352,6 @@ const Form = (props)=>{
                         setError: setError,
                         msg: errorMsg
                     }) : null,
-                    "(",
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_20___default().formContent),
                         children: [
@@ -668,8 +667,7 @@ const Form = (props)=>{
                                 ]
                             })
                         ]
-                    }),
-                    ")"
+                    })
                 ]
             }) : /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 style: {
