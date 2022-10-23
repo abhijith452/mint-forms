@@ -133,47 +133,13 @@ router.post(
     }
   }
 );
+
 router.post('/webhook', async (req, res) => {
   try {
     logger.info(JSON.stringify(req.body));
     // await axios.post("https://eo5z9welnk8y4gr.m.pipedream.net",req.body)
     // console.log(req.body)
-    res.sendStatus(200);
-  } catch (err) {
-    res.status(400).send(err);
-    logger.error(err);
-  }
-});
-router.get('/orderStatus', async (req, res) => {
-  try {
-    var paymentStatusDetailBuilder = new Paytm.PaymentStatusDetailBuilder(
-      req.query.orderId
-    );
-    var paymentStatusDetail = paymentStatusDetailBuilder
-      .setReadTimeout(8000)
-      .build();
-    var paytm = await Paytm.Payment.getPaymentStatus(paymentStatusDetail);
-
-   
-    res.send(paytm);
-  } catch (err) {
-    res.status(400).send(err);
-    logger.error(err);
-  }
-});
-router.post('/callback', async (req, res) => {
-  try {
-    var orderId = req.body.ORDERID;
-    var readTimeout = 80000;
-    var paymentStatusDetailBuilder = new Paytm.PaymentStatusDetailBuilder(
-      orderId
-    );
-    var paymentStatusDetail = paymentStatusDetailBuilder
-      .setReadTimeout(readTimeout)
-      .build();
-    var paytm = await Paytm.Payment.getPaymentStatus(paymentStatusDetail);
-
-    if (paytm.responseObject.body.resultInfo.resultStatus === 'TXN_SUCCESS') {
+    if (req.body.STATUS === 'TXN_SUCCESS') {
       const response = await Response.findOneAndUpdate(
         { orderId: req.body.ORDERID },
         {
@@ -203,16 +169,13 @@ router.post('/callback', async (req, res) => {
 
       response
         .save()
-        .then(() =>
-          res.redirect(`${process.env.domain}confirmation/${req.body.ORDERID}`)
-        )
+        .then(() => res.sendStatus(200))
         .catch((err) => {
           logger.error(err);
           res.status(400).send({ error: err.message });
         });
-    } else if (
-      paytm.responseObject.body.resultInfo.resultStatus === 'TXN_FAILURE'
-    ) {
+    } 
+    else if (req.body.STATUS === 'TXN_FAILURE') {
       const response = await Response.findOneAndUpdate(
         { orderId: req.body.ORDERID },
         {
@@ -240,13 +203,119 @@ router.post('/callback', async (req, res) => {
 
       response
         .save()
-        .then(() =>
-          res.redirect(`${process.env.domain}confirmation/${req.body.ORDERID}`)
-        )
+        .then(() => res.sendStatus(200))
         .catch((err) => {
           logger.error(err);
           res.status(400).send({ error: err.message });
         });
+    }
+  } catch (err) {
+    res.status(400).send(err);
+    logger.error(err);
+  }
+});
+router.get('/orderStatus', async (req, res) => {
+  try {
+    var paymentStatusDetailBuilder = new Paytm.PaymentStatusDetailBuilder(
+      req.query.orderId
+    );
+    var paymentStatusDetail = paymentStatusDetailBuilder
+      .setReadTimeout(8000)
+      .build();
+    var paytm = await Paytm.Payment.getPaymentStatus(paymentStatusDetail);
+
+    res.send(paytm);
+  } catch (err) {
+    res.status(400).send(err);
+    logger.error(err);
+  }
+});
+router.post('/callback', async (req, res) => {
+  try {
+    var orderId = req.body.ORDERID;
+    var readTimeout = 80000;
+    var paymentStatusDetailBuilder = new Paytm.PaymentStatusDetailBuilder(
+      orderId
+    );
+    var paymentStatusDetail = paymentStatusDetailBuilder
+      .setReadTimeout(readTimeout)
+      .build();
+    var paytm = await Paytm.Payment.getPaymentStatus(paymentStatusDetail);
+
+    if (paytm.responseObject.body.resultInfo.resultStatus === 'TXN_SUCCESS') {
+      // const response = await Response.findOneAndUpdate(
+      //   { orderId: req.body.ORDERID },
+      //   {
+      //     $set: {
+      //       paymentStatus: 'success',
+      //       txnDate: moment().tz('Asia/Kolkata').toISOString(),
+      //       txnId: req.body.TXNID,
+      //     },
+      //   }
+      // );
+      // var txnInfo = {
+      //   txnAmount: req.body.TXNAMOUNT,
+      //   orderId: req.body.ORDERID,
+      //   txnDate: moment().tz('Asia/Kolkata').toISOString(),
+      //   txnId: req.body.TXNID,
+      //   currency: req.body.CURRENCY,
+      // };
+      // const formDetails = await Form.findOne({ formId: response.formId });
+      // if (req.query.formId === 'indicon2022') {
+      //   notify('conSuccess', response, txnInfo, formDetails);
+      // } else if (req.query.formId !== 'transfer') {
+      //   notify('success', response, txnInfo, formDetails);
+      // }
+      // response
+      //   .save()
+      //   .then(() =>
+      //     res.redirect(`${process.env.domain}confirmation/${req.body.ORDERID}`)
+      //   )
+      //   .catch((err) => {
+      //     logger.error(err);
+      //     res.status(400).send({ error: err.message });
+      //   });
+      return res.redirect(
+        `${process.env.domain}confirmation/${req.body.ORDERID}`
+      );
+    } else if (
+      paytm.responseObject.body.resultInfo.resultStatus === 'TXN_FAILURE'
+    ) {
+      return res.redirect(
+        `${process.env.domain}confirmation/${req.body.ORDERID}`
+      );
+      // const response = await Response.findOneAndUpdate(
+      //   { orderId: req.body.ORDERID },
+      //   {
+      //     $set: {
+      //       paymentStatus: 'failure',
+      //       txnDate: moment().tz('Asia/Kolkata').toISOString(),
+      //       txnId: req.body.TXNID,
+      //     },
+      //   }
+      // );
+      // var txnInfo = {
+      //   txnAmount: req.body.TXNAMOUNT,
+      //   orderId: req.body.ORDERID,
+      //   txnDate: moment().tz('Asia/Kolkata').toISOString(),
+      //   txnId: req.body.TXNID,
+      //   currency: req.body.CURRENCY,
+      // };
+      // const formDetails = await Form.findOne({ formId: response.formId });
+      // if (req.query.formId === 'indicon2022') {
+      //   notify('conFailed', response, txnInfo, formDetails);
+      // } else {
+      //   notify('failed', response, txnInfo, formDetails);
+      // }
+      // response
+      //   .save()
+      //   .then(() =>
+      //     res.redirect(`${process.env.domain}confirmation/${req.body.ORDERID}`)
+      //   )
+      //   .catch((err) => {
+      //     logger.error(err);
+      //     res.status(400).send({ error: err.message });
+      //   });
     } else {
       return res.redirect(
         `${process.env.domain}confirmation/${req.body.ORDERID}`

@@ -217,7 +217,7 @@ const Form: NextPage = () => {
                   <CheckoutProvider
                     config={config}
                     env={
-                      process.env.NODE_ENV === 'development' ? 'STAGE' : 'PROD'
+                      'PROD'
                     }
                   >
                     <Checkout />

@@ -13,9 +13,9 @@
   "/form/test": "pages/form/test.html",
   "/": "pages/index.html",
   "/form/emergence": "pages/form/emergence.js",
-  "/form/indicon2022special": "pages/form/indicon2022special.js",
-  "/form/indicon2022": "pages/form/indicon2022.js",
   "/form/ypupskill": "pages/form/ypupskill.js",
+  "/form/indicon2022": "pages/form/indicon2022.js",
   "/_document": "pages/_document.js",
+  "/form/indicon2022special": "pages/form/indicon2022special.js",
   "/404": "pages/404.html"
 }
