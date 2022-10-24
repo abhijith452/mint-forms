@@ -251,7 +251,7 @@ const Form: NextPage<types> = (props) => {
                     options={[
                       'Rapid Prototyping',
                       'Introduction to PVsyst',
-                      'IOT Candle Workshop',
+                      // 'IOT Candle Workshop (Seat filled)',
                     ]}
                     value={values.workshop}
                     onChange={(e: any) => setFieldValue('workshop', e)}

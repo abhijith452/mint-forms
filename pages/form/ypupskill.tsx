@@ -116,7 +116,7 @@ const Form: NextPage<types> = (props) => {
   return (
     <div className={styles.form}>
       <Head>
-        <title>Indicon 2022</title>
+        <title>YP UPSkill 2022</title>
       </Head>
       {loading ? (
         <>

@@ -267,8 +267,7 @@ const Form = (props)=>{
                                                 label: "Workshop Preference *",
                                                 options: [
                                                     "Rapid Prototyping",
-                                                    "Introduction to PVsyst",
-                                                    "IOT Candle Workshop", 
+                                                    "Introduction to PVsyst", 
                                                 ],
                                                 value: values.workshop,
                                                 onChange: (e)=>setFieldValue("workshop", e),
