@@ -347,7 +347,7 @@ const Form = (props)=>{
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form);
 async function getServerSideProps() {
     try {
-        const price = await axios__WEBPACK_IMPORTED_MODULE_4___default().get( true ? "https://mint-forms.ieee-mint.org/api/form/formDetails?formId=indicon2022special" : 0);
+        const price = await axios__WEBPACK_IMPORTED_MODULE_4___default().get( true ? "https://mint-forms.ieee-mint.org/api/form/formDetails?formId=ypupskill" : 0);
         return {
             props: price.data
         };

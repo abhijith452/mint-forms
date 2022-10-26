@@ -1,7 +1,7 @@
 {
   "/_app": "pages/_app.js",
-  "/api/hello": "pages/api/hello.js",
   "/[formId]/responses": "pages/[formId]/responses.html",
+  "/api/hello": "pages/api/hello.js",
   "/completepayment/[paymentProvider]/[orderId]": "pages/completepayment/[paymentProvider]/[orderId].html",
   "/confirmation/[id]": "pages/confirmation/[id].html",
   "/create": "pages/create.html",
@@ -11,11 +11,11 @@
   "/form/pedes2022": "pages/form/pedes2022.html",
   "/form/test": "pages/form/test.html",
   "/": "pages/index.html",
-  "/_error": "pages/_error.js",
   "/form/emergence": "pages/form/emergence.js",
-  "/form/ypupskill": "pages/form/ypupskill.js",
   "/form/indicon2022": "pages/form/indicon2022.js",
+  "/form/ypupskill": "pages/form/ypupskill.js",
   "/form/indicon2022special": "pages/form/indicon2022special.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }

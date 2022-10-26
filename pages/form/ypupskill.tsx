@@ -351,8 +351,8 @@ export async function getServerSideProps() {
   try {
     const price = await axios.get(
       process.env.NODE_ENV !== 'development'
-        ? 'https://mint-forms.ieee-mint.org/api/form/formDetails?formId=indicon2022special'
-        : 'http://localhost:3000/api/form/formDetails?formId=indicon2022special'
+        ? 'https://mint-forms.ieee-mint.org/api/form/formDetails?formId=ypupskill'
+        : 'http://localhost:3000/api/form/formDetails?formId=ypupskill'
     );
 
     return {
