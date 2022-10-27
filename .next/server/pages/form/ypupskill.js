@@ -239,7 +239,7 @@ const Form = (props)=>{
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_3__.getIn)(errors, "type") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_3__.getIn)(errors, "type") : ""
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormTextArea__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
-                                                label: "Previous volunteering experince wiith IEEE or any other organizations",
+                                                label: "Previous volunteering experince with IEEE or any other organizations",
                                                 placeholder: "Enter your previous volunteering experince",
                                                 value: values.volunteering,
                                                 name: "",
@@ -269,7 +269,7 @@ const Form = (props)=>{
                                                     }),
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
                                                         label: "Section *",
-                                                        placeholder: "Enter your institution",
+                                                        placeholder: "Enter your IEEE Section",
                                                         value: values.section,
                                                         onChange: (e)=>setFieldValue("section", e.target.value),
                                                         errors: (0,formik__WEBPACK_IMPORTED_MODULE_3__.getIn)(errors, "section") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_3__.getIn)(errors, "section") : ""

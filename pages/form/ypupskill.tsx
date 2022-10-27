@@ -224,7 +224,7 @@ const Form: NextPage<types> = (props) => {
                     }
                   />
                   <FormTextArea
-                    label="Previous volunteering experince wiith IEEE or any other organizations"
+                    label="Previous volunteering experince with IEEE or any other organizations"
                     placeholder="Enter your previous volunteering experince"
                     value={values.volunteering}
                     name=""
@@ -274,7 +274,7 @@ const Form: NextPage<types> = (props) => {
                       />
                       <FormInput
                         label="Section *"
-                        placeholder="Enter your institution"
+                        placeholder="Enter your IEEE Section"
                         value={values.section}
                         onChange={(e: any) =>
                           setFieldValue('section', e.target.value)

@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/EPgfPht1ZEjapz80F8TG8/_buildManifest.js",
-    "static/EPgfPht1ZEjapz80F8TG8/_ssgManifest.js"
+    "static/g8bDPRt1GFjB6K12jFVyw/_buildManifest.js",
+    "static/g8bDPRt1GFjB6K12jFVyw/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -171,7 +171,7 @@
       "static/chunks/811-633bb6e0aef2b3cf.js",
       "static/chunks/710-cb70f52e78db6c83.js",
       "static/css/da237654784c48b6.css",
-      "static/chunks/pages/form/ypupskill-bf096678511337e4.js"
+      "static/chunks/pages/form/ypupskill-608ba43f983f255f.js"
     ]
   },
   "ampFirstPages": []
