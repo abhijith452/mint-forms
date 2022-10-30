@@ -11,6 +11,10 @@ const {
   getEmergencePrice,
   getEmergenceTotalPrice,
 } = require('../../utils/getEmergencePrice');
+const {
+  getExordiumPrice,
+  getExordiumTotalPrice,
+} = require('../../utils/getExordiumPrice');
 const Form = require('../models/forms');
 
 const getPriceValidateIndicon = (req) => {
@@ -36,6 +40,8 @@ const priceValidator = async (req, res, next) => {
         getPedesPrice(req.body) + getExtraPagesPrice2(req.body),
         req.body
       );
+    } else if (req.query.formId === 'exordium') {
+      total = getExordiumTotalPrice(getExordiumPrice(req));
     }
     console.log(total);
     console.log(JSON.parse(req.body.amount).amount);
