@@ -279,27 +279,31 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
-                  <FormIEEE
-                    label="If yes, enter your membership ID"
-                    placeholder="Enter your IEEE Membership ID "
-                    value={values.membershipId}
-                    onChange={(e: any) =>
-                      setFieldValue('membershipId', e.target.value)
-                    }
-                    onChangeValid={(e: any) => {
-                      setFieldValue('validIEEE', e);
-                    }}
-                    errors={
-                      getIn(errors, 'membershipId') !== undefined
-                        ? getIn(errors, 'membershipId')
-                        : ''
-                    }
-                    vaildError={
-                      getIn(errors, 'validIEEE') !== undefined
-                        ? getIn(errors, 'validIEEE')
-                        : ''
-                    }
-                  />
+
+                  {values.ieeeMember === 'Yes' ? (
+                    <FormIEEE
+                      label="If yes, enter your membership ID"
+                      placeholder="Enter your IEEE Membership ID "
+                      value={values.membershipId}
+                      onChange={(e: any) =>
+                        setFieldValue('membershipId', e.target.value)
+                      }
+                      onChangeValid={(e: any) => {
+                        setFieldValue('validIEEE', e);
+                      }}
+                      errors={
+                        getIn(errors, 'membershipId') !== undefined
+                          ? getIn(errors, 'membershipId')
+                          : ''
+                      }
+                      vaildError={
+                        getIn(errors, 'validIEEE') !== undefined
+                          ? getIn(errors, 'validIEEE')
+                          : ''
+                      }
+                    />
+                  ) : null}
+
                   <FormOptions
                     label="Category *"
                     options={getCategory(values)}

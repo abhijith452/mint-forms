@@ -280,7 +280,7 @@ const Form = (props)=>{
                                                 onChange: (e)=>setFieldValue("ieeeMember", e),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "ieeeMember") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "ieeeMember") : ""
                                             }),
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormIEEE__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                                            values.ieeeMember === "Yes" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormIEEE__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                                                 label: "If yes, enter your membership ID",
                                                 placeholder: "Enter your IEEE Membership ID ",
                                                 value: values.membershipId,
@@ -290,7 +290,7 @@ const Form = (props)=>{
                                                 },
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "membershipId") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "membershipId") : "",
                                                 vaildError: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "validIEEE") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "validIEEE") : ""
-                                            }),
+                                            }) : null,
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
                                                 label: "Category *",
                                                 options: getCategory(values),

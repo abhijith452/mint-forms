@@ -95,20 +95,25 @@ export default function Responses() {
     // downloadAnchorNode.remove();
 
     var g = data.data.responses;
-    var a = [];
+    var a = Object.keys(data.data.responses[1]);
+    var a3 = [];
     g.forEach((val) => {
-      if (val.amount !== undefined) {
-        a.push({ ...val, amount: JSON.parse(val.amount).ownerAmt });
-      } else {
-        a.push({ ...val });
-      }
+      // if (val.amount !== undefined) {
+      //   a.push({ ...val, amount: JSON.parse(val.amount).ownerAmt });
+      // } else {
+      //   a.push({ ...val });
+      // }
+      a3.push({
+        ...val,
+        volunteering: val.volunteering !== undefined ? val.volunteering.replace(/(\r\n|\n|\r)/gm, "") : '',
+      });
     });
 
     var config = {
-      data: data.data.responses,
+      data:  data.data.responses,
       filename: 'Responses',
       delimiter: ',',
-      headers: Object.keys(data.data.responses[0]),
+      headers: Object.keys(data.data.responses[1]),
     };
 
     csvDownload(config);
