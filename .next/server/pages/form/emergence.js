@@ -276,7 +276,8 @@ const Form = (props)=>{
                                                 children: [
                                                     "Introduction to PVsyst (Seat filled) ",
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
-                                                    "IOT Candle Workshop (Seat filled)"
+                                                    "IOT Candle Workshop (Seat filled)",
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {})
                                                 ]
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
