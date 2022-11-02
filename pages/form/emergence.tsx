@@ -260,8 +260,8 @@ const Form: NextPage<types> = (props) => {
                   <p>
                     Introduction to PVsyst (Seat filled) <br></br>
                     IOT Candle Workshop (Seat filled)
-                    <br></br>
                   </p>
+                  <br></br>
                   <FormOptions
                     label="IV Preference *"
                     options={[
