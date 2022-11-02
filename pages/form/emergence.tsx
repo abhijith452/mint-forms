@@ -248,10 +248,7 @@ const Form: NextPage<types> = (props) => {
 
                   <FormOptions
                     label="Workshop Preference *"
-                    options={[
-                      'Rapid Prototyping',
-                    
-                    ]}
+                    options={['Rapid Prototyping']}
                     value={values.workshop}
                     onChange={(e: any) => setFieldValue('workshop', e)}
                     errors={
@@ -261,8 +258,8 @@ const Form: NextPage<types> = (props) => {
                     }
                   />
                   <p>
-                   'Introduction to PVsyst (Seat filled)' <br></br>
-                      'IOT Candle Workshop (Seat filled)'
+                    Introduction to PVsyst (Seat filled) <br></br>
+                    IOT Candle Workshop (Seat filled)
                   </p>
                   <FormOptions
                     label="IV Preference *"
@@ -367,7 +364,7 @@ const Form: NextPage<types> = (props) => {
                   </h4>
                   <h5 className={styles.singlePrice}>
                     {/* {values.category.includes('Foreign') ? '$ ' : 'Rs '} */}
-                    {getEmergencePrice(values,props.earlybird)}
+                    {getEmergencePrice(values, props.earlybird)}
                   </h5>
                   <h4 className={styles.priceLabel}>
                     Total amount (
