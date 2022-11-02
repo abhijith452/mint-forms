@@ -264,10 +264,7 @@ const Form: NextPage<types> = (props) => {
                   <br></br>
                   <FormOptions
                     label="IV Preference *"
-                    options={[
-                      'ALIND Switchgear Indsutries, Mannar',
-                      'TRACO Cable Company, Thiruvalla',
-                    ]}
+                    options={['TRACO Cable Company, Thiruvalla']}
                     value={values.iv}
                     onChange={(e: any) => setFieldValue('iv', e)}
                     errors={
@@ -276,6 +273,10 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
+                  <p>
+                    ALIND Switchgear Industries, Mannar (Seat Filled)
+                    <br></br>
+                  </p>
                   <FormOptions
                     label="Do you want accomodation ? *"
                     options={['Yes', 'No']}

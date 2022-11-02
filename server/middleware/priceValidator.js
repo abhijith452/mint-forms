@@ -41,7 +41,7 @@ const priceValidator = async (req, res, next) => {
         req.body
       );
     } else if (req.query.formId === 'exordium') {
-      total = getExordiumTotalPrice(getExordiumPrice(req));
+      total = getExordiumTotalPrice(getExordiumPrice(req.body));
     }
     console.log(total);
     console.log(JSON.parse(req.body.amount).amount);

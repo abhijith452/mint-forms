@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { Formik, FormikProps, getIn } from 'formik';
+import { Formik, FormikProps, getIn, useFormikContext } from 'formik';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import * as yup from 'yup';
 import styles from '../../styles/Form.module.css';
 import Error from '../../UI-Components/error';
@@ -17,6 +17,7 @@ import {
   getExordiumPrice,
   getExordiumTotalPrice,
 } from '../../utils/getExordiumPrice';
+import FormPromoCode from '../../UI-Components/FormPromoCode';
 
 interface types {
   expiryDate: string;
@@ -40,23 +41,24 @@ const Form: NextPage<types> = (props) => {
     accomodation: '',
     department: '',
     departmentOther: '',
-    year: '',
+    yearofstudy: '',
+    category: '',
+    promoCode: '',
   });
   // const [initialVal, setIntialVal] = useState({
-  //   name: 'test',
+  //   name: 'Test',
   //   email: 'abhijithkannan452@gmail.com',
-  //   gender: 'Male',
-  //   district: 'India',
-  //   phone: '+917025263554',
-  //   institute: 'CEK',
-  //   ieeeMember: 'No',
-  //   validIEEE: '',
-  //   yearofstudy: 'Project Development yearofstudy',
-  //   iv: 'ALIND Switchgear Indsutries, Mannar',
+  //   phone: '9778305645',
+  //   institute: 'asdfs',
+  //   ieeeMember: 'Yes',
+  //   validIEEE: 'true',
   //   food: 'Veg',
   //   accomodation: 'Yes',
-  //   ieee: '',
-  //   ias: 'false',
+  //   department: 'EEE',
+  //   departmentOther: '',
+  //   yearofstudy: '1',
+  //   category: '',
+  //   promoCode: '',
   // });
   let schema = yup.object().shape({
     name: yup.string().required(),
@@ -76,11 +78,30 @@ const Form: NextPage<types> = (props) => {
     }),
     food: yup.string().required(),
     accomodation: yup.string().required(),
+    category: yup.string().required(),
+    promoCode: yup.string(),
   });
   const getCategory = (values: any) => {
+    if (values.validIEEE === 'true' && values.promoCode === 'NEWIEEE23') {
+      return ['IEEE Member Rs 499'];
+    }
     return values.validIEEE === 'true'
       ? ['IEEE Member Rs 649']
       : ['Non-IEEE Member Rs 799'];
+  };
+
+  const PriceUpdater: Function = () => {
+    const { values, setFieldValue } = useFormikContext<any>();
+    const didMount = useRef(false);
+    useEffect(() => {
+      if (didMount.current) {
+        if (values.promoCode === 'NEWIEEE23' && values.validIEEE === 'true') {
+          setFieldValue('category', 'IEEE Member Rs 499');
+        }
+      } else {
+        didMount.current = true;
+      }
+    }, [values.promoCode, values.validIEEE]);
   };
 
   const handleAxiosError = (err: any) => {
@@ -315,6 +336,25 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
+                  <FormPromoCode
+                    label="Promocode"
+                    placeholder="Enter your promocode (if any)"
+                    value={values.promoCode}
+                    onChange={(e: any) => setFieldValue('promoCode', e)}
+                    codes={['NEWIEEE23']}
+                    errors={
+                      getIn(errors, 'promoCode') !== undefined
+                        ? getIn(errors, 'promoCode')
+                        : ''
+                    }
+                    vaildError={
+                      getIn(errors, 'validIEEE') !== undefined
+                        ? getIn(errors, 'validIEEE')
+                        : ''
+                    }
+                  />
+                  <PriceUpdater />
+
                   <h4 className={styles.breakDownLabel}>
                     Amount based on chosen catgory
                   </h4>

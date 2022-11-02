@@ -283,12 +283,17 @@ const Form = (props)=>{
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
                                                 label: "IV Preference *",
                                                 options: [
-                                                    "ALIND Switchgear Indsutries, Mannar",
-                                                    "TRACO Cable Company, Thiruvalla", 
+                                                    "TRACO Cable Company, Thiruvalla"
                                                 ],
                                                 value: values.iv,
                                                 onChange: (e)=>setFieldValue("iv", e),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "iv") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "iv") : ""
+                                            }),
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                                                children: [
+                                                    "ALIND Switchgear Industries, Mannar (Seat Filled)",
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {})
+                                                ]
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
                                                 label: "Do you want accomodation ? *",

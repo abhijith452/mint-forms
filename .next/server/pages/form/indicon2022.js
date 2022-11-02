@@ -311,10 +311,12 @@ const Form = (props)=>{
         }
     };
     const catgory =  true ? [
-        // 'Indian Author (Academia)',
-        // 'Indian Author (Industry)',
-        // 'Indian Student Author',
-        "Indian Non-Author Attendee", 
+        "Indian Author (Academia)",
+        "Indian Author (Industry)",
+        "Indian Student Author",
+        "Indian Non-Author Attendee",
+        "Foreign Author",
+        "Foreign Student Author", 
     ] : 0;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_20___default().form),

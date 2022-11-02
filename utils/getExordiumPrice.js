@@ -1,5 +1,9 @@
 function getExordiumPrice(values) {
-  return values.validIEEE === 'true' ? 649 : 799;
+  if (values.promoCode === 'NEWIEEE23') {
+    return values.validIEEE === 'true' ? 499 : 799;
+  } else {
+    return values.validIEEE === 'true' ? 649 : 799;
+  }
 }
 
 function getExordiumTotalPrice(amount, values) {
