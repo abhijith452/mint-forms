@@ -250,8 +250,7 @@ const Form: NextPage<types> = (props) => {
                     label="Workshop Preference *"
                     options={[
                       'Rapid Prototyping',
-                      'Introduction to PVsyst',
-                      // 'IOT Candle Workshop (Seat filled)',
+                    
                     ]}
                     value={values.workshop}
                     onChange={(e: any) => setFieldValue('workshop', e)}
@@ -261,6 +260,10 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
+                  <p>
+                   'Introduction to PVsyst (Seat filled)' <br></br>
+                      'IOT Candle Workshop (Seat filled)'
+                  </p>
                   <FormOptions
                     label="IV Preference *"
                     options={[
