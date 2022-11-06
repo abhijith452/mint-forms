@@ -109,7 +109,7 @@ const Form: NextPage<types> = (props) => {
         </>
       ) : new Date().toISOString() < props.expiryDate ? (
         <div className={styles.formContainer}>
-          <img className={styles.formBanner} src="/upskill.jpg" />
+          {/* <img className={styles.formBanner} src="/upskill.jpg" /> */}
           <div className={styles.formDetails}>
             <p className={styles.subTitle}></p>
             <h1 className={styles.formTitle}>Case Study</h1>
