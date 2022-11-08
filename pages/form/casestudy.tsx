@@ -32,7 +32,6 @@ const Form: NextPage<types> = (props) => {
     college: '',
     events: '',
     platform: '',
-    other: '',
     budget: '',
   });
   // const [initialVal, setIntialVal] = useState({
@@ -63,10 +62,6 @@ const Form: NextPage<types> = (props) => {
     college: yup.string().required(),
     events: yup.string().required(),
     platform: yup.string().required(),
-    other: yup.string().when('platform', {
-      is: 'Other',
-      then: yup.string().required(),
-    }),
     budget: yup.string().required(),
   });
 
@@ -187,7 +182,12 @@ const Form: NextPage<types> = (props) => {
                   />
                   <FormOptions
                     label="Platform used for the registration of an event *"
-                    options={['Google forms', 'YepDesk', 'Other']}
+                    options={[
+                      'Google forms',
+                      'YepDesk',
+                      'Microsoft Forms',
+                      'Other',
+                    ]}
                     value={values.platform}
                     onChange={(e: any) => setFieldValue('platform', e)}
                     errors={
@@ -196,21 +196,7 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
-                  {values.platform === 'Other' ? (
-                    <FormInput
-                      label="Specify the platform *"
-                      placeholder=""
-                      value={values.other}
-                      onChange={(e: any) =>
-                        setFieldValue('other', e.target.value)
-                      }
-                      errors={
-                        getIn(errors, 'other') !== undefined
-                          ? getIn(errors, 'other')
-                          : ''
-                      }
-                    />
-                  ) : null}
+               
                   <FormInput
                     label="How is event budgetary allocation handled? *"
                     placeholder=""

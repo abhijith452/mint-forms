@@ -59,7 +59,6 @@ const Form = (props)=>{
         college: "",
         events: "",
         platform: "",
-        other: "",
         budget: ""
     });
     // const [initialVal, setIntialVal] = useState({
@@ -89,10 +88,6 @@ const Form = (props)=>{
         college: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
         events: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
         platform: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
-        other: yup__WEBPACK_IMPORTED_MODULE_11__.string().when("platform", {
-            is: "Other",
-            then: yup__WEBPACK_IMPORTED_MODULE_11__.string().required()
-        }),
         budget: yup__WEBPACK_IMPORTED_MODULE_11__.string().required()
     });
     const handleAxiosError = (err)=>{
@@ -193,19 +188,13 @@ const Form = (props)=>{
                                                 options: [
                                                     "Google forms",
                                                     "YepDesk",
-                                                    "Other"
+                                                    "Microsoft Forms",
+                                                    "Other", 
                                                 ],
                                                 value: values.platform,
                                                 onChange: (e)=>setFieldValue("platform", e),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "platform") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "platform") : ""
                                             }),
-                                            values.platform === "Other" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
-                                                label: "Specify the platform *",
-                                                placeholder: "",
-                                                value: values.other,
-                                                onChange: (e)=>setFieldValue("other", e.target.value),
-                                                errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "other") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "other") : ""
-                                            }) : null,
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
                                                 label: "How is event budgetary allocation handled? *",
                                                 placeholder: "",
