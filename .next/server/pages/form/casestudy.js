@@ -59,36 +59,20 @@ const Form = (props)=>{
         college: "",
         events: "",
         platform: "",
-        budget: ""
+        budget: "",
+        other: ""
     });
-    // const [initialVal, setIntialVal] = useState({
-    //   name: 'Test ',
-    //   email: 'abhijithkannan452@gmail.com',
-    //   phone: '+917025263554',
-    //   ieeeMember: 'No',
-    //   validIEEE: '',
-    //   institute: 'CEK',
-    //   designation: 'CEK',
-    //   address: 'XYZ Houser',
-    //   gender: 'Male',
-    //   country: 'India',
-    //   state: 'Kerala',
-    //   pincode: '686019',
-    //   food: 'Veg',
-    //   paperId1: 'asdas',
-    //   extraPage1: 'Not applicable',
-    //   paperId2: '',
-    //   extraPage2: '',
-    //   papers: '1',
-    //   specialSession: 'SS08'
-    // });
     let schema = yup__WEBPACK_IMPORTED_MODULE_11__.object().shape({
         email: yup__WEBPACK_IMPORTED_MODULE_11__.string().required().email(),
         section: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
         college: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
         events: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
         platform: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
-        budget: yup__WEBPACK_IMPORTED_MODULE_11__.string().required()
+        budget: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
+        other: yup__WEBPACK_IMPORTED_MODULE_11__.string().when("platform", {
+            is: "Other",
+            then: yup__WEBPACK_IMPORTED_MODULE_11__.string().required("Please enter the platform name")
+        })
     });
     const handleAxiosError = (err)=>{
         setError(true);
@@ -187,14 +171,20 @@ const Form = (props)=>{
                                                 label: "Platform used for the registration of an event *",
                                                 options: [
                                                     "Google forms",
-                                                    "YepDesk",
                                                     "Microsoft Forms",
-                                                    "Other", 
+                                                    "Other"
                                                 ],
                                                 value: values.platform,
                                                 onChange: (e)=>setFieldValue("platform", e),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "platform") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "platform") : ""
                                             }),
+                                            values.platform === "Other" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+                                                label: "Specify the platform *",
+                                                placeholder: "",
+                                                value: values.other,
+                                                onChange: (e)=>setFieldValue("other", e.target.value),
+                                                errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "other") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "other") : ""
+                                            }) : null,
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
                                                 label: "How is event budgetary allocation handled? *",
                                                 placeholder: "",

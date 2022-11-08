@@ -33,29 +33,8 @@ const Form: NextPage<types> = (props) => {
     events: '',
     platform: '',
     budget: '',
+    other: '',
   });
-  // const [initialVal, setIntialVal] = useState({
-  //   name: 'Test ',
-  //   email: 'abhijithkannan452@gmail.com',
-  //   phone: '+917025263554',
-  //   ieeeMember: 'No',
-  //   validIEEE: '',
-  //   institute: 'CEK',
-  //   designation: 'CEK',
-  //   address: 'XYZ Houser',
-  //   gender: 'Male',
-  //   country: 'India',
-  //   state: 'Kerala',
-  //   pincode: '686019',
-  //   food: 'Veg',
-  //   paperId1: 'asdas',
-  //   extraPage1: 'Not applicable',
-  //   paperId2: '',
-  //   extraPage2: '',
-  //   papers: '1',
-  //   specialSession: 'SS08'
-  // });
-
   let schema = yup.object().shape({
     email: yup.string().required().email(),
     section: yup.string().required(),
@@ -63,6 +42,10 @@ const Form: NextPage<types> = (props) => {
     events: yup.string().required(),
     platform: yup.string().required(),
     budget: yup.string().required(),
+    other: yup.string().when('platform', {
+      is: 'Other',
+      then: yup.string().required('Please enter the platform name'),
+    }),
   });
 
   const handleAxiosError = (err: any) => {
@@ -182,12 +165,7 @@ const Form: NextPage<types> = (props) => {
                   />
                   <FormOptions
                     label="Platform used for the registration of an event *"
-                    options={[
-                      'Google forms',
-                      'YepDesk',
-                      'Microsoft Forms',
-                      'Other',
-                    ]}
+                    options={['Google forms', 'Microsoft Forms', 'Other']}
                     value={values.platform}
                     onChange={(e: any) => setFieldValue('platform', e)}
                     errors={
@@ -196,7 +174,22 @@ const Form: NextPage<types> = (props) => {
                         : ''
                     }
                   />
-               
+                  {values.platform === 'Other' ? (
+                    <FormInput
+                      label="Specify the platform *"
+                      placeholder=""
+                      value={values.other}
+                      onChange={(e: any) =>
+                        setFieldValue('other', e.target.value)
+                      }
+                      errors={
+                        getIn(errors, 'other') !== undefined
+                          ? getIn(errors, 'other')
+                          : ''
+                      }
+                    />
+                  ) : null}
+
                   <FormInput
                     label="How is event budgetary allocation handled? *"
                     placeholder=""
