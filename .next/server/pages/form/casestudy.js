@@ -59,8 +59,9 @@ const Form = (props)=>{
         college: "",
         events: "",
         platform: "",
+        other: "",
         budget: "",
-        other: ""
+        other1: ""
     });
     let schema = yup__WEBPACK_IMPORTED_MODULE_11__.object().shape({
         email: yup__WEBPACK_IMPORTED_MODULE_11__.string().required().email(),
@@ -68,8 +69,12 @@ const Form = (props)=>{
         college: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
         events: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
         platform: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
-        budget: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
         other: yup__WEBPACK_IMPORTED_MODULE_11__.string().when("platform", {
+            is: "Other",
+            then: yup__WEBPACK_IMPORTED_MODULE_11__.string().required("Please enter the platform name")
+        }),
+        budget: yup__WEBPACK_IMPORTED_MODULE_11__.string().required(),
+        other1: yup__WEBPACK_IMPORTED_MODULE_11__.string().when("budget", {
             is: "Other",
             then: yup__WEBPACK_IMPORTED_MODULE_11__.string().required("Please enter the platform name")
         })
@@ -147,14 +152,14 @@ const Form = (props)=>{
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "email") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "email") : ""
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
-                                                label: "Which section does your college belong to ?*",
+                                                label: "Which section does your college / OU belong to ?*",
                                                 placeholder: "",
                                                 value: values.section,
                                                 onChange: (e)=>setFieldValue("section", e.target.value),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "section") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "section") : ""
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
-                                                label: "Name of your college *",
+                                                label: "Name of your college / OU *",
                                                 placeholder: "",
                                                 value: values.college,
                                                 onChange: (e)=>setFieldValue("college", e.target.value),
@@ -170,7 +175,7 @@ const Form = (props)=>{
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
                                                 label: "Platform used for the registration of an event *",
                                                 options: [
-                                                    "Google forms",
+                                                    "Google Forms",
                                                     "Microsoft Forms",
                                                     "Other"
                                                 ],
@@ -185,13 +190,24 @@ const Form = (props)=>{
                                                 onChange: (e)=>setFieldValue("other", e.target.value),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "other") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "other") : ""
                                             }) : null,
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
-                                                label: "How is event budgetary allocation handled? *",
-                                                placeholder: "",
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+                                                label: "Platform used for the budget allocation *",
+                                                options: [
+                                                    "Google Sheets",
+                                                    "Microsoft Excel",
+                                                    "Other"
+                                                ],
                                                 value: values.budget,
-                                                onChange: (e)=>setFieldValue("budget", e.target.value),
+                                                onChange: (e)=>setFieldValue("budget", e),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "budget") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "budget") : ""
                                             }),
+                                            values.budget === "Other" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormInput__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+                                                label: "Specify the platform *",
+                                                placeholder: "",
+                                                value: values.other1,
+                                                onChange: (e)=>setFieldValue("other1", e.target.value),
+                                                errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "other1") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "other1") : ""
+                                            }) : null,
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
                                                 className: (_styles_Form_module_css__WEBPACK_IMPORTED_MODULE_12___default().button),
                                                 type: "submit",

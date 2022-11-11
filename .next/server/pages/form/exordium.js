@@ -219,7 +219,7 @@ const Form = (props)=>{
             then: yup__WEBPACK_IMPORTED_MODULE_5__.string().required("Verify membership ID")
         }),
         food: yup__WEBPACK_IMPORTED_MODULE_5__.string().required(),
-        accomodation: yup__WEBPACK_IMPORTED_MODULE_5__.string().required(),
+        accomodation: yup__WEBPACK_IMPORTED_MODULE_5__.string(),
         category: yup__WEBPACK_IMPORTED_MODULE_5__.string().required(),
         promoCode: yup__WEBPACK_IMPORTED_MODULE_5__.string()
     });
@@ -383,16 +383,6 @@ const Form = (props)=>{
                                                 value: values.yearofstudy,
                                                 onChange: (e)=>setFieldValue("yearofstudy", e),
                                                 errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "yearofstudy") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "yearofstudy") : ""
-                                            }),
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
-                                                label: "Do you want accomodation ? *",
-                                                options: [
-                                                    "Yes",
-                                                    "No"
-                                                ],
-                                                value: values.accomodation,
-                                                onChange: (e)=>setFieldValue("accomodation", e),
-                                                errors: (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "accomodation") !== undefined ? (0,formik__WEBPACK_IMPORTED_MODULE_2__.getIn)(errors, "accomodation") : ""
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_UI_Components_FormOptions__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
                                                 label: "Food preference *",

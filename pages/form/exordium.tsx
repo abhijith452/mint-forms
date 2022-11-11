@@ -77,7 +77,7 @@ const Form: NextPage<types> = (props) => {
       then: yup.string().required('Verify membership ID'),
     }),
     food: yup.string().required(),
-    accomodation: yup.string().required(),
+    accomodation: yup.string(),
     category: yup.string().required(),
     promoCode: yup.string(),
   });
@@ -266,7 +266,7 @@ const Form: NextPage<types> = (props) => {
                     }
                   />
 
-                  <FormOptions
+                  {/* <FormOptions
                     label="Do you want accomodation ? *"
                     options={['Yes', 'No']}
                     value={values.accomodation}
@@ -276,7 +276,7 @@ const Form: NextPage<types> = (props) => {
                         ? getIn(errors, 'accomodation')
                         : ''
                     }
-                  />
+                  /> */}
                   <FormOptions
                     label="Food preference *"
                     options={['Veg', 'Non Veg']}

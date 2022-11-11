@@ -32,8 +32,9 @@ const Form: NextPage<types> = (props) => {
     college: '',
     events: '',
     platform: '',
-    budget: '',
     other: '',
+    budget: '',
+    other1: '',
   });
   let schema = yup.object().shape({
     email: yup.string().required().email(),
@@ -41,8 +42,13 @@ const Form: NextPage<types> = (props) => {
     college: yup.string().required(),
     events: yup.string().required(),
     platform: yup.string().required(),
-    budget: yup.string().required(),
     other: yup.string().when('platform', {
+      is: 'Other',
+      then: yup.string().required('Please enter the platform name'),
+    }),
+    budget: yup.string().required(),
+    
+    other1: yup.string().when('budget', {
       is: 'Other',
       then: yup.string().required('Please enter the platform name'),
     }),
@@ -125,7 +131,7 @@ const Form: NextPage<types> = (props) => {
                     }
                   />
                   <FormInput
-                    label="Which section does your college belong to ?*"
+                    label="Which section does your college / OU belong to ?*"
                     placeholder=""
                     value={values.section}
                     onChange={(e: any) =>
@@ -138,7 +144,7 @@ const Form: NextPage<types> = (props) => {
                     }
                   />
                   <FormInput
-                    label="Name of your college *"
+                    label="Name of your college / OU *"
                     placeholder=""
                     value={values.college}
                     onChange={(e: any) =>
@@ -165,7 +171,7 @@ const Form: NextPage<types> = (props) => {
                   />
                   <FormOptions
                     label="Platform used for the registration of an event *"
-                    options={['Google forms', 'Microsoft Forms', 'Other']}
+                    options={['Google Forms', 'Microsoft Forms', 'Other']}
                     value={values.platform}
                     onChange={(e: any) => setFieldValue('platform', e)}
                     errors={
@@ -189,8 +195,33 @@ const Form: NextPage<types> = (props) => {
                       }
                     />
                   ) : null}
-
-                  <FormInput
+                  <FormOptions
+                    label="Platform used for the budget allocation *"
+                    options={['Google Sheets', 'Microsoft Excel', 'Other']}
+                    value={values.budget}
+                    onChange={(e: any) => setFieldValue('budget', e)}
+                    errors={
+                      getIn(errors, 'budget') !== undefined
+                        ? getIn(errors, 'budget')
+                        : ''
+                    }
+                  />
+                  {values.budget === 'Other' ? (
+                    <FormInput
+                      label="Specify the platform *"
+                      placeholder=""
+                      value={values.other1}
+                      onChange={(e: any) =>
+                        setFieldValue('other1', e.target.value)
+                      }
+                      errors={
+                        getIn(errors, 'other1') !== undefined
+                          ? getIn(errors, 'other1')
+                          : ''
+                      }
+                    />
+                  ) : null}
+                  {/* <FormInput
                     label="How is event budgetary allocation handled? *"
                     placeholder=""
                     value={values.budget}
@@ -202,7 +233,7 @@ const Form: NextPage<types> = (props) => {
                         ? getIn(errors, 'budget')
                         : ''
                     }
-                  />
+                  /> */}
                   {/* {JSON.stringify(values, null, 2)} */}
                   <button
                     className={styles.button}
