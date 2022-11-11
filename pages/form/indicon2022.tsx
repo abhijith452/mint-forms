@@ -292,12 +292,12 @@ const Form: NextPage<types> = (props) => {
   const catgory =
     process.env.NODE_ENV === 'production'
       ? [
-          // 'Indian Author (Academia)',
-          // 'Indian Author (Industry)',
-          // 'Indian Student Author',
+          'Indian Author (Academia)',
+          'Indian Author (Industry)',
+          'Indian Student Author',
           'Indian Non-Author Attendee',
-          // 'Foreign Author',
-          // 'Foreign Student Author',
+          'Foreign Author',
+          'Foreign Student Author',
         ]
       : [
           'Indian Author (Academia)',
