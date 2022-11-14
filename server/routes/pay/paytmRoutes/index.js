@@ -193,28 +193,35 @@ router.post('/webhook', async (req, res) => {
           },
         }
       );
-
-      var txnInfo = {
-        txnAmount: req.body.TXNAMOUNT,
-        orderId: req.body.ORDERID,
-        txnDate: moment().tz('Asia/Kolkata').toISOString(),
-        txnId: req.body.TXNID,
-        currency: req.body.CURRENCY,
-      };
-      const formDetails = await Form.findOne({ formId: response.formId });
-      if (req.query.formId === 'indicon2022') {
-        notify('conFailed', response, txnInfo, formDetails);
+      if (response === null) {
+        axios.post(
+          'https://momentz.ieee-mint.org/api/pay/paytm/webhook',
+          req.body
+        );
+        return res.sendStatus(200);
       } else {
-        notify('failed', response, txnInfo, formDetails);
-      }
+        var txnInfo = {
+          txnAmount: req.body.TXNAMOUNT,
+          orderId: req.body.ORDERID,
+          txnDate: moment().tz('Asia/Kolkata').toISOString(),
+          txnId: req.body.TXNID,
+          currency: req.body.CURRENCY,
+        };
+        const formDetails = await Form.findOne({ formId: response.formId });
+        if (req.query.formId === 'indicon2022') {
+          notify('conFailed', response, txnInfo, formDetails);
+        } else {
+          notify('failed', response, txnInfo, formDetails);
+        }
 
-      response
-        .save()
-        .then(() => res.sendStatus(200))
-        .catch((err) => {
-          logger.error(err);
-          res.status(400).send({ error: err.message });
-        });
+        response
+          .save()
+          .then(() => res.sendStatus(200))
+          .catch((err) => {
+            logger.error(err);
+            res.status(400).send({ error: err.message });
+          });
+      }
     }
   } catch (err) {
     res.status(400).send(err);
