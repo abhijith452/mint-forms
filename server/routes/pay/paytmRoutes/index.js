@@ -137,6 +137,7 @@ router.post(
 router.post('/webhook', async (req, res) => {
   try {
     logger.info(JSON.stringify(req.body));
+
     // await axios.post("https://eo5z9welnk8y4gr.m.pipedream.net",req.body)
     // console.log(req.body)
     if (req.body.STATUS === 'TXN_SUCCESS') {
@@ -150,32 +151,35 @@ router.post('/webhook', async (req, res) => {
           },
         }
       );
+      if (response === null) {
+        axios.post("https://momentz.ieee-mint.org/api/pay/paytm/webhook",req.body)
+        return res.sendStatus(200);
+      } else {
+        var txnInfo = {
+          txnAmount: req.body.TXNAMOUNT,
+          orderId: req.body.ORDERID,
+          txnDate: moment().tz('Asia/Kolkata').toISOString(),
+          txnId: req.body.TXNID,
+          currency: req.body.CURRENCY,
+        };
 
-      var txnInfo = {
-        txnAmount: req.body.TXNAMOUNT,
-        orderId: req.body.ORDERID,
-        txnDate: moment().tz('Asia/Kolkata').toISOString(),
-        txnId: req.body.TXNID,
-        currency: req.body.CURRENCY,
-      };
+        const formDetails = await Form.findOne({ formId: response.formId });
 
-      const formDetails = await Form.findOne({ formId: response.formId });
+        if (req.query.formId === 'indicon2022') {
+          notify('conSuccess', response, txnInfo, formDetails);
+        } else if (req.query.formId !== 'transfer') {
+          notify('success', response, txnInfo, formDetails);
+        }
 
-      if (req.query.formId === 'indicon2022') {
-        notify('conSuccess', response, txnInfo, formDetails);
-      } else if (req.query.formId !== 'transfer') {
-        notify('success', response, txnInfo, formDetails);
+        response
+          .save()
+          .then(() => res.sendStatus(200))
+          .catch((err) => {
+            logger.error(err);
+            res.status(400).send({ error: err.message });
+          });
       }
-
-      response
-        .save()
-        .then(() => res.sendStatus(200))
-        .catch((err) => {
-          logger.error(err);
-          res.status(400).send({ error: err.message });
-        });
-    } 
-    else if (req.body.STATUS === 'TXN_FAILURE') {
+    } else if (req.body.STATUS === 'TXN_FAILURE') {
       const response = await Response.findOneAndUpdate(
         { orderId: req.body.ORDERID },
         {
