@@ -1,9 +1,9 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/[formId]/responses": "pages/[formId]/responses.html",
   "/api/hello": "pages/api/hello.js",
   "/completepayment/[paymentProvider]/[orderId]": "pages/completepayment/[paymentProvider]/[orderId].html",
+  "/[formId]/responses": "pages/[formId]/responses.html",
   "/confirmation/[id]": "pages/confirmation/[id].html",
   "/create": "pages/create.html",
   "/form/demo": "pages/form/demo.html",
@@ -12,12 +12,12 @@
   "/form/pedes2022": "pages/form/pedes2022.html",
   "/form/test": "pages/form/test.html",
   "/": "pages/index.html",
-  "/form/exordium": "pages/form/exordium.js",
   "/form/casestudy": "pages/form/casestudy.js",
-  "/form/indicon2022": "pages/form/indicon2022.js",
   "/form/emergence": "pages/form/emergence.js",
-  "/form/ypupskill": "pages/form/ypupskill.js",
+  "/form/exordium": "pages/form/exordium.js",
+  "/form/indicon2022": "pages/form/indicon2022.js",
   "/form/indicon2022special": "pages/form/indicon2022special.js",
+  "/form/ypupskill": "pages/form/ypupskill.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }
